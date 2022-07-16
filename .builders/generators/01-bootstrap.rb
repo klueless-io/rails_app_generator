@@ -92,6 +92,7 @@ KManager.action :bootstrap do
         add('Rakefile', dom: dom)
         add('.rspec', dom: dom)
         add('.rubocop.yml', dom: dom)
+        puts 'xxxxxxxxxxxxxxx'
         add('README.md', dom: dom)
         add('CODE_OF_CONDUCT.md', dom: dom)
         add('LICENSE.txt', dom: dom)
