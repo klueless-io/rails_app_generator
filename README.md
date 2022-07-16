@@ -1,3 +1,4 @@
+xxxxxxxxxxxxxxx
 # Rails App Generator
 
 > Create new Rails Application with custom opinions
