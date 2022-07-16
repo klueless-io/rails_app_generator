@@ -1,0 +1,14 @@
+{
+  "name": "rails_app_generator",
+  "version": "0.0.1",
+  "description": "Create new Rails Application with custom opinions",
+  "scripts": {
+    "release": "semantic-release"
+  },
+  "devDependencies": {
+    "@klueless-js/semantic-release-rubygem": "github:klueless-js/semantic-release-rubygem",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^19.0.3"
+  }
+}
