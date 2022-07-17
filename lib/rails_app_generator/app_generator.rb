@@ -1,6 +1,7 @@
+
+
 # frozen_string_literal: true
 
-require 'suspenders'
 require 'rails/generators/rails/app/app_generator'
 
 module RailsAppGenerator
@@ -8,33 +9,7 @@ module RailsAppGenerator
   class AppGenerator < Rails::Generators::AppGenerator
     include KLog::Logging
 
-    attr_reader :output_folder
-    attr_reader :dry_run_info
-
-    DryRunInfo = Struct.new(:output_folder, keyword_init: true)
-
-    # def initialize(**args)
-    #   @output_folder = args[:output_folder] || Dir.pwd
-    #   @dry_run = args[:dry_run] || false
-    # end
-
-    # def initialize(*args, **opts) #@, **opts)
-    #   # @output_folder = opts[:output_folder]
-    #   super(*args) # , **opts)
-
-    #   gem_path = Gem.loaded_specs["railties"].full_gem_path
-    # end
-
-    def start
-      return dry_run if dry_run?
-
-      run_rails_generator1
-    end
-
-    def dry_run?
-      @dry_run == true
-    end
-
+   
     # private
 
     # def run_rails_generator1

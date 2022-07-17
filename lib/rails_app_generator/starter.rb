@@ -1,55 +1,66 @@
 # frozen_string_literal: true
 
-require 'suspenders'
 require 'rails/generators/rails/app/app_generator'
 
 module RailsAppGenerator
-  #  Starter is a wrapper for Rails::AppGenerator (it follows composition over inheritance)
+  #  Starter is a wrapper for Rails::AppGenerator
   class Starter
     include KLog::Logging
 
     attr_reader :app_path
+    attr_reader :destination_root
     attr_reader :rails_template_path
     attr_reader :custom_template_path
 
-    def initialize(app_path = Dir.pwd)
-      @app_path = app_path
-      @rails_template_path = Rails::Generators::AppGenerator.source_root
-      @custom_template_path = File.expand_path(File.join(__dir__, '../../templates'))
+    def initialize(**args)
+      @app_path = args[:app_path] || '.'
+      @destination_root = args[:destination_root] || Dir.pwd
+      @rails_template_path = args[:rails_template_path] || Rails::Generators::AppGenerator.source_root
+      @custom_template_path = args[:custom_template_path] || File.expand_path(File.join(__dir__, '../../templates'))
     end
-
-    def template_paths
-      [
-        @rails_template_path,
-        @custom_template_path
-      ]
-    end
-
-    # Source paths represent the paths where templates can be found
-    # The first path entry is searched first, followed by the second, and so on.
-    #
-    # IF you don't set this property then it will default to template_paths
-    # Railties Template path + Rails App Generator Template path
-    def source_paths
-      @source_paths ||= template_paths
-    end
-
-    # def initialize(*args, **opts) #@, **opts)
-    #   # @app_path = opts[:app_path]
-    #   super(*args) # , **opts)
-
-    #   gem_path = Gem.loaded_specs["railties"].full_gem_path
-    # end
 
     def start
-      # return dry_run if dry_run?
+      RailsAppGenerator::AppGenerator.source_root(rails_template_path)
+      RailsAppGenerator::AppGenerator.source_paths << rails_template_path
+      RailsAppGenerator::AppGenerator.source_paths << custom_template_path
 
-      # run_rails_generator1
+      begin
+        RailsAppGenerator::AppGenerator.start ['.', '--skip-bundle', '--skip-git'], destination_root: destination_root  
+      rescue => exception
+        binding.pry
+      end
     end
 
-    # def dry_run?
-    #   @dry_run == true
-    # end
+    # source_paths_for_search
+    def start2
+      RailsAppGenerator::AppGenerator.source_root(rails_template_path)
+      RailsAppGenerator::AppGenerator.source_paths << rails_template_path
+      RailsAppGenerator::AppGenerator.source_paths << custom_template_path
+
+      opts = {
+        skip_bundle: true,
+        skip_git: true
+      }
+
+      generator = RailsAppGenerator::AppGenerator.new(['.'], opts, destination_root: destination_root)
+      generator.create_root_files
+    end
+
+    def start3
+      RailsAppGenerator::AppGenerator.source_root(rails_template_path)
+      RailsAppGenerator::AppGenerator.source_paths << rails_template_path
+      RailsAppGenerator::AppGenerator.source_paths << custom_template_path
+
+      opts = {
+        skip_bundle: true,
+        skip_git: true
+      }
+
+      generator = Rails::Generators::AppGenerator.new(["rails"], opts, destination_root: destination_root)
+      generator.create_root
+
+      # RailsAppGenerator::AppGenerator.start([app_path, '--skip-bundle', '--skip-git'])
+    end
 
     # # private
 
