@@ -19,6 +19,10 @@ module RailsAppGenerator
       @custom_template_path = args[:custom_template_path] || File.expand_path(File.join(__dir__, '../../templates'))
     end
 
+    def target_path
+      File.expand_path(File.join(destination_root, app_path))
+    end
+
     def start
       RailsAppGenerator::AppGenerator.source_root(rails_template_path)
       RailsAppGenerator::AppGenerator.source_paths << rails_template_path

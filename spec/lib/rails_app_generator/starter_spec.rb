@@ -45,6 +45,30 @@ RSpec.describe RailsAppGenerator::Starter do
       end
     end
 
+    describe '.target_path' do
+      subject { instance.target_path }
+
+      it { is_expected.to eq(Dir.pwd) }
+
+      context 'when app_path supplied' do
+        let(:args) { { app_path: 'xmen'} }
+
+        it { is_expected.to eq(File.join(Dir.pwd, 'xmen')) }
+      end
+
+      context 'when destination_root supplied' do
+        let(:args) { { destination_root: File.join(Dir.pwd, 'xxx')} }
+
+        it { is_expected.to eq(File.join(Dir.pwd, 'xxx')) }
+      end
+
+      context 'when app_path and destination_root supplied' do
+        let(:args) { { app_path: 'yyy', destination_root: File.join(Dir.pwd, 'xxx') } }
+
+        it { is_expected.to eq(File.join(Dir.pwd, 'xxx', 'yyy')) }
+      end
+    end
+
     describe '.rails_template_path' do
       subject { instance.rails_template_path }
 
@@ -70,9 +94,9 @@ RSpec.describe RailsAppGenerator::Starter do
     end
 
     # describe '#start' do
-    #   let(:destination_root) { sample_path('xxx2') }
+    #   let(:destination_root) { sample_path('x1') }
 
-    #   before { FileUtils.rm_rf(instance.app_path ) }
+    #   before { FileUtils.rm_rf(instance.destination_root ) }
 
     #   fit { instance.start }
     # end
@@ -80,7 +104,7 @@ RSpec.describe RailsAppGenerator::Starter do
     # describe '#start2' do
     #   let(:app_path) { sample_path('xxx3') }
 
-    #   before { FileUtils.rm_rf(instance.app_path ) }
+    #   before { FileUtils.rm_rf(instance.destination_root ) }
 
     #   fit { instance.start2 }
     # end
