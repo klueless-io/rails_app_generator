@@ -45,56 +45,20 @@ RSpec.describe RailsAppGenerator::Starter do
     describe '.rails_template_path' do
       subject { instance.rails_template_path }
 
-      it { is_expected.to eq(Rails::Generators::AppGenerator.source_root) }
+      it { is_expected.to eq(File.join(Gem.loaded_specs['railties'].full_gem_path, 'lib/rails/generators/rails/app/templates')) }
     end
 
     describe '.custom_template_path' do
       subject { instance.custom_template_path }
 
-      it { is_expected.to eq(File.expand_path(File.join(__dir__, '../../../templates'))) }
+      it { is_expected.to eq(File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates')) }
+      # it { is_expected.to eq(File.expand_path(File.join(__dir__, '../../../templates'))) }
     end
 
-    # describe '.dry_run?' do
-    #   subject { instance.dry_run? }
+    describe '.template_paths' do
+      subject { instance.template_paths }
 
-    #   it { is_expected.to be_falsey }
-
-    #   context 'when dry_run supplied' do
-    #     let(:opts) { { dry_run: dry_run } }
-
-    #     it { is_expected.to be_truthy }
-    #   end
-    # end
+      it { is_expected.to eq([instance.rails_template_path, instance.custom_template_path]) }
+    end
   end
-
-  # fdescribe '#dry_runner' do
-  #   subject { instance.dry_run_info }
-
-  #   before { instance.start }
-
-  #   let(:opts) { { app_path: sample_app_path1, dry_run: dry_run } }
-
-  #   it { subject }
-  # end
-
-  # describe '#start' do
-  #   let(:opts) { { app_path: sample_app_path } }
-
-  #   xit {
-  #     instance.run_rails_generator1
-  #     instance.run_rails_generator2
-  #   }
-  # end
-
-  # describe '#run_rails_generator1' do
-  #   let(:opts) { { app_path: sample_app_path1 } }
-
-  #   it { instance.run_rails_generator1 }
-  # end
-
-  # describe '#run_rails_generator2' do
-  #   let(:opts) { { app_path: sample_app_path2 } }
-
-  #   it { instance.run_rails_generator2 }
-  # end
 end

@@ -18,6 +18,22 @@ module RailsAppGenerator
       @custom_template_path = File.expand_path(File.join(__dir__, '../../templates'))
     end
 
+    def template_paths
+      [
+        @rails_template_path,
+        @custom_template_path
+      ]
+    end
+
+    # Source paths represent the paths where templates can be found
+    # The first path entry is searched first, followed by the second, and so on.
+    #
+    # IF you don't set this property then it will default to template_paths
+    # Railties Template path + Rails App Generator Template path
+    def source_paths
+      @source_paths ||= template_paths
+    end
+
     # def initialize(*args, **opts) #@, **opts)
     #   # @app_path = opts[:app_path]
     #   super(*args) # , **opts)
