@@ -19,8 +19,8 @@ group :green_pass_then_cop, halt_on_fail: true do
     # Ruby files
     ruby = dsl.ruby
     dsl.watch_spec_files_for(ruby.lib_files)
-    watch(%r{^lib//(.+)\.rb$}) { |m| "spec/unit/#{m[1]}_spec.rb" }
-    watch(%r{^lib//commands/(.+)\.rb$}) { |m| "spec/unit/commands/#{m[1]}_spec.rb" }
+    # watch(%r{^lib//(.+)\.rb$}) { |m| "spec/unit/#{m[1]}_spec.rb" }
+    # watch(%r{^lib//commands/(.+)\.rb$}) { |m| "spec/unit/commands/#{m[1]}_spec.rb" }
   end
 
   guard :rubocop, all_on_start: false, cli: ['--format', 'clang'] do

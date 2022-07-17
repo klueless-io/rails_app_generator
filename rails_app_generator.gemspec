@@ -40,6 +40,7 @@ Gem::Specification.new do |spec|
   # spec.extensions    = ['ext/rails_app_generator/extconf.rb']
 
   spec.add_dependency 'k_log', '~> 0'
+  spec.add_dependency 'railties', '~> 7' # , ['>= 3.0.0']
   # spec.add_dependency 'k_type', '~> 0'
   # spec.add_dependency 'k_util', '~> 0'
 end

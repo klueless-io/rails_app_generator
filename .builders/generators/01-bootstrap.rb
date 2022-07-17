@@ -92,13 +92,13 @@ KManager.action :bootstrap do
         add('Rakefile', dom: dom)
         add('.rspec', dom: dom)
         add('.rubocop.yml', dom: dom)
-        add('README.md', dom: dom)
-        add('CODE_OF_CONDUCT.md', dom: dom, ruby: 'blah blah')
+        add('README.md', dom: dom, ruby: '<help name="blah blah" />')
+        add('CODE_OF_CONDUCT.md', dom: dom)
         add('LICENSE.txt', dom: dom)
 
-        run_command("rubocop -a")
+        # run_command("rubocop -a")
       
-        run_command("git add .; git commit -m 'chore: #{self.options.description.downcase}'; git push")
+        # run_command("git add .; git commit -m 'chore: #{self.options.description.downcase}'; git push")
       end
       .blueprint(
         active: false,

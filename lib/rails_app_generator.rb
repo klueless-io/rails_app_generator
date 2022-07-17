@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'rails_app_generator/version'
+require_relative 'rails_app_generator/app_generator'
 
 module RailsAppGenerator
   # raise RailsAppGenerator::Error, 'Sample message'
