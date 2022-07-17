@@ -10,6 +10,7 @@ AllCops:
   Exclude:
     - ".builders/**/*"
     - "spec/samples/**/*"
+    - "a/**/*"
 
 Metrics/BlockLength:
   Exclude:

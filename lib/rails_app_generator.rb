@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
+require 'k_log'
 require_relative 'rails_app_generator/version'
+require_relative 'rails_app_generator/starter'
 require_relative 'rails_app_generator/app_generator'
 
 module RailsAppGenerator

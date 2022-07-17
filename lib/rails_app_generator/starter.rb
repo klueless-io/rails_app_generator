@@ -4,38 +4,38 @@ require 'suspenders'
 require 'rails/generators/rails/app/app_generator'
 
 module RailsAppGenerator
-  #  AppGenerator is a wrapper for Rails::AppGenerator (it follows composition over inheritance)
-  class AppGenerator < Rails::Generators::AppGenerator
+  #  Starter is a wrapper for Rails::AppGenerator (it follows composition over inheritance)
+  class Starter
     include KLog::Logging
 
-    attr_reader :output_folder
-    attr_reader :dry_run_info
+    attr_reader :app_path
+    attr_reader :rails_template_path
+    attr_reader :custom_template_path
 
-    DryRunInfo = Struct.new(:output_folder, keyword_init: true)
-
-    # def initialize(**args)
-    #   @output_folder = args[:output_folder] || Dir.pwd
-    #   @dry_run = args[:dry_run] || false
-    # end
+    def initialize(app_path = Dir.pwd)
+      @app_path = app_path
+      @rails_template_path = Rails::Generators::AppGenerator.source_root
+      @custom_template_path = File.expand_path(File.join(__dir__, '../../templates'))
+    end
 
     # def initialize(*args, **opts) #@, **opts)
-    #   # @output_folder = opts[:output_folder]
+    #   # @app_path = opts[:app_path]
     #   super(*args) # , **opts)
 
     #   gem_path = Gem.loaded_specs["railties"].full_gem_path
     # end
 
     def start
-      return dry_run if dry_run?
+      # return dry_run if dry_run?
 
-      run_rails_generator1
+      # run_rails_generator1
     end
 
-    def dry_run?
-      @dry_run == true
-    end
+    # def dry_run?
+    #   @dry_run == true
+    # end
 
-    # private
+    # # private
 
     # def run_rails_generator1
     #   #   gem_path = Gem.loaded_specs["railties"].full_gem_path
@@ -45,10 +45,10 @@ module RailsAppGenerator
     #   # Rails::AppGenerator.source_root templates_root
     #   # destination_root = "/Users/davidcruwys/dev/kweb/xmen"
 
-    #   # Rails::Generators::AppGenerator.start [output_folder, '--skip-bundle']
+    #   # Rails::Generators::AppGenerator.start [app_path, '--skip-bundle']
 
-    #   gem_path = Gem.loaded_specs['suspenders'].full_gem_path
-    #   templates_root = File.expand_path(File.join(gem_path, 'templates'))
+    #   gem_path = Gem.loaded_specs["suspenders"].full_gem_path
+    #   templates_root = File.expand_path(File.join(gem_path, "templates"))
 
     #   Suspenders::AppGenerator.source_root templates_root
     #   Suspenders::AppGenerator.source_paths << Rails::Generators::AppGenerator.source_root << templates_root
@@ -63,14 +63,14 @@ module RailsAppGenerator
 
     #   # generator = KStarter::AppGenerator.new([folder], opts)
     #   # generator.destination_root = destination_root
-    #   FileUtils.rm_rf(output_folder)
+    #   FileUtils.rm_rf(app_path)
 
-    #   Suspenders::AppGenerator.start([output_folder, '--skip-bundle'])
+    #   Suspenders::AppGenerator.start([app_path, '--skip-bundle'])
     # end
 
     # def run_rails_generator2
-    #   gem_path = Gem.loaded_specs['rails_app_generator'].full_gem_path
-    #   templates_root = File.expand_path(File.join(gem_path, 'templates'))
+    #   gem_path = Gem.loaded_specs["rails_app_generator"].full_gem_path
+    #   templates_root = File.expand_path(File.join(gem_path, "templates"))
 
     #   puts '--------------------------------------------------------------'
     #   puts "1 #{templates_root}"
@@ -82,14 +82,14 @@ module RailsAppGenerator
 
     #   # generator = KStarter::AppGenerator.new([folder], opts)
     #   # generator.destination_root = destination_root
-    #   FileUtils.rm_rf(output_folder)
+    #   FileUtils.rm_rf(app_path)
 
-    #   Rails::Generators::AppGenerator.start([output_folder, '--skip-bundle'])
+    #   Rails::Generators::AppGenerator.start([app_path, '--skip-bundle'])
     # end
 
     # def dry_run
     #   @dry_run_info = DryRunInfo.new(
-    #     output_folder: output_folder
+    #     app_path: app_path
     #   )
 
     #   # Rails::Generators::AppGenerator.source_root(defaults_rails_templates)
@@ -99,7 +99,7 @@ module RailsAppGenerator
     #   # KStarter::AppGenerator.source_root(defaults_rails_templates)
     #   # Rails::Generators::AppGenerator
 
-    #   generator = Rails::Generators::AppGenerator.new([output_folder], opts)
+    #   generator = Rails::Generators::AppGenerator.new([app_path], opts)
     #   generator.app_path
     #   # generator.destination_root = destination_root
     #   # generator.destination_root
@@ -113,6 +113,7 @@ module RailsAppGenerator
     #   # generator.destination_root
 
     #   log.structure(dry_run_info)
+
     # end
   end
 end
