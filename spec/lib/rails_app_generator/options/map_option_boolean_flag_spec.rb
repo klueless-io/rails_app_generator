@@ -2,7 +2,7 @@
 
 RSpec.describe RailsAppGenerator::MapOptionBooleanFlag do
   describe '#map' do
-    subject { described_class.map(name, value) }
+    subject { described_class.new.map(name, value) }
 
     let(:name) { :skip_git }
 

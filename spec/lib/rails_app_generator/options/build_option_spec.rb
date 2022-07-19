@@ -12,20 +12,20 @@ RSpec.describe RailsAppGenerator::BuildOption do
     context 'when name only' do
       let(:opts) { { name: :xmen } }
 
-      it { is_expected.to have_attributes(name: :xmen, desc: '', type: :string, default: '', required: false, mapper: RailsAppGenerator::MapOptionValue) }
+      it { is_expected.to have_attributes(name: :xmen, desc: '', type: :string, default: '', required: false, mapper: RailsAppGenerator::MapOptionString) }
     end
 
     context 'when name and description' do
       let(:opts) { { name: :xmen, desc: 'crazy xmen' } }
 
-      it { is_expected.to have_attributes(name: :xmen, desc: 'crazy xmen', type: :string, default: '', required: false, mapper: RailsAppGenerator::MapOptionValue) }
+      it { is_expected.to have_attributes(name: :xmen, desc: 'crazy xmen', type: :string, default: '', required: false, mapper: RailsAppGenerator::MapOptionString) }
     end
 
     context 'when type is configured' do
       context 'as :integer' do
         let(:opts) { { name: :xmen, type: :integer } }
 
-        it { is_expected.to have_attributes(name: :xmen, desc: '', type: :integer, default: 0, required: false, mapper: RailsAppGenerator::MapOptionValue) }
+        it { is_expected.to have_attributes(name: :xmen, desc: '', type: :integer, default: 0, required: false, mapper: RailsAppGenerator::MapOptionIgnore) }
       end
 
       context 'as :boolean' do
@@ -37,13 +37,13 @@ RSpec.describe RailsAppGenerator::BuildOption do
       context 'as :array' do
         let(:opts) { { name: :xmen, type: :array } }
 
-        it { is_expected.to have_attributes(name: :xmen, desc: '', type: :array, default: [], required: false, mapper: RailsAppGenerator::MapOptionValue) }
+        it { is_expected.to have_attributes(name: :xmen, desc: '', type: :array, default: [], required: false, mapper: RailsAppGenerator::MapOptionIgnore) }
       end
 
       context 'as :hash' do
         let(:opts) { { name: :xmen, type: :hash } }
 
-        it { is_expected.to have_attributes(name: :xmen, desc: '', type: :hash, default: {}, required: false, mapper: RailsAppGenerator::MapOptionValue) }
+        it { is_expected.to have_attributes(name: :xmen, desc: '', type: :hash, default: {}, required: false, mapper: RailsAppGenerator::MapOptionIgnore) }
       end
     end
 

@@ -2,9 +2,9 @@
 
 module RailsAppGenerator
   # Simple pass through mapper for options that do not yet have a mapper defined
-  class MapOptionValue
-    def self.map(_name, value)
-      value
+  class MapOptionIgnore < BaseMapOption
+    def map(_name, _value)
+      nil
     end
   end
 end

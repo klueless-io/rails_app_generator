@@ -47,9 +47,11 @@ module RailsAppGenerator
     def sane_mapper
       case type
       when :boolean
-        RailsAppGenerator::MapOptionBooleanFlag
+        RailsAppGenerator::MapOptionBooleanFlag.new
+      when :string
+        RailsAppGenerator::MapOptionString.new
       else
-        RailsAppGenerator::MapOptionValue
+        RailsAppGenerator::MapOptionIgnore.new
       end
     end
   end

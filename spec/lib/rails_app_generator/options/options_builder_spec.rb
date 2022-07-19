@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RailsAppGenerator::BuildOptions do
+RSpec.describe RailsAppGenerator::OptionsBuilder do
   let(:instance) { described_class.new(opts) }
   let(:opts) { {} }
 
@@ -83,8 +83,4 @@ RSpec.describe RailsAppGenerator::BuildOptions do
       it { is_expected.to eq([]) }
     end
   end
-
-  #   "--skip-git",
-  #   "--skip-test",
-  #   "--skip-bundle"
 end

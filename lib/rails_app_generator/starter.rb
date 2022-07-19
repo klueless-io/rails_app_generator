@@ -43,7 +43,7 @@ module RailsAppGenerator
       File.expand_path(File.join(destination_root, app_path))
     end
 
-    def start
+    def start(_options)
       puts "Target path: #{target_path}"
 
       RailsAppGenerator::AppGenerator.source_root(rails_template_path)
