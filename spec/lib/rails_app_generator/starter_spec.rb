@@ -15,6 +15,7 @@ RSpec.describe RailsAppGenerator::Starter do
   let(:app_path) { sample_path('a1') }
   let(:args) { {} }
   let(:opts) { {} }
+  let(:rails_options) { RailsAppGenerator::RailsOptions.new(opts) }
 
   let(:dry_run) { true }
   let(:no_dry_run) { false }
@@ -94,12 +95,38 @@ RSpec.describe RailsAppGenerator::Starter do
       end
     end
 
-    describe '#start' do
+    context 'when executing the generator' do
+      subject { instance.start }
+
       let(:args) { { destination_root: sample_path('x1') } }
+      let(:opts) do
+        {
+          skip_git: true,
+          skip_bundle: true # ,
+          # test: 'rspec'
+        }
+      end
 
-      before { FileUtils.rm_rf(instance.target_path) }
+      describe '.console_output' do
+        subject { instance.console_output }
 
-      # fit { instance.start }
+        it { is_expected.to be_nil }
+
+        context 'when console_output is written too' do
+          before do
+            FileUtils.rm_rf(instance.target_path)
+            instance.start(rails_options)
+          end
+
+          it { is_expected.not_to be_empty }
+        end
+      end
+
+      describe '#start' do
+        before { FileUtils.rm_rf(instance.target_path) }
+
+        it { instance.start(rails_options) }
+      end
     end
   end
 end

@@ -32,7 +32,6 @@ See all [stories](./STORIES.md)
 
 
 ## Usage
-xxxxxxxxxxxxxxxx <help name="blah blah" />
 See all [usage examples](./USAGE.md)
 
 

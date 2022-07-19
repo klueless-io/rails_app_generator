@@ -5,10 +5,14 @@
 module RailsAppGenerator
   #  AppGenerator is a wrapper for Rails::AppGenerator
   class AppGenerator < Rails::Generators::AppGenerator
+    class_option :test, type: :string, default: 'rspec'
+
     def initialize(*args)
       super
 
+      puts '----------------------------------------------------'
       puts options
+      puts '----------------------------------------------------'
 
       # return unless options[:api]
 
@@ -29,6 +33,17 @@ module RailsAppGenerator
 
       # add(:rspec) if options[:testing_framework] == 'rspec'
     end
+
+    # def create_root_files
+    #   super
+
+    #   # add(:irbrc)
+    #   # add(:foreman)
+    #   # add(:dotenv)
+    #   # add(:docker)
+    #   # add(:docker_compose)
+    #   # add(:rubocop)
+    # end
 
     # include KLog::Logging
 

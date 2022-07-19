@@ -2,6 +2,9 @@
 
 module RailsAppGenerator
   class RailsOptions < OptionsBuilder
+    # NOTE: Currently you need to register new options in two places
+    #       here and in lib/rails_app_generator/app_generator.rb
+
     future_option   :template             , type: :string                               # , desc: "Path to some #{name} template (can be a filesystem path or URL)"
     future_option   :database             , type: :string , default: 'sqlite3'          # , desc: "Preconfigure for selected database (options: #{DATABASES.join('/')})"
     register_option :skip_git             , type: :boolean, default: false              # , desc: "Skip .gitignore file"
