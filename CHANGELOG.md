@@ -1,3 +1,10 @@
+## [0.0.3](https://github.com/klueless-io/rails_app_generator/compare/v0.0.2...v0.0.3) (2022-07-19)
+
+
+### Bug Fixes
+
+* add builder option command line mapping ([5cc16b5](https://github.com/klueless-io/rails_app_generator/commit/5cc16b53f3ea2821e226a51dedfa10513307860f))
+
 ## [0.0.2](https://github.com/klueless-io/rails_app_generator/compare/v0.0.1...v0.0.2) (2022-07-19)
 
 
