@@ -1,3 +1,10 @@
+## [0.0.5](https://github.com/klueless-io/rails_app_generator/compare/v0.0.4...v0.0.5) (2022-07-19)
+
+
+### Bug Fixes
+
+* add console output capture ([0d66a3b](https://github.com/klueless-io/rails_app_generator/commit/0d66a3ba19c2adbd0f2c0747b8212e7e628c22ba))
+
 ## [0.0.4](https://github.com/klueless-io/rails_app_generator/compare/v0.0.3...v0.0.4) (2022-07-19)
 
 
