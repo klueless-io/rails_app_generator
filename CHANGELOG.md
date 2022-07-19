@@ -1,3 +1,10 @@
+## [0.0.4](https://github.com/klueless-io/rails_app_generator/compare/v0.0.3...v0.0.4) (2022-07-19)
+
+
+### Bug Fixes
+
+* add map string options ([50a22ba](https://github.com/klueless-io/rails_app_generator/commit/50a22ba1bdefc7726e687d072009d73bbfd21b83))
+
 ## [0.0.3](https://github.com/klueless-io/rails_app_generator/compare/v0.0.2...v0.0.3) (2022-07-19)
 
 
