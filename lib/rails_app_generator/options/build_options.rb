@@ -16,19 +16,31 @@ module RailsAppGenerator
         @registered_options ||= []
       end
 
-      def register(name, **args)
-        registered_options << BuildOption.new(**{ name: name }.merge(args))
+      def registered_options_lookup
+        @registered_options_lookup ||= {}
+      end
+
+      def register_option(name, **args)
+        return if registered_options_lookup.key?(name)
+
+        option = BuildOption.new(**{ name: name }.merge(args))
+
+        registered_options_lookup[name] = option
+        registered_options << option
       end
 
       def reset
         @registered_options = nil
+        @registered_options_lookup = nil
       end
     end
 
-    def rails_options
-      build_options
-
-      []
+    def cmd_line_options
+      self.class.registered_options.map do |option|
+        mapper = option.mapper
+        value = options[option.name]
+        mapper.map(option.name, value)
+      end.reject(&:blank?)
     end
 
     private
