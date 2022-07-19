@@ -1,41 +1,14 @@
 # frozen_string_literal: true
 
 module RailsAppGenerator
-  class Option
-    attr_reader :name, :description, :type, :default, :required
-
-    def initialize(**args)
-      @name = args[:name]
-      @description = args[:description] || ''
-      @type = args[:type] || :string
-      @required = args.fetch(:required, false)
-      @default = args.fetch(:default, sane_default)
-    end
-
-    private
-
-    def sane_default
-      case type
-      when :string
-        ''
-      when :boolean
-        false
-      when :integer
-        0
-      when :array
-        []
-      when :hash
-        {}
-      end
-    end
-  end
-
   #  Build options for RailsAppGenerator::Starter
   class BuildOptions
-    attr_reader :opts
+    attr_reader :options
 
     def initialize(opts)
       # @opts = opts
+      @options = default_options
+      @options.merge!(opts)
     end
 
     class << self
@@ -44,7 +17,11 @@ module RailsAppGenerator
       end
 
       def register(name, **args)
-        registered_options << Option.new(**{ name: name }.merge(args))
+        registered_options << BuildOption.new(**{ name: name }.merge(args))
+      end
+
+      def reset
+        @registered_options = nil
       end
     end
 
@@ -54,28 +31,10 @@ module RailsAppGenerator
       []
     end
 
-    def options
-      build_options
-    end
-
     private
 
-    def build_options
-      default_options
-    end
-
     def default_options
-      return @default_options unless @default_options.nil?
-
-      @default_options = begin
-        o = {}
-
-        self.class.registered_options.each do |option|
-          o[option.name] = nil
-        end
-
-        o
-      end
+      self.class.registered_options.to_h { |option| [option.name, option.default] }
     end
   end
 

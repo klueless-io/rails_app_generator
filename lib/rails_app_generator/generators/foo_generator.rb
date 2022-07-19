@@ -2,8 +2,9 @@
 
 require_relative 'base'
 
-puts 'xxxxxxxxxxxxxxxxxxxxxx'
+# Some comment
 module RailsAppGenerator
+  # xxx
   class FooGenerator < Generators::Base
     def bundler_audit_gem
       puts '11111111111'

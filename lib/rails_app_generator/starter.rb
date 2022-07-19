@@ -50,27 +50,27 @@ module RailsAppGenerator
       RailsAppGenerator::AppGenerator.source_paths << rails_template_path
       RailsAppGenerator::AppGenerator.source_paths << custom_template_path
 
-      opts = [
-        '--skip-namespace',
-        '--skip-collision-check',
-        '--skip-git',
-        '--skip-keeps',
-        '--skip-action-mailer',
-        '--skip-action-mailbox',
-        '--skip-action-text',
-        '--skip-active-record',
-        '--skip-active-job',
-        '--skip-active-storage',
-        '--skip-action-cable',
-        '--skip-asset-pipeline',
-        '--skip-javascript',
-        '--skip-hotwire',
-        '--skip-jbuilder',
-        '--skip-test',
-        '--skip-system-test',
-        '--skip-bootsnap',
-        '--skip-bundle'
-      ]
+      # opts = [
+      #   '--skip-namespace',
+      #   '--skip-collision-check',
+      #   '--skip-git',
+      #   '--skip-keeps',
+      #   '--skip-action-mailer',
+      #   '--skip-action-mailbox',
+      #   '--skip-action-text',
+      #   '--skip-active-record',
+      #   '--skip-active-job',
+      #   '--skip-active-storage',
+      #   '--skip-action-cable',
+      #   '--skip-asset-pipeline',
+      #   '--skip-javascript',
+      #   '--skip-hotwire',
+      #   '--skip-jbuilder',
+      #   '--skip-test',
+      #   '--skip-system-test',
+      #   '--skip-bootsnap',
+      #   '--skip-bundle'
+      # ]
 
       opts = [
         '--skip-git',

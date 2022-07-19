@@ -27,49 +27,32 @@ RSpec.describe RailsAppGenerator::BuildOptions do
 
         it { is_expected.to include(have_attributes(name: :xmen, description: 'crazy xmen', type: :string, default: '', required: false)) }
       end
-
-      context 'when type is configured' do
-        context 'as :integer' do
-          before { described_class.register(:xmen, type: :integer) }
-
-          it { is_expected.to include(have_attributes(name: :xmen, description: '', type: :integer, default: 0, required: false)) }
-        end
-
-        context 'as :boolean' do
-          before { described_class.register(:xmen, type: :boolean) }
-
-          it { is_expected.to include(have_attributes(name: :xmen, description: '', type: :boolean, default: false, required: false)) }
-        end
-
-        context 'as :array' do
-          before { described_class.register(:xmen, type: :array) }
-
-          it { is_expected.to include(have_attributes(name: :xmen, description: '', type: :array, default: [], required: false)) }
-        end
-
-        context 'as :hash' do
-          before { described_class.register(:xmen, type: :hash) }
-
-          it { is_expected.to include(have_attributes(name: :xmen, description: '', type: :hash, default: {}, required: false)) }
-        end
-      end
     end
   end
 
-  describe '#options' do
+  describe '.options' do
+    before { described_class.reset }
+
     subject { instance.options }
 
-    it { is_expected.to be_a Hash }
+    it { is_expected.to eq({}) }
 
-    context 'when registered options' do
-      context 'are not set' do
-        # it { is_expected.to be_empty }
+    context 'when options have been registered' do
+      before do
+        described_class.register(:xmen)
+        described_class.register(:my_count, type: :integer, default: 53)
+        described_class.register(:active, type: :boolean, default: true)
+        described_class.register(:primary, type: :boolean)
       end
 
-      context 'are set' do
-        before { described_class.register(:xmen, description: 'crazy xmen') }
+      context 'but not set' do
+        it { is_expected.to include(xmen: '', my_count: 53, active: true, primary: false) }
+      end
 
-        # it { is_expected.to include(xmen: nil) }
+      context 'options are set' do
+        let(:opts) { { xmen: 'wolverine', my_count: 42, active: false } }
+
+        it { is_expected.to include(xmen: 'wolverine', my_count: 42, active: false, primary: false) }
       end
     end
   end

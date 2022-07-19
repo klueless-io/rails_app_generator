@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module RailsAppGenerator
+  # Option for the rails generator
   class BuildOption
     attr_reader :name, :description, :type, :default, :required
 
