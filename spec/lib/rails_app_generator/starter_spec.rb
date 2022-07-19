@@ -26,7 +26,7 @@ RSpec.describe RailsAppGenerator::Starter do
       it { is_expected.to eq('.') }
 
       context 'when app_path supplied' do
-        let(:args) { { app_path: 'xmen'} }
+        let(:args) { { app_path: 'xmen' } }
 
         it { is_expected.to eq('xmen') }
       end
@@ -38,10 +38,11 @@ RSpec.describe RailsAppGenerator::Starter do
       it { is_expected.to eq(Dir.pwd) }
 
       context 'when destination_root supplied' do
-        let(:args) { { destination_root: sample_path('a1')} }
+        let(:args) { { destination_root: sample_path('a1') } }
 
-        it { 
-          is_expected.to eq(sample_path('a1')) }
+        it {
+          is_expected.to eq(sample_path('a1'))
+        }
       end
     end
 
@@ -51,13 +52,13 @@ RSpec.describe RailsAppGenerator::Starter do
       it { is_expected.to eq(Dir.pwd) }
 
       context 'when app_path supplied' do
-        let(:args) { { app_path: 'xmen'} }
+        let(:args) { { app_path: 'xmen' } }
 
         it { is_expected.to eq(File.join(Dir.pwd, 'xmen')) }
       end
 
       context 'when destination_root supplied' do
-        let(:args) { { destination_root: File.join(Dir.pwd, 'xxx')} }
+        let(:args) { { destination_root: File.join(Dir.pwd, 'xxx') } }
 
         it { is_expected.to eq(File.join(Dir.pwd, 'xxx')) }
       end
@@ -75,7 +76,7 @@ RSpec.describe RailsAppGenerator::Starter do
       it { is_expected.to eq(File.join(Gem.loaded_specs['railties'].full_gem_path, 'lib/rails/generators/rails/app/templates')) }
 
       context 'when rails_template_path supplied' do
-        let(:args) { { rails_template_path: '/path_to_rails_template'} }
+        let(:args) { { rails_template_path: '/path_to_rails_template' } }
 
         it { is_expected.to eq('/path_to_rails_template') }
       end
@@ -87,34 +88,18 @@ RSpec.describe RailsAppGenerator::Starter do
       it { is_expected.to eq(File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates')) }
 
       context 'when custom_template_path supplied' do
-        let(:args) { { custom_template_path: '/path_to_custom_template'} }
+        let(:args) { { custom_template_path: '/path_to_custom_template' } }
 
         it { is_expected.to eq('/path_to_custom_template') }
       end
     end
 
-    # describe '#start' do
-    #   let(:destination_root) { sample_path('x1') }
+    describe '#start' do
+      let(:args) { { destination_root: sample_path('x1') } }
 
-    #   before { FileUtils.rm_rf(instance.destination_root ) }
+      before { FileUtils.rm_rf(instance.target_path) }
 
-    #   fit { instance.start }
-    # end
-
-    # describe '#start2' do
-    #   let(:app_path) { sample_path('xxx3') }
-
-    #   before { FileUtils.rm_rf(instance.destination_root ) }
-
-    #   fit { instance.start2 }
-    # end
-
-    # describe '#start3' do
-    #   let(:app_path) { sample_path('xxx3') }
-
-    #   before { FileUtils.rm_rf(instance.app_path ) }
-
-    #   fit { instance.start3 }
-    # end
+      # fit { instance.start }
+    end
   end
 end

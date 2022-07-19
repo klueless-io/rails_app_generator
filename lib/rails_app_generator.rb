@@ -1,9 +1,24 @@
 # frozen_string_literal: true
 
-require 'k_log'
-require_relative 'rails_app_generator/version'
-require_relative 'rails_app_generator/starter'
-require_relative 'rails_app_generator/app_generator'
+# require 'k_log'
+
+require 'rails/command/base'
+require 'rails/generators/app_base'
+require 'rails/generators'
+require 'rails/generators/app_name'
+require 'rails/generators/rails/app/app_generator'
+require 'bundler'
+
+require 'rails_app_generator/version'
+require 'rails_app_generator/build_option'
+require 'rails_app_generator/build_options'
+require 'rails_app_generator/starter'
+require 'rails_app_generator/app_builder'
+require 'rails_app_generator/app_generator'
+
+# require "rails_app_generator/generators/base"
+# require "rails_app_generator/generators/foo_generator"
+# require "rails_app_generator/generators/advisories_generator"
 
 module RailsAppGenerator
   # raise RailsAppGenerator::Error, 'Sample message'
