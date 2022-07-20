@@ -7,23 +7,89 @@ module RailsAppGenerator
   class AppGenerator < Rails::Generators::AppGenerator
     class_option :test, type: :string, default: 'rspec'
 
-    def initialize(*args)
+    class_option :add_irbrc                   , type: :boolean, default: false
+    class_option :add_foreman                 , type: :boolean, default: false
+    class_option :add_dotenv                  , type: :boolean, default: false
+    class_option :add_docker                  , type: :boolean, default: false
+    class_option :add_docker_compose          , type: :boolean, default: false
+    class_option :add_rubocop                 , type: :boolean, default: false
+    class_option :add_annotate                , type: :boolean, default: false
+    class_option :add_continuous_integration  , type: :boolean, default: false
+    class_option :add_high_voltage            , type: :boolean, default: false
+    class_option :add_generators              , type: :boolean, default: false
+    class_option :add_lograge                 , type: :boolean, default: false
+    class_option :add_pundit                  , type: :boolean, default: false
+    class_option :add_services                , type: :boolean, default: false
+    class_option :add_sidekiq                 , type: :boolean, default: false
+    class_option :add_views                   , type: :boolean, default: false
+    class_option :add_errors                 , type: :boolean, default: false
+    class_option :add_scaffold               , type: :boolean, default: false
+    class_option :add_factory_bot             , type: :boolean, default: false
+    class_option :add_shoulda                 , type: :boolean, default: false
+
+    # points to the original rails templates
+    attr_reader :rails_template_path
+
+    # points to template path where you can override the standard rails templates
+    attr_reader :rails_override_template_path
+
+    # points to template path for rails addons
+    attr_reader :addon_template_path
+
+    def initialize(args, *options)
       super
 
-      puts '----------------------------------------------------'
-      puts options
-      puts '----------------------------------------------------'
-
-      # return unless options[:api]
-
-      # self.options = options.merge(
-      #   skip_errors: true,
-      #   skip_high_voltage: true,
-      #   skip_stimulus: true,
-      #   skip_tailwind: true,
-      #   skip_views: true
-      # ).freeze
+      @rails_template_path            = self.class.rails_template_path
+      @rails_override_template_path   = self.class.rails_override_template_path
+      @addon_template_path            = self.class.addon_template_path
     end
+
+    class << self
+      # points to the original rails templates
+      attr_writer :rails_template_path
+
+      # AppGenerator.source_root
+      def rails_template_path
+        @rails_template_path ||= File.join(Gem.loaded_specs['railties'].full_gem_path, 'lib/rails/generators/rails/app/templates')
+      end
+
+      # points to the custom templates related to rails
+      attr_writer :rails_override_template_path
+
+      def rails_override_template_path
+        @rails_override_template_path ||= File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates')
+      end
+
+      # points to templates related to rails addons
+      attr_writer :addon_template_path
+
+      def addon_template_path
+        @addon_template_path ||= File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, "templates/addons/#{addon_name}")
+      end
+    end
+
+    # def source_paths
+    #   # ['/whatever', './templates']
+    #   super
+    # end
+
+    # def initialize(*args)
+    #   super
+
+    #   # puts '----------------------------------------------------'
+    #   # puts options
+    #   # puts '----------------------------------------------------'
+
+    #   # return unless options[:api]
+
+    #   # self.options = options.merge(
+    #   #   skip_errors: true,
+    #   #   skip_high_voltage: true,
+    #   #   skip_stimulus: true,
+    #   #   skip_tailwind: true,
+    #   #   skip_views: true
+    #   # ).freeze
+    # end
 
     def create_test_files
       return if options[:skip_test]
@@ -34,28 +100,55 @@ module RailsAppGenerator
       # add(:rspec) if options[:testing_framework] == 'rspec'
     end
 
-    # def create_root_files
-    #   super
+    # rubocop:disable Metrics/AbcSize
+    def create_root_files
+      super
 
-    #   # add(:irbrc)
-    #   # add(:foreman)
-    #   # add(:dotenv)
-    #   # add(:docker)
-    #   # add(:docker_compose)
-    #   # add(:rubocop)
-    # end
+      add(:irbrc)                           if options[:add_irbrc]
+      add(:foreman)                         if options[:add_foreman]
+      add(:dotenv)                          if options[:add_dotenv]
+      add(:docker)                          if options[:add_docker]
+      add(:docker_compose)                  if options[:add_docker_compose]
+      add(:rubocop)                         if options[:add_rubocop]
+    end
+    # rubocop:enable Metrics/AbcSize
 
-    # include KLog::Logging
+    # rubocop:disable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
+    def finish_template
+      puts 'finish template'
 
-    # def finish_template
-    #   puts 'finish template'
-    #   invoke :rails_customization
-    #   super
-    # end
+      add(:annotate)                        if options[:add_annotate]
+      add(:continuous_integration)          if options[:add_continuous_integration]
+      add(:high_voltage)                    if options[:add_high_voltage]
+      add(:generators)                      if options[:add_generators]
+      add(:lograge)                         if options[:add_lograge]
+      add(:pundit)                          if options[:add_pundit]
+      add(:services)                        if options[:add_services]
+      add(:sidekiq)                         if options[:add_sidekiq]
+      add(:views, :errors, :scaffold)       if options[:add_views]
+      add(:factory_bot)                     if options[:add_factory_bot]
+      add(:shoulda)                         if options[:add_shoulda]
 
-    # def fuck
-    #   puts 'fuckity'
-    # end
+      # invoke :rails_customization
+      super
+    end
+    # rubocop:enable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
+
+    no_commands do
+      # Context wraps the configured options and can be made available to addons
+      def context
+        @context ||= Context.new(options)
+      end
+
+      def add(*addons)
+        addons.each do |addon|
+          addon = addon.to_s.capitalize.camelize
+          addon = "RailsAppGenerator::AddOns::#{addon}"
+
+          addon.constantize.apply(context)
+        end
+      end
+    end
 
     # def rails_customization
     #   puts 'rails customizations'
@@ -98,86 +191,6 @@ module RailsAppGenerator
     #   # generate("suspenders:analytics")
     #   # generate("suspenders:inline_svg")
     #   # generate("suspenders:advisories")
-    # end
-
-    # private
-
-    # def run_rails_generator1
-    #   #   gem_path = Gem.loaded_specs["railties"].full_gem_path
-    #   #   # lib/rails/generators/rails/app/templates
-    #   #   templates_root = File.expand_path(File.join(gem_path, "lib/rails/generators/rails/app/templates"))
-
-    #   # Rails::AppGenerator.source_root templates_root
-    #   # destination_root = "/Users/davidcruwys/dev/kweb/xmen"
-
-    #   # Rails::Generators::AppGenerator.start [output_folder, '--skip-bundle']
-
-    #   gem_path = Gem.loaded_specs['suspenders'].full_gem_path
-    #   templates_root = File.expand_path(File.join(gem_path, 'templates'))
-
-    #   Suspenders::AppGenerator.source_root templates_root
-    #   Suspenders::AppGenerator.source_paths << Rails::Generators::AppGenerator.source_root << templates_root
-
-    #   puts '--------------------------------------------------------------'
-    #   puts "1 #{templates_root}"
-    #   puts "2 #{Suspenders::AppGenerator.source_root}"
-    #   puts "3 #{Suspenders::AppGenerator.source_paths}"
-    #   puts "4 #{Rails::Generators::AppGenerator.source_root}"
-
-    #   opts = {}
-
-    #   # generator = KStarter::AppGenerator.new([folder], opts)
-    #   # generator.destination_root = destination_root
-    #   FileUtils.rm_rf(output_folder)
-
-    #   Suspenders::AppGenerator.start([output_folder, '--skip-bundle'])
-    # end
-
-    # def run_rails_generator2
-    #   gem_path = Gem.loaded_specs['rails_app_generator'].full_gem_path
-    #   templates_root = File.expand_path(File.join(gem_path, 'templates'))
-
-    #   puts '--------------------------------------------------------------'
-    #   puts "1 #{templates_root}"
-    #   puts "2 #{Rails::Generators::AppGenerator.source_root}"
-    #   puts "3 #{Rails::Generators::AppGenerator.source_paths}"
-    #   puts "4 #{Rails::Generators::AppGenerator.source_root}"
-
-    #   opts = {}
-
-    #   # generator = KStarter::AppGenerator.new([folder], opts)
-    #   # generator.destination_root = destination_root
-    #   FileUtils.rm_rf(output_folder)
-
-    #   Rails::Generators::AppGenerator.start([output_folder, '--skip-bundle'])
-    # end
-
-    # def dry_run
-    #   @dry_run_info = DryRunInfo.new(
-    #     output_folder: output_folder
-    #   )
-
-    #   # Rails::Generators::AppGenerator.source_root(defaults_rails_templates)
-
-    #   opts = {}
-
-    #   # KStarter::AppGenerator.source_root(defaults_rails_templates)
-    #   # Rails::Generators::AppGenerator
-
-    #   generator = Rails::Generators::AppGenerator.new([output_folder], opts)
-    #   generator.app_path
-    #   # generator.destination_root = destination_root
-    #   # generator.destination_root
-    #   generator.source_paths
-    #   generator.class.source_root
-    #   # => ["/Users/davidcruwys/.asdf/installs/ruby/2.7.6/lib/ruby/gems/2.7.0/gems/railties-7.0.3.1/lib/rails/generators/rails/app/templates"]
-    #   # g.find_in_source_paths('README.MD')
-
-    #   # FileUtils.rm_rf(destination_root)
-
-    #   # generator.destination_root
-
-    #   log.structure(dry_run_info)
     # end
   end
 end

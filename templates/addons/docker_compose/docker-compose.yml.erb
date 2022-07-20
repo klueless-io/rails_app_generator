@@ -1,0 +1,21 @@
+version: "3"
+services:
+  <%= app_name %>-db:
+    image: postgres
+    volumes:
+      - <%= app_name %>-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: <%= app_name %>
+      POSTGRES_USER: <%= app_name %>
+
+  <%-if uses?(:sidekiq) -%>
+  <%= app_name %>-redis:
+    image: redis
+    ports:
+      - 6379:6379
+  <%- end -%>
+
+volumes:
+  <%= app_name %>-data:

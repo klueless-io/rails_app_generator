@@ -1,0 +1,37 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/*
+    - node_modules/**/*
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Metrics/MethodLength:
+  CountAsOne: ['array', 'heredoc']
+  IgnoredMethods: ['describe', 'context']
+
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']
+  Exclude:
+    - config/environments/*.rb
+    - '**/*.rake'
+
+Layout/LineLength:
+  Max: 120
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Lint/EmptyBlock:
+  Exclude:
+    - spec/factories/*
+
+Style/BlockDelimiters:
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false

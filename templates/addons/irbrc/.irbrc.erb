@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+require 'irb/completion'
+require 'irb/ext/save-history'
+
+<%# https://docs.ruby-lang.org/en/2.2.0/IRB.html %>
+IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
+IRB.conf[:PROMPT_MODE] = :SIMPLE
+
+<% if uses?(:factory_bot) -%>
+include FactoryBot::Syntax::Methods
+<% end -%>

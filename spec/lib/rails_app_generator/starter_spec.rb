@@ -95,6 +95,18 @@ RSpec.describe RailsAppGenerator::Starter do
       end
     end
 
+    describe '.addon_template_path' do
+      subject { instance.addon_template_path }
+
+      it { is_expected.to eq(File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates/addons')) }
+
+      context 'when addon_template_path supplied' do
+        let(:args) { { addon_template_path: '/path_to_custom_template' } }
+
+        it { is_expected.to eq('/path_to_custom_template') }
+      end
+    end
+
     context 'when executing the generator' do
       subject { instance.start }
 
@@ -102,8 +114,31 @@ RSpec.describe RailsAppGenerator::Starter do
       let(:opts) do
         {
           skip_git: true,
-          skip_bundle: true # ,
+          skip_bundle: true,
+
+          # new addon options
+          add_irbrc: false,
+          add_foreman: false,
+          add_dotenv: false,
+          add_docker: false,
+          add_docker_compose: false,
+          add_rubocop: false,
+
+          # new addon options after finish
+          add_annotate: false,
+          add_continuous_integration: false,
+          add_high_voltage: false,
+          add_generators: false,
+          add_lograge: false,
+          add_pundit: false,
+          add_services: false,
+          add_sidekiq: true,
+          add_views: false,
+          add_factory_bot: false,
+          add_shoulda: false
+
           # test: 'rspec'
+
         }
       end
 
@@ -125,7 +160,13 @@ RSpec.describe RailsAppGenerator::Starter do
       describe '#start' do
         before { FileUtils.rm_rf(instance.target_path) }
 
-        it { instance.start(rails_options) }
+        fit do
+          instance.start(rails_options)
+
+          console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/a2.txt', File.join(File.dirname(__FILE__)))
+
+          File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
+        end
       end
     end
   end

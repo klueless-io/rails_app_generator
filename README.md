@@ -22,6 +22,15 @@ Or install it yourself as:
 gem install rails_app_generator
 ```
 
+## Notes
+
+You can use rails_app_generator to create Rails 7 applications
+You can use rails_app_generator with ruby 2.7 or 3.1
+
+Rails new uses a batteries included approach, this means that you get everything and if you don't want a feature you need to turn it off explicitly using --skip-feature
+I hope to change the focus in this project so that you get very minimal installation and then you turn on what you want explicitly.
+Templates for rails are separated from templates for addons
+
 ## Stories
 
 ### Main Story

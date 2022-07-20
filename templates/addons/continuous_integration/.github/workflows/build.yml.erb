@@ -1,0 +1,49 @@
+name: <%= camelized %> CI 🚀
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+      DATABASE_HOST: localhost
+      DATABASE_USERNAME: <%= app_name %>
+      DATABASE_PASSWORD: <%= app_name %>
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_PASSWORD: <%= app_name %>
+          POSTGRES_USER: <%= app_name %>
+        ports:
+          - 5432:5432
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: <%= RUBY_VERSION %>
+          bundler-cache: true
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.9
+      - name: Install dependencies
+        run: |
+          sudo apt-get -yqq install libpq-dev build-essential libcurl4-openssl-dev
+          gem install bundler
+          bundle install --jobs 4
+          yarn install
+      - name: Setup databases
+        run: |
+          bin/rails db:setup
+      - name: Run tests
+        run: bin/rails test

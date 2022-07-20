@@ -1,0 +1,39 @@
+<%%= form_with(model: <%= model_resource_name %>) do |form| %>
+<%% if <%= singular_table_name %>.errors.any? %>
+<div id="error_explanation">
+  <h2><%%= pluralize(<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
+
+  <ul>
+    <%% <%= singular_table_name %>.errors.each do |error| %>
+    <li><%%= error.full_message %></li>
+    <%% end %>
+  </ul>
+</div>
+<%% end %>
+
+<% attributes.each do |attribute| -%>
+  <div class="mb-6">
+    <% if attribute.password_digest? -%>
+      <%%= form.label :password, class: "label" %>
+      <%%= form.password_field :password, class: "input" %>
+      </div>
+      <div class="mb-6">
+        <%%= form.label :password_confirmation, class: "label" %>
+        <%%= form.password_field :password_confirmation, class: "input" %>
+    <% else %>
+      <%%= form.label :<%= attribute.column_name %>, class: "label" %>
+      <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class: "input" %>
+    <% end %>
+    </div>
+
+<% end -%>
+<div class="mt-2 flex justify-between items-center">
+  <%%= link_to 'Back', <%= index_helper %>_path, class: "btn btn-default" %>
+  <div class="flex">
+    <%%= form.button class: "btn btn-default" %>
+    <%% if form.object.persisted? %>
+    <%%= link_to 'Delete', form.object, class: "btn btn-default", method: :delete, data: { remote: true, confirm: "Are you sure?" }, class: "btn btn-warn" %>
+    <%% end %>
+  </div>
+</div>
+<%% end %>

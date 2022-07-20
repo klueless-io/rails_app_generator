@@ -1,83 +1,54 @@
 # frozen_string_literal: true
 
 RSpec.describe RailsAppGenerator::AppGenerator do
+  def sample_path(name)
+    File.expand_path("../../../a/#{name}", __dir__)
+  end
+
   let(:instance) { described_class.new(**args) }
-  let(:args) { {} }
+  let(:args) { [] }
 
-  let(:sample_output_folder1) { File.join(Dir.pwd, 'a', 'sample1') }
-  let(:sample_output_folder2) { File.join(Dir.pwd, 'a', 'sample2') }
-  let(:dry_run) { true }
-  let(:no_dry_run) { false }
+  # describe '#initialize' do
 
-  # subject { instance.name }
-
-  # it {
-  #   gem_path = Gem.loaded_specs["railties"].full_gem_path
-  #   # lib/rails/generators/rails/app/templates
-  #   templates_root = File.expand_path(File.join(gem_path, "lib/rails/generators/rails/app/templates"))
-
-  #   described_class.source_root templates_root
-  #   # destination_root = "/Users/davidcruwys/dev/kweb/xmen"
-  #   destination_root = "/Users/davidcruwys/dev/kgems/rails_app_generator/a/sample"
-  #   described_class.start [destination_root, '--skip-bundle']
-  # }
-
-  # describe 'initialize' do
-  #   let(:args) { {} }
-
-  #   describe '.output_folder' do
-  #     subject { instance.output_folder }
-
-  #     it { is_expected.to eq(Dir.pwd) }
-
-  #     context 'when output_folder supplied' do
-  #       let(:args) { { output_folder: sample_output_folder1 } }
-
-  #       it { is_expected.to eq(sample_output_folder1) }
-  #     end
-  #   end
-
-  #   describe '.dry_run?' do
-  #     subject { instance.dry_run? }
-
-  #     it { is_expected.to be_falsey }
-
-  #     context 'when dry_run supplied' do
-  #       let(:args) { { dry_run: dry_run } }
-
-  #       it { is_expected.to be_truthy }
-  #     end
-  #   end
   # end
 
-  # describe '#dry_runner' do
-  #   subject { instance.dry_run_info }
+  describe '#class << self' do
+    describe '#rails_template_path' do
+      subject { described_class.rails_template_path }
 
-  #   before { instance.start }
+      it { is_expected.to include('gems/railties').and end_with('lib/rails/generators/rails/app/templates') }
 
-  #   let(:args) { { output_folder: sample_output_folder1, dry_run: dry_run } }
+      context 'when rails_template_path supplied' do
+        before { described_class.rails_template_path = '/some_path' }
 
-  #   it { subject }
-  # end
+        it { is_expected.to eq('/some_path') }
+      end
+    end
 
-  # # describe '#start' do
-  # #   let(:args) { { output_folder: sample_output_folder } }
+    describe '#rails_override_template_path' do
+      subject { described_class.rails_override_template_path }
 
-  # #   xit {
-  # #     instance.run_rails_generator1
-  # #     instance.run_rails_generator2
-  # #   }
-  # # end
+      it { is_expected.to end_with('/rails_app_generator/templates') }
 
-  # describe '#run_rails_generator1' do
-  #   let(:args) { { output_folder: sample_output_folder1 } }
+      context 'when rails_override_template_path supplied' do
+        before { described_class.rails_override_template_path = '/some_path' }
 
-  #   it { instance.run_rails_generator1 }
-  # end
+        it { is_expected.to eq('/some_path') }
+      end
+    end
 
-  # describe '#run_rails_generator2' do
-  #   let(:args) { { output_folder: sample_output_folder2 } }
+    # rubocop:disable Lint/InterpolationCheck
+    describe '#addon_template_path' do
+      subject { described_class.addon_template_path }
 
-  #   fit { instance.run_rails_generator2 }
-  # end
+      it { is_expected.to end_with('/rails_app_generator/templates/addons/#{addon_name}') }
+
+      context 'when addon_template_path supplied' do
+        before { described_class.addon_template_path = '/some_path/#{addon_name}' }
+
+        it { is_expected.to eq('/some_path/#{addon_name}') }
+      end
+    end
+    # rubocop:enable Lint/InterpolationCheck
+  end
 end

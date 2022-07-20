@@ -1,0 +1,7 @@
+<% if uses?(:docker_compose) -%>
+docker: docker-compose up --scale <%= app_name %>=0
+<% end -%>
+<% if uses?(:sidekiq) -%>
+sidekiq: bundle exec sidekiq
+<% end -%>
+web: bundle exec rails server -p 3000

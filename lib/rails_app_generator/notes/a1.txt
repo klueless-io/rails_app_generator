@@ -83,4 +83,4 @@ create  tmp/storage
 create  tmp/storage/.keep
 remove  config/initializers/cors.rb
 remove  config/initializers/new_framework_defaults_7_0.rb
-example at ./spec/lib/rails_app_generator/starter_spec.rb:110
+finish template
