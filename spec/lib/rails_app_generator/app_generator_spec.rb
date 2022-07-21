@@ -25,30 +25,28 @@ RSpec.describe RailsAppGenerator::AppGenerator do
       end
     end
 
-    describe '#rails_override_template_path' do
-      subject { described_class.rails_override_template_path }
+    describe '#override_template_path' do
+      subject { described_class.override_template_path }
 
       it { is_expected.to end_with('/rails_app_generator/templates') }
 
-      context 'when rails_override_template_path supplied' do
-        before { described_class.rails_override_template_path = '/some_path' }
+      context 'when override_template_path supplied' do
+        before { described_class.override_template_path = '/some_path' }
 
         it { is_expected.to eq('/some_path') }
       end
     end
 
-    # rubocop:disable Lint/InterpolationCheck
     describe '#addon_template_path' do
       subject { described_class.addon_template_path }
 
-      it { is_expected.to end_with('/rails_app_generator/templates/addons/#{addon_name}') }
+      it { is_expected.to end_with('/rails_app_generator/templates/addons/%<addon>s') }
 
       context 'when addon_template_path supplied' do
-        before { described_class.addon_template_path = '/some_path/#{addon_name}' }
+        before { described_class.addon_template_path = '/some_path/%<addon>s' }
 
-        it { is_expected.to eq('/some_path/#{addon_name}') }
+        it { is_expected.to eq('/some_path/%<addon>s') }
       end
     end
-    # rubocop:enable Lint/InterpolationCheck
   end
 end

@@ -33,8 +33,8 @@ module RailsAppGenerator
     # points to the original rails templates
     attr_reader :rails_template_path
 
-    # points to the custom templates related to rails
-    attr_reader :custom_template_path
+    # points to the overriding templates related to rails
+    attr_reader :override_template_path
 
     # points to templates related to rails addons
     attr_reader :addon_template_path
@@ -42,11 +42,11 @@ module RailsAppGenerator
     attr_reader :console_output
 
     def initialize(**args)
-      @app_path = args[:app_path] || '.'
-      @destination_root = args[:destination_root] || Dir.pwd
-      @rails_template_path = args[:rails_template_path] || Rails::Generators::AppGenerator.source_root
-      @custom_template_path = args[:custom_template_path] || File.expand_path(File.join(__dir__, '../../templates'))
-      @addon_template_path = args[:addon_template_path] || File.expand_path(File.join(__dir__, '../../templates/addons'))
+      @app_path               = args[:app_path]                     || '.'
+      @destination_root       = args[:destination_root]             || Dir.pwd
+      @rails_template_path    = args[:rails_template_path]          || AppGenerator.rails_template_path
+      @override_template_path = args[:override_template_path]       || AppGenerator.override_template_path
+      @addon_template_path    = args[:addon_template_path]          || AppGenerator.addon_template_path
     end
 
     def target_path
@@ -56,9 +56,9 @@ module RailsAppGenerator
     def start(options = [])
       puts "Target path: #{target_path}"
 
-      RailsAppGenerator::AppGenerator.source_root(rails_template_path)
-      # RailsAppGenerator::AppGenerator.source_paths << rails_template_path
-      RailsAppGenerator::AppGenerator.source_paths << addon_template_path
+      # RailsAppGenerator::AppGenerator.source_root(rails_template_path)
+      # # RailsAppGenerator::AppGenerator.source_paths << rails_template_path
+      # RailsAppGenerator::AppGenerator.source_paths << addon_template_path
 
       opts = extract_rails_options(app_path, options)
 

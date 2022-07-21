@@ -23,7 +23,6 @@ RSpec.describe RailsAppGenerator::Starter do
   describe 'initialize' do
     describe '.app_path' do
       subject { instance.app_path }
-
       it { is_expected.to eq('.') }
 
       context 'when app_path supplied' do
@@ -83,13 +82,13 @@ RSpec.describe RailsAppGenerator::Starter do
       end
     end
 
-    describe '.custom_template_path' do
-      subject { instance.custom_template_path }
+    describe '.override_template_path' do
+      subject { instance.override_template_path }
 
       it { is_expected.to eq(File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates')) }
 
-      context 'when custom_template_path supplied' do
-        let(:args) { { custom_template_path: '/path_to_custom_template' } }
+      context 'when override_template_path supplied' do
+        let(:args) { { override_template_path: '/path_to_custom_template' } }
 
         it { is_expected.to eq('/path_to_custom_template') }
       end
@@ -98,7 +97,7 @@ RSpec.describe RailsAppGenerator::Starter do
     describe '.addon_template_path' do
       subject { instance.addon_template_path }
 
-      it { is_expected.to eq(File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates/addons')) }
+      it { is_expected.to eq(RailsAppGenerator::AppGenerator.addon_template_path) }
 
       context 'when addon_template_path supplied' do
         let(:args) { { addon_template_path: '/path_to_custom_template' } }
@@ -122,52 +121,52 @@ RSpec.describe RailsAppGenerator::Starter do
           add_dotenv: false,
           add_docker: false,
           add_docker_compose: false,
-          add_rubocop: false,
+          add_rubocop: false
 
           # new addon options after finish
-          add_annotate: false,
-          add_continuous_integration: false,
-          add_high_voltage: false,
-          add_generators: false,
-          add_lograge: false,
-          add_pundit: false,
-          add_services: false,
-          add_sidekiq: true,
-          add_views: false,
-          add_factory_bot: false,
-          add_shoulda: false
+          # add_annotate: false,
+          # add_continuous_integration: false,
+          # add_high_voltage: false,
+          # add_generators: false,
+          # add_lograge: false,
+          # add_pundit: false,
+          # add_services: false,
+          # add_sidekiq: false,
+          # add_views: false,
+          # add_factory_bot: false,
+          # add_shoulda: false
 
           # test: 'rspec'
 
         }
       end
 
-      describe '.console_output' do
-        subject { instance.console_output }
+      # describe '.console_output' do
+      #   subject { instance.console_output }
 
-        it { is_expected.to be_nil }
+      #   it { is_expected.to be_nil }
 
-        context 'when console_output is written too' do
-          before do
-            FileUtils.rm_rf(instance.target_path)
-            instance.start(rails_options)
-          end
+      #   context 'when console_output is written too' do
+      #     before do
+      #       FileUtils.rm_rf(instance.target_path)
+      #       instance.start(rails_options)
+      #     end
 
-          it { is_expected.not_to be_empty }
-        end
-      end
+      #     it { is_expected.not_to be_empty }
+      #   end
+      # end
 
-      describe '#start' do
-        before { FileUtils.rm_rf(instance.target_path) }
+      # describe '#start' do
+      #   before { FileUtils.rm_rf(instance.target_path) }
 
-        fit do
-          instance.start(rails_options)
+      #   it do
+      #     instance.start(rails_options)
 
-          console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/a2.txt', File.join(File.dirname(__FILE__)))
+      #     console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/a2.txt', File.join(File.dirname(__FILE__)))
 
-          File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
-        end
-      end
+      #     File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
+      #   end
+      # end
     end
   end
 end

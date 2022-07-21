@@ -17,65 +17,32 @@ module RailsAppGenerator
 
     def apply; end
 
+    # list any methods that you want access to, but not to be exposed as a thor command
     no_commands do
-      # list any methods that you want access to, but not to be exposed as a thor command
-      def options
-        @context.options
-      end
-
-      def uses?(identifier = nil)
-        identifier ||= self.class.identifier
-        options = @context.options
-        return false if options["skip_#{identifier}".to_sym]
-
-        return true if @context.default_addons.include?(identifier)
-
-        klass = identifier.nil? ? self.class : self.class.get(identifier)
-        Dependencies.new(klass, @context).satisfied?
-      end
-
       def source_paths
-        paths = RailsAppGenerator::AppGenerator.source_paths
-        paths << "/Users/davidcruwys/dev/kgems/rails_app_generator/templates/addons/#{self.class.identifier}"
-        paths
+        [
+          format(context.addon_template_path, addon: self.class.addon_name),
+          context.rails_override_template_path,
+          context.rails_template_path
+        ]
       end
 
-      #   def find_in_source_paths(file)
-      #     puts "yyyyyyyyyyyyyyyyyyyyyy: #{file}"
-      #     possible_files = [file, file + Thor::TEMPLATE_EXTNAME]
-      #     relative_root = relative_to_original_destination_root(destination_root, false)
+      def options
+        context.options
+      end
 
-      #     source_paths.each do |source|
-      #       possible_files.each do |f|
-      #         source_file = File.expand_path(f, File.join(source, relative_root))
-      #         return source_file if File.exist?(source_file)
-      #       end
-      #     end
+      def uses?(addon_name = nil)
+        addon_name ||= self.class.addon_name
 
-      #     message = "Could not find #{file.inspect} in any of your source paths. ".dup
+        return false  if options["skip_#{addon_name}".to_sym]
+        return true   if context.default_addons.include?(addon_name)
 
-      #     unless self.class.source_root
-      #       message << "Please invoke #{self.class.name}.source_root(PATH) with the PATH containing your templates. "
-      #     end
-
-      #     message << if source_paths.empty?
-      #                  "Currently you have no source paths."
-      #                else
-      #                  "Your current source paths are: \n#{source_paths.join("\n")}"
-      #                end
-
-      #     raise Error, message
-      #   end
+        klass = addon_name.nil? ? self.class : self.class.get(addon_name)
+        Dependencies.new(klass, context).satisfied?
+      end
     end
 
     class << self
-      # def default_source_root
-      #   puts 'am I every called - default_source_root?'
-      #   # Is there a better way to do this?
-      #   # eg Could I transfer the configured source roots to the AddOn class?
-      #   File.expand_path(File.join('..', '..', 'templates'), __dir__)
-      # end
-
       def apply(context = Context.new({}))
         instance = new(context)
         return unless instance.uses?
@@ -88,16 +55,13 @@ module RailsAppGenerator
         "RailsAppGenerator::AddOns::#{addon}".constantize
       end
 
-      def identifier
+      def addon_name
         name.demodulize.underscore.to_sym
       end
 
       def dependencies
         @dependencies ||= []
       end
-
-      puts 'about to add find_in_source_paths: lib/rails_app_generator/add_on.rb'
-      def xmen; end
 
       protected
 

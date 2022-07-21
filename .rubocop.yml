@@ -16,6 +16,7 @@ Metrics/BlockLength:
   Exclude:
     - "**/spec/**/*"
     - "*.gemspec"
+    - "lib/rails_app_generator/app_generator.rb"
   IgnoredMethods:
     - configure
     - context

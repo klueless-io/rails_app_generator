@@ -27,51 +27,28 @@ module RailsAppGenerator
     class_option :add_factory_bot             , type: :boolean, default: false
     class_option :add_shoulda                 , type: :boolean, default: false
 
-    # points to the original rails templates
-    attr_reader :rails_template_path
-
-    # points to template path where you can override the standard rails templates
-    attr_reader :rails_override_template_path
-
-    # points to template path for rails addons
-    attr_reader :addon_template_path
-
-    def initialize(args, *options)
-      super
-
-      @rails_template_path            = self.class.rails_template_path
-      @rails_override_template_path   = self.class.rails_override_template_path
-      @addon_template_path            = self.class.addon_template_path
-    end
-
     class << self
       # points to the original rails templates
       attr_writer :rails_template_path
 
-      # AppGenerator.source_root
       def rails_template_path
         @rails_template_path ||= File.join(Gem.loaded_specs['railties'].full_gem_path, 'lib/rails/generators/rails/app/templates')
       end
 
       # points to the custom templates related to rails
-      attr_writer :rails_override_template_path
+      attr_writer :override_template_path
 
-      def rails_override_template_path
-        @rails_override_template_path ||= File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates')
+      def override_template_path
+        @override_template_path ||= File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates')
       end
 
       # points to templates related to rails addons
       attr_writer :addon_template_path
 
       def addon_template_path
-        @addon_template_path ||= File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, "templates/addons/#{addon_name}")
+        @addon_template_path ||= File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates/addons/%<addon>s')
       end
     end
-
-    # def source_paths
-    #   # ['/whatever', './templates']
-    #   super
-    # end
 
     # def initialize(*args)
     #   super
@@ -100,44 +77,40 @@ module RailsAppGenerator
       # add(:rspec) if options[:testing_framework] == 'rspec'
     end
 
-    # rubocop:disable Metrics/AbcSize
-    def create_root_files
-      super
-
-      add(:irbrc)                           if options[:add_irbrc]
-      add(:foreman)                         if options[:add_foreman]
-      add(:dotenv)                          if options[:add_dotenv]
-      add(:docker)                          if options[:add_docker]
-      add(:docker_compose)                  if options[:add_docker_compose]
-      add(:rubocop)                         if options[:add_rubocop]
-    end
-    # rubocop:enable Metrics/AbcSize
-
-    # rubocop:disable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
     def finish_template
       puts 'finish template'
 
-      add(:annotate)                        if options[:add_annotate]
-      add(:continuous_integration)          if options[:add_continuous_integration]
-      add(:high_voltage)                    if options[:add_high_voltage]
-      add(:generators)                      if options[:add_generators]
-      add(:lograge)                         if options[:add_lograge]
-      add(:pundit)                          if options[:add_pundit]
-      add(:services)                        if options[:add_services]
-      add(:sidekiq)                         if options[:add_sidekiq]
-      add(:views, :errors, :scaffold)       if options[:add_views]
-      add(:factory_bot)                     if options[:add_factory_bot]
-      add(:shoulda)                         if options[:add_shoulda]
+      # add(:annotate)                        if options[:add_annotate]
+      # add(:continuous_integration)          if options[:add_continuous_integration]
+      # add(:high_voltage)                    if options[:add_high_voltage]
+      # add(:generators)                      if options[:add_generators]
+      # add(:lograge)                         if options[:add_lograge]
+      # add(:pundit)                          if options[:add_pundit]
+      # add(:services)                        if options[:add_services]
+      # add(:sidekiq)                         if options[:add_sidekiq]
+      # add(:views, :errors, :scaffold)       if options[:add_views]
+      # add(:factory_bot)                     if options[:add_factory_bot]
+      # add(:shoulda)                         if options[:add_shoulda]
 
       # invoke :rails_customization
       super
     end
-    # rubocop:enable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
-
     no_commands do
+      def source_paths
+        [
+          context.rails_override_template_path,
+          context.rails_template_path
+        ]
+      end
+
       # Context wraps the configured options and can be made available to addons
       def context
-        @context ||= Context.new(options)
+        @context ||= Context.new(
+          self.class.rails_template_path,
+          self.class.override_template_path,
+          self.class.addon_template_path,
+          options
+        )
       end
 
       def add(*addons)
@@ -147,6 +120,13 @@ module RailsAppGenerator
 
           addon.constantize.apply(context)
         end
+      end
+
+      def uses?(addon)
+        return false if options["skip_#{addon}".to_sym]
+
+        addon = AddOn.get(addon)
+        Dependencies.new(addon, context).satisfied?
       end
     end
 
