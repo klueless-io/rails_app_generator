@@ -1,3 +1,12 @@
+## [0.0.6](https://github.com/klueless-io/rails_app_generator/compare/v0.0.5...v0.0.6) (2022-07-21)
+
+
+### Bug Fixes
+
+* add a bunch of addons ([b781af6](https://github.com/klueless-io/rails_app_generator/commit/b781af66d7fe7d7dcd2550577166213deefc06c6))
+* add a bunch of addons ([d9a85b7](https://github.com/klueless-io/rails_app_generator/commit/d9a85b7b32c2c25577d98b4b3be9aab7947ff6e9))
+* update template paths in app_generator ([9b28a5e](https://github.com/klueless-io/rails_app_generator/commit/9b28a5ee58535a761581e619eb01dc3059a79948))
+
 ## [0.0.5](https://github.com/klueless-io/rails_app_generator/compare/v0.0.4...v0.0.5) (2022-07-19)
 
 
