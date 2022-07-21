@@ -73,8 +73,6 @@ RSpec.describe RailsAppGenerator::Starter do
     describe '.rails_template_path' do
       subject { instance.rails_template_path }
 
-      it { is_expected.to eq(File.join(Gem.loaded_specs['railties'].full_gem_path, 'lib/rails/generators/rails/app/templates')) }
-
       context 'when rails_template_path supplied' do
         let(:args) { { rails_template_path: '/path_to_rails_template' } }
 
@@ -85,7 +83,7 @@ RSpec.describe RailsAppGenerator::Starter do
     describe '.override_template_path' do
       subject { instance.override_template_path }
 
-      it { is_expected.to eq(File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates')) }
+      it { is_expected.to eq(RailsAppGenerator::AppGenerator.override_template_path) }
 
       context 'when override_template_path supplied' do
         let(:args) { { override_template_path: '/path_to_custom_template' } }
@@ -178,22 +176,23 @@ RSpec.describe RailsAppGenerator::Starter do
         let(:opts) do
           {
             skip_git: true,
-            skip_bundle: false,
-            css: 'bootstrap'
+            skip_bundle: false
+            # css: 'bootstrap'
           }
         end
-  
+
         before { FileUtils.rm_rf(instance.target_path) }
 
-        fit do
+        xit do
           instance.start(rails_options)
+
+          system 'gem env'
 
           console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/kw01.txt', File.join(File.dirname(__FILE__)))
 
           File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
         end
       end
-
     end
   end
 end

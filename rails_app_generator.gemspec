@@ -39,10 +39,17 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   # spec.extensions    = ['ext/rails_app_generator/extconf.rb']
 
-  spec.add_dependency 'bootsnap' # used by rails new
-  # spec.add_dependency 'k_log', '~> 0'
-  # spec.add_dependency 'rails', '~> 7' # , ['>= 3.0.0']
   # spec.add_dependency 'railties', '~> 7' # , ['>= 3.0.0']
+
+  spec.add_dependency 'bootsnap' # used by rails new
+  spec.add_dependency 'cssbundling-rails'
+  spec.add_dependency 'importmap-rails'
+  spec.add_dependency 'jsbundling-rails'
+  spec.add_dependency 'rails', '~> 7' # , ['>= 3.0.0']
+  spec.add_dependency 'stimulus-rails'
+  spec.add_dependency 'turbo-rails'
+
+  # spec.add_dependency 'k_log', '~> 0'
   # spec.add_dependency 'k_type', '~> 0'
   # spec.add_dependency 'k_util', '~> 0'
 end

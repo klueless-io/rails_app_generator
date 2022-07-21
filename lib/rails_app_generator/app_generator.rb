@@ -32,21 +32,40 @@ module RailsAppGenerator
       attr_writer :rails_template_path
 
       def rails_template_path
-        @rails_template_path ||= File.join(Gem.loaded_specs['railties'].full_gem_path, 'lib/rails/generators/rails/app/templates')
+        @rails_template_path ||= gem_template_path('railties', 'lib/rails/generators/rails/app/templates')
       end
 
       # points to the custom templates related to rails
       attr_writer :override_template_path
 
       def override_template_path
-        @override_template_path ||= File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates')
+        @override_template_path ||= gem_template_path('rails_app_generator', 'templates')
       end
 
       # points to templates related to rails addons
       attr_writer :addon_template_path
 
       def addon_template_path
-        @addon_template_path ||= File.join(Gem.loaded_specs['rails_app_generator'].full_gem_path, 'templates/addons/%<addon>s')
+        @addon_template_path ||= gem_template_path('rails_app_generator', 'templates/addons/%<addon>')
+      end
+
+      private
+
+      def gem_template_path(gem_name, template_path)
+        gem_path = gem_path(gem_name)
+
+        File.join(gem_path, template_path)
+      end
+
+      def gem_path(gem_name)
+        gem = Gem.loaded_specs[gem_name]
+        return gem.full_gem_path if gem
+
+        puts "gem not available for '#{gem_name}'"
+
+        return Dir.pwd if Dir.pwd.end_with?('dev/kgems/rails_app_generator') # code smell: this is for my local development environment
+
+        raise "'#{gem_name}' not available"
       end
     end
 
@@ -67,68 +86,6 @@ module RailsAppGenerator
     #   #   skip_views: true
     #   # ).freeze
     # end
-
-    def create_test_files
-      return if options[:skip_test]
-
-      super if options[:test] == 'minitest'
-      # puts options[:testing_framework]
-
-      # add(:rspec) if options[:testing_framework] == 'rspec'
-    end
-
-    def finish_template
-      puts 'finish template'
-
-      add(:annotate)                        if options[:add_annotate]
-      add(:continuous_integration)          if options[:add_continuous_integration]
-      add(:high_voltage)                    if options[:add_high_voltage]
-      add(:generators)                      if options[:add_generators]
-      add(:lograge)                         if options[:add_lograge]
-      add(:pundit)                          if options[:add_pundit]
-      add(:services)                        if options[:add_services]
-      add(:sidekiq)                         if options[:add_sidekiq]
-      add(:views, :errors, :scaffold)       if options[:add_views]
-      add(:factory_bot)                     if options[:add_factory_bot]
-      add(:shoulda)                         if options[:add_shoulda]
-
-      # invoke :rails_customization
-      super
-    end
-    no_commands do
-      def source_paths
-        [
-          context.rails_override_template_path,
-          context.rails_template_path
-        ]
-      end
-
-      # Context wraps the configured options and can be made available to addons
-      def context
-        @context ||= Context.new(
-          self.class.rails_template_path,
-          self.class.override_template_path,
-          self.class.addon_template_path,
-          options
-        )
-      end
-
-      def add(*addons)
-        addons.each do |addon|
-          addon = addon.to_s.capitalize.camelize
-          addon = "RailsAppGenerator::AddOns::#{addon}"
-
-          addon.constantize.apply(context)
-        end
-      end
-
-      def uses?(addon)
-        return false if options["skip_#{addon}".to_sym]
-
-        addon = AddOn.get(addon)
-        Dependencies.new(addon, context).satisfied?
-      end
-    end
 
     # def rails_customization
     #   puts 'rails customizations'
@@ -172,5 +129,84 @@ module RailsAppGenerator
     #   # generate("suspenders:inline_svg")
     #   # generate("suspenders:advisories")
     # end
+
+    def create_root_files
+      super
+
+      add_if(:irbrc)
+      add_if(:foreman)
+      add_if(:dotenv)
+      add_if(:docker)
+      add_if(:docker_compose)
+      add_if(:rubocop)
+    end
+
+    def create_test_files
+      return if options[:skip_test]
+
+      super if options[:test] == 'minitest'
+
+      # puts options[:testing_framework]
+
+      # add(:rspec) if options[:testing_framework] == 'rspec'
+    end
+
+    def finish_template
+      puts 'finish template'
+
+      add_if(:annotate)
+      add_if(:continuous_integration)
+      add_if(:high_voltage)
+      add_if(:generators)
+      add_if(:lograge)
+      add_if(:pundit)
+      add_if(:services)
+      add_if(:sidekiq)
+      add(:views, :errors, :scaffold) if options[:add_views]
+      add_if(:factory_bot)
+      add_if(:shoulda)
+
+      # invoke :rails_customization
+      super
+    end
+    no_commands do
+      def source_paths
+        [
+          context.rails_override_template_path,
+          context.rails_template_path
+        ]
+      end
+
+      # Context wraps the configured options and can be made available to addons
+      def context
+        @context ||= Context.new(
+          self.class.rails_template_path,
+          self.class.override_template_path,
+          self.class.addon_template_path,
+          options
+        )
+      end
+
+      def add(*addons)
+        addons.each do |addon|
+          addon = addon.to_s.capitalize.camelize
+          addon = "RailsAppGenerator::AddOns::#{addon}"
+
+          addon.constantize.apply(context)
+        end
+      end
+
+      def add_if(addon)
+        option_name = "add_#{addon}".to_sym
+        add(addon) if options[option_name]
+      end
+
+      def uses?(addon)
+        return false if options["skip_#{addon}".to_sym]
+
+        addon = AddOn.get(addon)
+        Dependencies.new(addon, context).satisfied?
+      end
+    end
   end
 end

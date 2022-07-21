@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'pathname'
+
+source_path = File.expand_path("#{Pathname.new(__FILE__).dirname}/../lib")
+$LOAD_PATH << source_path
+
+require 'rails_app_generator'
+
+# if ARGV.empty?
+#   puts 'Please provide a path for the new application'
+#   puts
+#   puts 'See --help for more info'
+#   exit 0
+# elsif %w[-v --version].include? ARGV[0]
+#   puts RailsAppGenerator::VERSION
+#   exit 0
+# end
+
+# templates_root = File.expand_path(File.join('..', 'templates'), File.dirname(__FILE__))
+# RailsAppGenerator::AppGenerator.source_root templates_root
+# RailsAppGenerator::AppGenerator.source_paths << Rails::Generators::AppGenerator.source_root << templates_root
+
+# RailsAppGenerator::AppGenerator.start
+require 'pry'
+
+args = {
+  app_path: 'kw01_bootstrap',
+  destination_root: '/Users/davidcruwys/dev/kweb'
+}
+opts = {
+  skip_git: true,
+  skip_bundle: false
+  # css: 'bootstrap'
+}
+
+# RailsAppGenerator::AppGenerator.override_template_path = '/Users/davidcruwys/dev/kgems/rails_app_generator/templates'
+# RailsAppGenerator::AppGenerator.addon_template_path = '/Users/davidcruwys/dev/kgems/rails_app_generator/templates/addons/%<addon>'
+
+instance = RailsAppGenerator::Starter.new(args)
+FileUtils.rm_rf(instance.target_path)
+
+rails_options = RailsAppGenerator::RailsOptions.new(opts)
+instance.start(rails_options)
+
+# system 'gem env'
+
+# console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/kw01.txt', File.join(File.dirname(__FILE__)))
+
+# File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))

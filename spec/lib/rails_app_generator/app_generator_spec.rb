@@ -40,12 +40,12 @@ RSpec.describe RailsAppGenerator::AppGenerator do
     describe '#addon_template_path' do
       subject { described_class.addon_template_path }
 
-      it { is_expected.to end_with('/rails_app_generator/templates/addons/%<addon>s') }
+      it { is_expected.to end_with('/rails_app_generator/templates/addons/%<addon>') }
 
       context 'when addon_template_path supplied' do
-        before { described_class.addon_template_path = '/some_path/%<addon>s' }
+        before { described_class.addon_template_path = '/some_path/%<addon>' }
 
-        it { is_expected.to eq('/some_path/%<addon>s') }
+        it { is_expected.to eq('/some_path/%<addon>') }
       end
     end
   end
