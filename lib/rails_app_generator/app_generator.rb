@@ -80,17 +80,17 @@ module RailsAppGenerator
     def finish_template
       puts 'finish template'
 
-      # add(:annotate)                        if options[:add_annotate]
-      # add(:continuous_integration)          if options[:add_continuous_integration]
-      # add(:high_voltage)                    if options[:add_high_voltage]
-      # add(:generators)                      if options[:add_generators]
-      # add(:lograge)                         if options[:add_lograge]
-      # add(:pundit)                          if options[:add_pundit]
-      # add(:services)                        if options[:add_services]
-      # add(:sidekiq)                         if options[:add_sidekiq]
-      # add(:views, :errors, :scaffold)       if options[:add_views]
-      # add(:factory_bot)                     if options[:add_factory_bot]
-      # add(:shoulda)                         if options[:add_shoulda]
+      add(:annotate)                        if options[:add_annotate]
+      add(:continuous_integration)          if options[:add_continuous_integration]
+      add(:high_voltage)                    if options[:add_high_voltage]
+      add(:generators)                      if options[:add_generators]
+      add(:lograge)                         if options[:add_lograge]
+      add(:pundit)                          if options[:add_pundit]
+      add(:services)                        if options[:add_services]
+      add(:sidekiq)                         if options[:add_sidekiq]
+      add(:views, :errors, :scaffold)       if options[:add_views]
+      add(:factory_bot)                     if options[:add_factory_bot]
+      add(:shoulda)                         if options[:add_shoulda]
 
       # invoke :rails_customization
       super

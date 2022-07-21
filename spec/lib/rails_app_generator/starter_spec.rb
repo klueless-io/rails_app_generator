@@ -167,6 +167,33 @@ RSpec.describe RailsAppGenerator::Starter do
       #     File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
       #   end
       # end
+
+      describe '#kw01_bootstrap' do
+        let(:args) do
+          {
+            app_path: 'kw01_bootstrap',
+            destination_root: '/Users/davidcruwys/dev/kweb'
+          }
+        end
+        let(:opts) do
+          {
+            skip_git: true,
+            skip_bundle: false,
+            css: 'bootstrap'
+          }
+        end
+  
+        before { FileUtils.rm_rf(instance.target_path) }
+
+        fit do
+          instance.start(rails_options)
+
+          console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/kw01.txt', File.join(File.dirname(__FILE__)))
+
+          File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
+        end
+      end
+
     end
   end
 end

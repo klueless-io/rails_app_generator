@@ -35,7 +35,7 @@ module RailsAppGenerator
     future_option   :api                        , type: :boolean                              # , desc: "Preconfigure smaller stack for API only apps"
     future_option   :minimal                    , type: :boolean                              # , desc: "Preconfigure a minimal rails app"
     future_option   :javascript                 , type: :string , default: 'importmap'        # , desc: "Choose JavaScript approach [options: importmap (default), webpack, esbuild, rollup]"
-    future_option   :css                        , type: :string                               # , desc: "Choose CSS processor [options: tailwind, bootstrap, bulma, postcss, sass... check https://github.com/rails/cssbundling-rails]"
+    register_option :css                        , type: :string                               # , desc: "Choose CSS processor [options: tailwind, bootstrap, bulma, postcss, sass... check https://github.com/rails/cssbundling-rails]"
     register_option :skip_bundle                , type: :boolean, default: false              # , desc: "Don't run bundle install"
 
     register_option :add_irbrc                  , type: :boolean, default: false

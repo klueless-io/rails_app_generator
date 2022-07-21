@@ -26,11 +26,17 @@ RSpec.describe RailsAppGenerator::RailsOptions do
         {
           skip_git: true,
           skip_bundle: true,
-          test: 'rspec'
+          test: 'rspec',
+          css: 'bootstrap'
         }
       end
 
-      it { is_expected.to eq(['--skip-git', '--test=rspec', '--skip-bundle']) }
+      it do
+        is_expected
+          .to  include('--skip-git')
+          .and include('--test=rspec')
+          .and include('--skip-bundle')
+      end
     end
   end
 end
