@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'pathname'
+require 'pry'
+
+source_path = File.expand_path("#{Pathname.new(__FILE__).dirname}/../lib")
+$LOAD_PATH << source_path
+
+require 'rails_app_generator'
+
+if ARGV.empty?
+  puts 'Please provide a profile for the new application'
+  puts
+  puts 'See --help for more info'
+  exit 0
+elsif %w[-v --version].include? ARGV[0]
+  puts RailsAppGenerator::VERSION
+  exit 0
+end
+
+profile_path = File.expand_path("#{Pathname.new(__FILE__).dirname}/../profiles")
+profile_name = ARGV[0]
+profile_name += '.json' unless profile_name.end_with?('.json')
+profile_file = File.join(profile_path, profile_name)
+
+if File.exist?(profile_file)
+  puts "Using profile #{profile_file}"
+
+  profile = JSON.parse(File.read(profile_file), symbolize_names: true)
+  args = profile[:args]
+  opts = profile[:opts]
+  rails_options = RailsAppGenerator::RailsOptions.new(opts)
+
+  instance = RailsAppGenerator::Starter.new(args)
+  FileUtils.rm_rf(instance.target_path)
+  instance.start(rails_options)
+else
+  puts "Profile #{profile_file} not found"
+  exit 1
+end

@@ -66,7 +66,6 @@ module RailsAppGenerator
       protected
 
       def depends_on(*addon)
-        puts addon
         @dependencies = addon.map(&:to_sym)
       end
     end

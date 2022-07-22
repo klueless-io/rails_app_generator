@@ -13,9 +13,9 @@ module RailsAppGenerator
     #   RailsAppGenerator::AddOns::Credentials.apply
     # end
 
-    # def readme
-    #   template 'README.md.erb', 'README.md'
-    # end
+    def readme
+      template 'README.md.erb', 'README.md'
+    end
 
     # def ruby_version
     #   RailsAppGenerator::AddOns::RubyVersion.new(Context.new(options)).apply

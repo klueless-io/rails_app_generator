@@ -22,8 +22,8 @@ module RailsAppGenerator
     class_option :add_services                , type: :boolean, default: false
     class_option :add_sidekiq                 , type: :boolean, default: false
     class_option :add_views                   , type: :boolean, default: false
-    class_option :add_errors                 , type: :boolean, default: false
-    class_option :add_scaffold               , type: :boolean, default: false
+    class_option :add_errors                  , type: :boolean, default: false
+    class_option :add_scaffold                , type: :boolean, default: false
     class_option :add_factory_bot             , type: :boolean, default: false
     class_option :add_shoulda                 , type: :boolean, default: false
 
@@ -141,15 +141,15 @@ module RailsAppGenerator
       add_if(:rubocop)
     end
 
-    def create_test_files
-      return if options[:skip_test]
+    # def create_test_files
+    #   return if options[:skip_test]
 
-      super if options[:test] == 'minitest'
+    #   super if options[:test] == 'minitest'
 
-      # puts options[:testing_framework]
+    #   # puts options[:testing_framework]
 
-      # add(:rspec) if options[:testing_framework] == 'rspec'
-    end
+    #   # add(:rspec) if options[:testing_framework] == 'rspec'
+    # end
 
     def finish_template
       puts 'finish template'
@@ -169,7 +169,16 @@ module RailsAppGenerator
       # invoke :rails_customization
       super
     end
+
     no_commands do
+      def add_controller(name, *args)
+        generate(:controller, name, *args)
+      end
+
+      def add_scaffold(name, *args)
+        generate(:scaffold, name, *args)
+      end
+    
       def source_paths
         [
           context.rails_override_template_path,
@@ -207,6 +216,12 @@ module RailsAppGenerator
         addon = AddOn.get(addon)
         Dependencies.new(addon, context).satisfied?
       end
+    end
+
+    protected
+
+    def get_builder_class
+      RailsAppGenerator::AppBuilder
     end
   end
 end

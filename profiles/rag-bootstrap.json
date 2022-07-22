@@ -1,0 +1,10 @@
+{
+  "args": {
+    "app_path": "bootstrap",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag"
+  },
+  "opts": {
+    "skip_git": true,
+    "css": "bootstrap"
+  }
+}

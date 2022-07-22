@@ -7,7 +7,6 @@ create  Gemfile
 create  app
 create  app/assets/config/manifest.js
 create  app/assets/stylesheets/application.css
-create  app/bob/boblike.txt
 create  app/channels/application_cable/channel.rb
 create  app/channels/application_cable/connection.rb
 create  app/controllers/application_controller.rb

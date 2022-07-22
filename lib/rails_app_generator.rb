@@ -17,12 +17,13 @@ require 'rails_app_generator/options/map_option_boolean_flag'
 require 'rails_app_generator/options/build_option'
 require 'rails_app_generator/options/options_builder'
 require 'rails_app_generator/options/rails_options'
-require_relative 'rails_app_generator/context'
-require_relative 'rails_app_generator/dependencies'
-require_relative 'rails_app_generator/add_on'
+require 'rails_app_generator/context'
+require 'rails_app_generator/dependencies'
+require 'rails_app_generator/add_on'
 Dir[File.join(__dir__, 'rails_app_generator', 'addons', '*.rb')].sort.each { |file| require file }
 require 'rails_app_generator/app_builder'
 require 'rails_app_generator/app_generator'
+require 'rails_app_generator/rails_template'
 require 'rails_app_generator/starter'
 
 # require "rails_app_generator/generators/base"
