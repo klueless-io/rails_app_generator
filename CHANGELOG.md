@@ -1,3 +1,10 @@
+## [0.0.7](https://github.com/klueless-io/rails_app_generator/compare/v0.0.6...v0.0.7) (2022-07-22)
+
+
+### Bug Fixes
+
+* add support for profiles and after templates ([1ecf4ab](https://github.com/klueless-io/rails_app_generator/commit/1ecf4abef1bc0f45928a33319ed9db8bebe1c27a))
+
 ## [0.0.6](https://github.com/klueless-io/rails_app_generator/compare/v0.0.5...v0.0.6) (2022-07-21)
 
 
