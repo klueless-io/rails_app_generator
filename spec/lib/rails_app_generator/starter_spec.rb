@@ -34,10 +34,10 @@ RSpec.describe RailsAppGenerator::Starter do
     opts = {
       # skip_git: true,
       skip_bundle: false,
-      test: 'minitest',
+      test: 'minitest'
       # css: 'bootstrap'
     }
-    
+
     instance = RailsAppGenerator::Starter.new(args)
     FileUtils.rm_rf(instance.target_path)
 
@@ -45,7 +45,7 @@ RSpec.describe RailsAppGenerator::Starter do
     rails_options.debug
     instance.start(rails_options)
   }
-  fit {
+  fit do
     # p1 = '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rails_standard'
     # p2 = '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag_standard'
 
@@ -55,7 +55,7 @@ RSpec.describe RailsAppGenerator::Starter do
     diff = ProjectDiff.new(p1, p2)
     diff.debug
     diff.vscode_compare_files
-  }
+  end
 
   describe 'initialize' do
     describe '.app_path' do
@@ -148,7 +148,7 @@ RSpec.describe RailsAppGenerator::Starter do
       let(:opts) do
         {
           skip_git: true,
-          skip_bundle: true,
+          skip_bundle: true
 
           # # new addon options
           # add_irbrc: false,

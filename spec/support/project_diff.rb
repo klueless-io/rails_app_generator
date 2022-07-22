@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 puts 'project diff'
 
 # frozen_string_literal: true
@@ -21,8 +23,8 @@ class ProjectDiff
 
   def file_list(path)
     Dir.glob("#{path}/**/*")
-      .reject(&method(:exclusions))
-      .map{ |f| f.delete_prefix(path) }
+       .reject(&method(:exclusions))
+       .map { |f| f.delete_prefix(path) }
   end
 
   # What files are only on the left or right side?
@@ -37,20 +39,16 @@ class ProjectDiff
 
   # What files are different on the left or right side?
 
+  # rubocop:disable Metrics/AbcSize
   def files_that_are_different
     common_files = file_list_lhs & file_list_rhs
     common_files
-      .map do |file|
-        {
-          file: file,
-          different: !FileUtils.compare_file(File.join(lhs_path, file), File.join(rhs_path, file))
-        }
-      end
+      .map { |file| { file: file, different: !FileUtils.compare_file(File.join(lhs_path, file), File.join(rhs_path, file)) } }
       .select { |file| file[:different] }
       .reject { |file| diff_exclusions(file[:file]) }
       .map { |file| file[:file] }
   end
-  #   file_list_lhs.map { |f| { file: f, diff: FileUtils.compare_file('somefile', 'somefile')  #=> true} }
+  # rubocop:enable Metrics/AbcSize
 
   def vscode_compare_files
     files_that_are_different.map do |file|
@@ -59,6 +57,17 @@ class ProjectDiff
   end
 
   def debug
+    debug_stats
+
+    debug_files_only_on_the_left
+    debug_files_only_on_the_right
+    debug_files_that_are_different
+  end
+
+  private
+
+  # rubocop:disable Metrics/AbcSize
+  def debug_stats
     kv('left path'                      , lhs_path)
     kv('file count'                     , file_list_lhs.count)
     kv('files only on left count'       , files_only_on_lhs.count)
@@ -68,20 +77,25 @@ class ProjectDiff
     kv('files only on right count'      , files_only_on_rhs.count)
 
     kv('files that are different count' , files_that_are_different.count)
+  end
+  # rubocop:enable Metrics/AbcSize
 
+  def debug_files_only_on_the_left
     puts '- [files only on left]----------------------------------------------------'
-    list = files_only_on_lhs.each { |f| puts f}
+    list = files_only_on_lhs.each { |f| puts f }
     puts list.any? ? list : 'NO FILES'
+  end
 
+  def debug_files_only_on_the_right
     puts '- [files only on right]---------------------------------------------------'
-    list = files_only_on_rhs.each { |f| puts f}
+    list = files_only_on_rhs.each { |f| puts f }
     puts list.any? ? list : 'NO FILES'
+  end
 
+  def debug_files_that_are_different
     puts '- [files that are different]----------------------------------------------'
     puts files_that_are_different.empty? ? 'NO FILES' : files_that_are_different
   end
-
-  private
 
   def kv(label, value, len = 35)
     return ' ' * len if label.nil?
@@ -92,14 +106,14 @@ class ProjectDiff
     puts "#{label}: #{value}"
   end
 
-  def exclusions(f)
-    File.directory?(f) ||
-    f.include?('/tmp/') ||
-    f.include?('/node_modules')
+  def exclusions(file)
+    File.directory?(file) ||
+      file.include?('/tmp/') ||
+      file.include?('/node_modules')
   end
 
-  def diff_exclusions(f)
-    f.include?('config/credentials.yml.enc') ||
-    f.include?('master.key')
+  def diff_exclusions(file)
+    file.include?('config/credentials.yml.enc') ||
+      file.include?('master.key')
   end
 end

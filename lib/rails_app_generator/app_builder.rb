@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module RailsAppGenerator
+  # The application builder allows you to override elements of the application
+  # generator without being forced to reverse the operations of the default generator.
   class AppBuilder < Rails::AppBuilder
     # def bin
     #   super

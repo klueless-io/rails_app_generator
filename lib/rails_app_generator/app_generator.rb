@@ -178,7 +178,7 @@ module RailsAppGenerator
       def add_scaffold(name, *args)
         generate(:scaffold, name, *args)
       end
-    
+
       def source_paths
         [
           context.rails_override_template_path,
@@ -220,8 +220,10 @@ module RailsAppGenerator
 
     protected
 
+    # rubocop:disable Naming/AccessorMethodName
     def get_builder_class
       RailsAppGenerator::AppBuilder
     end
+    # rubocop:enable Naming/AccessorMethodName
   end
 end

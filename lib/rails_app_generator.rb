@@ -23,7 +23,6 @@ require 'rails_app_generator/add_on'
 Dir[File.join(__dir__, 'rails_app_generator', 'addons', '*.rb')].sort.each { |file| require file }
 require 'rails_app_generator/app_builder'
 require 'rails_app_generator/app_generator'
-require 'rails_app_generator/rails_template'
 require 'rails_app_generator/starter'
 
 # require "rails_app_generator/generators/base"
