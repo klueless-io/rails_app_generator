@@ -1,3 +1,11 @@
+## [0.0.8](https://github.com/klueless-io/rails_app_generator/compare/v0.0.7...v0.0.8) (2022-07-24)
+
+
+### Bug Fixes
+
+* add support for bootstrap profile ([f70d17d](https://github.com/klueless-io/rails_app_generator/commit/f70d17d28cae3f7758c62360bd3d97ca27bf06b5))
+* add support for bootstrap profile ([a114339](https://github.com/klueless-io/rails_app_generator/commit/a1143391166c10fc802800e2e1236f69aeda9091))
+
 ## [0.0.7](https://github.com/klueless-io/rails_app_generator/compare/v0.0.6...v0.0.7) (2022-07-22)
 
 
