@@ -27,14 +27,13 @@ index_content = join_templates(
 )
 # join: "</section>\n\n<section>\n"
 
-create_file       'app/views/home/index.html.erb', index_content, force: true
+create_file 'app/views/home/index.html.erb', index_content, force: true
 
 # move the nav bar into
 # 'app/views/shared/_navbar.html.erb'
 # and add the nav bar to the layout
 # 'app/views/layouts/application.html.erb'
 # <%= render partial: 'shared/navbar' %>
-
 
 # gem               'sassc-rails'
 

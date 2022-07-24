@@ -20,42 +20,42 @@ RSpec.describe RailsAppGenerator::Starter do
   let(:dry_run) { true }
   let(:no_dry_run) { false }
 
-  it {
-    require 'rails_app_generator'
+  # it {
+  #   require 'rails_app_generator'
 
-    app_path = 'rag_standard'
-    # kweb_path = '/Users/davidcruwys/dev/kweb'
-    rag_path = '/Users/davidcruwys/dev/kgems/rails_app_generator/a'
+  #   app_path = 'rag_standard'
+  #   # kweb_path = '/Users/davidcruwys/dev/kweb'
+  #   rag_path = '/Users/davidcruwys/dev/kgems/rails_app_generator/a'
 
-    args = {
-      app_path: app_path,
-      destination_root: rag_path
-    }
-    opts = {
-      # skip_git: true,
-      skip_bundle: false,
-      test: 'minitest'
-      # css: 'bootstrap'
-    }
+  #   args = {
+  #     app_path: app_path,
+  #     destination_root: rag_path
+  #   }
+  #   opts = {
+  #     # skip_git: true,
+  #     skip_bundle: false,
+  #     test: 'minitest'
+  #     # css: 'bootstrap'
+  #   }
 
-    instance = RailsAppGenerator::Starter.new(args)
-    FileUtils.rm_rf(instance.target_path)
+  #   instance = RailsAppGenerator::Starter.new(args)
+  #   FileUtils.rm_rf(instance.target_path)
 
-    rails_options = RailsAppGenerator::RailsOptions.new(opts)
-    rails_options.debug
-    instance.start(rails_options)
-  }
-  fit do
-    # p1 = '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rails_standard'
-    # p2 = '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag_standard'
+  #   rails_options = RailsAppGenerator::RailsOptions.new(opts)
+  #   rails_options.debug
+  #   instance.start(rails_options)
+  # }
+  # it do
+  #   # p1 = '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rails_standard'
+  #   # p2 = '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag_standard'
 
-    p1 = '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag_standard'
-    p2 = '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag_bootstrap'
+  #   p1 = '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag_standard'
+  #   p2 = '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag_bootstrap'
 
-    diff = ProjectDiff.new(p1, p2)
-    diff.debug
-    diff.vscode_compare_files
-  end
+  #   diff = ProjectDiff.new(p1, p2)
+  #   diff.debug
+  #   diff.vscode_compare_files
+  # end
 
   describe 'initialize' do
     describe '.app_path' do
@@ -191,17 +191,17 @@ RSpec.describe RailsAppGenerator::Starter do
       #   end
       # end
 
-      describe '#start' do
-        before { FileUtils.rm_rf(instance.target_path) }
+      # describe '#start' do
+      #   before { FileUtils.rm_rf(instance.target_path) }
 
-        it do
-          instance.start(rails_options)
+      #   it do
+      #     instance.start(rails_options)
 
-          console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/a2.txt', File.join(File.dirname(__FILE__)))
+      #     console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/a2.txt', File.join(File.dirname(__FILE__)))
 
-          File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
-        end
-      end
+      #     File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
+      #   end
+      # end
 
       # describe '#kw01_bootstrap' do
       #   let(:args) do
