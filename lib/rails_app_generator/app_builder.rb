@@ -4,6 +4,9 @@ module RailsAppGenerator
   # The application builder allows you to override elements of the application
   # generator without being forced to reverse the operations of the default generator.
   class AppBuilder < Rails::AppBuilder
+    def run_css
+      binding.pry
+    end
     # def bin
     #   super
     #   template 'bin/setup.erb', 'bin/setup', force: true

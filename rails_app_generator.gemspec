@@ -47,6 +47,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'jsbundling-rails'
   spec.add_dependency 'rails', '~> 7' # , ['>= 3.0.0']
   spec.add_dependency 'stimulus-rails'
+  spec.add_dependency 'tailwindcss-rails'
   spec.add_dependency 'turbo-rails'
 
   # spec.add_dependency 'k_log', '~> 0'

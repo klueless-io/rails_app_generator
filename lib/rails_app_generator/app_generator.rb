@@ -171,6 +171,14 @@ module RailsAppGenerator
     end
 
     no_commands do
+      # USED BY AFTER_TEMPLATE
+      def gac(message)
+        return unless active?(:git)
+
+        git add: "."
+        git commit: " -m '#{message}'"
+      end
+    
       def add_controller(name, *args)
         generate(:controller, name, *args)
       end
@@ -179,14 +187,28 @@ module RailsAppGenerator
         generate(:scaffold, name, *args)
       end
 
+      def read_template(template_file)
+        path = find_in_source_paths(template_file)
+
+        File.read(path)
+      end
+
+      def join_templates(*template_files, join: "\n\n")
+        template_files.map { |template_file| read_template(template_file) }.join(join)
+      end
+
+      # Local template path is handy when you want template files used when working with the --template flag
+      attr_accessor :local_template_path
+
       def source_paths
-        [
-          context.rails_override_template_path,
-          context.rails_template_path
-        ]
+        paths = local_template_path ? [local_template_path] : []
+        paths << context.rails_override_template_path
+        paths << context.rails_template_path
+        paths
       end
 
       # Context wraps the configured options and can be made available to addons
+      # TODO: should I add local_template_path to the context?
       def context
         @context ||= Context.new(
           self.class.rails_template_path,
@@ -210,8 +232,26 @@ module RailsAppGenerator
         add(addon) if options[option_name]
       end
 
+      def skip_flag?(option_name)
+        value = options["skip_#{option_name}".to_sym]
+
+        return false if value.nil?
+        value == true
+      end
+
+      def add_flag?(option_name)
+        value = options["add_#{option_name}".to_sym]
+
+        return false if value.nil?
+        value == true
+      end
+
+      def active?(option_name)
+        add_flag?(option_name) || !skip_flag?(option_name)
+      end
+
       def uses?(addon)
-        return false if options["skip_#{addon}".to_sym]
+        return false unless active?(addon)
 
         addon = AddOn.get(addon)
         Dependencies.new(addon, context).satisfied?

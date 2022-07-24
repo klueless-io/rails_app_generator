@@ -5,6 +5,7 @@
   },
   "opts": {
     "skip_git": true,
-    "skip_bundle": true
+    "skip_bundle": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/rag_simple.rb"
   }
 }
