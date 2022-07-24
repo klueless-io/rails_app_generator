@@ -175,10 +175,10 @@ module RailsAppGenerator
       def gac(message)
         return unless active?(:git)
 
-        git add: "."
+        git add: '.'
         git commit: " -m '#{message}'"
       end
-    
+
       def add_controller(name, *args)
         generate(:controller, name, *args)
       end
@@ -236,6 +236,7 @@ module RailsAppGenerator
         value = options["skip_#{option_name}".to_sym]
 
         return false if value.nil?
+
         value == true
       end
 
@@ -243,6 +244,7 @@ module RailsAppGenerator
         value = options["add_#{option_name}".to_sym]
 
         return false if value.nil?
+
         value == true
       end
 

@@ -19,8 +19,7 @@ def application_html
   HTML
 end
 
-gsub_file         'app/views/layouts/application.html.erb' , %(    <%= yield %>), application_html
+gsub_file 'app/views/layouts/application.html.erb' , %(    <%= yield %>), application_html
 
-after_bundle do
-end
-
+# after_bundle do
+# end

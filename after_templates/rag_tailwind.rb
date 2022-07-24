@@ -12,7 +12,7 @@ self.local_template_path = File.join(File.dirname(__FILE__), 'rag_bootstrap')
 
 gac 'base rails 7 image created'
 
-add_controller("home", "index", "about")
+add_controller('home', 'index', 'about')
 route("root 'home#index'")
 
 # # need a join template method
@@ -60,14 +60,15 @@ def add_css_customizations
 
   # This is custom CSS for the fancier components
   create_file       'app/assets/stylesheets/custom-component.css'         , join_templates('component-cards-fancy.css', 'component-cards-staff.css')
-  
+
   # Update the layout so that the stylesheets are included
-  insert_into_file  'app/views/layouts/application.html.erb', read_template('application.html.erb'), before: %(    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>)
+  insert_into_file  'app/views/layouts/application.html.erb', read_template('application.html.erb'),
+                    before: %(    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>)
   gsub_file         'app/views/layouts/application.html.erb', %(    <%= yield %>), read_template('application-yield.html.erb')
 end
 
 def add_crud_people
   # Need to get the bootstrap form styling working
   # Follow the instructions at: https://youtu.be/phOUsR0dm5s?t=493
-  add_scaffold("people", 'first_name', 'last_name', 'age:integer', 'address:text')
+  add_scaffold('people', 'first_name', 'last_name', 'age:integer', 'address:text')
 end
