@@ -33,7 +33,7 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
 
     context 'when custom exclusion handler' do
       before do
-        instance.exclusion_handler = lambda do |file, relative_file|
+        instance.exclusion_handler = lambda do |_file, relative_file|
           relative_file.start_with?('node_modules')
         end
       end
