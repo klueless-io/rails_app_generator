@@ -1,3 +1,10 @@
+## [0.0.13](https://github.com/klueless-io/rails_app_generator/compare/v0.0.12...v0.0.13) (2022-07-25)
+
+
+### Bug Fixes
+
+* better attribute names ([9cdc5dc](https://github.com/klueless-io/rails_app_generator/commit/9cdc5dc24a4d2402efed68ddbf71e461ee870bbe))
+
 ## [0.0.12](https://github.com/klueless-io/rails_app_generator/compare/v0.0.11...v0.0.12) (2022-07-25)
 
 
