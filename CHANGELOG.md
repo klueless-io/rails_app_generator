@@ -1,3 +1,10 @@
+## [0.0.11](https://github.com/klueless-io/rails_app_generator/compare/v0.0.10...v0.0.11) (2022-07-25)
+
+
+### Bug Fixes
+
+* add support for FilePairs in diff tool ([e330e1c](https://github.com/klueless-io/rails_app_generator/commit/e330e1c3db06ac2710893a3909f36af290727b57))
+
 ## [0.0.10](https://github.com/klueless-io/rails_app_generator/compare/v0.0.9...v0.0.10) (2022-07-25)
 
 
