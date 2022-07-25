@@ -23,34 +23,27 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
     subject { instance.compare }
 
     it do
-      puts "lhs_path: #{lhs_path}"
-      puts "rhs_path: #{rhs_path}"
-
       is_expected.to have_attributes(
-        lhs_only: ['a_only.txt'],
-        rhs_only: ['b_only.txt'],
-        diff_list: ['d_diff.txt'],
-        same_list: ['c_same.txt', 'child/e_same.txt']
+        lhs_only: include('a_only.txt'),
+        rhs_only: include('b_only.txt'),
+        diff_list: include('d_diff.txt'),
+        same_list: include('c_same.txt', 'child/e_same.txt')
       )
     end
 
     context 'when custom exclusion handler' do
       before do
         instance.exclusion_handler = lambda do |file, relative_file|
-          puts file
           relative_file.start_with?('node_modules')
         end
       end
 
       it do
-        puts "lhs_path: #{lhs_path}"
-        puts "rhs_path: #{rhs_path}"
-
         is_expected.to have_attributes(
-          lhs_only: ['a_only.txt', 'tmp/a_only.txt'],
-          rhs_only: ['b_only.txt', 'tmp/b_only.txt'],
-          diff_list: ['d_diff.txt'],
-          same_list: ['c_same.txt', 'tmp/temp_file.txt', 'child/e_same.txt']
+          lhs_only: include('a_only.txt', 'tmp/a_only.txt'),
+          rhs_only: include('b_only.txt', 'tmp/b_only.txt'),
+          diff_list: include('d_diff.txt'),
+          same_list: include('c_same.txt', 'tmp/temp_file.txt', 'child/e_same.txt')
         )
       end
     end
