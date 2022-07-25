@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'k_log'
-
 require 'rails/command/base'
 require 'rails/generators/app_base'
 require 'rails/generators'
@@ -14,9 +12,6 @@ require 'rails_app_generator/cli'
 require 'rails_app_generator/util'
 require 'rails_app_generator/diff/compare_info'
 require 'rails_app_generator/diff/processor'
-# require 'rails_app_generator/cli/rails_new'
-# require 'rails_app_generator/cli/profile'
-# require 'rails_app_generator/cli/diff'
 require 'rails_app_generator/options/base_map_option'
 require 'rails_app_generator/options/map_option_ignore'
 require 'rails_app_generator/options/map_option_string'
@@ -32,15 +27,9 @@ require 'rails_app_generator/app_builder'
 require 'rails_app_generator/app_generator'
 require 'rails_app_generator/starter'
 
-# require "rails_app_generator/generators/base"
-# require "rails_app_generator/generators/foo_generator"
-# require "rails_app_generator/generators/advisories_generator"
-
 module RailsAppGenerator
   # raise RailsAppGenerator::Error, 'Sample message'
   Error = Class.new(StandardError)
-
-  # Your code goes here...
 end
 
 if ENV.fetch('KLUE_DEBUG', 'false').downcase == 'true'

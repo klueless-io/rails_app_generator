@@ -22,7 +22,10 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
   context 'compare' do
     subject { instance.compare }
 
-    it {
+    fit {
+      puts "lhs_path: #{lhs_path}"
+      puts "rhs_path: #{rhs_path}"
+    
       is_expected.to have_attributes(
         lhs_only: ['a_only.txt'],
         rhs_only: ['b_only.txt'],
@@ -34,11 +37,15 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
     context 'when custom exclusion handler' do
       before do
         instance.exclusion_handler = lambda do |_file, relative_file|
+          puts _file
           relative_file.start_with?('node_modules')
         end
       end
 
-      it {
+      fit {
+        puts "lhs_path: #{lhs_path}"
+        puts "rhs_path: #{rhs_path}"
+
         is_expected.to have_attributes(
           lhs_only: ['a_only.txt', 'tmp/a_only.txt'],
           rhs_only: ['b_only.txt', 'tmp/b_only.txt'],

@@ -9,8 +9,15 @@ module RailsAppGenerator
     option :compare , type: :boolean
 
     def diff(lhs_folder, rhs_folder)
-      puts "Diffing #{lhs_folder} and #{rhs_folder}"
-      puts JSON.pretty_generate(options)
+      # puts "Diffing #{lhs_folder} and #{rhs_folder}"
+      # puts JSON.pretty_generate(options)
+      processor = RailsAppGenerator::Diff::Processor.new(lhs_folder, rhs_folder)
+      compare_info = processor.compare
+
+      compare_info.debug
+
+      # report = RailsAppGenerator::Diff::Report.new(compare_info)
+      # report.display
     end
 
     # def initialize(profile_file)
