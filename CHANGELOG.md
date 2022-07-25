@@ -1,3 +1,12 @@
+## [0.0.10](https://github.com/klueless-io/rails_app_generator/compare/v0.0.9...v0.0.10) (2022-07-25)
+
+
+### Bug Fixes
+
+* add diff processor ([edd86a3](https://github.com/klueless-io/rails_app_generator/commit/edd86a3657ec83c566f84cd965820d780a2a1c43))
+* fix gha specs ([6ae95de](https://github.com/klueless-io/rails_app_generator/commit/6ae95de2e53e77590375c3a9863a78744b38fa30))
+* fix gha specs ([c7504f9](https://github.com/klueless-io/rails_app_generator/commit/c7504f97ddf25011a887b7b6ec4b0235e6dbd16d))
+
 ## [0.0.9](https://github.com/klueless-io/rails_app_generator/compare/v0.0.8...v0.0.9) (2022-07-24)
 
 
