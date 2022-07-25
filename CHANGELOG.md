@@ -1,3 +1,10 @@
+## [0.0.12](https://github.com/klueless-io/rails_app_generator/compare/v0.0.11...v0.0.12) (2022-07-25)
+
+
+### Bug Fixes
+
+* add support for open in editor in diff tool ([9d94e26](https://github.com/klueless-io/rails_app_generator/commit/9d94e261c6bac8d17c65da00d6d7d8e2907422ae))
+
 ## [0.0.11](https://github.com/klueless-io/rails_app_generator/compare/v0.0.10...v0.0.11) (2022-07-25)
 
 
