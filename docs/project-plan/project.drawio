@@ -1,59 +1,47 @@
-<mxfile host="TYq">
-  <diagram id="Oaa" name="In progress">
+<mxfile host="x0A">
+  <diagram id="Oq8" name="In progress">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_Oaa" parent="Oaa"/>
-        <mxCell id="node_root_Oaa" parent="page_root_Oaa"/>
-        <mxCell id="Oaa-1" value="DrawIO DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fontColor=#1F2D3D;text;fontSize=28;fontStyle=1;fillColor=none" vertex="1" parent="node_root_Oaa">
+        <mxCell id="page_root_Oq8" parent="Oq8"/>
+        <mxCell id="node_root_Oq8" parent="page_root_Oq8"/>
+        <mxCell id="Oq8-1" value="DrawIO DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fontColor=#1F2D3D;text;fontSize=28;fontStyle=1;fillColor=none" vertex="1" parent="node_root_Oq8">
           <mxGeometry x="300" y="0" width="400" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="Oaa-3" value="cli support for diff" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_Oaa">
+        <mxCell id="Oq8-3" value="add diff tool open in vscode option" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_Oq8">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Oaa-4" value="cli support for profile" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_Oaa">
-          <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="Oaa-5" value="add diff tool with support" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_Oaa">
-          <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
-        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="CBi" name="To Do">
+  <diagram id="Ip4" name="To Do">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_CBi" parent="CBi"/>
-        <mxCell id="node_root_CBi" parent="page_root_CBi"/>
-        <mxCell id="CBi-1" value="add diff tool with support" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_CBi">
+        <mxCell id="page_root_Ip4" parent="Ip4"/>
+        <mxCell id="node_root_Ip4" parent="page_root_Ip4"/>
+        <mxCell id="Ip4-1" value="cli support for diff" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_Ip4">
           <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="CBi-2" value="add diff tool left hand side only option" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_CBi">
+        <mxCell id="Ip4-2" value="cli support for profile" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_Ip4">
           <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="CBi-3" value="add diff tool right hand side only option" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_CBi">
+        <mxCell id="Ip4-3" value="cli support for rails new (rag new should work like rails new) - buggy, need to work through" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_Ip4">
           <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="CBi-4" value="add diff tool lhs/rhs differences" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_CBi">
-          <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="CBi-5" value="add diff tool open in vscode option" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_CBi">
-          <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="CBi-6" value="cli support for rails new (rag new should work like rails new) - buggy, need to work through" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_CBi">
-          <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="CBi-7" value="need an option for deleting target project path" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_CBi">
+        <mxCell id="Ip4-4" value="need an option for deleting target project path" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_Ip4">
           <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="TEp" name="Done">
+  <diagram id="YZE" name="Done">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_TEp" parent="TEp"/>
-        <mxCell id="node_root_TEp" parent="page_root_TEp"/>
-        <mxCell id="TEp-1" value="add project plan to do list" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_TEp">
+        <mxCell id="page_root_YZE" parent="YZE"/>
+        <mxCell id="node_root_YZE" parent="page_root_YZE"/>
+        <mxCell id="YZE-1" value="add diff tool supporting lhs only, rhs only, same and different" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_YZE">
+          <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="YZE-2" value="add project plan to do list" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_YZE">
           <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>

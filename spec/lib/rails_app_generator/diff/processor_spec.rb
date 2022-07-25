@@ -19,32 +19,110 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
     end
   end
 
-  context 'compare' do
-    subject { instance.compare }
+  context '.compare' do
+    context 'when default exclusion handler' do
+      describe '.lhs_only' do
+        subject { instance.compare.lhs_only }
 
-    it do
-      is_expected.to have_attributes(
-        lhs_only: include('a_only.txt'),
-        rhs_only: include('b_only.txt'),
-        diff_list: include('d_diff.txt'),
-        same_list: include('c_same.txt', 'child/e_same.txt')
-      )
+        it do
+          expected = fp('a_only.txt', 'a_only.txt', nil)
+
+          is_expected.to include(have_attributes(file: expected.file, lhs_absolute_file: expected.lhs_absolute_file, rhs_absolute_file: expected.rhs_absolute_file))
+        end
+      end
+
+      describe '.rhs_only' do
+        subject { instance.compare.rhs_only }
+
+        it do
+          expected = fp('b_only.txt', nil, 'b_only.txt')
+
+          is_expected.to include(have_attributes(file: expected.file, lhs_absolute_file: expected.lhs_absolute_file, rhs_absolute_file: expected.rhs_absolute_file))
+        end
+      end
+
+      describe '.diff' do
+        subject { instance.compare.diff }
+
+        it do
+          expected = fp('d_diff.txt', 'd_diff.txt', 'd_diff.txt')
+
+          is_expected.to include(have_attributes(file: expected.file, lhs_absolute_file: expected.lhs_absolute_file, rhs_absolute_file: expected.rhs_absolute_file))
+        end
+      end
+
+      describe '.same' do
+        subject { instance.compare.same }
+
+        it do
+          expected1 = fp('c_same.txt', 'c_same.txt', 'c_same.txt')
+          expected2 = fp('child/e_same.txt', 'child/e_same.txt', 'child/e_same.txt')
+
+          is_expected.to include(
+            have_attributes(file: expected1.file, lhs_absolute_file: expected1.lhs_absolute_file, rhs_absolute_file: expected1.rhs_absolute_file),
+            have_attributes(file: expected2.file, lhs_absolute_file: expected2.lhs_absolute_file, rhs_absolute_file: expected2.rhs_absolute_file)
+          )
+        end
+      end
     end
 
-    context 'when custom exclusion handler' do
+    context 'when default exclusion handler' do
       before do
         instance.exclusion_handler = lambda do |_file, relative_file|
           relative_file.start_with?('node_modules')
         end
       end
 
-      it do
-        is_expected.to have_attributes(
-          lhs_only: include('a_only.txt', 'tmp/a_only.txt'),
-          rhs_only: include('b_only.txt', 'tmp/b_only.txt'),
-          diff_list: include('d_diff.txt'),
-          same_list: include('c_same.txt', 'tmp/temp_file.txt', 'child/e_same.txt')
-        )
+      describe '.lhs_only' do
+        subject { instance.compare.lhs_only }
+
+        it do
+          expected1 = fp('a_only.txt', 'a_only.txt', nil)
+          expected2 = fp('tmp/a_only.txt', 'tmp/a_only.txt', nil)
+
+          is_expected.to include(
+            have_attributes(file: expected1.file, lhs_absolute_file: expected1.lhs_absolute_file, rhs_absolute_file: expected1.rhs_absolute_file),
+            have_attributes(file: expected2.file, lhs_absolute_file: expected2.lhs_absolute_file, rhs_absolute_file: expected2.rhs_absolute_file)
+          )
+        end
+      end
+
+      describe '.rhs_only' do
+        subject { instance.compare.rhs_only }
+
+        it do
+          expected1 = fp('b_only.txt', nil, 'b_only.txt')
+          expected2 = fp('tmp/b_only.txt', nil, 'tmp/b_only.txt')
+
+          is_expected.to include(
+            have_attributes(file: expected1.file, lhs_absolute_file: expected1.lhs_absolute_file, rhs_absolute_file: expected1.rhs_absolute_file),
+            have_attributes(file: expected2.file, lhs_absolute_file: expected2.lhs_absolute_file, rhs_absolute_file: expected2.rhs_absolute_file)
+          )
+        end
+      end
+
+      describe '.diff' do
+        subject { instance.compare.diff }
+
+        it do
+          expected = fp('d_diff.txt', 'd_diff.txt', 'd_diff.txt')
+
+          is_expected.to include(have_attributes(file: expected.file, lhs_absolute_file: expected.lhs_absolute_file, rhs_absolute_file: expected.rhs_absolute_file))
+        end
+      end
+
+      describe '.same' do
+        subject { instance.compare.same }
+
+        it do
+          expected1 = fp('c_same.txt', 'c_same.txt', 'c_same.txt')
+          expected2 = fp('child/e_same.txt', 'child/e_same.txt', 'child/e_same.txt')
+
+          is_expected.to include(
+            have_attributes(file: expected1.file, lhs_absolute_file: expected1.lhs_absolute_file, rhs_absolute_file: expected1.rhs_absolute_file),
+            have_attributes(file: expected2.file, lhs_absolute_file: expected2.lhs_absolute_file, rhs_absolute_file: expected2.rhs_absolute_file)
+          )
+        end
       end
     end
   end

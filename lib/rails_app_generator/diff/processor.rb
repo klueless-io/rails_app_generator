@@ -43,14 +43,6 @@ module RailsAppGenerator
            .map { |file| file.delete_prefix(prefix_path) }
       end
 
-      # def vscode_compare_files
-      #   files_that_are_different.map do |file|
-      #     system("code --diff #{File.join(lhs_path, file)} #{File.join(rhs_path, file)}")
-      #   end
-      # end
-
-      # private
-
       # def diff_exclusions(file)
       #   file.include?('config/credentials.yml.enc') ||
       #     file.include?('master.key')

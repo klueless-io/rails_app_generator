@@ -2,57 +2,98 @@
 
 module RailsAppGenerator
   module Diff
-    # CompareInfo information
+    # CompareInfo stores LHS and RHS file information in segments
     class CompareInfo
       attr_reader :lhs_path
       attr_reader :lhs_files
-      attr_reader :lhs_only
 
       attr_reader :rhs_path
       attr_reader :rhs_files
-      attr_reader :rhs_only
 
-      attr_reader :diff_list
-      attr_reader :same_list
+      # File segments
+      attr_reader :lhs_only
+      attr_reader :rhs_only
+      attr_reader :diff
+      attr_reader :same
 
       def initialize(lhs_path, lhs_files, rhs_path, rhs_files)
-        @lhs_path   = lhs_path
-        @lhs_files  = lhs_files
-        @lhs_only   = []
+        @lhs_path                 = lhs_path
+        @lhs_files                = lhs_files
 
-        @rhs_path   = rhs_path
-        @rhs_files  = rhs_files
-        @rhs_only   = []
+        @rhs_path                 = rhs_path
+        @rhs_files                = rhs_files
 
-        @diff_list  = []
-        @same_list  = []
+        @lhs_only                 = []
+        @rhs_only                 = []
+        @diff                     = []
+        @same                     = []
 
-        separate_files(lhs_path, lhs_files, rhs_path, rhs_files)
+        segment_files(lhs_path, lhs_files, rhs_path, rhs_files)
+      end
+
+      def lhs_file_info(type)
+        case type
+        when :lhs_only
+          rel_abs_file(lhs_path, lhs_only)
+        when :rhs_only
+          [] # there should be no right hand side files for the left hand path
+        when :same
+          rel_abs_file(lhs_path, same)
+        when :diff
+          rel_abs_file(lhs_path, diff)
+        end
+      end
+
+      def rhs_file_info(type)
+        case type
+        when :lhs_only
+          [] # there should be no left hand side files for the right hand path
+        when :rhs_only
+          rel_abs_file(rhs_path, rhs_only)
+        when :same
+          rel_abs_file(rhs_path, same)
+        when :diff
+          rel_abs_file(rhs_path, diff)
+        end
       end
 
       def debug
         debug_stats
-        debug_files('left only', lhs_only)
-        debug_files('right only', rhs_only)
-        debug_files('same', same_list)
-        debug_files('diff', diff_list)
+        debug_files('left only'   , lhs_only)
+        debug_files('right only'  , rhs_only)
+        debug_files('same'        , same)
+        debug_files('diff'        , diff)
       end
 
       private
 
-      def separate_files(lhs_path, lhs_files, rhs_path, rhs_files)
-        @lhs_only = lhs_files - rhs_files
-        @rhs_only = rhs_files - lhs_files
-
+      # rubocop:disable Metrics/AbcSize
+      def segment_files(lhs_path, lhs_files, rhs_path, rhs_files)
+        lhs_only = lhs_files - rhs_files
+        rhs_only = rhs_files - lhs_files
         matching_files = lhs_files & rhs_files
 
+        @lhs_only = lhs_only.map { |file| FilePair.new(file, lhs_absolute_file: File.join(lhs_path, file)) }
+        @rhs_only = rhs_only.map { |file| FilePair.new(file, rhs_absolute_file: File.join(rhs_path, file)) }
+
         matching_files.each do |file|
+          file_pair = FilePair.new(
+            file,
+            lhs_absolute_file: File.join(lhs_path, file),
+            rhs_absolute_file: File.join(rhs_path, file)
+          )
+
           if FileUtils.compare_file(File.join(lhs_path, file), File.join(rhs_path, file))
-            @same_list << file
+            @same << file_pair
           else
-            @diff_list << file
+            @diff << file_pair
           end
         end
+      end
+      # rubocop:enable Metrics/AbcSize
+
+      def rel_abs_file(path, files)
+        files.map { |file| FilePair.new(file, File.join(path, file)) }
       end
 
       # rubocop:disable Metrics/AbcSize
@@ -66,8 +107,8 @@ module RailsAppGenerator
         Util.kv('file count - left only'  , lhs_only.count)
         Util.kv('file count - right only' , rhs_only.count)
 
-        Util.kv('file count - same'       , same_list.count)
-        Util.kv('file count - different'  , diff_list.count)
+        Util.kv('file count - same'       , same.count)
+        Util.kv('file count - different'  , diff.count)
       end
       # rubocop:enable Metrics/AbcSize
 

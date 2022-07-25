@@ -18,7 +18,7 @@ module RailsAppGenerator
       end
 
       def line(heading, len = 80)
-        heading = "- [#{heading}]"
+        heading = "- [ #{heading} ]"
         puts heading.length > len ? heading : heading.ljust(len, '-')
       end
     end
