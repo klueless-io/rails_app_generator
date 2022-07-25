@@ -22,7 +22,7 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
   context 'compare' do
     subject { instance.compare }
 
-    fit do
+    it do
       puts "lhs_path: #{lhs_path}"
       puts "rhs_path: #{rhs_path}"
 
@@ -42,7 +42,7 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
         end
       end
 
-      fit do
+      it do
         puts "lhs_path: #{lhs_path}"
         puts "rhs_path: #{rhs_path}"
 
