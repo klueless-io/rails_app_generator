@@ -31,7 +31,7 @@ module RailsAppGenerator
 
       def open_files(files)
         files.map do |f|
-          system("code --diff #{f.lhs_absolute_file} #{f.rhs_absolute_file}")
+          system("code --diff #{f.lhs_file} #{f.rhs_file}")
         end
       end
     end

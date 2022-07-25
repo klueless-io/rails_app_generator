@@ -27,7 +27,7 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
         it do
           expected = fp('a_only.txt', 'a_only.txt', nil)
 
-          is_expected.to include(have_attributes(file: expected.file, lhs_absolute_file: expected.lhs_absolute_file, rhs_absolute_file: expected.rhs_absolute_file))
+          is_expected.to include(have_attributes(file: expected.file, lhs_file: expected.lhs_file, rhs_file: expected.rhs_file))
         end
       end
 
@@ -37,7 +37,7 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
         it do
           expected = fp('b_only.txt', nil, 'b_only.txt')
 
-          is_expected.to include(have_attributes(file: expected.file, lhs_absolute_file: expected.lhs_absolute_file, rhs_absolute_file: expected.rhs_absolute_file))
+          is_expected.to include(have_attributes(file: expected.file, lhs_file: expected.lhs_file, rhs_file: expected.rhs_file))
         end
       end
 
@@ -47,7 +47,7 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
         it do
           expected = fp('d_diff.txt', 'd_diff.txt', 'd_diff.txt')
 
-          is_expected.to include(have_attributes(file: expected.file, lhs_absolute_file: expected.lhs_absolute_file, rhs_absolute_file: expected.rhs_absolute_file))
+          is_expected.to include(have_attributes(file: expected.file, lhs_file: expected.lhs_file, rhs_file: expected.rhs_file))
         end
       end
 
@@ -59,8 +59,8 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
           expected2 = fp('child/e_same.txt', 'child/e_same.txt', 'child/e_same.txt')
 
           is_expected.to include(
-            have_attributes(file: expected1.file, lhs_absolute_file: expected1.lhs_absolute_file, rhs_absolute_file: expected1.rhs_absolute_file),
-            have_attributes(file: expected2.file, lhs_absolute_file: expected2.lhs_absolute_file, rhs_absolute_file: expected2.rhs_absolute_file)
+            have_attributes(file: expected1.file, lhs_file: expected1.lhs_file, rhs_file: expected1.rhs_file),
+            have_attributes(file: expected2.file, lhs_file: expected2.lhs_file, rhs_file: expected2.rhs_file)
           )
         end
       end
@@ -81,8 +81,8 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
           expected2 = fp('tmp/a_only.txt', 'tmp/a_only.txt', nil)
 
           is_expected.to include(
-            have_attributes(file: expected1.file, lhs_absolute_file: expected1.lhs_absolute_file, rhs_absolute_file: expected1.rhs_absolute_file),
-            have_attributes(file: expected2.file, lhs_absolute_file: expected2.lhs_absolute_file, rhs_absolute_file: expected2.rhs_absolute_file)
+            have_attributes(file: expected1.file, lhs_file: expected1.lhs_file, rhs_file: expected1.rhs_file),
+            have_attributes(file: expected2.file, lhs_file: expected2.lhs_file, rhs_file: expected2.rhs_file)
           )
         end
       end
@@ -95,8 +95,8 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
           expected2 = fp('tmp/b_only.txt', nil, 'tmp/b_only.txt')
 
           is_expected.to include(
-            have_attributes(file: expected1.file, lhs_absolute_file: expected1.lhs_absolute_file, rhs_absolute_file: expected1.rhs_absolute_file),
-            have_attributes(file: expected2.file, lhs_absolute_file: expected2.lhs_absolute_file, rhs_absolute_file: expected2.rhs_absolute_file)
+            have_attributes(file: expected1.file, lhs_file: expected1.lhs_file, rhs_file: expected1.rhs_file),
+            have_attributes(file: expected2.file, lhs_file: expected2.lhs_file, rhs_file: expected2.rhs_file)
           )
         end
       end
@@ -107,7 +107,7 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
         it do
           expected = fp('d_diff.txt', 'd_diff.txt', 'd_diff.txt')
 
-          is_expected.to include(have_attributes(file: expected.file, lhs_absolute_file: expected.lhs_absolute_file, rhs_absolute_file: expected.rhs_absolute_file))
+          is_expected.to include(have_attributes(file: expected.file, lhs_file: expected.lhs_file, rhs_file: expected.rhs_file))
         end
       end
 
@@ -119,8 +119,8 @@ RSpec.describe RailsAppGenerator::Diff::Processor do
           expected2 = fp('child/e_same.txt', 'child/e_same.txt', 'child/e_same.txt')
 
           is_expected.to include(
-            have_attributes(file: expected1.file, lhs_absolute_file: expected1.lhs_absolute_file, rhs_absolute_file: expected1.rhs_absolute_file),
-            have_attributes(file: expected2.file, lhs_absolute_file: expected2.lhs_absolute_file, rhs_absolute_file: expected2.rhs_absolute_file)
+            have_attributes(file: expected1.file, lhs_file: expected1.lhs_file, rhs_file: expected1.rhs_file),
+            have_attributes(file: expected2.file, lhs_file: expected2.lhs_file, rhs_file: expected2.rhs_file)
           )
         end
       end
