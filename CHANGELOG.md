@@ -1,3 +1,10 @@
+## [0.0.14](https://github.com/klueless-io/rails_app_generator/compare/v0.0.13...v0.0.14) (2022-07-26)
+
+
+### Bug Fixes
+
+* cli support for diff ([90f6a2f](https://github.com/klueless-io/rails_app_generator/commit/90f6a2f03c31f8b78d6f2b140a173bc73f08c48c))
+
 ## [0.0.13](https://github.com/klueless-io/rails_app_generator/compare/v0.0.12...v0.0.13) (2022-07-25)
 
 
