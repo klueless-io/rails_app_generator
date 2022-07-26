@@ -1,3 +1,17 @@
+# [0.1.0](https://github.com/klueless-io/rails_app_generator/compare/v0.0.15...v0.1.0) (2022-07-26)
+
+
+### Bug Fixes
+
+* fix cops ([caab557](https://github.com/klueless-io/rails_app_generator/commit/caab557ac6bd42df3e732024b8d71d97238c3a22))
+* fix failing specs ([94dbc85](https://github.com/klueless-io/rails_app_generator/commit/94dbc85a898da8954927b8a0e2979f83d6850e79))
+* separate CLI methods into include modules ([2357654](https://github.com/klueless-io/rails_app_generator/commit/235765457f736d56f5ee64b064d2fe666c71ead8))
+
+
+### Features
+
+* first release ([0bf3adb](https://github.com/klueless-io/rails_app_generator/commit/0bf3adba504a8524c821b4497c9d5e001126e3d3))
+
 ## [0.0.15](https://github.com/klueless-io/rails_app_generator/compare/v0.0.14...v0.0.15) (2022-07-26)
 
 
