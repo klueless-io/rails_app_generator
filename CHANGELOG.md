@@ -1,3 +1,10 @@
+## [0.1.1](https://github.com/klueless-io/rails_app_generator/compare/v0.1.0...v0.1.1) (2022-07-26)
+
+
+### Bug Fixes
+
+* add profile import_map ([9cda9ec](https://github.com/klueless-io/rails_app_generator/commit/9cda9ecc85992a0903450dbd9245795fc471d9a5))
+
 # [0.1.0](https://github.com/klueless-io/rails_app_generator/compare/v0.0.15...v0.1.0) (2022-07-26)
 
 
