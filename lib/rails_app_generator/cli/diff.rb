@@ -43,6 +43,7 @@ module RailsAppGenerator
         )
         vscode.open
       end
+      # rubocop:enable Metrics/AbcSize
     end
   end
 end
