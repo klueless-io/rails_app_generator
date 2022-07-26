@@ -1,3 +1,11 @@
+## [0.1.2](https://github.com/klueless-io/rails_app_generator/compare/v0.1.1...v0.1.2) (2022-07-26)
+
+
+### Bug Fixes
+
+* add profile tailwind_hotwire ([b79bb70](https://github.com/klueless-io/rails_app_generator/commit/b79bb70258c7e312d460961dd98516ddd1e2650c))
+* add profile tailwind_hotwire ([c9ac471](https://github.com/klueless-io/rails_app_generator/commit/c9ac471e4391fe0ddd4b97977916da25cdc4f33e))
+
 ## [0.1.1](https://github.com/klueless-io/rails_app_generator/compare/v0.1.0...v0.1.1) (2022-07-26)
 
 
