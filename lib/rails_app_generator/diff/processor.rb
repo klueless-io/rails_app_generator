@@ -8,7 +8,10 @@ module RailsAppGenerator
       attr_reader :rhs_path
 
       DEFAULT_EXCLUSION = lambda do |_file, relative_file|
-        relative_file.start_with?('tmp') || relative_file.start_with?('node_modules')
+        relative_file.start_with?('tmp') ||
+          relative_file.start_with?('node_modules') ||
+          relative_file.start_with?('log') ||
+          relative_file == 'Gemfile.lock'
       end
 
       def initialize(lhs_path, rhs_path)

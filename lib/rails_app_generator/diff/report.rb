@@ -14,7 +14,7 @@ module RailsAppGenerator
       def initialize(compare_info, **opts)
         @info = compare_info
 
-        @show_left_only   = opts[:show_left_only].nil?    ? false : opts[:show_left_only]
+        @show_left_only   = opts[:show_left_only].nil?    ? true  : opts[:show_left_only]
         @show_right_only  = opts[:show_right_only].nil?   ? true  : opts[:show_right_only]
         @show_same        = opts[:show_same].nil?         ? false : opts[:show_same]
         @show_different   = opts[:show_different].nil?    ? true  : opts[:show_different]

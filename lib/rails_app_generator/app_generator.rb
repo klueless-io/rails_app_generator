@@ -187,6 +187,10 @@ module RailsAppGenerator
         generate(:scaffold, name, *args)
       end
 
+      def bundle_add(name)
+        run("bundle add #{name}")
+      end
+
       def read_template(template_file)
         path = find_in_source_paths(template_file)
 

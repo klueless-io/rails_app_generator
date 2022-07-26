@@ -18,7 +18,6 @@ module RailsAppGenerator
       option :open_same       , type: :boolean
       option :open_different  , type: :boolean
 
-      # rubocop:disable Metrics/AbcSize
       def diff(lhs_folder, rhs_folder)
         # puts "Diffing #{lhs_folder} and #{rhs_folder}"
         # puts JSON.pretty_generate(options)
@@ -34,16 +33,15 @@ module RailsAppGenerator
         )
         report.display
 
-        vscode = RailsAppGenerator::Diff::OpenInEditor.new(
-          compare_info,
-          open_left_only: options[:open_left_only],
-          open_right_only: options[:open_right_only],
-          open_same: options[:open_same],
-          open_different: options[:show_different]
-        )
-        vscode.open
+        # vscode = RailsAppGenerator::Diff::OpenInEditor.new(
+        #   compare_info,
+        #   open_left_only: options[:open_left_only],
+        #   open_right_only: options[:open_right_only],
+        #   open_same: options[:open_same],
+        #   open_different: options[:show_different]
+        # )
+        # vscode.open
       end
-      # rubocop:enable Metrics/AbcSize
     end
   end
 end
