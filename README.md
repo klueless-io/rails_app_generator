@@ -22,6 +22,15 @@ Or install it yourself as:
 gem install rails_app_generator
 ```
 
+Use the Gem
+
+```
+rag rag-simple
+rag rag-tailwind
+rag rag-bootstrap
+```
+
+
 ## Notes
 
 You can use rails_app_generator to create Rails 7 applications
@@ -37,7 +46,7 @@ Templates for rails are separated from templates for addons
 
 As a Developer, I want to create new Rails application with flexible opinions so that I can build different rails proof of concepts
 
-See all [stories](./STORIES.md)
+[Project Plan](./docs/project-plan.md)
 
 
 ## Usage

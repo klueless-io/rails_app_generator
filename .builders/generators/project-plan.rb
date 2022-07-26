@@ -7,7 +7,6 @@ KManager.action :project_plan do
       .page('In progress', theme: :style_03, margin_left: 0, margin_top: 0) do
         grid_layout(y: 90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
-        todo(title: 'cli support for profile')
 
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
@@ -23,6 +22,7 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        todo(title: 'cli support for profile')
         todo(title: 'separate CLI methods into include modules')
         todo(title: 'cli support for diff')
         todo(title: 'add diff tool - open in editor')

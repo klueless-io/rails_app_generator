@@ -56,6 +56,10 @@ module RailsAppGenerator
       end
     end
 
+    def delete_target_folder
+      FileUtils.rm_rf(target_path)
+    end
+
     private
 
     def capture_console

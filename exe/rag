@@ -9,49 +9,34 @@ $LOAD_PATH << source_path
 
 require 'rails_app_generator'
 
+first = ARGV.first
+
 if ARGV.empty?
   puts 'Please provide a profile for the new application'
   puts
   puts 'See --help for more info'
-  exit 0
-elsif %w[-v --version].include? ARGV[0]
+elsif %w[-v --version].include?(first)
   puts RailsAppGenerator::VERSION
-  exit 0
+elsif first == 'diff'
+  RailsAppGenerator::Cli::Diff.start(ARGV)
+elsif first == 'new'
+  puts 'TODO: NEW'
+
+  # # Use RAG with in the same way as the Rails generator (the following commands should be equivalent)
+  # #   rails new args
+  # #   rag   new args
+  # if ARGV.first == 'new'
+  #   # NOTE: This is not yet working
+  #   RailsAppGenerator::Cli::Standard.start ARGV[1..]
+  #   exit 0
+  # elsif !ARGV.first.nil?
+  # end
+
+else
+  fallback_profile_path = File.expand_path("#{Pathname.new(__FILE__).dirname}/../profiles")
+  args = ['profile'] + ARGV + ["--fallback-profile-path=#{fallback_profile_path}"]
+
+  RailsAppGenerator::Cli::Profile.start(args)
 end
 
-RailsAppGenerator::Cli::Main.start(ARGV)
-
 exit 0
-
-# # Use RAG with in the same way as the Rails generator (the following commands should be equivalent)
-# #   rails new args
-# #   rag   new args
-# if ARGV.first == 'new'
-#   # NOTE: This is not yet working
-#   RailsAppGenerator::Cli::Standard.start ARGV[1..]
-#   exit 0
-# elsif !ARGV.first.nil?
-#   profile_path = File.expand_path("#{Pathname.new(__FILE__).dirname}/../profiles")
-#   profile_name = ARGV[0]
-#   profile_name += '.json' unless profile_name.end_with?('.json')
-#   profile_file = File.join(profile_path, profile_name)
-
-#   RailsAppGenerator::Cli::Profile.start(profile_file)
-
-#   exit 0
-# end
-
-# if File.exist?(profile_file)
-#   puts "Using profile #{profile_file}"
-
-#   profile = JSON.parse(File.read(profile_file), symbolize_names: true)
-#   args = profile[:args]
-#   opts = profile[:opts]
-#   rails_options = RailsAppGenerator::RailsOptions.new(opts)
-
-#   instance = RailsAppGenerator::Starter.new(args)
-#   FileUtils.rm_rf(instance.target_path)
-#   instance.start(rails_options)
-# else
-# puts "Profile #{profile_file} not found"
-# exit 1

@@ -9,7 +9,7 @@ require 'bundler'
 
 require 'rails_app_generator/version'
 require 'rails_app_generator/cli/diff'
-require 'rails_app_generator/cli/main'
+require 'rails_app_generator/cli/profile'
 require 'rails_app_generator/util'
 require 'rails_app_generator/diff/file_pair'
 require 'rails_app_generator/diff/compare_info'
