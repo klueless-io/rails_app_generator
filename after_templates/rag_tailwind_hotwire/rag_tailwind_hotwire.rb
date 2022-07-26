@@ -8,41 +8,42 @@
 
 require 'pry'
 
-def add_customizations
-  self.local_template_path = File.join(File.dirname(__FILE__), 'rag_bootstrap')
+self.local_template_path = File.join(File.dirname(__FILE__), 'rag_tailwind')
 
-  gac 'base rails 7 image created'
+gac 'base rails 7 image created'
 
-  add_controller('home', 'index', 'about')
-  route("root 'home#index'")
+add_controller('home', 'index', 'about')
+route("root 'home#index'")
 
-  # need a join template method
-  index_content = join_templates(
-    'component-nav.html',
-    'component-hero.html',
-    'component-cards-fancy.html',
-    'component-cards-staff.html',
-    'component-cards-styled.html',
-    'component-modal.html',
-    'component-footer.html'
-  )
+index_content = join_templates(
+  'component-section-begin.html',
+  'component-nav.html',
+  'component-hero.html',
+  'component-cta.html',
+  'component-faq.html',
+  'component-cta.html',
+  'component-footer.html',
+  'component-section-end.html'
+)
+# join: "</section>\n\n<section>\n"
 
-  # move the nav bar into
-  # 'app/views/shared/_navbar.html.erb'
-  # and add the nav bar to the layout
-  # 'app/views/layouts/application.html.erb'
-  # <%= render partial: 'shared/navbar' %>
+create_file 'app/views/home/index.html.erb', index_content, force: true
 
-  create_file       'app/views/home/index.html.erb', index_content, force: true
+# move the nav bar into
+# 'app/views/shared/_navbar.html.erb'
+# and add the nav bar to the layout
+# 'app/views/layouts/application.html.erb'
+# <%= render partial: 'shared/navbar' %>
 
-  gem               'sassc-rails'
+# gem               'sassc-rails'
 
-  after_bundle do
-    add_css_customizations
-    add_crud_people
+after_bundle do
+  gsub_file 'app/views/layouts/application.html.erb', %(container mx-auto mt-28 px-5 flex), 'container mx-auto px-5'
+  # add_css_customizations
 
-    rails_command('db:migrate')
-  end
+  # add_crud_people
+
+  # rails_command("db:migrate")
 end
 
 def add_css_customizations
@@ -72,10 +73,4 @@ def add_crud_people
   # Need to get the bootstrap form styling working
   # Follow the instructions at: https://youtu.be/phOUsR0dm5s?t=493
   add_scaffold('people', 'first_name', 'last_name', 'age:integer', 'address:text')
-end
-
-begin
-  add_customizations
-rescue StandardError => e
-  puts e.message
 end

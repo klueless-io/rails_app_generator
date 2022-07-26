@@ -1,0 +1,12 @@
+{
+  "args": {
+    "app_path": "tailwind_hotwire",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag"
+  },
+  "opts": {
+    "skip_test": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/rag_tailwind_hotwire.rb",
+    "css": "tailwind",
+    "javascript": "esbuild"
+  }
+}

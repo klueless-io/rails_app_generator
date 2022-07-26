@@ -15,8 +15,13 @@ KManager.action :project_plan do
         todo(title: 'add auto open flag to profile and command line')
         todo(title: 'add profile - stimulas')
         todo(title: 'add profile - hotwire')
+        todo(title: 'add profile - turbo')
         todo(title: 'add profile - vue')
         todo(title: 'add profile - svelte')
+        todo(title: 'add profile - react')
+        todo(title: 'add profile - vite')
+        todo(title: 'add profile - docker') # https://www.youtube.com/watch?v=ZhrnqHVVo1g
+        todo(title: 'add encryption - https://youtu.be/ZmwNzod1trk?t=701')
         todo(title: 'cli help support for diff')
         todo(title: 'cli support for rails new (rag new should work like rails new) - buggy, need to work through')
         todo(title: 'need an option for deleting target project path') # FileUtils.rm_rf(instance.target_path)
@@ -25,7 +30,7 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
-        todo(title: 'add profile - import maps')
+        todo(title: 'add profile - import_map') # vs esbuild - import_map is a replacement for webpacker
         todo(title: 'profile - fix the bootstrap profile')
         todo(title: 'cli support for profile')
         todo(title: 'separate CLI methods into include modules')
