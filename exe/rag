@@ -19,7 +19,7 @@ elsif %w[-v --version].include? ARGV[0]
   exit 0
 end
 
-RailsAppGenerator::Cli.start(ARGV)
+RailsAppGenerator::Cli::Main.start(ARGV)
 
 exit 0
 
@@ -29,19 +29,6 @@ exit 0
 # if ARGV.first == 'new'
 #   # NOTE: This is not yet working
 #   RailsAppGenerator::Cli::Standard.start ARGV[1..]
-#   exit 0
-# elsif ARGV.first == 'diff'
-#   # args, opts = Thor::Arguments.split(ARGV[1..])
-#   RailsAppGenerator::Cli::Diff.start(ARGV[1..]) # , { lhs: true, rhs: true, compare: true } )
-#   exit 0
-# elsif ARGV.first == 'diff_lhs'
-#   RailsAppGenerator::Cli::Diff.start(ARGV[1..], { lhs: true })
-#   exit 0
-# elsif ARGV.first == 'diff_rhs'
-#   RailsAppGenerator::Cli::Diff.start(ARGV[1..], { rhs: true })
-#   exit 0
-# elsif ARGV.first == 'diff_compare'
-#   RailsAppGenerator::Cli::Diff.start(ARGV[1..], { compare: true })
 #   exit 0
 # elsif !ARGV.first.nil?
 #   profile_path = File.expand_path("#{Pathname.new(__FILE__).dirname}/../profiles")
