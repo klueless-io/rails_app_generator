@@ -1,0 +1,4 @@
+<turbo-frame id='counter'>
+  <div class='mt-4' style='color: <%= rand_color %>'>Current Count: <%= @counter %></div>
+  <div class="mt-4"><%= link_to 'Increment', increment_path(counter: @counter), class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %></div>
+</turbo-frame>

@@ -11,6 +11,7 @@ AllCops:
     - ".builders/**/*"
     - "spec/samples/**/*"
     - "a/**/*"
+    - "after_templates/**/*"
 
 Metrics/BlockLength:
   Exclude:
