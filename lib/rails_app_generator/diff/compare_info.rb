@@ -88,7 +88,7 @@ module RailsAppGenerator
 
       def debug_files(heading, files)
         Util.line(heading)
-        puts files.any? ? files : 'NO FILES'
+        puts files.any? ? files.map(&:file) : 'NO FILES'
       end
     end
   end

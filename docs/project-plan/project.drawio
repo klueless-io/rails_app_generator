@@ -1,47 +1,50 @@
-<mxfile host="x0A">
-  <diagram id="Oq8" name="In progress">
+<mxfile host="zY2">
+  <diagram id="UqU" name="In progress">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_Oq8" parent="Oq8"/>
-        <mxCell id="node_root_Oq8" parent="page_root_Oq8"/>
-        <mxCell id="Oq8-1" value="DrawIO DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fontColor=#1F2D3D;text;fontSize=28;fontStyle=1;fillColor=none" vertex="1" parent="node_root_Oq8">
+        <mxCell id="page_root_UqU" parent="UqU"/>
+        <mxCell id="node_root_UqU" parent="page_root_UqU"/>
+        <mxCell id="UqU-1" value="DrawIO DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fontColor=#1F2D3D;text;fontSize=28;fontStyle=1;fillColor=none" vertex="1" parent="node_root_UqU">
           <mxGeometry x="300" y="0" width="400" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="Oq8-3" value="add diff tool open in vscode option" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_Oq8">
+        <mxCell id="UqU-3" value="cli support for profile" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_UqU">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="Ip4" name="To Do">
+  <diagram id="ps5" name="To Do">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_Ip4" parent="Ip4"/>
-        <mxCell id="node_root_Ip4" parent="page_root_Ip4"/>
-        <mxCell id="Ip4-1" value="cli support for diff" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_Ip4">
+        <mxCell id="page_root_ps5" parent="ps5"/>
+        <mxCell id="node_root_ps5" parent="page_root_ps5"/>
+        <mxCell id="ps5-1" value="cli help support for diff" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_ps5">
           <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Ip4-2" value="cli support for profile" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_Ip4">
+        <mxCell id="ps5-2" value="cli support for rails new (rag new should work like rails new) - buggy, need to work through" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_ps5">
           <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Ip4-3" value="cli support for rails new (rag new should work like rails new) - buggy, need to work through" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_Ip4">
-          <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="Ip4-4" value="need an option for deleting target project path" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_Ip4">
+        <mxCell id="ps5-3" value="need an option for deleting target project path" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_ps5">
           <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="YZE" name="Done">
+  <diagram id="CmN" name="Done">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_YZE" parent="YZE"/>
-        <mxCell id="node_root_YZE" parent="page_root_YZE"/>
-        <mxCell id="YZE-1" value="add diff tool supporting lhs only, rhs only, same and different" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_YZE">
+        <mxCell id="page_root_CmN" parent="CmN"/>
+        <mxCell id="node_root_CmN" parent="page_root_CmN"/>
+        <mxCell id="CmN-1" value="cli support for diff" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_CmN">
           <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="YZE-2" value="add project plan to do list" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_YZE">
+        <mxCell id="CmN-2" value="add diff tool - open in editor" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_CmN">
+          <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="CmN-3" value="add diff tool supporting lhs only, rhs only, same and different" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_CmN">
+          <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="CmN-4" value="add project plan to do list" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_CmN">
           <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>

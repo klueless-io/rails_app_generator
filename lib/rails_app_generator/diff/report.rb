@@ -14,10 +14,10 @@ module RailsAppGenerator
       def initialize(compare_info, **opts)
         @info = compare_info
 
-        @show_left_only   = opts[:show_left_only].nil?  ? false : opts[:show_left_only]
-        @show_right_only  = opts[:show_right_only].nil? ? true  : opts[:show_right_only]
-        @show_same        = opts[:show_same].nil?       ? false : opts[:show_same]
-        @show_different   = opts[:show_different].nil?  ? true  : opts[:show_different]
+        @show_left_only   = opts[:show_left_only].nil?    ? false : opts[:show_left_only]
+        @show_right_only  = opts[:show_right_only].nil?   ? true  : opts[:show_right_only]
+        @show_same        = opts[:show_same].nil?         ? false : opts[:show_same]
+        @show_different   = opts[:show_different].nil?    ? true  : opts[:show_different]
       end
 
       def display
@@ -30,8 +30,10 @@ module RailsAppGenerator
       private
 
       def display_files(heading, files)
+        return if files.empty?
+
         Util.line(heading)
-        puts files.any? ? files.map(&:file) : 'NO FILES'
+        puts files.map(&:file)
       end
     end
   end
