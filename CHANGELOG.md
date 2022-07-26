@@ -1,3 +1,10 @@
+## [0.0.15](https://github.com/klueless-io/rails_app_generator/compare/v0.0.14...v0.0.15) (2022-07-26)
+
+
+### Bug Fixes
+
+* update project plan documentation ([7ed1728](https://github.com/klueless-io/rails_app_generator/commit/7ed1728e081149e56eb4292f37825169a5f21690))
+
 ## [0.0.14](https://github.com/klueless-io/rails_app_generator/compare/v0.0.13...v0.0.14) (2022-07-26)
 
 
