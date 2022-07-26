@@ -30,6 +30,7 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        todo(title: 'add profile - tailwind_hotwire')
         todo(title: 'add profile - import_map') # vs esbuild - import_map is a replacement for webpacker
         todo(title: 'profile - fix the bootstrap profile')
         todo(title: 'cli support for profile')
