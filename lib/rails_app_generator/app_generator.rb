@@ -171,6 +171,23 @@ module RailsAppGenerator
     end
 
     no_commands do
+      # Template command examples
+      # gac 'base rails 7 image created'
+      # add_controller('home', 'index')
+      # add_scaffold('people', 'first_name', 'last_name', 'age:integer', 'address:text')
+      # route("root 'home#index'")
+      # gem "cssbundling-rails"
+      # rails_command('db:migrate')
+      # bundle_add('hotwire-rails')
+      # rails_command('hotwire:install')
+      # run('bin/importmap pin sortablejs')
+      # run('npm install daisyui')
+      # create_file       'app/assets/stylesheets/custom-bootstrap-import.scss' , read_template('custom-bootstrap-import.scss')
+      # append_to_file    'app/assets/config/manifest.js'                       , read_template('manifest.js')
+      # insert_into_file  'app/views/layouts/application.html.erb', read_template('application.html.erb'),
+      # gsub_file         'app/views/layouts/application.html.erb', %(container mx-auto mt-28 px-5 flex), 'container mx-auto px-5'
+      # template 'home.css', 'app/assets/stylesheets/home.css'
+
       # USED BY AFTER_TEMPLATE
       def gac(message)
         return unless active?(:git)
@@ -185,6 +202,10 @@ module RailsAppGenerator
 
       def add_scaffold(name, *args)
         generate(:scaffold, name, *args)
+      end
+
+      def add_migration(name, *args)
+        generate(:migration, name, *args)
       end
 
       def bundle_add(name)

@@ -16,16 +16,13 @@ add_controller('home', 'index', 'about')
 route("root 'home#index'")
 
 index_content = join_templates(
-  'component-section-begin.html',
   'component-nav.html',
   'component-hero.html',
   'component-cta.html',
   'component-faq.html',
   'component-cta.html',
-  'component-footer.html',
-  'component-section-end.html'
+  'component-footer.html'
 )
-# join: "</section>\n\n<section>\n"
 
 create_file 'app/views/home/index.html.erb', index_content, force: true
 
@@ -48,6 +45,7 @@ end
 
 def add_css_customizations
   # Update the manifest to include the stylesheets
+  # IS THIS CONFIGURED?
   append_to_file    'app/assets/config/manifest.js'                       , read_template('manifest.js')
 
   # This is how you would add custom styling via @import in the application.bootstrap.css

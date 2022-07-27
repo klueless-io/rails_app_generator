@@ -15,7 +15,7 @@ module RailsAppGenerator
         @info = compare_info
 
         @open_left_only   = opts[:open_left_only].nil?  ? false : opts[:open_left_only]
-        @open_right_only  = opts[:open_right_only].nil? ? true  : opts[:open_right_only]
+        @open_right_only  = opts[:open_right_only].nil? ? false : opts[:open_right_only]
         @open_same        = opts[:open_same].nil?       ? false : opts[:open_same]
         @open_different   = opts[:open_different].nil?  ? true  : opts[:open_different]
       end

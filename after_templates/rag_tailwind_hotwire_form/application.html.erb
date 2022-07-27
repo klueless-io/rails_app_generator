@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html data-theme="emerald">
+  <head>
+    <title>TailwindHotwireForm</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <main class="container mx-auto">
+      <div class="py-8">
+        <div id="flash" class="flash">
+          <%= render partial: "shared/flash" %>
+        </div>
+        <%= yield %>
+      </div>
+    </main>
+  </body>
+</html>
