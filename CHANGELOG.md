@@ -1,3 +1,10 @@
+## [0.1.3](https://github.com/klueless-io/rails_app_generator/compare/v0.1.2...v0.1.3) (2022-07-27)
+
+
+### Bug Fixes
+
+* add profile tailwind_daisyui, tailwind_hotwire_form ([dcb227f](https://github.com/klueless-io/rails_app_generator/commit/dcb227fc9ccf0783d87049c4c6660f914e39fa97))
+
 ## [0.1.2](https://github.com/klueless-io/rails_app_generator/compare/v0.1.1...v0.1.2) (2022-07-26)
 
 
