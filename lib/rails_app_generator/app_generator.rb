@@ -208,8 +208,21 @@ module RailsAppGenerator
         generate(:migration, name, *args)
       end
 
+      def add_stimulus(name, *args)
+        generate(:stimulus, name, *args)
+      end
+
       def bundle_add(name)
         run("bundle add #{name}")
+      end
+
+      def pin(name, *args)
+        run("bin/importmap pin #{name} #{args.join(' ')}")
+      end
+
+      def pin_download(name, *args)
+        args << '--download' unless args.include?('--download')
+        pin(name, *args)
       end
 
       def read_template(template_file)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html data-theme="emerald">
+<html data-theme="retro">
   <head>
-    <title>TailwindHotwireForm</title>
+    <title>Tailwind Hotwire Form + Search</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,8 @@
   </head>
 
   <body>
+    <%= render partial: "shared/theme_changer" %>
+
     <main class="container mx-auto">
       <div class="py-8">
         <div id="flash" class="flash">

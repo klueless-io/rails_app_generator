@@ -1,0 +1,16 @@
+<div class="prose lg:prose-xl">
+  <h1>Contacts list</h1>
+  <%= form_tag contacts_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" } do |f| %>
+    <%= text_field_tag "query", nil, placeholder: "Search ...", class: "input input.bordered w-full max-w-xs my-5" %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+</div>
+
+<div class="bg-gray-100 p-8 col-span-5">
+  <%= turbo_frame_tag  "search-results" do %>
+    <%= render partial: "list", locals: { contacts: @contacts } %>
+  <% end %>
+</div>
+
+<%= link_to "Add new contact", new_contact_path, class: "btn btn-primary mt-4" %>

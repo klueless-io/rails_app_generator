@@ -7,6 +7,7 @@ KManager.action :project_plan do
       .page('In progress', theme: :style_03, margin_left: 0, margin_top: 0) do
         grid_layout(y: 90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        todo(title: 'add profile - tailwind_hotwire_form_search (FINISH of the stimulus controller + add stimulus controller for theme change')
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
 
@@ -30,6 +31,7 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        todo(title: 'add profile - tailwind_hotwire_form')
         todo(title: 'add profile - tailwind_hotwire')
         todo(title: 'add profile - import_map') # vs esbuild - import_map is a replacement for webpacker
         todo(title: 'profile - fix the bootstrap profile')

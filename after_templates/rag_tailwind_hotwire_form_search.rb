@@ -1,11 +1,18 @@
 # frozen_string_literal: true
 
-# How to Start a Ruby on Rails 7 App With Hotwire and Tailwind CSS
+# How To Build a Powerful Search Form With Hotwire
+# https://www.youtube.com/watch?v=4MUEQVxUbm4
+
+# This builds on top of: Ruby on Rails Forms With Hotwire
 # https://www.youtube.com/watch?v=-n7IbUFKjoM
 
 require 'pry'
 
-self.local_template_path = File.join(File.dirname(__FILE__), 'rag_tailwind_hotwire_form')
+self.local_template_path = File.join(File.dirname(__FILE__), File.basename(__FILE__, '.*'))
+
+puts '----------------------------------------------------------------------'
+puts "Using template: #{self.local_template_path}"
+puts '----------------------------------------------------------------------'
 
 gac 'base rails 7 image created'
 
@@ -38,17 +45,22 @@ after_bundle do
   copy_file 'application.js'              , 'app/javascript/application.js'                     , force: true
 
   copy_file '_flash.html.erb'             , 'app/views/shared/_flash.html.erb'
+  copy_file '_theme_changer.html.erb'             , 'app/views/shared/_theme_changer.html.erb'
+
+  add_stimulus('search')
 
   # Install tailwind directly, instead of via the --css=tailwind option so that we can configure 3rd party plugins
   # gem "jsbundling-rails"
   gem "cssbundling-rails"
 
   rails_command('css:install:tailwind')
-  run('npm install daisyui')
-  run('npm install -D @tailwindcss/typography')
-  
+  run('npm i daisyui')
+  run('npm i -D @tailwindcss/typography')
+
   gsub_file 'tailwind.config.js', %(]\n}), "],\n  plugins: [require(\"daisyui\"), require(\"@tailwindcss/typography\")],\n}"
   copy_file 'application.tailwind.css'    , 'app/assets/stylesheets/application.tailwind.css'   , force: true
+
+  pin_download("debounce")
 
   rails_command('db:migrate')
 end

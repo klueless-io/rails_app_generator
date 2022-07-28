@@ -13,9 +13,10 @@ module RailsAppGenerator
           relative_file.start_with?('log') ||
           relative_file.start_with?('db') ||
           relative_file.start_with?('app/assets/builds') ||
-          relative_file == 'Gemfile.lock' ||
-          relative_file == 'Package.lock' ||
-          relative_file == 'Yarn.lock' ||
+          relative_file.casecmp?('gemfile.lock') ||
+          relative_file.casecmp?('package.lock') ||
+          relative_file.casecmp?('package-lock.json') ||
+          relative_file.casecmp?('yarn.lock') ||
           relative_file == 'config/master.key' ||
           relative_file == 'config/credentials.yml.enc'
       end

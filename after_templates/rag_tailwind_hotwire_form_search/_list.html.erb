@@ -1,0 +1,19 @@
+<table class="table table-zebra mt-0 w-full">
+  <thead>
+    <tr class="w-full">
+      <th class="text-left">ID</th>
+      <th class="text-left">Name</th>
+      <th class="text-left">Age</th>
+      <th class="text-left">Email</th>
+      <th class="text-center" colspan="2">Actions</th>
+    </tr>
+  </thead>
+  <tbody id="contacts-list" data-controller="contacts" data-action="">
+  <% contacts.each do |contact| %>
+    <%= render partial: "contact", locals: { contact: contact }  %>
+  <% end %>
+  </tbody>
+</table>
+<div class="text-gray-400 mt-4 text-xs text-right" id="contacts-count">
+  <%= render partial: "count", locals: { contacts: contacts } %>
+</div>
