@@ -7,6 +7,15 @@
 # https://www.youtube.com/watch?v=-n7IbUFKjoM
 
 require 'pry'
+# frozen_string_literal: true
+
+# How To Build a Powerful Search Form With Hotwire
+# https://www.youtube.com/watch?v=4MUEQVxUbm4
+
+# This builds on top of: Ruby on Rails Forms With Hotwire
+# https://www.youtube.com/watch?v=-n7IbUFKjoM
+
+require 'pry'
 
 self.local_template_path = File.join(File.dirname(__FILE__), File.basename(__FILE__, '.*'))
 
@@ -47,7 +56,9 @@ after_bundle do
   copy_file '_flash.html.erb'             , 'app/views/shared/_flash.html.erb'
   copy_file '_theme_changer.html.erb'             , 'app/views/shared/_theme_changer.html.erb'
 
-  add_stimulus('search')
+  # add_stimulus('search')
+  copy_file 'search_controller.js'        , 'app/javascript/controllers/search_controller.js'
+  copy_file 'theme_changer_controller.js' , 'app/javascript/controllers/theme_changer_controller.js'
 
   # Install tailwind directly, instead of via the --css=tailwind option so that we can configure 3rd party plugins
   # gem "jsbundling-rails"

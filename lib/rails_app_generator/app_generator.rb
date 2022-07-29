@@ -208,6 +208,10 @@ module RailsAppGenerator
         generate(:migration, name, *args)
       end
 
+      def db_migrate
+        rails_command('db:migrate')
+      end
+
       def add_stimulus(name, *args)
         generate(:stimulus, name, *args)
       end

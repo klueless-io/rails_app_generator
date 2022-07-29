@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def inline_error_for(field, form_obj)
     html = []
 
@@ -11,5 +10,4 @@ module ApplicationHelper
 
     html.join.html_safe
   end
-
 end
