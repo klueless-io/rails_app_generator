@@ -1,105 +1,108 @@
-<mxfile host="jCb">
-  <diagram id="9If" name="In progress">
+<mxfile host="Sbx">
+  <diagram id="h6s" name="In progress">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_9If" parent="9If"/>
-        <mxCell id="node_root_9If" parent="page_root_9If"/>
-        <mxCell id="9If-2" value="add profile - rag_tailwind_style_reuse" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_9If">
+        <mxCell id="page_root_h6s" parent="h6s"/>
+        <mxCell id="node_root_h6s" parent="page_root_h6s"/>
+        <mxCell id="h6s-2" value="add profile - rag_tailwind_style_reuse" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_h6s">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="9If-3" value="add profile - rag_tailwind_hotwire_flash" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_9If">
+        <mxCell id="h6s-3" value="add profile - rag_tailwind_hotwire_flash" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_h6s">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="iYl" name="To Do">
+  <diagram id="pqv" name="To Do">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_iYl" parent="iYl"/>
-        <mxCell id="node_root_iYl" parent="page_root_iYl"/>
-        <mxCell id="iYl-2" value="generator for new profiles" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="page_root_pqv" parent="pqv"/>
+        <mxCell id="node_root_pqv" parent="page_root_pqv"/>
+        <mxCell id="pqv-2" value="generator for new profiles" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-3" value="add auto open flag to profile and command line" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-3" value="add auto open flag to profile and command line" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-4" value="add profile - stimulas" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-4" value="add profile - stimulas" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-5" value="add profile - hotwire" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-5" value="add profile - hotwire" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-6" value="add profile - turbo" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-6" value="add profile - turbo" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="330" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-7" value="add profile - vue" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-7" value="add profile - vue" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="650" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-8" value="add profile - svelte" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-8" value="add profile - svelte" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="10" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-9" value="add profile - react" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-9" value="add profile - react" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="330" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-10" value="add profile - vite" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-10" value="add profile - vite" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="650" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-11" value="add profile - docker" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-11" value="add profile - docker" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="10" y="250" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-12" value="add encryption - https://youtu.be/ZmwNzod1trk?t=701" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-12" value="add encryption - https://youtu.be/ZmwNzod1trk?t=701" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="330" y="250" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-13" value="cli help support for diff" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-13" value="cli help support for diff" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="650" y="250" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-14" value="cli support for rails new (rag new should work like rails new) - buggy, need to work through" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-14" value="cli support for rails new (rag new should work like rails new) - buggy, need to work through" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="10" y="330" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="iYl-15" value="need an option for deleting target project path" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_iYl">
+        <mxCell id="pqv-15" value="need an option for deleting target project path" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pqv">
           <mxGeometry x="330" y="330" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="1ja" name="Done">
+  <diagram id="Pwy" name="Done">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_1ja" parent="1ja"/>
-        <mxCell id="node_root_1ja" parent="page_root_1ja"/>
-        <mxCell id="1ja-2" value="add profile - tailwind_hotwire_form_search" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_1ja">
+        <mxCell id="page_root_Pwy" parent="Pwy"/>
+        <mxCell id="node_root_Pwy" parent="page_root_Pwy"/>
+        <mxCell id="Pwy-2" value="add profile - tailwind-emulating-bootstrap" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="1ja-3" value="add profile - tailwind_hotwire_form" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_1ja">
+        <mxCell id="Pwy-3" value="add profile - tailwind-hotwire-form-search" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="1ja-4" value="add profile - tailwind_hotwire" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_1ja">
+        <mxCell id="Pwy-4" value="add profile - tailwind-hotwire-form" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
           <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="1ja-5" value="add profile - import_map" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_1ja">
+        <mxCell id="Pwy-5" value="add profile - tailwind-hotwire" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
           <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="1ja-6" value="profile - fix the bootstrap profile" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_1ja">
+        <mxCell id="Pwy-6" value="add profile - import-map" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
           <mxGeometry x="330" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="1ja-7" value="cli support for profile" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_1ja">
+        <mxCell id="Pwy-7" value="profile - fix the bootstrap profile" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
           <mxGeometry x="650" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="1ja-8" value="separate CLI methods into include modules" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_1ja">
+        <mxCell id="Pwy-8" value="cli support for profile" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
           <mxGeometry x="10" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="1ja-9" value="cli support for diff" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_1ja">
+        <mxCell id="Pwy-9" value="separate CLI methods into include modules" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
           <mxGeometry x="330" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="1ja-10" value="add diff tool - open in editor" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_1ja">
+        <mxCell id="Pwy-10" value="cli support for diff" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
           <mxGeometry x="650" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="1ja-11" value="add diff tool supporting lhs only, rhs only, same and different" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_1ja">
+        <mxCell id="Pwy-11" value="add diff tool - open in editor" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
           <mxGeometry x="10" y="250" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="1ja-12" value="add project plan to do list" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_1ja">
+        <mxCell id="Pwy-12" value="add diff tool supporting lhs only, rhs only, same and different" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
           <mxGeometry x="330" y="250" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="Pwy-13" value="add project plan to do list" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Pwy">
+          <mxGeometry x="650" y="250" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TailwindEmulatingBootstrap</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag css_framework, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  
+  <body>
+    <%= link_to "Bootstrap" , home_bootstrap_path, class: "btn btn-#{File.basename(request.path) == 'bootstrap' ? 'primary' : 'secondary'}" %>
+    <%= link_to "Tailwind"  , home_tailwind_path , class: "btn btn-#{File.basename(request.path) == 'tailwind'  ? 'primary' : 'secondary'}" %>
+    <hr />
+
+    <%= yield %>
+  </body>
+</html>

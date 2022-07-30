@@ -69,23 +69,25 @@ module RailsAppGenerator
       end
     end
 
-    # def initialize(*args)
-    #   super
+    def initialize(*args)
+      super
 
-    #   # puts '----------------------------------------------------'
-    #   # puts options
-    #   # puts '----------------------------------------------------'
+      @force_copy = false
 
-    #   # return unless options[:api]
+      # puts '----------------------------------------------------'
+      # puts options
+      # puts '----------------------------------------------------'
 
-    #   # self.options = options.merge(
-    #   #   skip_errors: true,
-    #   #   skip_high_voltage: true,
-    #   #   skip_stimulus: true,
-    #   #   skip_tailwind: true,
-    #   #   skip_views: true
-    #   # ).freeze
-    # end
+      # return unless options[:api]
+
+      # self.options = options.merge(
+      #   skip_errors: true,
+      #   skip_high_voltage: true,
+      #   skip_stimulus: true,
+      #   skip_tailwind: true,
+      #   skip_views: true
+      # ).freeze
+    end
 
     # def rails_customization
     #   puts 'rails customizations'
@@ -176,7 +178,7 @@ module RailsAppGenerator
       # add_controller('home', 'index')
       # add_scaffold('people', 'first_name', 'last_name', 'age:integer', 'address:text')
       # route("root 'home#index'")
-      # gem "cssbundling-rails"
+      # css_install('tailwind')
       # rails_command('db:migrate')
       # bundle_add('hotwire-rails')
       # rails_command('hotwire:install')
@@ -187,6 +189,18 @@ module RailsAppGenerator
       # insert_into_file  'app/views/layouts/application.html.erb', read_template('application.html.erb'),
       # gsub_file         'app/views/layouts/application.html.erb', %(container mx-auto mt-28 px-5 flex), 'container mx-auto px-5'
       # template 'home.css', 'app/assets/stylesheets/home.css'
+
+      # force_copy?         # defaults to false
+      # force_copy(true)    # set to true
+      # force_copy(false)   # set to false
+      # force_copy          # aka force_copy(true)
+      def force_copy?
+        @force_copy ||= options[:force_copy] || false
+      end
+
+      def force_copy(value: true)
+        @force_copy = value
+      end
 
       # USED BY AFTER_TEMPLATE
       def gac(message)
@@ -220,6 +234,13 @@ module RailsAppGenerator
         run("bundle add #{name}")
       end
 
+      # If you need to manually install tailwind (instead of using the --template option)
+      # you can use css_install('tailwind')
+      def css_install(name)
+        gem 'cssbundling-rails'
+        rails_command("css:install:#{name}")
+      end
+
       def pin(name, *args)
         run("bin/importmap pin #{name} #{args.join(' ')}")
       end
@@ -227,6 +248,12 @@ module RailsAppGenerator
       def pin_download(name, *args)
         args << '--download' unless args.include?('--download')
         pin(name, *args)
+      end
+
+      def copy_file(source, destination, **args)
+        args = { force: true }.merge(args) if force_copy?
+
+        super(source, destination, **args)
       end
 
       def read_template(template_file)

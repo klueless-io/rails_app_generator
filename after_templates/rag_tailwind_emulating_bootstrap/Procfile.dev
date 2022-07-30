@@ -1,0 +1,3 @@
+web: bin/rails server -p 3000
+css_bootstrap: yarn build:css_bootstrap --watch
+css_tailwind: yarn build:css_tailwind --watch
