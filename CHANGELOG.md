@@ -1,3 +1,10 @@
+## [0.1.6](https://github.com/klueless-io/rails_app_generator/compare/v0.1.5...v0.1.6) (2022-07-30)
+
+
+### Bug Fixes
+
+* add profile - tailwind-emulating-bootstrap ([d79b99e](https://github.com/klueless-io/rails_app_generator/commit/d79b99ecb8448635952d6c978aea9c5e92f11a71))
+
 ## [0.1.5](https://github.com/klueless-io/rails_app_generator/compare/v0.1.4...v0.1.5) (2022-07-29)
 
 
