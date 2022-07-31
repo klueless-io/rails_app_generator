@@ -1,3 +1,10 @@
+## [0.1.7](https://github.com/klueless-io/rails_app_generator/compare/v0.1.6...v0.1.7) (2022-07-30)
+
+
+### Bug Fixes
+
+* add video documentation ([79fa9ae](https://github.com/klueless-io/rails_app_generator/commit/79fa9aeafe5d195b14cfcd1124f45dc6c30f16fc))
+
 ## [0.1.6](https://github.com/klueless-io/rails_app_generator/compare/v0.1.5...v0.1.6) (2022-07-30)
 
 
