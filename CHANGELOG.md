@@ -1,3 +1,10 @@
+## [0.1.8](https://github.com/klueless-io/rails_app_generator/compare/v0.1.7...v0.1.8) (2022-07-31)
+
+
+### Bug Fixes
+
+* add support for required gems on addons ([78bfcef](https://github.com/klueless-io/rails_app_generator/commit/78bfcef2323cdc01edb769924585d86d4ff21579))
+
 ## [0.1.7](https://github.com/klueless-io/rails_app_generator/compare/v0.1.6...v0.1.7) (2022-07-30)
 
 
