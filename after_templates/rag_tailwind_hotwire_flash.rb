@@ -16,7 +16,8 @@ after_bundle do
 end
 
 def setup_db
-  add_scaffold('title', 'body:text')
+  add_scaffold('post', 'title', 'body:text')
+
   db_migrate
 end
 

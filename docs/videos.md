@@ -39,5 +39,6 @@ A set of templates that can be used via the `--template` argument
   ![](images/tailwind_hotwire_form_search.png)
 
 - Hotwire Flash Messages
+  
 - Tailwind, Reusing Styles
   - https://tailwindcss.com/docs/reusing-styles

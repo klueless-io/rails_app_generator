@@ -5,7 +5,7 @@
 module RailsAppGenerator
   #  AppGenerator is a wrapper for Rails::AppGenerator
   class AppGenerator < Rails::Generators::AppGenerator
-    class_option :test, type: :string, default: 'rspec'
+    class_option :test                        , type: :string , default: 'rspec'
 
     class_option :add_irbrc                   , type: :boolean, default: false
     class_option :add_foreman                 , type: :boolean, default: false
@@ -46,7 +46,7 @@ module RailsAppGenerator
       attr_writer :addon_template_path
 
       def addon_template_path
-        @addon_template_path ||= gem_template_path('rails_app_generator', 'templates/addons/%<addon>')
+        @addon_template_path ||= gem_template_path('rails_app_generator', 'templates/addons/%<addon>s')
       end
 
       private
@@ -63,6 +63,7 @@ module RailsAppGenerator
 
         puts "gem not available for '#{gem_name}'"
 
+        # THIS CODE DOES NOT REALLY WORK
         return Dir.pwd if Dir.pwd.end_with?('dev/kgems/rails_app_generator') # code smell: this is for my local development environment
 
         raise "'#{gem_name}' not available"
@@ -91,7 +92,6 @@ module RailsAppGenerator
 
     # def rails_customization
     #   puts 'rails customizations'
-    #   invoke :fuck
     #   # invoke :customize_gemfile
     #   # invoke :setup_development_environment
     #   # invoke :setup_production_environment
@@ -326,6 +326,20 @@ module RailsAppGenerator
 
         addon = AddOn.get(addon)
         Dependencies.new(addon, context).satisfied?
+      end
+
+      def gems
+        all_gemfile_entries = gemfile_entries + addon_gemfile_entries
+
+        all_gemfile_entries.map do |entry|
+          FormattedGemEntry.new(entry.name, entry.version, entry.comment, entry.options, entry.commented_out)
+        end
+      end
+
+      def addon_gemfile_entries
+        AddOns.constants
+              .select { |klass| AddOns.const_get(klass).is_a?(Class) }
+              .flat_map { |klass| AddOns.const_get(klass).gem_entries }
       end
     end
 

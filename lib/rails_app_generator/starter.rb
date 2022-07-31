@@ -28,6 +28,7 @@ module RailsAppGenerator
     # points to templates related to rails addons
     attr_reader :addon_template_path
 
+    attr_reader :capture_output
     attr_reader :console_output
 
     def initialize(**args)
@@ -36,6 +37,7 @@ module RailsAppGenerator
       @rails_template_path    = args[:rails_template_path]          || AppGenerator.rails_template_path
       @override_template_path = args[:override_template_path]       || AppGenerator.override_template_path
       @addon_template_path    = args[:addon_template_path]          || AppGenerator.addon_template_path
+      @capture_output         = args[:capture_output].nil? ? false : args[:capture_output]
     end
 
     def target_path
@@ -45,13 +47,13 @@ module RailsAppGenerator
     def start(options = [])
       puts "Target path: #{target_path}"
 
-      # RailsAppGenerator::AppGenerator.source_root(rails_template_path)
-      # # RailsAppGenerator::AppGenerator.source_paths << rails_template_path
-      # RailsAppGenerator::AppGenerator.source_paths << addon_template_path
-
       opts = extract_rails_options(app_path, options)
 
-      @console_output = capture_console do
+      if capture_output
+        @console_output = capture_console do
+          RailsAppGenerator::AppGenerator.start(opts, destination_root: destination_root)
+        end
+      else
         RailsAppGenerator::AppGenerator.start(opts, destination_root: destination_root)
       end
     end

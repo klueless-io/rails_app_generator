@@ -7,12 +7,15 @@ module RailsAppGenerator
     include Rails::Generators::Actions
     include Rails::Generators::AppName
 
-    attr_reader :dependencies, :context
+    attr_reader :context
+    attr_reader :gem_entries
+    attr_reader :dependencies
 
     def initialize(context)
       super
       @context = context
       @dependencies = self.class.dependencies || []
+      @gem_entries = self.class.gem_entries || []
     end
 
     def apply; end
@@ -21,7 +24,7 @@ module RailsAppGenerator
     no_commands do
       def source_paths
         [
-          format(context.addon_template_path, addon: self.class.addon_name),
+          format(context.addon_template_path, addon: self.class.addon_name.to_s),
           context.rails_override_template_path,
           context.rails_template_path
         ]
@@ -63,10 +66,22 @@ module RailsAppGenerator
         @dependencies ||= []
       end
 
+      def gem_entries
+        @gem_entries ||= []
+      end
+
       protected
 
       def depends_on(*addon)
         @dependencies = addon.map(&:to_sym)
+      end
+
+      def required_gem(gem_entry)
+        gem_entries << gem_entry
+      end
+
+      def gem
+        Rails::Generators::AppBase::GemfileEntry
       end
     end
   end

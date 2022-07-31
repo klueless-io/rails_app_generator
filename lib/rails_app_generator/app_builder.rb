@@ -23,9 +23,9 @@ module RailsAppGenerator
     #   RailsAppGenerator::AddOns::RubyVersion.new(Context.new(options)).apply
     # end
 
-    # def gemfile
-    #   template 'Gemfile.erb', 'Gemfile'
-    # end
+    def gemfile
+      template 'Gemfile.erb', 'Gemfile'
+    end
 
     # def gitignore
     #   template '.gitignore.erb', '.gitignore'
