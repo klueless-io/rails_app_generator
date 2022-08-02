@@ -343,6 +343,7 @@ module RailsAppGenerator
       # gsub_file         'app/views/layouts/application.html.erb', %(container mx-auto mt-28 px-5 flex), 'container mx-auto px-5'
       # template 'home.css', 'app/assets/stylesheets/home.css'
 
+      # OLD style will be removed soon
       def local_template_base(xxx)
         File.join(File.dirname(xxx), File.basename(xxx, '.*'))
       end

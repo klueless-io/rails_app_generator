@@ -40,32 +40,18 @@ class AddOn < Thor
     end
 
     def build_required_gem_code
-      return nil unless options[:gem]
-
-      gem_name = options[:gem] == 'gem' ? name : options[:gem]
-
-      info = gem_info(gem_name)
+      info = gem_info
 
       "      required_gem gem.version('#{info.name}', '#{info.version}', '#{info.description}')"
     end
 
     # example: 'https://rubygems.org/api/v1/gems/draper.json'
-    def gem_info(name)
-      link = "https://rubygems.org/api/v1/gems/#{name.downcase}.json"
-      info = Net::HTTP.get(URI.parse(link))
-      json = JSON.parse(info)
+    def gem_info
+      return nil unless options[:gem]
 
-      GemInfo.new(
-        name: json['name'],
-        version: json['version'],
-        description: json['info']
-      )
-    rescue SocketError
-      abort 'Internet connection cannot be established to RubyGems.org'
-    rescue JSON::ParserError
-      abort "Check you have entered the right Gem name\n#{link}"
+      gem_name = options[:gem] == 'gem' ? name : options[:gem]
+
+      ::GemInfo.get(gem_name)
     end
   end
 end
-# /Users/davidcruwys/dev/kgems/rails_app_generator/templates/thor/addon
-# /Users/davidcruwys/dev/kgems/rails_app_generator/lib/templates/thor

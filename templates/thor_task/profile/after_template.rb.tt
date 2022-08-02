@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-# Description goes here
+# <%= data.description %>
 require 'pry'
 
-self.local_template_path = local_template_base(__FILE__)
+self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'
 
@@ -12,4 +12,4 @@ route("root 'home#index'")
 
 force_copy
 
-copy_file 'index.html.erb', 'app/views/home/index.html.erb'
+copy_file 'home/index.html.erb', 'app/views/home/index.html.erb'

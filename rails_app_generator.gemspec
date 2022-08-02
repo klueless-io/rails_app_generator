@@ -50,7 +50,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'tailwindcss-rails'
   spec.add_dependency 'turbo-rails'
 
-  # spec.add_dependency 'k_log', '~> 0'
+  spec.add_dependency 'cmdlet', '~> 0'
   # spec.add_dependency 'k_type', '~> 0'
   # spec.add_dependency 'k_util', '~> 0'
 end

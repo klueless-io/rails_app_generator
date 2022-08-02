@@ -1,0 +1,12 @@
+{
+  "args": {
+    "app_path": "<%= data.name_snake %>",
+    "destination_root": "<%= data.destination_root %>"
+  },
+  "opts": {
+    "skip_git": true,
+    "skip_test": true,
+    "template": "<%= data.template_file %>",
+    "add_<%= data.name_snake %>": true
+  }
+}

@@ -1,0 +1,3 @@
+<h1><%= data.name_human %></h1>
+
+<h2><%= data.description %></h2>
