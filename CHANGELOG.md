@@ -1,3 +1,10 @@
+## [0.1.10](https://github.com/klueless-io/rails_app_generator/compare/v0.1.9...v0.1.10) (2022-08-02)
+
+
+### Bug Fixes
+
+* refactor GemInfo ([9294d5f](https://github.com/klueless-io/rails_app_generator/commit/9294d5faff71e69f6812868c976a26171a12d4c5))
+
 ## [0.1.9](https://github.com/klueless-io/rails_app_generator/compare/v0.1.8...v0.1.9) (2022-08-02)
 
 
