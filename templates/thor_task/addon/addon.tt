@@ -1,0 +1,21 @@
+# frozen_string_literal: true
+
+module RailsAppGenerator
+  # Custom add-ons for RailsAppGenerator
+  module AddOns
+    # Add <%= Thor::Util.camel_case(name) %> to rails application
+    class <%= Thor::Util.camel_case(name) %> < AddOn
+<%= addon_config_code %>
+      def apply
+        # say 'Setting up <%= Thor::Util.camel_case(name)%>'
+        # template('<%= Thor::Util.snake_case(name)%>_template.rb', 'target/<%= Thor::Util.snake_case(name)%>.rb', force: true)
+        # template('app/javascript/stylesheets/components.scss')
+        # create_file('target/<%= Thor::Util.snake_case(name)%>.rb', 'put your content here')
+        # directory 'app/template', 'app/target', force: true
+        # empty_directory 'app/target'
+        # inject_into_file('app/application.js', "some content")
+        # rails_command('tailwindcss:install')
+      end
+    end
+  end
+end

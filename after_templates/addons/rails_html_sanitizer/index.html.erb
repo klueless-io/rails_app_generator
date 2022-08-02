@@ -1,0 +1,31 @@
+<h1>Testing HTML Sanitizer</h1>
+
+<p>Read more here <a href="https://github.com/rails/rails-html-sanitizer">rails-html-sanitizer</a></p>
+
+<textarea rows="4" cols="200">
+full_sanitizer = Rails::Html::FullSanitizer.new
+full_sanitizer.sanitize("<b>Bold</b> no more!  <a href='more.html'>See more here</a>...")
+</textarea>
+
+<hr>
+<%=
+  Rails::Html::FullSanitizer
+    .new
+    .sanitize("<b>Bold</b> no more!  <a href='more.html'>See more here</a>...")
+%>
+
+<br/><br/><br/>
+
+<hr>
+
+<textarea rows="4" cols="200">
+link_sanitizer = Rails::Html::LinkSanitizer.new
+link_sanitizer.sanitize('<a href="example.com">Only the link text will be kept.</a>')
+# => Only the link text will be kept.
+</textarea>
+
+<%=
+  Rails::Html::LinkSanitizer
+    .new
+    .sanitize('<a href="example.com">Only the link text will be kept.</a>')
+%>

@@ -14,6 +14,7 @@ KManager.action :project_plan do
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
         todo(title: 'generator for new profiles')
+        todo(title: 'look at the sample tailwind pages in P7 and turn them into an addon')
 
         todo(title: 'add auto open flag to profile and command line')
         todo(title: 'add profile - stimulas')
@@ -22,9 +23,9 @@ KManager.action :project_plan do
         todo(title: 'add profile - vue')
         todo(title: 'add profile - svelte')
         todo(title: 'add profile - react')
-        todo(title: 'add profile - vite')
-        todo(title: 'add profile - docker') # https://www.youtube.com/watch?v=ZhrnqHVVo1g
-        todo(title: 'add encryption - https://youtu.be/ZmwNzod1trk?t=701')
+        todo(title: 'add profile - vite')         # see: /Users/davidcruwys/dev/printspeak/printspeak-r7-test1
+        todo(title: 'add profile - docker')       # https://www.youtube.com/watch?v=ZhrnqHVVo1g
+        todo(title: 'add encryption')             # https://youtu.be/ZmwNzod1trk?t=701
         todo(title: 'cli help support for diff')
         todo(title: 'cli support for rails new (rag new should work like rails new) - buggy, need to work through')
         todo(title: 'need an option for deleting target project path') # FileUtils.rm_rf(instance.target_path)

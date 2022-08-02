@@ -7,6 +7,19 @@ module RailsAppGenerator
       attr_reader :lhs_path
       attr_reader :rhs_path
 
+      # Consider the Thor Diff Method below
+      # see: gems/thor-1.2.1/lib/thor/shell/basic.rb
+
+      # def show_diff(destination, content) #:nodoc:
+      #   diff_cmd = ENV["THOR_DIFF"] || ENV["RAILS_DIFF"] || "diff -u"
+      #   require "tempfile"
+      #   Tempfile.open(File.basename(destination), File.dirname(destination)) do |temp|
+      #     temp.write content
+      #     temp.rewind
+      #     system %(#{diff_cmd} "#{destination}" "#{temp.path}")
+      #   end
+      # end
+
       DEFAULT_EXCLUSION = lambda do |_file, relative_file|
         relative_file.start_with?('tmp') ||
           relative_file.start_with?('node_modules') ||

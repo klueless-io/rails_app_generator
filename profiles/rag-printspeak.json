@@ -1,0 +1,11 @@
+{
+  "args": {
+    "app_path": "p7",
+    "destination_root": "/Users/davidcruwys/dev/printspeak"
+  },
+  "opts": {
+    "skip_test": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/rag_printspeak.rb",
+    "javascript": "esbuild"
+  }
+}

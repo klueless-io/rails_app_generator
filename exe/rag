@@ -20,7 +20,7 @@ elsif %w[-v --version].include?(first)
 elsif first == 'diff'
   RailsAppGenerator::Cli::Diff.start(ARGV)
 elsif first == 'new'
-  # RailsAppGenerator::AppGenerator.start(ARGV[1..], destination_root: '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag')
+  RailsAppGenerator::AppGenerator.start(ARGV[1..], destination_root: '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag')
 else
   fallback_profile_path = File.expand_path("#{Pathname.new(__FILE__).dirname}/../profiles")
   args = ['profile'] + ARGV + ["--fallback-profile-path=#{fallback_profile_path}"]

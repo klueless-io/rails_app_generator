@@ -39,6 +39,7 @@ module RailsAppGenerator
 
     register_option :add_irbrc                  , type: :boolean, default: false
     register_option :add_foreman                , type: :boolean, default: false
+    register_option :add_devise                 , type: :boolean, default: false
     register_option :add_dotenv                 , type: :boolean, default: false
     register_option :add_docker                 , type: :boolean, default: false
     register_option :add_docker_compose         , type: :boolean, default: false
@@ -56,6 +57,9 @@ module RailsAppGenerator
     register_option :add_scaffold               , type: :boolean, default: false
     register_option :add_factory_bot            , type: :boolean, default: false
     register_option :add_shoulda                , type: :boolean, default: false
+
+    # NEW GEM ADDONS
+    register_option :add_rails_html_sanitizer   , type: :boolean, default: false
 
     # if options[:minimal]
     #   self.options = options.merge(
