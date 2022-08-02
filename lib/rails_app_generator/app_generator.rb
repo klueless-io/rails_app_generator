@@ -69,8 +69,6 @@ module RailsAppGenerator
     # webmock              3.13.0   3.14.0   = 3.13.0   development, test
     # websocket-driver     0.6.5    0.7.5
 
-    # gem "rails-html-sanitizer", "1.3.0"
-    # gem "unicorn", "5.3.0"
     # gem "honeybadger", "4.6.0"
     # gem "pg", "0.20.0"
     # gem "redis", "3.3.3"

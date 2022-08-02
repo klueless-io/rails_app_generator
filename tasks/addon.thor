@@ -2,9 +2,9 @@
 
 # https://codecrate.com/2014/01/replace-rake-with-thor.html
 
-require 'pry'
 require 'net/http'
 require 'json'
+require_relative 'gem_info'
 
 # Thor task to create a new AddOn for Rails App Generator
 class AddOn < Thor
