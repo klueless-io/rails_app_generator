@@ -1,3 +1,10 @@
+## [0.1.12](https://github.com/klueless-io/rails_app_generator/compare/v0.1.11...v0.1.12) (2022-08-02)
+
+
+### Bug Fixes
+
+* update rails-html-sanitizer example ([7f3a2d8](https://github.com/klueless-io/rails_app_generator/commit/7f3a2d810a968748baf4f8a4a147b086a26781c0))
+
 ## [0.1.11](https://github.com/klueless-io/rails_app_generator/compare/v0.1.10...v0.1.11) (2022-08-02)
 
 
