@@ -339,7 +339,8 @@ module RailsAppGenerator
       # create_file       'app/assets/stylesheets/custom-bootstrap-import.scss' , read_template('custom-bootstrap-import.scss')
       # append_to_file    'app/assets/config/manifest.js'                       , read_template('manifest.js')
       # insert_into_file  'app/views/layouts/application.html.erb', read_template('application.html.erb')
-      # insert_into_file  'app/views/layouts/application.html.erb', read_template('application.html.erb'), before: %(    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>)
+      # insert_into_file  'app/views/layouts/application.html.erb', read_template('application.html.erb'),
+      #     before: %(    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>)
 
       # gsub_file         'app/views/layouts/application.html.erb', %(container mx-auto mt-28 px-5 flex), 'container mx-auto px-5'
       # template 'home.css', 'app/assets/stylesheets/home.css'
@@ -347,6 +348,7 @@ module RailsAppGenerator
       def local_template_base(xxx)
         File.join(File.dirname(xxx), File.basename(xxx, '.*'))
       end
+
       # force_copy?         # defaults to false
       # force_copy(true)    # set to true
       # force_copy(false)   # set to false

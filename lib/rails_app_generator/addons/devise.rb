@@ -42,7 +42,7 @@ module RailsAppGenerator
           gsub_file migration, /:admin/, ':admin, default: false'
         end
       end
-      
+
       def create_seed
         insert_into_file 'db/seeds.rb' do
           <<~RUBY

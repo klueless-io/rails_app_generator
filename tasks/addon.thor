@@ -6,11 +6,12 @@ require 'pry'
 require 'net/http'
 require 'json'
 
+# Thor task to create a new AddOn for Rails App Generator
 class AddOn < Thor
   include Thor::Actions
 
   source_root(File.expand_path('../templates/thor_task', File.dirname(__FILE__)))
-  
+
   GemInfo = Struct.new(:name, :version, :description, keyword_init: true)
 
   attr_accessor :name
@@ -47,7 +48,7 @@ class AddOn < Thor
 
       "      required_gem gem.version('#{info.name}', '#{info.version}', '#{info.description}')"
     end
-    
+
     # example: 'https://rubygems.org/api/v1/gems/draper.json'
     def gem_info(name)
       link = "https://rubygems.org/api/v1/gems/#{name.downcase}.json"
@@ -55,12 +56,12 @@ class AddOn < Thor
       json = JSON.parse(info)
 
       GemInfo.new(
-        name: json["name"],
-        version: json["version"],
-        description: json["info"]
+        name: json['name'],
+        version: json['version'],
+        description: json['info']
       )
     rescue SocketError
-      abort "Internet connection cannot be established to RubyGems.org"
+      abort 'Internet connection cannot be established to RubyGems.org'
     rescue JSON::ParserError
       abort "Check you have entered the right Gem name\n#{link}"
     end
