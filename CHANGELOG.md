@@ -1,3 +1,10 @@
+## [0.1.11](https://github.com/klueless-io/rails_app_generator/compare/v0.1.10...v0.1.11) (2022-08-02)
+
+
+### Bug Fixes
+
+* add thor task to create profiles ([0ec4ae0](https://github.com/klueless-io/rails_app_generator/commit/0ec4ae01a2879fc627422cb79e4cbc685e78dcb8))
+
 ## [0.1.10](https://github.com/klueless-io/rails_app_generator/compare/v0.1.9...v0.1.10) (2022-08-02)
 
 
