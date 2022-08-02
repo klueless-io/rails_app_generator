@@ -1,3 +1,11 @@
+## [0.1.9](https://github.com/klueless-io/rails_app_generator/compare/v0.1.8...v0.1.9) (2022-08-02)
+
+
+### Bug Fixes
+
+* add thor task to create add-ons, plus profile rails-html-santaizer ([098700f](https://github.com/klueless-io/rails_app_generator/commit/098700facf9eb7d74ce6dfed8495e22d0904a386))
+* cops ([61f106e](https://github.com/klueless-io/rails_app_generator/commit/61f106e8d5bfa918731430efd5c6fea34d25a41b))
+
 ## [0.1.8](https://github.com/klueless-io/rails_app_generator/compare/v0.1.7...v0.1.8) (2022-07-31)
 
 
