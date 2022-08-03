@@ -149,6 +149,7 @@ module RailsAppGenerator
     # gem "net-sftp", "3.0.0"
     # gem "prawn", "2.4.0"
     # gem "prawn-table", "0.2.2"
+    # gem "appraisal"
 
     class_option :add_irbrc                   , type: :boolean, default: false
     class_option :add_foreman                 , type: :boolean, default: false
@@ -173,6 +174,7 @@ module RailsAppGenerator
 
     # NEW GEM ADDONS
     class_option :add_rails_html_sanitizer    , type: :boolean, default: false
+    class_option :add_honeybadger             , type: :boolean, default: false
 
     class << self
       # points to the original rails templates
@@ -315,33 +317,15 @@ module RailsAppGenerator
       add(:views, :errors, :scaffold) if options[:add_views]
       add_if(:factory_bot)
       add_if(:shoulda)
+      add_if(:rails_app_generator)
+      add_if(:honeybadger)
 
       # invoke :rails_customization
       super
     end
 
     no_commands do
-      # Template command examples
-      # gac 'base rails 7 image created'
-      # force_copy
-      # add_controller('home', 'index')
-      # add_scaffold('people', 'first_name', 'last_name', 'age:integer', 'address:text')
-      # route("root 'home#index'")
-      # css_install('tailwind')
-      # rails_command('db:migrate')
-      # db_migrate
-      # bundle_add('hotwire-rails')
-      # rails_command('hotwire:install')
-      # run('bin/importmap pin sortablejs')
-      # run('npm install daisyui')
-      # create_file       'app/assets/stylesheets/custom-bootstrap-import.scss' , read_template('custom-bootstrap-import.scss')
-      # append_to_file    'app/assets/config/manifest.js'                       , read_template('manifest.js')
-      # insert_into_file  'app/views/layouts/application.html.erb', read_template('application.html.erb')
-      # insert_into_file  'app/views/layouts/application.html.erb', read_template('application.html.erb'),
-      #     before: %(    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>)
-
-      # gsub_file         'app/views/layouts/application.html.erb', %(container mx-auto mt-28 px-5 flex), 'container mx-auto px-5'
-      # template 'home.css', 'app/assets/stylesheets/home.css'
+      # https://codingpackets.com/blog/rails-generators-cheat-sheet/
 
       # OLD style will be removed soon
       def local_template_base(xxx)
@@ -396,6 +380,10 @@ module RailsAppGenerator
         run("bundle add #{name}")
       end
 
+      def bundle_exec(name, *args)
+        run("bundle exec #{name} #{args.join(' ')}")
+      end
+
       # If you need to manually install tailwind (instead of using the --template option)
       # you can use css_install('tailwind')
       def css_install(name)
@@ -435,6 +423,32 @@ module RailsAppGenerator
         template_files.map { |template_file| read_template(template_file) }.join(join)
       end
 
+      # Moves a file at given location, to another location. Both files are relative to the destination_root
+      #
+      # ==== Parameters
+      # path<String>:: source_path of the file to be moved (relative to destination_root)
+      # path<String>:: target_path of the file moving to (relative to destination_root)
+      # config<Hash>:: give :verbose => false to not log the status.
+      #
+      # ==== Example
+      #
+      #   move_file 'README', 'readme.md'
+      #   move_file 'config/xmen.sample.yml', 'config/xmen.yml
+      #
+      def move_file(source_path, target_path, config = {})
+        source = File.expand_path(source_path, destination_root)
+        target = File.expand_path(target_path, destination_root)
+        config.merge!({ verbose: true })
+
+        say_status :move_file_source, relative_to_original_destination_root(source), config.fetch(:verbose, true)
+        say_status :move_file_source, relative_to_original_destination_root(target), config.fetch(:verbose, true)
+
+        if !options[:pretend] && (File.exist?(source))
+          require "fileutils"
+          ::FileUtils.mv(source, target)
+        end
+      end
+
       # Local template path is handy when you want template files used when working with the --template flag
       attr_accessor :local_template_path
 
@@ -466,17 +480,16 @@ module RailsAppGenerator
       end
 
       def add_if(addon)
-        option_name = "add_#{addon}".to_sym
-        add(addon) if options[option_name]
+        add(addon) if active?(addon)
       end
 
-      def skip_flag?(option_name)
-        value = options["skip_#{option_name}".to_sym]
+      # def skip_flag?(option_name)
+      #   value = options["skip_#{option_name}".to_sym]
 
-        return false if value.nil?
+      #   return true if value.nil?
 
-        value == true
-      end
+      #   value == true
+      # end
 
       def add_flag?(option_name)
         value = options["add_#{option_name}".to_sym]
@@ -487,7 +500,7 @@ module RailsAppGenerator
       end
 
       def active?(option_name)
-        add_flag?(option_name) || !skip_flag?(option_name)
+        add_flag?(option_name) # || !skip_flag?(option_name)
       end
 
       def uses?(addon)
@@ -505,10 +518,18 @@ module RailsAppGenerator
         end
       end
 
-      def addon_gemfile_entries
+      def addon_classes
         AddOns.constants
-              .select { |klass| AddOns.const_get(klass).is_a?(Class) }
-              .flat_map { |klass| AddOns.const_get(klass).gem_entries }
+          .map { |addon_klass_name| AddOns.const_get(addon_klass_name) }
+          .select { |klass| klass.is_a?(Class) && klass.respond_to?(:addon_name) }
+      end
+
+      def active_addon_classes
+        addon_classes.select { |klass| active?(klass.addon_name) }
+      end
+
+      def addon_gemfile_entries
+        active_addon_classes.flat_map { |klass| klass.gem_entries }
       end
     end
 

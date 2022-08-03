@@ -60,6 +60,7 @@ module RailsAppGenerator
 
     # NEW GEM ADDONS
     register_option :add_rails_html_sanitizer   , type: :boolean, default: false
+    register_option :add_honeybadger            , type: :boolean, default: false
 
     # if options[:minimal]
     #   self.options = options.merge(

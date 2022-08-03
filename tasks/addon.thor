@@ -12,10 +12,19 @@ class AddOn < Thor
 
   source_root(File.expand_path('../templates/thor_task', File.dirname(__FILE__)))
 
+  Data = Struct.new(
+    :name,
+    :name_dash,
+    :name_snake,
+    :name_human,
+    :name_camel,
+    :addon_config_code,
+    keyword_init: true
+  )
   GemInfo = Struct.new(:name, :version, :description, keyword_init: true)
 
   attr_accessor :name
-  attr_accessor :addon_config_code
+  attr_accessor :data
 
   # method_option :from, :required => true
   desc 'new', 'Create a new Addon for Rails App Generator'
@@ -24,10 +33,7 @@ class AddOn < Thor
   method_option :depends_on, type: :string, desc: 'This AddOn depends on another AddOn/Gem. active_record is a common dependency'
   def new(name)
     self.name = name
-
-    code = [build_depends_on_code, build_required_gem_code].compact
-    code << '' if code.any?
-    self.addon_config_code = code.join("\n")
+    self.data = build_data(name)
 
     template('addon/addon', "lib/rails_app_generator/addons/#{name}.rb", force: options[:force])
   end
@@ -52,6 +58,36 @@ class AddOn < Thor
       gem_name = options[:gem] == 'gem' ? name : options[:gem]
 
       ::GemInfo.get(gem_name)
+    end
+
+    def build_data(name)
+      code = [build_depends_on_code, build_required_gem_code].compact
+      code << '' if code.any?
+  
+      Data.new(
+        name: name,
+        name_dash: dash(name),
+        name_snake: snake(name),
+        name_human: human(name),
+        name_camel: camel(name),
+        addon_config_code: code.join("\n")
+      )
+    end
+
+    def human(value)
+      Cmdlet::Case::Human.new.call(value)
+    end
+
+    def dash(value)
+      Cmdlet::Case::Dash.new.call(value)
+    end
+
+    def snake(value)
+      Cmdlet::Case::Snake.new.call(value)
+    end
+
+    def camel(value)
+      Cmdlet::Case::Camel.new.call(value)
     end
   end
 end

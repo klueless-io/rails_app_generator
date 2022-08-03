@@ -1,16 +1,23 @@
 # frozen_string_literal: true
 
+# NEW GEM ADDONS
+# lib/rails_app_generator/app_generator.rb
+#   class_option :add_<%= data.name_snake %>, type: :boolean, default: false
+#   add_if(:<%= data.name_snake %>)
+# lib/rails_app_generator/options/rails_options.rb
+#   register_option :add_<%= data.name_snake %>, type: :boolean, default: false
+
 module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
-    # Add <%= Thor::Util.camel_case(name) %> to rails application
-    class <%= Thor::Util.camel_case(name) %> < AddOn
-<%= addon_config_code %>
+    # Add <%= data.name_camel %> to rails application
+    class <%= data.name_camel %> < AddOn
+<%= data.addon_config_code %>
       def apply
-        # say 'Setting up <%= Thor::Util.camel_case(name)%>'
-        # template('<%= Thor::Util.snake_case(name)%>_template.rb', 'target/<%= Thor::Util.snake_case(name)%>.rb', force: true)
+        # say 'Setting up <%= data.name_camel %>'
+        # template('<%= data.name_snake%>_template.rb', 'target/<%= data.name_snake%>.rb', force: true)
         # template('app/javascript/stylesheets/components.scss')
-        # create_file('target/<%= Thor::Util.snake_case(name)%>.rb', 'put your content here')
+        # create_file('target/<%= data.name_snake%>.rb', 'put your content here')
         # directory 'app/template', 'app/target', force: true
         # empty_directory 'app/target'
         # inject_into_file('app/application.js', "some content")

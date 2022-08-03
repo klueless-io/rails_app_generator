@@ -1,0 +1,49 @@
+<h1>Honeybadger</h1>
+
+<h2>Make managing application errors a more pleasant experience.</h2>
+
+<p>Follow the instructions below and then click on products -> new</p>
+
+<%= link_to 'Products', products_path %>
+
+<h2>Instructions</h2>
+
+<p>If you want to see 404/500 HTML inplace of the debug routing error when in development then alter the following file</p>
+
+<b>config/environments/development.rb</b>
+<pre>
+  
+# config.consider_all_requests_local = true
+config.consider_all_requests_local = false
+  
+</pre>
+
+<p>If you want to see the exception message in Honeybadger then make sure then remove the comment<p>
+
+<b>config/honeybadger.yml</b>
+
+<pre>
+# report_data: true
+report_data: true
+</pre>
+
+<p>If you want to send the exception message to Honeybadger then make sure your remove development from the list<p>
+
+<pre>
+# development_environments:
+- test
+- development
+- cucumber
+</pre>
+
+<p>Test frrom the command line using</p>
+
+<pre>
+bundle exec honeybadger test
+</pre>
+
+<p>More information can be found at 
+  <a href="http://honeybadger.io/">http://honeybadger.io/</a> and
+  <a hreg="https://honeybadger.wistia.com/medias/l3cmyucx8f">https://honeybadger.wistia.com/medias/l3cmyucx8f</a>
+
+</p>

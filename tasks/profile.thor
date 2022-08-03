@@ -17,6 +17,7 @@ class Profile < Thor
     :name_dash,
     :name_snake,
     :name_human,
+    :name_camel,
     :description,
     :destination_root,
     :template_file,
@@ -44,18 +45,6 @@ class Profile < Thor
 
   # rubocop:disable Metrics/BlockLength
   no_commands do
-    def human(value)
-      Cmdlet::Case::Human.new.call(value)
-    end
-
-    def dash(value)
-      Cmdlet::Case::Dash.new.call(value)
-    end
-
-    def snake(value)
-      Cmdlet::Case::Snake.new.call(value)
-    end
-
     def profile_path(file)
       path = 'profiles'
       path = File.join(path, options[:variant]) if options[:variant]
@@ -72,18 +61,17 @@ class Profile < Thor
     def build_data(name)
       gi = gem_info(name)
 
-      name_dash = dash(name)
-      name_snake = snake(name)
       description = gi ? gi.description : 'Description goes here'
 
       Data.new(
         name: name,
-        name_dash: name_dash,
-        name_snake: name_snake,
-        name_human: human(name_dash),
+        name_dash: dash(name),
+        name_snake: snake(name),
+        name_human: human(name),
+        name_camel: camel(name),
         description: description,
         destination_root: build_destination_root,
-        template_file: build_template_file(name_snake)
+        template_file: build_template_file(snake(name))
       )
     end
 
@@ -108,6 +96,22 @@ class Profile < Thor
       gem_name = options[:gem] == 'gem' ? name : options[:gem]
 
       GemInfo.get(gem_name)
+    end
+
+    def human(value)
+      Cmdlet::Case::Human.new.call(value)
+    end
+
+    def dash(value)
+      Cmdlet::Case::Dash.new.call(value)
+    end
+
+    def snake(value)
+      Cmdlet::Case::Snake.new.call(value)
+    end
+
+    def camel(value)
+      Cmdlet::Case::Camel.new.call(value)
     end
   end
   # rubocop:enable Metrics/BlockLength

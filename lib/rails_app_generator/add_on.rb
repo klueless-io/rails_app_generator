@@ -43,6 +43,38 @@ module RailsAppGenerator
         klass = addon_name.nil? ? self.class : self.class.get(addon_name)
         Dependencies.new(klass, context).satisfied?
       end
+
+      def read_template(template_file)
+        path = find_in_source_paths(template_file)
+
+        File.read(path)
+      end
+
+      # Moves a file at given location, to another location. Both files are relative to the destination_root
+      #
+      # ==== Parameters
+      # path<String>:: source_path of the file to be moved (relative to destination_root)
+      # path<String>:: target_path of the file moving to (relative to destination_root)
+      # config<Hash>:: give :verbose => false to not log the status.
+      #
+      # ==== Example
+      #
+      #   move_file 'README', 'readme.md'
+      #   move_file 'config/xmen.sample.yml', 'config/xmen.yml
+      #
+      def move_file(source_path, target_path, config = {})
+        source = File.expand_path(source_path, destination_root)
+        target = File.expand_path(target_path, destination_root)
+        config.merge!({ verbose: true })
+
+        say_status :move_file_source, relative_to_original_destination_root(source), config.fetch(:verbose, true)
+        say_status :move_file_source, relative_to_original_destination_root(target), config.fetch(:verbose, true)
+
+        if !options[:pretend] && (File.exist?(source))
+          require "fileutils"
+          ::FileUtils.mv(source, target)
+        end
+      end
     end
 
     class << self
