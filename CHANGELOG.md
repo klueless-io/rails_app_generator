@@ -1,3 +1,11 @@
+## [0.1.13](https://github.com/klueless-io/rails_app_generator/compare/v0.1.12...v0.1.13) (2022-08-03)
+
+
+### Bug Fixes
+
+* add honeybadger addon ([5118957](https://github.com/klueless-io/rails_app_generator/commit/511895750056a8eff7bc41c0cc902ff81cfcd7d3))
+* add honeybadger addon + cops ([e105b47](https://github.com/klueless-io/rails_app_generator/commit/e105b47790c2a91a0a9ec0224f8a7aecb75067a9))
+
 ## [0.1.12](https://github.com/klueless-io/rails_app_generator/compare/v0.1.11...v0.1.12) (2022-08-02)
 
 
