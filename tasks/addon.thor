@@ -38,6 +38,7 @@ class AddOn < Thor
     template('addon/addon', "lib/rails_app_generator/addons/#{name}.rb", force: options[:force])
   end
 
+  # rubocop:disable Metrics/BlockLength
   no_commands do
     def build_depends_on_code
       return nil unless options[:depends_on]
@@ -63,7 +64,7 @@ class AddOn < Thor
     def build_data(name)
       code = [build_depends_on_code, build_required_gem_code].compact
       code << '' if code.any?
-  
+
       Data.new(
         name: name,
         name_dash: dash(name),
@@ -90,4 +91,5 @@ class AddOn < Thor
       Cmdlet::Case::Camel.new.call(value)
     end
   end
+  # rubocop:enable Metrics/BlockLength
 end

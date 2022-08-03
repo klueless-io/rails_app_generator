@@ -13,7 +13,6 @@ module RailsAppGenerator
 
         copy_file('honeybadger.sample.yml', 'config/honeybadger.sample.yml')
         append_to_file('config/locales/en.yml', read_template('en.yml'))
-
       end
     end
   end

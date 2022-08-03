@@ -302,6 +302,7 @@ module RailsAppGenerator
     #   # add(:rspec) if options[:testing_framework] == 'rspec'
     # end
 
+    # rubocop:disable Metrics/AbcSize
     def finish_template
       puts 'finish template'
 
@@ -323,6 +324,7 @@ module RailsAppGenerator
       # invoke :rails_customization
       super
     end
+    # rubocop:enable Metrics/AbcSize
 
     no_commands do
       # https://codingpackets.com/blog/rails-generators-cheat-sheet/
@@ -435,6 +437,7 @@ module RailsAppGenerator
       #   move_file 'README', 'readme.md'
       #   move_file 'config/xmen.sample.yml', 'config/xmen.yml
       #
+      # rubocop:disable Metrics/AbcSize
       def move_file(source_path, target_path, config = {})
         source = File.expand_path(source_path, destination_root)
         target = File.expand_path(target_path, destination_root)
@@ -443,11 +446,12 @@ module RailsAppGenerator
         say_status :move_file_source, relative_to_original_destination_root(source), config.fetch(:verbose, true)
         say_status :move_file_source, relative_to_original_destination_root(target), config.fetch(:verbose, true)
 
-        if !options[:pretend] && (File.exist?(source))
-          require "fileutils"
-          ::FileUtils.mv(source, target)
-        end
+        return unless !options[:pretend] && File.exist?(source)
+
+        require 'fileutils'
+        ::FileUtils.mv(source, target)
       end
+      # rubocop:enable Metrics/AbcSize
 
       # Local template path is handy when you want template files used when working with the --template flag
       attr_accessor :local_template_path
@@ -520,8 +524,8 @@ module RailsAppGenerator
 
       def addon_classes
         AddOns.constants
-          .map { |addon_klass_name| AddOns.const_get(addon_klass_name) }
-          .select { |klass| klass.is_a?(Class) && klass.respond_to?(:addon_name) }
+              .map { |addon_klass_name| AddOns.const_get(addon_klass_name) }
+              .select { |klass| klass.is_a?(Class) && klass.respond_to?(:addon_name) }
       end
 
       def active_addon_classes
@@ -529,7 +533,7 @@ module RailsAppGenerator
       end
 
       def addon_gemfile_entries
-        active_addon_classes.flat_map { |klass| klass.gem_entries }
+        active_addon_classes.flat_map(&:gem_entries)
       end
     end
 

@@ -21,6 +21,7 @@ module RailsAppGenerator
     def apply; end
 
     # list any methods that you want access to, but not to be exposed as a thor command
+    # rubocop:disable Metrics/BlockLength
     no_commands do
       def source_paths
         [
@@ -62,6 +63,7 @@ module RailsAppGenerator
       #   move_file 'README', 'readme.md'
       #   move_file 'config/xmen.sample.yml', 'config/xmen.yml
       #
+      # rubocop:disable Metrics/AbcSize
       def move_file(source_path, target_path, config = {})
         source = File.expand_path(source_path, destination_root)
         target = File.expand_path(target_path, destination_root)
@@ -70,12 +72,14 @@ module RailsAppGenerator
         say_status :move_file_source, relative_to_original_destination_root(source), config.fetch(:verbose, true)
         say_status :move_file_source, relative_to_original_destination_root(target), config.fetch(:verbose, true)
 
-        if !options[:pretend] && (File.exist?(source))
-          require "fileutils"
-          ::FileUtils.mv(source, target)
-        end
+        return unless !options[:pretend] && File.exist?(source)
+
+        require 'fileutils'
+        ::FileUtils.mv(source, target)
       end
+      # rubocop:enable Metrics/AbcSize
     end
+    # rubocop:enable Metrics/BlockLength
 
     class << self
       def apply(context = Context.new({}))
