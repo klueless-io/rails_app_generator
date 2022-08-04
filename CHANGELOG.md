@@ -1,3 +1,11 @@
+## [0.1.15](https://github.com/klueless-io/rails_app_generator/compare/v0.1.14...v0.1.15) (2022-08-04)
+
+
+### Bug Fixes
+
+* addon acts_as_list ([6b7e759](https://github.com/klueless-io/rails_app_generator/commit/6b7e759b1601300b7f616ced2a8dce27056bf781))
+* addon acts_as_list ([c88e583](https://github.com/klueless-io/rails_app_generator/commit/c88e58373833e5ab9685dd1ddf7dd4327ef7db8b))
+
 ## [0.1.14](https://github.com/klueless-io/rails_app_generator/compare/v0.1.13...v0.1.14) (2022-08-04)
 
 
