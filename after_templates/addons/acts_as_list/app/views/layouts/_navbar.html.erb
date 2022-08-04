@@ -1,6 +1,8 @@
 <header>
   <%= link_to 'Home', root_path %> |
   <%= link_to 'ToDo List', todo_lists_path %> |
-  <%= link_to 'ToDo Items', todo_items_path %>
+  <%= link_to 'ToDo Items', todo_items_path %> |
+  <%= link_to 'People', todo_items_path(todo_list_id: TodoList.find_by(name: 'people')) %> |
+  <%= link_to 'Jobs', todo_items_path(todo_list_id: TodoList.find_by(name: 'jobs')) %>
   <hr />
 </header>

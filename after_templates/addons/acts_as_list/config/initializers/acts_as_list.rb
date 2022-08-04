@@ -1,1 +1,0 @@
-# Custom initializer for rails application

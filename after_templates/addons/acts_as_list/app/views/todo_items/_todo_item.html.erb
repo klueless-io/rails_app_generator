@@ -1,0 +1,21 @@
+<tr>
+  <td>
+    <%= todo_item.task %>
+  </td>
+  <td>
+    <%= todo_item.position %>
+  </td>
+  <td>
+    <%= todo_item.todo_list.name %>
+  </td>
+  <td>
+    <%= link_to "Show", todo_item %> |
+    <%= link_to "Insert At #2", insert_at_todo_item_path(todo_item.id, **query_params) %> |
+    <%= link_to "Higher", move_higher_todo_item_path(todo_item.id, **query_params) %> |
+    <%= link_to "Lower", move_lower_todo_item_path(todo_item.id, **query_params) %> |
+    <%= link_to "Top", move_to_top_todo_item_path(todo_item.id, **query_params) %> |
+    <%= link_to "Bottom", move_to_bottom_todo_item_path(todo_item.id, **query_params) %> |
+    <%= link_to "Remove From List", remove_from_list_todo_item_path(todo_item.id, **query_params) %>
+  </td>
+</tr>
+
