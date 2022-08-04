@@ -51,7 +51,7 @@ class Profile < Thor
 
     copy_file('profile/db/seeds.rb'                                   , after_template_path('db/seeds.rb')                            , force: options[:force])
 
-    copy_file("profile/config/initializers/addon_name.rb"             , after_template_path("config/initializers/#{name}.rb")         , force: options[:force])
+    copy_file('profile/config/initializers/addon_name.rb'             , after_template_path("config/initializers/#{name}.rb")         , force: options[:force])
   end
 
   # rubocop:enable Metrics/AbcSize
