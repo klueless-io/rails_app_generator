@@ -59,8 +59,10 @@ module RailsAppGenerator
     register_option :add_shoulda                , type: :boolean, default: false
 
     # NEW GEM ADDONS
-    register_option :add_rails_html_sanitizer   , type: :boolean, default: false
+    register_option :add_acts_as_list           , type: :boolean, default: false
     register_option :add_honeybadger            , type: :boolean, default: false
+    register_option :add_rails_html_sanitizer   , type: :boolean, default: false
+    register_option :add_twilio_ruby            , type: :boolean, default: false
 
     # if options[:minimal]
     #   self.options = options.merge(

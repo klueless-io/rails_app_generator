@@ -1,0 +1,12 @@
+{
+  "args": {
+    "app_path": "twilio_ruby",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/addons"
+  },
+  "opts": {
+    "skip_git": true,
+    "skip_test": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/twilio_ruby/_.rb",
+    "add_twilio_ruby": true
+  }
+}

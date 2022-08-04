@@ -24,6 +24,7 @@ class Profile < Thor
     keyword_init: true
   )
 
+  attr_accessor :name
   attr_accessor :data
 
   desc 'new', 'Create a new Profile for testing Rails App Generator settings'
@@ -32,7 +33,8 @@ class Profile < Thor
   method_option :force, type: :boolean, default: false, desc: 'Overwrite existing files'
   # rubocop:disable Metrics/AbcSize
   def new(name)
-    @data = build_data(name)
+    self.name = snake(name)
+    self.data = build_data
 
     say "Creating profile #{name}"
     puts "Variant: #{options[:variant]}"
@@ -58,7 +60,7 @@ class Profile < Thor
       File.join(path, file)
     end
 
-    def build_data(name)
+    def build_data
       gi = gem_info(name)
 
       description = gi ? gi.description : 'Description goes here'
@@ -66,12 +68,12 @@ class Profile < Thor
       Data.new(
         name: name,
         name_dash: dash(name),
-        name_snake: snake(name),
+        name_snake: name,
         name_human: human(name),
         name_camel: camel(name),
         description: description,
         destination_root: build_destination_root,
-        template_file: build_template_file(snake(name))
+        template_file: build_template_file(name)
       )
     end
 

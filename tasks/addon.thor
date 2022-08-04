@@ -21,7 +21,6 @@ class AddOn < Thor
     :addon_config_code,
     keyword_init: true
   )
-  GemInfo = Struct.new(:name, :version, :description, keyword_init: true)
 
   attr_accessor :name
   attr_accessor :data
@@ -32,10 +31,10 @@ class AddOn < Thor
   method_option :force, type: :boolean, default: false, desc: 'Overwrite existing files'
   method_option :depends_on, type: :string, desc: 'This AddOn depends on another AddOn/Gem. active_record is a common dependency'
   def new(name)
-    self.name = name
-    self.data = build_data(name)
+    self.name = snake(name)
+    self.data = build_data
 
-    template('addon/addon', "lib/rails_app_generator/addons/#{name}.rb", force: options[:force])
+    template('addon/addon', "lib/rails_app_generator/addons/#{self.name}.rb", force: options[:force])
   end
 
   # rubocop:disable Metrics/BlockLength
@@ -61,7 +60,7 @@ class AddOn < Thor
       ::GemInfo.get(gem_name)
     end
 
-    def build_data(name)
+    def build_data
       code = [build_depends_on_code, build_required_gem_code].compact
       code << '' if code.any?
 

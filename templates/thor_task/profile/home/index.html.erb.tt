@@ -2,6 +2,12 @@
 
 <h2><%= data.description %></h2>
 
-<%%= link_to 'Products', products_path %> |
-<%%= link_to 'Posts', posts_path %> |
-<%%= link_to 'People', people_path %>
+<!-- 
+Add/Remove as needed
+-->
+
+<!--
+<= link_to 'Products', products_path %> |
+<= link_to 'Posts', posts_path %> |
+<= link_to 'People', people_path %>
+-->

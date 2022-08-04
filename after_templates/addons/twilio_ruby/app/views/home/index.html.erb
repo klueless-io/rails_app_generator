@@ -1,0 +1,27 @@
+<style>
+.alert { color: red; }
+.notice { color: green; }
+</style>
+
+<% flash.each do |type, msg| %>
+  <div class="<%= type%>"><%= msg %></div>
+<% end %>
+<% if flash.any? %>
+  <hr />
+<% end %>
+
+<h1>Twilio ruby</h1>
+
+<h2>The official library for communicating with the Twilio REST API, building TwiML, and generating Twilio JWT Capability Tokens</h2>
+
+<%= link_to 'Send SMS', home_send_sms_path %>
+<!-- 
+Add/Remove as needed
+-->
+
+<!--
+<= link_to 'Products', products_path %> |
+<= link_to 'Posts', posts_path %> |
+<= link_to 'People', people_path %>
+-->
+
