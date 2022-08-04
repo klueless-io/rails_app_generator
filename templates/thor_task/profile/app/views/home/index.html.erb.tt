@@ -1,0 +1,23 @@
+<style>
+.alert { color: red; }
+.notice { color: green; }
+</style>
+
+<%% flash.each do |type, msg| %><div class="<%%= type %>"><%%= msg %></div><%% end %>
+<%% if flash.any? %><hr /><%% end %>
+
+<h1><%= data.name_human %></h1>
+
+<h2><%= data.description %></h2>
+
+<!-- 
+Add/Remove as needed
+-->
+
+<!--
+<= link_to 'Some Action', home_some_action_path %>
+
+<= link_to 'Products', products_path %> |
+<= link_to 'Posts', posts_path %> |
+<= link_to 'People', people_path %>
+-->

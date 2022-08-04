@@ -12,6 +12,7 @@ AllCops:
     - "spec/samples/**/*"
     - "a/**/*"
     - "after_templates/**/*"
+    - "templates/**/*"
 
 Metrics/BlockLength:
   Exclude:

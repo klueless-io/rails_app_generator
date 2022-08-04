@@ -41,8 +41,10 @@ class Profile < Thor
 
     template('profile/profile.json', profile_path("#{data.name_dash}.json"), force: options[:force])
     template('profile/after_template.rb', after_template_path('_.rb'), force: options[:force])
-    template('profile/home/index.html.erb', after_template_path('home/index.html.erb'), force: options[:force])
+    template('profile/app/controllers/home_controller.rb', after_template_path('app/controllers/home_controller.rb'), force: options[:force])
+    template('profile/app/views/home/index.html.erb', after_template_path('app/views/home/index.html.erb'), force: options[:force])
   end
+
   # rubocop:enable Metrics/AbcSize
 
   # rubocop:disable Metrics/BlockLength
