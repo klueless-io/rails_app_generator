@@ -39,10 +39,19 @@ class Profile < Thor
     say "Creating profile #{name}"
     puts "Variant: #{options[:variant]}"
 
-    template('profile/profile.json', profile_path("#{data.name_dash}.json"), force: options[:force])
-    template('profile/after_template.rb', after_template_path('_.rb'), force: options[:force])
-    template('profile/app/controllers/home_controller.rb', after_template_path('app/controllers/home_controller.rb'), force: options[:force])
-    template('profile/app/views/home/index.html.erb', after_template_path('app/views/home/index.html.erb'), force: options[:force])
+    template('profile/profile.json'                                   , profile_path("#{data.name_dash}.json")                        , force: options[:force])
+    template('profile/after_template.rb'                              , after_template_path('_.rb')                                   , force: options[:force])
+    template('profile/app/controllers/home_controller.rb'             , after_template_path('app/controllers/home_controller.rb')     , force: options[:force])
+    template('profile/app/views/home/index.html.erb'                  , after_template_path('app/views/home/index.html.erb')          , force: options[:force])
+
+    copy_file('profile/app/views/layouts/_alerts.html.erb'            , after_template_path('app/views/layouts/_alerts.html.erb')     , force: options[:force])
+    copy_file('profile/app/views/layouts/_navbar.html.erb'            , after_template_path('app/views/layouts/_navbar.html.erb')     , force: options[:force])
+    copy_file('profile/app/views/layouts/_footer.html.erb'            , after_template_path('app/views/layouts/_footer.html.erb')     , force: options[:force])
+    copy_file('profile/app/views/layouts/application.html.erb'        , after_template_path('app/views/layouts/application.html.erb') , force: options[:force])
+
+    copy_file('profile/db/seeds.rb'                                   , after_template_path('db/seeds.rb')                            , force: options[:force])
+
+    copy_file("profile/config/initializers/addon_name.rb"             , after_template_path("config/initializers/#{name}.rb")         , force: options[:force])
   end
 
   # rubocop:enable Metrics/AbcSize

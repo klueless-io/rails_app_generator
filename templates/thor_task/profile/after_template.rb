@@ -15,7 +15,17 @@ route("root 'home#index'")
 
 force_copy
 
-copy_file 'home/index.html.erb', 'app/views/home/index.html.erb'
+copy_file 'app/controllers/home_controller.rb'            , 'app/controllers/home_controller.rb'
+copy_file 'app/views/home/index.html.erb'                 , 'app/views/home/index.html.erb'
+
+copy_file 'app/views/layouts/_alerts.html.erb'            , 'app/views/layouts/_alerts.html.erb'
+copy_file 'app/views/layouts/_navbar.html.erb'            , 'app/views/layouts/_navbar.html.erb'
+copy_file 'app/views/layouts/_footer.html.erb'            , 'app/views/layouts/_footer.html.erb'
+template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
+
+template  'db/seeds.rb'                                   , 'db/seeds.rb'
+
+copy_file 'config/initializers/<%= data.name_snake %>.rb' , 'config/initializers/<%= data.name_snake %>.rb'
 
 after_bundle do
   setup_db
