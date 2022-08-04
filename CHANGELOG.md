@@ -1,3 +1,10 @@
+## [0.1.14](https://github.com/klueless-io/rails_app_generator/compare/v0.1.13...v0.1.14) (2022-08-04)
+
+
+### Bug Fixes
+
+* add twilio addon ([2a70a12](https://github.com/klueless-io/rails_app_generator/commit/2a70a1216dc9d7475289a154f6c7b8c4a2a80403))
+
 ## [0.1.13](https://github.com/klueless-io/rails_app_generator/compare/v0.1.12...v0.1.13) (2022-08-03)
 
 
