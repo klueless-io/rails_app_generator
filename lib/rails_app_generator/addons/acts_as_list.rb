@@ -11,16 +11,7 @@ module RailsAppGenerator
         The class that has this specified needs to have a "position" column defined as an integer on the mapped database table.
       COMMENT
 
-      def apply
-        # say 'Setting up ActsAsList'
-        # template('acts_as_list_template.rb', 'target/acts_as_list.rb', force: true)
-        # template('app/javascript/stylesheets/components.scss')
-        # create_file('target/acts_as_list.rb', 'put your content here')
-        # directory 'app/template', 'app/target', force: true
-        # empty_directory 'app/target'
-        # inject_into_file('app/application.js', "some content")
-        # rails_command('tailwindcss:install')
-      end
+      def apply; end
     end
   end
 end

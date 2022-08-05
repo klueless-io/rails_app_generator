@@ -8,16 +8,12 @@ module RailsAppGenerator
     class_option :test                        , type: :string , default: 'rspec'
 
     # Gem                              Current  Latest   Requested  Groups
-    # acts_as_list                     0.9.19   1.0.4    ~> 0.9     default
-    # arel                             7.1.4    9.0.0
     # aws-partitions                   1.613.0  1.614.0
     # aws-sdk-cognitoidentityprovider  1.67.0   1.68.0
     # aws-sdk-core                     3.131.5  3.131.6
     # aws-sdk-personalize              1.42.0   1.43.0
     # aws-sdk-resources                3.136.0  3.137.0
     # aws-sdk-wafv2                    1.40.0   1.41.0
-    # bigdecimal                       1.4.4    3.1.2    ~> 1.4     development, test
-    # binding_of_caller                0.8.0    1.0.0    ~> 0.8     default
     # browser                          2.7.1    5.3.1    ~> 2.3     default
     # capistrano-bundler               1.6.0    2.1.0    ~> 1.2     development, test
     # capybara                         3.33.0   3.37.1   = 3.33.0   development, test
@@ -163,6 +159,7 @@ module RailsAppGenerator
 
     # NEW GEM ADDONS
     class_option :add_acts_as_list            , type: :boolean, default: false
+    class_option :add_faker                   , type: :boolean, default: false
     class_option :add_honeybadger             , type: :boolean, default: false
     class_option :add_rails_html_sanitizer    , type: :boolean, default: false
     class_option :add_twilio_ruby             , type: :boolean, default: false
@@ -299,12 +296,13 @@ module RailsAppGenerator
 
       add_if(:acts_as_list)
       add_if(:annotate)
-      add_if(:devise)
       add_if(:continuous_integration)
+      add_if(:devise)
       add_if(:factory_bot)
+      add_if(:faker)
+      add_if(:generators)
       add_if(:high_voltage)
       add_if(:honeybadger)
-      add_if(:generators)
       add_if(:lograge)
       add_if(:pundit)
       add_if(:rails_app_generator)
