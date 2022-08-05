@@ -61,6 +61,7 @@ module RailsAppGenerator
     # NEW GEM ADDONS
     register_option :add_acts_as_list           , type: :boolean, default: false
     register_option :add_browser                , type: :boolean, default: false
+    register_option :add_chartkick              , type: :boolean, default: false
     register_option :add_faker                  , type: :boolean, default: false
     register_option :add_honeybadger            , type: :boolean, default: false
     register_option :add_rails_html_sanitizer   , type: :boolean, default: false
