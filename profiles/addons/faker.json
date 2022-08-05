@@ -1,0 +1,12 @@
+{
+  "args": {
+    "app_path": "faker",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/addons"
+  },
+  "opts": {
+    "skip_git": true,
+    "skip_test": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/faker/_.rb",
+    "add_faker": true
+  }
+}
