@@ -1,3 +1,10 @@
+## [0.1.16](https://github.com/klueless-io/rails_app_generator/compare/v0.1.15...v0.1.16) (2022-08-05)
+
+
+### Bug Fixes
+
+* addon faker ([0c61f17](https://github.com/klueless-io/rails_app_generator/commit/0c61f17dbff15dcfc2f9d3851601cbdddde4d207))
+
 ## [0.1.15](https://github.com/klueless-io/rails_app_generator/compare/v0.1.14...v0.1.15) (2022-08-04)
 
 
