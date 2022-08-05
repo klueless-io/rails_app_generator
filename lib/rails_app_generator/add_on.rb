@@ -82,12 +82,23 @@ module RailsAppGenerator
     # rubocop:enable Metrics/BlockLength
 
     class << self
-      def apply(context = Context.new({}))
-        instance = new(context)
-        return unless instance.uses?
+      # attr_reader :before_bundle_callback
+      # attr_reader :after_bundle_callback
 
-        instance.apply
-      end
+      # def before_bundle(&block)
+      #   @before_bundle_callback = block
+      # end
+
+      # def after_bundle(&block)
+      #   @after_bundle_callback = block
+      # end
+
+      # def apply(context = Context.new({}))
+      #   instance = new(context)
+      #   return unless instance.uses?
+
+      #   instance.apply
+      # end
 
       def get(addon)
         addon = addon.to_s.capitalize.camelize

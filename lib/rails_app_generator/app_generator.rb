@@ -208,10 +208,17 @@ module RailsAppGenerator
       end
     end
 
+    attr_reader :addon_instances
+    # attr_reader :before_bundle_addon_callbacks
+    # attr_reader :after_bundle_addon_callbacks
+
     def initialize(*args)
       super
 
       @force_copy = false
+      @addon_instances = []
+      # @before_bundle_addon_callbacks = []
+      # @after_bundle_addon_callbacks = []
 
       # puts '----------------------------------------------------'
       # puts options
@@ -319,6 +326,13 @@ module RailsAppGenerator
       super
     end
     # rubocop:enable Metrics/AbcSize
+
+    def run_after_bundle_callbacks
+      addon_instances.select { |addon| addon.respond_to?(:before_bundle) }.each(&:before_bundle)
+      super
+      addon_instances.select { |addon| addon.respond_to?(:after_bundle) }.each(&:after_bundle)
+    end
+
 
     no_commands do
       # https://codingpackets.com/blog/rails-generators-cheat-sheet/
@@ -473,9 +487,22 @@ module RailsAppGenerator
           addon = addon.to_s.capitalize.camelize
           addon = "RailsAppGenerator::AddOns::#{addon}"
 
-          addon.constantize.apply(context)
+          addon_instance = addon.constantize.new(context)
+
+          if addon_instance.uses?
+            addon_instance.apply
+            @addon_instances << addon_instance
+          end
         end
       end
+
+      # def apply(context = Context.new({}))
+      #   instance = new(context)
+      #   return unless instance.uses?
+
+      #   instance.apply
+      # end
+
 
       def add_if(addon)
         add(addon) if active?(addon)
@@ -529,6 +556,14 @@ module RailsAppGenerator
       def addon_gemfile_entries
         active_addon_classes.flat_map(&:gem_entries)
       end
+
+      # def addon_before_bundle_callbacks
+      #   active_addon_classes.flat_map(&:before_bundle_callback).compact
+      # end
+
+      # def addon_after_bundle_callbacks
+      #   active_addon_classes.flat_map(&:after_bundle_callback).compact
+      # end
     end
 
     protected

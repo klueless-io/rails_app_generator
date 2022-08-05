@@ -23,6 +23,14 @@ module RailsAppGenerator
         # inject_into_file('app/application.js', "some content")
         # rails_command('tailwindcss:install')
       end
+
+      def before_bundle
+        # say 'Setting up <%= data.name_camel %> - before bundle install'
+      end
+
+      def after_bundle
+        # say 'Setting up <%= data.name_camel %> - after bundle install'
+      end
     end
   end
 end
