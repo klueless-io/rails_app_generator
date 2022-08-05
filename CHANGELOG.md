@@ -1,3 +1,10 @@
+## [0.1.17](https://github.com/klueless-io/rails_app_generator/compare/v0.1.16...v0.1.17) (2022-08-05)
+
+
+### Bug Fixes
+
+* addon browser ([a1fae1d](https://github.com/klueless-io/rails_app_generator/commit/a1fae1d3ee5e5ecabe53fb5ac60d8067477f39b1))
+
 ## [0.1.16](https://github.com/klueless-io/rails_app_generator/compare/v0.1.15...v0.1.16) (2022-08-05)
 
 
