@@ -159,6 +159,7 @@ module RailsAppGenerator
 
     # NEW GEM ADDONS
     class_option :add_acts_as_list            , type: :boolean, default: false
+    class_option :add_browser                 , type: :boolean, default: false
     class_option :add_faker                   , type: :boolean, default: false
     class_option :add_honeybadger             , type: :boolean, default: false
     class_option :add_rails_html_sanitizer    , type: :boolean, default: false
@@ -296,6 +297,7 @@ module RailsAppGenerator
 
       add_if(:acts_as_list)
       add_if(:annotate)
+      add_if(:browser)
       add_if(:continuous_integration)
       add_if(:devise)
       add_if(:factory_bot)
