@@ -10,8 +10,7 @@ module RailsAppGenerator
     class Faker < AddOn
       required_gem gem.version('faker', '2.22.0', 'Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.')
 
-      def apply
-      end
+      def apply; end
     end
   end
 end
