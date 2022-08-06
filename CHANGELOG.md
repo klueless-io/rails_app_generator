@@ -1,3 +1,10 @@
+## [0.1.25](https://github.com/klueless-io/rails_app_generator/compare/v0.1.24...v0.1.25) (2022-08-06)
+
+
+### Bug Fixes
+
+* addon mini_magick ([7897e60](https://github.com/klueless-io/rails_app_generator/commit/7897e60e6aaa63813135251f7337b0dab23525a5))
+
 ## [0.1.24](https://github.com/klueless-io/rails_app_generator/compare/v0.1.23...v0.1.24) (2022-08-06)
 
 
