@@ -67,6 +67,7 @@ module RailsAppGenerator
     register_option :add_hexapdf                , type: :boolean, default: false
     register_option :add_honeybadger            , type: :boolean, default: false
     register_option :add_rails_html_sanitizer   , type: :boolean, default: false
+    register_option :add_rest_client            , type: :boolean, default: false
     register_option :add_twilio_ruby            , type: :boolean, default: false
 
     # if options[:minimal]

@@ -19,9 +19,7 @@ module RailsAppGenerator
     # factory_bot_rails                5.2.0    6.2.0    = 5.2.0    development, test
     # guard-bundler                    2.2.1    3.0.0    = 2.2.1    development, test
     # guard-rubocop                    1.4.0    1.5.0    = 1.4.0    development, test
-    # hexapdf                          0.23.0   0.24.0   ~> 0.5     default
     # http-accept                      1.7.0    2.2.0
-    # k_log                            0.0.18   0.0.33   = 0.0.18   development, test
     # net-ssh                          6.1.0    7.0.1
     # oauth2                           1.4.10   2.0.6
     # omniauth-oauth2                  1.7.3    1.8.0
@@ -155,6 +153,7 @@ module RailsAppGenerator
     class_option :add_hexapdf                 , type: :boolean, default: false
     class_option :add_honeybadger             , type: :boolean, default: false
     class_option :add_rails_html_sanitizer    , type: :boolean, default: false
+    class_option :add_rest_client             , type: :boolean, default: false
     class_option :add_twilio_ruby             , type: :boolean, default: false
 
     class << self
@@ -311,6 +310,7 @@ module RailsAppGenerator
       add_if(:lograge)
       add_if(:pundit)
       add_if(:rails_app_generator)
+      add_if(:rest_client)
       add_if(:services)
       add_if(:shoulda)
       add_if(:sidekiq)
