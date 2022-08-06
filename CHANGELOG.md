@@ -1,3 +1,11 @@
+## [0.1.26](https://github.com/klueless-io/rails_app_generator/compare/v0.1.25...v0.1.26) (2022-08-06)
+
+
+### Bug Fixes
+
+* profile mini_magick ([f44b932](https://github.com/klueless-io/rails_app_generator/commit/f44b932df8fa7d817e2064d74af49476f82710d3))
+* profile mini_magick ([6935964](https://github.com/klueless-io/rails_app_generator/commit/69359640e7791691052aac1496b43aa1a5fd99c0))
+
 ## [0.1.25](https://github.com/klueless-io/rails_app_generator/compare/v0.1.24...v0.1.25) (2022-08-06)
 
 
