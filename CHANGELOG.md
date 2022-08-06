@@ -1,3 +1,11 @@
+## [0.1.28](https://github.com/klueless-io/rails_app_generator/compare/v0.1.27...v0.1.28) (2022-08-06)
+
+
+### Bug Fixes
+
+* refactor Addon ([0c9add2](https://github.com/klueless-io/rails_app_generator/commit/0c9add25a438130cd643466aa9a6af2cb9c50b03))
+* rename registered_option to class_option ([a12d802](https://github.com/klueless-io/rails_app_generator/commit/a12d80211038f0bef88f2a051026368e3dadbf6e))
+
 ## [0.1.27](https://github.com/klueless-io/rails_app_generator/compare/v0.1.26...v0.1.27) (2022-08-06)
 
 
