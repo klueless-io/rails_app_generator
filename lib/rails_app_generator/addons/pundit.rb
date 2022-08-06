@@ -6,7 +6,7 @@ module RailsAppGenerator
     # Add Pundit - Pundit provides a set of helpers which guide you in
     # leveraging regular Ruby classes and object oriented design patterns
     # to build a simple, robust and scalable authorization system.
-    class Pundit < Addon
+    class Pundit < RailsAppGenerator::Addon
       def apply
         directory 'app/policies', 'app/policies'
         template 'app/controllers/authorized_controller.rb.erb', 'app/controllers/authorized_controller.rb'

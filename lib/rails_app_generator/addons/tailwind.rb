@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add Tailwind CSS support to rails application
-    class Tailwind < Addon
+    class Tailwind < RailsAppGenerator::Addon
       depends_on :javascript
 
       def apply

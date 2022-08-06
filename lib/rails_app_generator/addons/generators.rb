@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add Rails Generator configuration to rails application
-    class Generators < Addon
+    class Generators < RailsAppGenerator::Addon
       def apply
         directory('lib/generators/rails/navigation', 'lib/generators/rails/navigation') if uses?(:views)
 

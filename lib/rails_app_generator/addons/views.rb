@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add default rails views
-    class Views < Addon
+    class Views < RailsAppGenerator::Addon
       depends_on :tailwind
 
       def apply

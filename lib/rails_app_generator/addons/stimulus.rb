@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Stimulus components
-    class Stimulus < Addon
+    class Stimulus < RailsAppGenerator::Addon
       depends_on :javascript
 
       def apply

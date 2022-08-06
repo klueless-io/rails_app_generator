@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RailsAppGenerator
-  # XXXX
+  # Base class for all add-ons
   class Addon < Rails::Generators::Base
     include Thor::Actions
     include Rails::Generators::Actions
@@ -82,29 +82,6 @@ module RailsAppGenerator
     # rubocop:enable Metrics/BlockLength
 
     class << self
-      # attr_reader :before_bundle_callback
-      # attr_reader :after_bundle_callback
-
-      # def before_bundle(&block)
-      #   @before_bundle_callback = block
-      # end
-
-      # def after_bundle(&block)
-      #   @after_bundle_callback = block
-      # end
-
-      # def apply(context = Context.new({}))
-      #   instance = new(context)
-      #   return unless instance.uses?
-
-      #   instance.apply
-      # end
-
-      def get(addon)
-        addon = addon.to_s.capitalize.camelize
-        "RailsAppGenerator::AddOns::#{addon}".constantize
-      end
-
       def addon_name
         name.demodulize.underscore.to_sym
       end

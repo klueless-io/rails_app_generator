@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add Devise authentication to rails application
-    class Devise < Addon
+    class Devise < RailsAppGenerator::Addon
       depends_on :active_record
 
       required_gem gem.version('devise', '4.8.1', 'Flexible authentication solution for Rails with Warden')

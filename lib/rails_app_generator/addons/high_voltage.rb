@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add High Voltage rails engine for static pages.
-    class HighVoltage < Addon
+    class HighVoltage < RailsAppGenerator::Addon
       depends_on :views
 
       def apply

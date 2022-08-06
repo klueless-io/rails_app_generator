@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add InlineSvg support to rails application
-    class InlineSvg < Addon
+    class InlineSvg < RailsAppGenerator::Addon
       depends_on :views
     end
   end

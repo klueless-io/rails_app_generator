@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add Honeybadger to rails application
-    class Honeybadger < Addon
+    class Honeybadger < RailsAppGenerator::Addon
       required_gem gem.version('honeybadger', '4.12.1', 'Make managing application errors a more pleasant experience.')
 
       def apply

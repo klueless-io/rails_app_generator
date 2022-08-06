@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add Foreman process management for applications with multiple components
-    class Foreman < Addon
+    class Foreman < RailsAppGenerator::Addon
       def apply
         template '.foreman.erb', '.foreman'
         template 'Procfile.erb', 'Procfile'

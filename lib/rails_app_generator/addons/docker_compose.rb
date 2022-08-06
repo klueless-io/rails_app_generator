@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add Docker Compose to rails application
-    class DockerCompose < Addon
+    class DockerCompose < RailsAppGenerator::Addon
       def apply
         template 'docker-compose.yml.erb', 'docker-compose.yml'
       end

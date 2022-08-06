@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add FactoryBot to rails application
-    class FactoryBot < Addon
+    class FactoryBot < RailsAppGenerator::Addon
       depends_on :active_record, :test
 
       def apply

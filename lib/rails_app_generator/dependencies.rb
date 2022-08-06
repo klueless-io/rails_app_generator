@@ -24,8 +24,8 @@ module RailsAppGenerator
 
       return true if @context.default_addons.include?(addon)
 
-      visited << addon
-      dependencies = Addon.get(addon).dependencies - visited
+      visited << RailsAppGenerator::Addon
+      dependencies = AddonUtil.get(addon).dependencies - visited
       dependencies.each do |dependency|
         return false unless dependencies_satisfied?(dependency, visited)
       end

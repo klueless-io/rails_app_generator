@@ -487,7 +487,7 @@ module RailsAppGenerator
 
           if addon_instance.uses?
             addon_instance.apply
-            @addon_instances << addon_instance
+            @addon_instances << RailsAppGenerator::Addon_instance
           end
         end
       end
@@ -526,7 +526,7 @@ module RailsAppGenerator
       def uses?(addon)
         return false unless active?(addon)
 
-        addon = Addon.get(addon)
+        addon = AddonUtil.get(addon)
         Dependencies.new(addon, context).satisfied?
       end
 
@@ -538,11 +538,11 @@ module RailsAppGenerator
         end
       end
 
-      def addon_classes
-        AddOns.constants
-              .map { |addon_klass_name| AddOns.const_get(addon_klass_name) }
-              .select { |klass| klass.is_a?(Class) && klass.respond_to?(:addon_name) }
-      end
+      # def addon_classes
+      #   AddOns.constants
+      #         .map { |addon_klass_name| AddOns.const_get(addon_klass_name) }
+      #         .select { |klass| klass.is_a?(Class) && klass.respond_to?(:addon_name) }
+      # end
 
       def active_addon_classes
         addon_classes.select { |klass| active?(klass.addon_name) }

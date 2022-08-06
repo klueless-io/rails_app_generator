@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add DotEnv to rails application
-    class Services < Addon
+    class Services < RailsAppGenerator::Addon
       def apply
         directory 'app/services', 'app/services'
       end
