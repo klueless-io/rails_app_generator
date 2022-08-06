@@ -1,0 +1,25 @@
+<h1>Mini magick</h1>
+
+<h2>Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick</h2>
+
+<table>
+<tr>
+<td>
+  <h3>Plain</h3>
+  <%= image_tag "data://image/png;base64,#{@img}" %>
+</td>
+<td>
+  <h3>Rotate</h3>
+  <%= image_tag "data://image/png;base64,#{@img_rotate}" %>
+</td>
+<td>
+  <h3>Negate</h3>
+  <%= image_tag "data://image/png;base64,#{@img_negate}" %>
+</td>
+<td>
+  <h3>Distort</h3>
+  <%= image_tag "data://image/png;base64,#{@img_distort}" %>
+</td>
+</tr>
+</table>
+
