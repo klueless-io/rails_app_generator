@@ -148,12 +148,13 @@ module RailsAppGenerator
     class_option :add_acts_as_list            , type: :boolean, default: false
     class_option :add_browser                 , type: :boolean, default: false
     class_option :add_chartkick               , type: :boolean, default: false
-    class_option :add_groupdate               , type: :boolean, default: false
     class_option :add_faker                   , type: :boolean, default: false
+    class_option :add_groupdate               , type: :boolean, default: false
     class_option :add_hexapdf                 , type: :boolean, default: false
-    class_option :add_honeybadger             , type: :boolean, default: false
-    class_option :add_rails_html_sanitizer    , type: :boolean, default: false
     class_option :add_httparty                , type: :boolean, default: false
+    class_option :add_honeybadger             , type: :boolean, default: false
+    class_option :add_mini_magick             , type: :boolean, default: false
+    class_option :add_rails_html_sanitizer    , type: :boolean, default: false
     class_option :add_twilio_ruby             , type: :boolean, default: false
 
     class << self
@@ -309,6 +310,7 @@ module RailsAppGenerator
       add_if(:high_voltage)
       add_if(:honeybadger)
       add_if(:lograge)
+      add_if(:mini_magick)
       add_if(:pundit)
       add_if(:rails_app_generator)
       add_if(:services)
