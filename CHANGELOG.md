@@ -1,3 +1,10 @@
+## [0.1.18](https://github.com/klueless-io/rails_app_generator/compare/v0.1.17...v0.1.18) (2022-08-06)
+
+
+### Bug Fixes
+
+* addon chartkick and groupdate ([f3dd173](https://github.com/klueless-io/rails_app_generator/commit/f3dd1736ac4e2cacb87314b9f5703a45a70e102c))
+
 ## [0.1.17](https://github.com/klueless-io/rails_app_generator/compare/v0.1.16...v0.1.17) (2022-08-05)
 
 
