@@ -160,6 +160,7 @@ module RailsAppGenerator
     class_option :add_acts_as_list            , type: :boolean, default: false
     class_option :add_browser                 , type: :boolean, default: false
     class_option :add_chartkick               , type: :boolean, default: false
+    class_option :add_groupdate               , type: :boolean, default: false
     class_option :add_faker                   , type: :boolean, default: false
     class_option :add_honeybadger             , type: :boolean, default: false
     class_option :add_rails_html_sanitizer    , type: :boolean, default: false
@@ -209,6 +210,7 @@ module RailsAppGenerator
     end
 
     attr_reader :addon_instances
+
     # attr_reader :before_bundle_addon_callbacks
     # attr_reader :after_bundle_addon_callbacks
 
@@ -308,6 +310,7 @@ module RailsAppGenerator
       add_if(:chartkick)
       add_if(:continuous_integration)
       add_if(:devise)
+      add_if(:groupdate)
       add_if(:factory_bot)
       add_if(:faker)
       add_if(:generators)
@@ -332,7 +335,6 @@ module RailsAppGenerator
       super
       addon_instances.select { |addon| addon.respond_to?(:after_bundle) }.each(&:after_bundle)
     end
-
 
     no_commands do
       # https://codingpackets.com/blog/rails-generators-cheat-sheet/
@@ -502,7 +504,6 @@ module RailsAppGenerator
 
       #   instance.apply
       # end
-
 
       def add_if(addon)
         add(addon) if active?(addon)

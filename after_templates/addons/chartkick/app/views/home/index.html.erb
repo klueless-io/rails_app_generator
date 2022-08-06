@@ -15,16 +15,24 @@
   It is built on top of the <a href="http://www.chartjs.org/">Chart.js</a> library.</p>
 
 <h3>Line Chart</h3><br /><br />
-<%= line_chart Person.group(:updated_at).count %>
+<%= line_chart Person.group_by_day(:updated_at).count %>
 
 <br /><br />
-<h3>Pie Chart</h3><br /><br />
-<%= pie_chart Yogurt.group(:flavor).count %>
-<% data = [['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]] %>
+<h3>Pie Chart via Query</h3><br /><br />
+<%= pie_chart Yogurt.group(:flavour).count %>
 
-<%= pie_chart data, library: { pieSliceText: 'value' } %>
+<h3>Pie Chart (Manual)</h3><br /><br />
+
+<%= pie_chart [
+    ['Task', 'Hours per Day'],
+    ['Work',11],
+    ['Eat',2],
+    ['Commute',2],
+    ['Watch TV', 2],
+    ['Sleep',7]
+  ]
+%>
+
+<h3>Column Chart</h3><br /><br />
+
+<%= column_chart Person.group_by_hour_of_day(:updated_at, format: "%l %P").count %>

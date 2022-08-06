@@ -8,6 +8,7 @@
     "skip_test": true,
     "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/chartkick/_.rb",
     "add_chartkick": true,
+    "add_groupdate": true,
     "add_faker": true
   }
 }

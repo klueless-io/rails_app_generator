@@ -34,8 +34,7 @@ module RailsAppGenerator
           import "chartkick"
           import "Chart.bundle"
         RUBY
-      end    
-
+      end
     end
   end
 end

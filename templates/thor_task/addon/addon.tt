@@ -14,7 +14,7 @@ module RailsAppGenerator
     class <%= data.name_camel %> < AddOn
 <%= data.addon_config_code %>
       def apply
-        # say 'Setting up <%= data.name_camel %>'
+        say 'Setting up <%= data.name_camel %>'
         # template('<%= data.name_snake%>_template.rb', 'target/<%= data.name_snake%>.rb', force: true)
         # template('app/javascript/stylesheets/components.scss')
         # create_file('target/<%= data.name_snake%>.rb', 'put your content here')
@@ -25,11 +25,11 @@ module RailsAppGenerator
       end
 
       def before_bundle
-        # say 'Setting up <%= data.name_camel %> - before bundle install'
+        say 'Setting up <%= data.name_camel %> - before bundle install'
       end
 
       def after_bundle
-        # say 'Setting up <%= data.name_camel %> - after bundle install'
+        say 'Setting up <%= data.name_camel %> - after bundle install'
       end
     end
   end

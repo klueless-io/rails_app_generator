@@ -13,5 +13,5 @@ flavours = %w[Blueberry Strawberry Banana Raspberry Apple Grape]
 end
 50.times do
   person = Person.create(name: Faker::Name.name)
-  person.update!(updated_at: Faker::Date.between(from: 20.days.ago, to: Date.today))
+  person.update!(updated_at: Faker::Time.between_dates(from: 20.days.ago, to: Date.today, period: :day) + 10.hours)
 end

@@ -36,6 +36,8 @@ def setup_db
   add_scaffold('yogurt', 'flavour')
   # add_scaffold('post', 'title', 'body:text')
   add_scaffold('people', 'name')
+  copy_file 'app/views/people/_person.html.erb'             , 'app/views/people/_person.html.erb'
+  
   # add_scaffold('product', 'name', 'price:integer')
 
   db_migrate
