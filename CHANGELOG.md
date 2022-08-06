@@ -1,3 +1,10 @@
+## [0.1.24](https://github.com/klueless-io/rails_app_generator/compare/v0.1.23...v0.1.24) (2022-08-06)
+
+
+### Bug Fixes
+
+* remove addon rest-client ([28ff657](https://github.com/klueless-io/rails_app_generator/commit/28ff65783e9d80c436bd291a9f1578e62e99f08c))
+
 ## [0.1.23](https://github.com/klueless-io/rails_app_generator/compare/v0.1.22...v0.1.23) (2022-08-06)
 
 
