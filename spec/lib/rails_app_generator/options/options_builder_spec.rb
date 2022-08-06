@@ -10,22 +10,22 @@ RSpec.describe RailsAppGenerator::OptionsBuilder do
     it { is_expected.to be_a described_class }
   end
 
-  describe '#BuildOptions.register_option' do
+  describe '#BuildOptions.class_option' do
     before { described_class.reset }
 
-    subject { described_class.registered_options }
+    subject { described_class.class_options }
 
     it { is_expected.to be_a Array }
 
     context 'when registering an option' do
       context 'when name only' do
-        before { described_class.register_option(:xmen) }
+        before { described_class.class_option(:xmen) }
 
         it { is_expected.to include(have_attributes(name: :xmen, desc: '', type: :string, default: '', required: false)) }
       end
 
       context 'when name and description' do
-        before { described_class.register_option(:xmen, desc: 'crazy xmen') }
+        before { described_class.class_option(:xmen, desc: 'crazy xmen') }
 
         it { is_expected.to include(have_attributes(name: :xmen, desc: 'crazy xmen', type: :string, default: '', required: false)) }
       end
@@ -39,12 +39,12 @@ RSpec.describe RailsAppGenerator::OptionsBuilder do
 
     it { is_expected.to eq({}) }
 
-    context 'when options have been registered' do
+    context 'when options have been class' do
       before do
-        described_class.register_option(:xmen)
-        described_class.register_option(:my_count, type: :integer, default: 53)
-        described_class.register_option(:active, type: :boolean, default: true)
-        described_class.register_option(:primary, type: :boolean)
+        described_class.class_option(:xmen)
+        described_class.class_option(:my_count, type: :integer, default: 53)
+        described_class.class_option(:active, type: :boolean, default: true)
+        described_class.class_option(:primary, type: :boolean)
       end
 
       context 'but not set' do
@@ -64,7 +64,7 @@ RSpec.describe RailsAppGenerator::OptionsBuilder do
 
     before do
       described_class.reset
-      described_class.register_option :skip_git, type: :boolean, default: false, desc: 'Skip .gitignore file'
+      described_class.class_option :skip_git, type: :boolean, default: false, desc: 'Skip .gitignore file'
     end
 
     context 'when opts is empty' do

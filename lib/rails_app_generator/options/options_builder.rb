@@ -13,37 +13,37 @@ module RailsAppGenerator
     end
 
     class << self
-      def registered_options
-        @registered_options ||= []
+      def class_options
+        @class_options ||= []
       end
 
-      def registered_options_lookup
-        @registered_options_lookup ||= {}
+      def class_options_lookup
+        @class_options_lookup ||= {}
       end
 
       # Future options are placeholders for options that are not yet implemented
       def future_option(name, **args); end
 
       # Register an option with the builder, this method has the same signature as Thor.
-      # 
+      #
       # This is so options can be used interchangeably between OptionsBuilder and Thor.
       def class_option(name, **args)
-        return if registered_options_lookup.key?(name)
+        return if class_options_lookup.key?(name)
 
         option = BuildOption.new(**{ name: name }.merge(args))
 
-        registered_options_lookup[name] = option
-        registered_options << option
+        class_options_lookup[name] = option
+        class_options << option
       end
 
       def reset
-        @registered_options = nil
-        @registered_options_lookup = nil
+        @class_options = nil
+        @class_options_lookup = nil
       end
     end
 
     def cmd_line_options
-      self.class.registered_options.map do |option|
+      self.class.class_options.map do |option|
         mapper = option.mapper
         value = options[option.name]
         mapper.map(option.name, value)
@@ -60,7 +60,7 @@ module RailsAppGenerator
     private
 
     def default_options
-      self.class.registered_options.to_h { |option| [option.name, option.default] }
+      self.class.class_options.to_h { |option| [option.name, option.default] }
     end
   end
 end
