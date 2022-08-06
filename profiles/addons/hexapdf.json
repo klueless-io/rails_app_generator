@@ -1,0 +1,13 @@
+{
+  "args": {
+    "app_path": "hexapdf",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/addons"
+  },
+  "opts": {
+    "skip_git": true,
+    "skip_test": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/hexapdf/_.rb",
+    "add_hexapdf": true,
+    "add_faker": true    
+  }
+}

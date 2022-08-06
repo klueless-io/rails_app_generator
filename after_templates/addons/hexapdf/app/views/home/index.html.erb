@@ -1,0 +1,11 @@
+<style>
+.alert { color: red; }
+.notice { color: green; }
+</style>
+
+<% flash.each do |type, msg| %><div class="<%= type %>"><%= msg %></div><% end %>
+<% if flash.any? %><hr /><% end %>
+
+<h1>Hexapdf</h1>
+
+<h2>HexaPDF is a pure Ruby library with an accompanying application for working with PDF files.</h2>
