@@ -34,6 +34,16 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        todo(title: 'add addon - groupdate')
+        todo(title: 'add addon - chartkick')
+        todo(title: 'add addon - browser')
+        todo(title: 'add addon - faker')
+        todo(title: 'add addon - acts_as_list')
+        todo(title: 'add addon - twilio')
+        todo(title: 'add addon - honeybadger')
+
+        
+        todo(title: 'add profile - rails-html-sanitizer')
         todo(title: 'add profile - tailwind-emulating-bootstrap')
         todo(title: 'add profile - tailwind-hotwire-form-search')
         todo(title: 'add profile - tailwind-hotwire-form')
