@@ -1,3 +1,11 @@
+## [0.1.21](https://github.com/klueless-io/rails_app_generator/compare/v0.1.20...v0.1.21) (2022-08-06)
+
+
+### Bug Fixes
+
+* addon hexapdf progress ([631e589](https://github.com/klueless-io/rails_app_generator/commit/631e5897c9dd7bcdbb9a8c857b9a62c251213fa6))
+* addon hexapdf progress ([b2bb9e5](https://github.com/klueless-io/rails_app_generator/commit/b2bb9e5855a24a41fdddcd553ce970481bc57e66))
+
 ## [0.1.20](https://github.com/klueless-io/rails_app_generator/compare/v0.1.19...v0.1.20) (2022-08-06)
 
 
