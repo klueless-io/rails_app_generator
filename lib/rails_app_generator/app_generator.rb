@@ -153,7 +153,7 @@ module RailsAppGenerator
     class_option :add_hexapdf                 , type: :boolean, default: false
     class_option :add_honeybadger             , type: :boolean, default: false
     class_option :add_rails_html_sanitizer    , type: :boolean, default: false
-    class_option :add_rest_client             , type: :boolean, default: false
+    class_option :add_httparty                , type: :boolean, default: false
     class_option :add_twilio_ruby             , type: :boolean, default: false
 
     class << self
@@ -305,12 +305,12 @@ module RailsAppGenerator
       add_if(:faker)
       add_if(:generators)
       add_if(:hexapdf)
+      add_if(:httparty)
       add_if(:high_voltage)
       add_if(:honeybadger)
       add_if(:lograge)
       add_if(:pundit)
       add_if(:rails_app_generator)
-      add_if(:rest_client)
       add_if(:services)
       add_if(:shoulda)
       add_if(:sidekiq)
