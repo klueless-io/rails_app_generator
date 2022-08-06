@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add RSpec unit testing support to rails application
-    class Rspec < AddOn
+    class Rspec < Addon
       depends_on :test
 
       def apply

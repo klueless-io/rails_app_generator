@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add DotEnv to rails application
-    class Dotenv < AddOn
+    class Dotenv < Addon
       def apply
         template '.env.development.erb', '.env.development'
       end

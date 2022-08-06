@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add Chartkick to rails application
-    class Chartkick < AddOn
+    class Chartkick < Addon
       required_gem gem.version('chartkick', '4.2.1', 'Create beautiful JavaScript charts with one line of Ruby')
 
       def apply; end

@@ -526,7 +526,7 @@ module RailsAppGenerator
       def uses?(addon)
         return false unless active?(addon)
 
-        addon = AddOn.get(addon)
+        addon = Addon.get(addon)
         Dependencies.new(addon, context).satisfied?
       end
 

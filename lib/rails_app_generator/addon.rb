@@ -2,7 +2,7 @@
 
 module RailsAppGenerator
   # XXXX
-  class AddOn < Rails::Generators::Base
+  class Addon < Rails::Generators::Base
     include Thor::Actions
     include Rails::Generators::Actions
     include Rails::Generators::AppName

@@ -25,12 +25,13 @@ require 'rails_app_generator/options/options_builder'
 require 'rails_app_generator/options/rails_options'
 require 'rails_app_generator/context'
 require 'rails_app_generator/dependencies'
-require 'rails_app_generator/add_on'
-Dir[File.join(__dir__, 'rails_app_generator', 'addons', '*.rb')].sort.each { |file| require file }
+require 'rails_app_generator/addon'
 require 'rails_app_generator/formatted_gem_entry'
 require 'rails_app_generator/app_builder'
 require 'rails_app_generator/app_generator'
 require 'rails_app_generator/starter'
+
+Dir[File.join(__dir__, 'rails_app_generator', 'addons', '*.rb')].sort.each { |file| require file }
 
 module RailsAppGenerator
   # raise RailsAppGenerator::Error, 'Sample message'

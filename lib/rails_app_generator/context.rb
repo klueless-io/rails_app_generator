@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RailsAppGenerator
-  # Context passes
+  # Context stores the template folder and options
   class Context
     attr_reader :rails_template_path
     attr_reader :rails_override_template_path

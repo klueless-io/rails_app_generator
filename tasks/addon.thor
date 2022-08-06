@@ -6,8 +6,8 @@ require 'net/http'
 require 'json'
 require_relative 'gem_info'
 
-# Thor task to create a new AddOn for Rails App Generator
-class AddOn < Thor
+# Thor task to create a new Addon for Rails App Generator
+class Addon < Thor
   include Thor::Actions
 
   source_root(File.expand_path('../templates/thor_task', File.dirname(__FILE__)))
@@ -27,9 +27,9 @@ class AddOn < Thor
 
   # method_option :from, :required => true
   desc 'new', 'Create a new Addon for Rails App Generator'
-  method_option :gem  , type: :string, default: nil, desc: 'Add required_gem helper to the AddOn. Gem name is looked up to find version and description'
+  method_option :gem  , type: :string, default: nil, desc: 'Add required_gem helper to the Addon. Gem name is looked up to find version and description'
   method_option :force, type: :boolean, default: false, desc: 'Overwrite existing files'
-  method_option :depends_on, type: :string, desc: 'This AddOn depends on another AddOn/Gem. active_record is a common dependency'
+  method_option :depends_on, type: :string, desc: 'This Addon depends on another Addon/Gem. active_record is a common dependency'
   def new(name)
     self.name = snake(name)
     self.data = build_data

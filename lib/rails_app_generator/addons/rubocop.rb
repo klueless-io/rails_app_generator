@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add Rubocop to rails application
-    class Rubocop < AddOn
+    class Rubocop < Addon
       def apply
         template '.rubocop.yml.erb', '.rubocop.yml'
       end

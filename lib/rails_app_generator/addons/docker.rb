@@ -4,7 +4,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add Docker to rails application
-    class Docker < AddOn
+    class Docker < Addon
       def apply
         template 'Dockerfile.erb', 'Dockerfile'
         template '.dockerignore.erb', '.dockerignore'

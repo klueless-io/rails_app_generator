@@ -11,7 +11,7 @@ module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns
     # Add <%= data.name_camel %> to rails application
-    class <%= data.name_camel %> < AddOn
+    class <%= data.name_camel %> < Addon
 <%= data.addon_config_code %>
       def apply
         say 'Setting up <%= data.name_camel %>'
