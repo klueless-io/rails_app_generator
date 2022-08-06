@@ -557,14 +557,6 @@ module RailsAppGenerator
       def addon_gemfile_entries
         active_addon_classes.flat_map(&:gem_entries)
       end
-
-      # def addon_before_bundle_callbacks
-      #   active_addon_classes.flat_map(&:before_bundle_callback).compact
-      # end
-
-      # def addon_after_bundle_callbacks
-      #   active_addon_classes.flat_map(&:after_bundle_callback).compact
-      # end
     end
 
     protected
