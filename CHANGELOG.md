@@ -1,3 +1,11 @@
+## [0.1.22](https://github.com/klueless-io/rails_app_generator/compare/v0.1.21...v0.1.22) (2022-08-06)
+
+
+### Bug Fixes
+
+* addon hexapdf ([0b99dde](https://github.com/klueless-io/rails_app_generator/commit/0b99dde1e2609c12c1235b4a9c73e683785c3eb6))
+* addon rest-client ([ed3a426](https://github.com/klueless-io/rails_app_generator/commit/ed3a42669ae9707fa2713f767fcda990346bed5e))
+
 ## [0.1.21](https://github.com/klueless-io/rails_app_generator/compare/v0.1.20...v0.1.21) (2022-08-06)
 
 
