@@ -1,0 +1,12 @@
+{
+  "args": {
+    "app_path": "httparty",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/addons"
+  },
+  "opts": {
+    "skip_git": true,
+    "skip_test": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/httparty/_.rb",
+    "add_httparty": true
+  }
+}

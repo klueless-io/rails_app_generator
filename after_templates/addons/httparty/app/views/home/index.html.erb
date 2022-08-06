@@ -1,0 +1,11 @@
+<style>
+.alert { color: red; }
+.notice { color: green; }
+</style>
+
+<% flash.each do |type, msg| %><div class="<%= type %>"><%= msg %></div><% end %>
+<% if flash.any? %><hr /><% end %>
+
+<h1>Httparty</h1>
+
+<h2>Makes http fun! Also, makes consuming restful web services dead easy.</h2>
