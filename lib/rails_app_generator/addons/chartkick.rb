@@ -7,8 +7,7 @@ module RailsAppGenerator
     class Chartkick < AddOn
       required_gem gem.version('chartkick', '4.2.1', 'Create beautiful JavaScript charts with one line of Ruby')
 
-      def apply
-      end
+      def apply; end
 
       def after_bundle
         append_to_file('config/importmap.rb', <<~RUBY)

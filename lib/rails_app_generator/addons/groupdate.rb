@@ -8,8 +8,7 @@ module RailsAppGenerator
       required_gem gem.version('groupdate', '6.1.0', 'The simplest way to group temporal data')
 
       # NOTE: in the examples, the Groupdate gem is used in conjunction with Chartkick.
-      def apply
-      end
+      def apply; end
     end
   end
 end
