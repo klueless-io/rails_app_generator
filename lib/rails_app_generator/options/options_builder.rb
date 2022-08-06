@@ -24,7 +24,10 @@ module RailsAppGenerator
       # Future options are placeholders for options that are not yet implemented
       def future_option(name, **args); end
 
-      def register_option(name, **args)
+      # Register an option with the builder, this method has the same signature as Thor.
+      # 
+      # This is so options can be used interchangeably between OptionsBuilder and Thor.
+      def class_option(name, **args)
         return if registered_options_lookup.key?(name)
 
         option = BuildOption.new(**{ name: name }.merge(args))
@@ -60,32 +63,4 @@ module RailsAppGenerator
       self.class.registered_options.to_h { |option| [option.name, option.default] }
     end
   end
-
-  # opts = [
-  #   "--skip-namespace",
-  #   "--skip-collision-check",
-  #   "--skip-git",
-  #   "--skip-keeps",
-  #   "--skip-action-mailer",
-  #   "--skip-action-mailbox",
-  #   "--skip-action-text",
-  #   "--skip-active-record",
-  #   "--skip-active-job",
-  #   "--skip-active-storage",
-  #   "--skip-action-cable",
-  #   "--skip-asset-pipeline",
-  #   "--skip-javascript",
-  #   "--skip-hotwire",
-  #   "--skip-jbuilder",
-  #   "--skip-test",
-  #   "--skip-system-test",
-  #   "--skip-bootsnap",
-  #   "--skip-bundle"
-  # ]
-
-  # opts = [
-  #   "--skip-git",
-  #   "--skip-test",
-  #   "--skip-bundle"
-  # ]
 end

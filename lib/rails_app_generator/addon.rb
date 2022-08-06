@@ -41,7 +41,7 @@ module RailsAppGenerator
         return false  if options["skip_#{addon_name}".to_sym]
         return true   if context.default_addons.include?(addon_name)
 
-        klass = addon_name.nil? ? self.class : self.class.get(addon_name)
+        klass = addon_name.nil? ? self.class : AddonUtil.get(addon_name)
         Dependencies.new(klass, context).satisfied?
       end
 

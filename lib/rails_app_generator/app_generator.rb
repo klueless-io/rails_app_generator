@@ -487,17 +487,10 @@ module RailsAppGenerator
 
           if addon_instance.uses?
             addon_instance.apply
-            @addon_instances << RailsAppGenerator::Addon_instance
+            @addon_instances << addon_instance
           end
         end
       end
-
-      # def apply(context = Context.new({}))
-      #   instance = new(context)
-      #   return unless instance.uses?
-
-      #   instance.apply
-      # end
 
       def add_if(addon)
         add(addon) if active?(addon)
@@ -538,14 +531,8 @@ module RailsAppGenerator
         end
       end
 
-      # def addon_classes
-      #   AddOns.constants
-      #         .map { |addon_klass_name| AddOns.const_get(addon_klass_name) }
-      #         .select { |klass| klass.is_a?(Class) && klass.respond_to?(:addon_name) }
-      # end
-
       def active_addon_classes
-        addon_classes.select { |klass| active?(klass.addon_name) }
+        AddonUtil.classes.select { |klass| active?(klass.addon_name) }
       end
 
       def addon_gemfile_entries
