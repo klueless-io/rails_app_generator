@@ -1,3 +1,10 @@
+## [0.1.27](https://github.com/klueless-io/rails_app_generator/compare/v0.1.26...v0.1.27) (2022-08-06)
+
+
+### Bug Fixes
+
+* add addon_util and specs ([55e96be](https://github.com/klueless-io/rails_app_generator/commit/55e96bef66e05f33c7c1c1347fd04ff70166d352))
+
 ## [0.1.26](https://github.com/klueless-io/rails_app_generator/compare/v0.1.25...v0.1.26) (2022-08-06)
 
 
