@@ -25,8 +25,6 @@ template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/a
 
 template  'db/seeds.rb'                                   , 'db/seeds.rb'
 
-copy_file 'config/initializers/<%= data.name_snake %>.rb' , 'config/initializers/<%= data.name_snake %>.rb'
-
 after_bundle do
   setup_db
 end

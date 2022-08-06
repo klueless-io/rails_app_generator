@@ -8,27 +8,17 @@ module RailsAppGenerator
     class_option :test                        , type: :string , default: 'rspec'
 
     # Gem                              Current  Latest   Requested  Groups
-    # aws-partitions                   1.613.0  1.614.0
-    # aws-sdk-cognitoidentityprovider  1.67.0   1.68.0
-    # aws-sdk-core                     3.131.5  3.131.6
-    # aws-sdk-personalize              1.42.0   1.43.0
-    # aws-sdk-resources                3.136.0  3.137.0
-    # aws-sdk-wafv2                    1.40.0   1.41.0
+    # aws-sdk
     # capistrano-bundler               1.6.0    2.1.0    ~> 1.2     development, test
     # capybara                         3.33.0   3.37.1   = 3.33.0   development, test
-    # chartkick                        2.3.5    4.2.1    ~> 2.3     default
-    # childprocess                     3.0.0    4.1.0
     # clamby                           1.6.6    1.6.8    = 1.6.6    default
     # createsend                       5.1.1    6.0.0    ~> 5.1     default
     # database_cleaner                 1.7.0    2.0.1    = 1.7.0    development, test
     # erubi                            1.10.0   1.11.0
     # factory_bot                      5.2.0    6.2.1
     # factory_bot_rails                5.2.0    6.2.0    = 5.2.0    development, test
-    # faker                            1.9.6    2.22.0   ~> 1.7     default
-    # groupdate                        4.3.0    6.1.0    ~> 4.1     default
     # guard-bundler                    2.2.1    3.0.0    = 2.2.1    development, test
     # guard-rubocop                    1.4.0    1.5.0    = 1.4.0    development, test
-    # hashie                           3.6.0    5.0.0
     # hexapdf                          0.23.0   0.24.0   ~> 0.5     default
     # http-accept                      1.7.0    2.2.0
     # k_log                            0.0.18   0.0.33   = 0.0.18   development, test
