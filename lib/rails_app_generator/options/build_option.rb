@@ -6,17 +6,12 @@ module RailsAppGenerator
   # This class maps closely (but not exactly) to Thor's options
   # The pattern is not exactly the same, it is easy to map the options
   # you need from other generators such as: railties/lib/rails/generators/app_base.rb
-  #
-  # @example
-  # class_option    :skip_git, type: :boolean, default: false, desc: "Skip .gitignore file"
-  # becomes
-  # register_option :skip_git, type: :boolean, default: false, desc: "Skip .gitignore file"
   class BuildOption
-    attr_reader :name, :desc, :type, :default, :required, :mapper
+    attr_reader :name, :description, :type, :default, :required, :mapper
 
-    def initialize(**args)
-      @name = args[:name]
-      @desc = args[:desc] || ''
+    def initialize(name, **args)
+      @name = name
+      @description = args[:description] || ''
       @type = args[:type] || :string
       @required = args.fetch(:required, false)
       @default = args[:default] || sane_default
@@ -26,6 +21,16 @@ module RailsAppGenerator
     end
 
     def cmd_option(value); end
+
+    def to_h
+      {
+        name: name,
+        description: description,
+        type: type,
+        default: default,
+        required: required,
+      }
+    end
 
     private
 

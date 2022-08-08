@@ -7,6 +7,7 @@
     "skip_git": true,
     "skip_test": true,
     "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/mini_magick/_.rb",
-    "add_mini_magick": true
+    "add_mini_magick": true,
+    "force": true
   }
 }

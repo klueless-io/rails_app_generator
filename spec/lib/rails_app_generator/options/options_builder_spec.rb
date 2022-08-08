@@ -10,7 +10,7 @@ RSpec.describe RailsAppGenerator::OptionsBuilder do
     it { is_expected.to be_a described_class }
   end
 
-  describe '#BuildOptions.class_option' do
+  describe '#BuildOptions.class_options' do
     before { described_class.reset }
 
     subject { described_class.class_options }
@@ -21,13 +21,13 @@ RSpec.describe RailsAppGenerator::OptionsBuilder do
       context 'when name only' do
         before { described_class.class_option(:xmen) }
 
-        it { is_expected.to include(have_attributes(name: :xmen, desc: '', type: :string, default: '', required: false)) }
+        it { is_expected.to include(have_attributes(name: :xmen, description: '', type: :string, default: '', required: false)) }
       end
 
       context 'when name and description' do
-        before { described_class.class_option(:xmen, desc: 'crazy xmen') }
+        before { described_class.class_option(:xmen, description: 'crazy xmen') }
 
-        it { is_expected.to include(have_attributes(name: :xmen, desc: 'crazy xmen', type: :string, default: '', required: false)) }
+        it { is_expected.to include(have_attributes(name: :xmen, description: 'crazy xmen', type: :string, default: '', required: false)) }
       end
     end
   end
@@ -39,7 +39,7 @@ RSpec.describe RailsAppGenerator::OptionsBuilder do
 
     it { is_expected.to eq({}) }
 
-    context 'when options have been class' do
+    context 'when options added via class_option' do
       before do
         described_class.class_option(:xmen)
         described_class.class_option(:my_count, type: :integer, default: 53)
@@ -64,7 +64,7 @@ RSpec.describe RailsAppGenerator::OptionsBuilder do
 
     before do
       described_class.reset
-      described_class.class_option :skip_git, type: :boolean, default: false, desc: 'Skip .gitignore file'
+      described_class.class_option :skip_git, type: :boolean, default: false, description: 'Skip .gitignore file'
     end
 
     context 'when opts is empty' do

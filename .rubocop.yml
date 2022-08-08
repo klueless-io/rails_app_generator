@@ -19,7 +19,7 @@ Metrics/BlockLength:
     - "**/spec/**/*"
     - "*.gemspec"
     - "lib/rails_app_generator/app_generator.rb"
-  IgnoredMethods:
+  AllowedMethods:
     - configure
     - context
     - define

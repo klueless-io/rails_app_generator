@@ -22,6 +22,8 @@ elsif first == 'diff'
 elsif first == 'new'
   RailsAppGenerator::AppGenerator.start(ARGV[1..], destination_root: '/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag')
 else
+  require 'rails_app_generator/rag_initializer'
+
   fallback_profile_path = File.expand_path("#{Pathname.new(__FILE__).dirname}/../profiles")
   args = ['profile'] + ARGV + ["--fallback-profile-path=#{fallback_profile_path}"]
 

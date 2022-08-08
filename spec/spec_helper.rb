@@ -7,6 +7,7 @@ require 'simplecov'
 SimpleCov.start
 
 require 'rails_app_generator'
+require 'rails_app_generator/rag_initializer'
 
 Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
 

@@ -21,33 +21,73 @@ module RailsAppGenerator
         @class_options_lookup ||= {}
       end
 
-      # Future options are placeholders for options that are not yet implemented
-      def future_option(name, **args); end
-
       # Register an option with the builder, this method has the same signature as Thor.
       #
       # This is so options can be used interchangeably between OptionsBuilder and Thor.
       def class_option(name, **args)
-        return if class_options_lookup.key?(name)
+        option = BuildOption.new(name, args)
 
-        option = BuildOption.new(**{ name: name }.merge(args))
+        add_class_option(option)
+      end
 
-        class_options_lookup[name] = option
+      def add_class_option(option)
+        if class_options_lookup.key?(option.name)
+          # raise ArgumentError, "Option #{option.name} already registered"
+          puts "Option #{option.name} already registered"
+          return
+        end
+
+        class_options_lookup[option.name.to_sym] = option
         class_options << option
+      end
+
+      def add_thor_class_option(thor_option)
+        args = {
+          description: thor_option.description,
+          type: thor_option.type,
+          default: thor_option.default,
+          required: thor_option.required
+        }
+        option = BuildOption.new(thor_option.name, args)
+
+        add_class_option(option)
       end
 
       def reset
         @class_options = nil
         @class_options_lookup = nil
       end
+
+      def to_h
+        { 
+          class_option_keys: class_options.map(&:name),
+          class_options: class_options.map(&:to_h),
+        }
+      end
     end
 
     def cmd_line_options
-      self.class.class_options.map do |option|
+      available_options = options.clone
+
+      result = self.class.class_options.map do |option|
         mapper = option.mapper
-        value = options[option.name]
+        key = option.name.to_sym
+        value = options[key]
+        available_options.delete(key)
+        # if available_options.delete(option.name.to_sym)
+        #   puts "option IS  registered: #{option.name}"
+        # else
+        #   puts "option not registered: #{option.name}"
+        # end
+
         mapper.map(option.name, value)
       end.reject(&:blank?)
+
+      return result if available_options.empty?
+
+      puts "options not registered: #{available_options.keys.join(', ')}"
+      result
+      # raise 'Unknown options'
     end
 
     def debug
@@ -57,10 +97,16 @@ module RailsAppGenerator
       puts cmd_line_options
     end
 
+    def to_h
+      { 
+        options: options
+      }
+    end
+
     private
 
     def default_options
-      self.class.class_options.to_h { |option| [option.name, option.default] }
+      self.class.class_options.to_h { |option| [option.name.to_sym, option.default] }
     end
   end
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# require 'pry'
+require 'pry'
 
 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
 #

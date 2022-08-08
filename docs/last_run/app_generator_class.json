@@ -1,0 +1,398 @@
+{
+  "class_option_keys": [
+    "skip_namespace",
+    "skip_collision_check",
+    "force",
+    "pretend",
+    "quiet",
+    "skip",
+    "ruby",
+    "template",
+    "database",
+    "skip_git",
+    "skip_keeps",
+    "skip_action_mailer",
+    "skip_action_mailbox",
+    "skip_action_text",
+    "skip_active_record",
+    "skip_active_job",
+    "skip_active_storage",
+    "skip_action_cable",
+    "skip_asset_pipeline",
+    "asset_pipeline",
+    "skip_javascript",
+    "skip_hotwire",
+    "skip_jbuilder",
+    "skip_test",
+    "skip_system_test",
+    "skip_bootsnap",
+    "dev",
+    "edge",
+    "main",
+    "rc",
+    "no_rc",
+    "help",
+    "version",
+    "api",
+    "minimal",
+    "javascript",
+    "css",
+    "skip_bundle",
+    "add_acts_as_list",
+    "add_browser",
+    "add_chartkick",
+    "add_faker",
+    "add_groupdate",
+    "add_hexapdf",
+    "add_httparty",
+    "add_honeybadger",
+    "add_mini_magick",
+    "add_rails_html_sanitizer",
+    "add_twilio_ruby"
+  ],
+  "class_options": [
+    {
+      "name": "skip_namespace",
+      "description": "Skip namespace (affects only isolated engines)",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_collision_check",
+      "description": "Skip collision check",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "force",
+      "description": "Overwrite files that already exist",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "pretend",
+      "description": "Run but do not make any changes",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "quiet",
+      "description": "Suppress status output",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "skip",
+      "description": "Skip files that already exist",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "ruby",
+      "description": "Path to the Ruby binary of your choice",
+      "type": "string",
+      "default": "/Users/davidcruwys/.asdf/installs/ruby/2.7.6/bin/ruby",
+      "required": false
+    },
+    {
+      "name": "template",
+      "description": "Path to some application template (can be a filesystem path or URL)",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "database",
+      "description": "Preconfigure for selected database (options: mysql/postgresql/sqlite3/oracle/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)",
+      "type": "string",
+      "default": "sqlite3",
+      "required": false
+    },
+    {
+      "name": "skip_git",
+      "description": "Skip .gitignore file",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_keeps",
+      "description": "Skip source control .keep files",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_action_mailer",
+      "description": "Skip Action Mailer files",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_action_mailbox",
+      "description": "Skip Action Mailbox gem",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_action_text",
+      "description": "Skip Action Text gem",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_active_record",
+      "description": "Skip Active Record files",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_active_job",
+      "description": "Skip Active Job",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_active_storage",
+      "description": "Skip Active Storage files",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_action_cable",
+      "description": "Skip Action Cable files",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_asset_pipeline",
+      "description": "Indicates when to generate skip asset pipeline",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "asset_pipeline",
+      "description": "Choose your asset pipeline [options: sprockets (default), propshaft]",
+      "type": "string",
+      "default": "sprockets",
+      "required": false
+    },
+    {
+      "name": "skip_javascript",
+      "description": "Skip JavaScript files",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_hotwire",
+      "description": "Skip Hotwire integration",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_jbuilder",
+      "description": "Skip jbuilder gem",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_test",
+      "description": "Skip test files",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_system_test",
+      "description": "Skip system test files",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "skip_bootsnap",
+      "description": "Skip bootsnap gem",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "dev",
+      "description": "Set up the application with Gemfile pointing to your Rails checkout",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "edge",
+      "description": "Set up the application with Gemfile pointing to Rails repository",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "main",
+      "description": "Set up the application with Gemfile pointing to Rails repository main branch",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "rc",
+      "description": "Path to file containing extra configuration options for rails command",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "no_rc",
+      "description": "Skip loading of extra configuration options from .railsrc file",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "help",
+      "description": "Show this help message and quit",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "version",
+      "description": "Show Rails version number and quit",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "api",
+      "description": "Preconfigure smaller stack for API only apps",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "minimal",
+      "description": "Preconfigure a minimal rails app",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "javascript",
+      "description": "Choose JavaScript approach [options: importmap (default), webpack, esbuild, rollup]",
+      "type": "string",
+      "default": "importmap",
+      "required": false
+    },
+    {
+      "name": "css",
+      "description": "Choose CSS processor [options: tailwind, bootstrap, bulma, postcss, sass... check https://github.com/rails/cssbundling-rails]",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "skip_bundle",
+      "description": "Don't run bundle install",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_acts_as_list",
+      "description": "Indicates when to generate add acts as list",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_browser",
+      "description": "Indicates when to generate add browser",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_chartkick",
+      "description": "Indicates when to generate add chartkick",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_faker",
+      "description": "Indicates when to generate add faker",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_groupdate",
+      "description": "Indicates when to generate add groupdate",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_hexapdf",
+      "description": "Indicates when to generate add hexapdf",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_httparty",
+      "description": "Indicates when to generate add httparty",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_honeybadger",
+      "description": "Indicates when to generate add honeybadger",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_mini_magick",
+      "description": "Indicates when to generate add mini magick",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_rails_html_sanitizer",
+      "description": "Indicates when to generate add rails html sanitizer",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_twilio_ruby",
+      "description": "Indicates when to generate add twilio ruby",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    }
+  ]
+}

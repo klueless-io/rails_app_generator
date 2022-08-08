@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-# NEW GEM ADDONS
-# lib/rails_app_generator/app_generator.rb
-#   class_option :add_<%= data.name_snake %>, type: :boolean, default: false
-#   add_if(:<%= data.name_snake %>)
-# lib/rails_app_generator/options/rails_options.rb
-#   register_option :add_<%= data.name_snake %>, type: :boolean, default: false
+# lib/rails_app_generator/rag_initializer.rb
+# config.rag.add_option :add_<%= data.name_snake %>             , type: :boolean, default: false
 
 module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
