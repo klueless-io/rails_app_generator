@@ -38,6 +38,7 @@
     "javascript",
     "css",
     "skip_bundle",
+    "test",
     "add_acts_as_list",
     "add_browser",
     "add_chartkick",
@@ -315,6 +316,13 @@
       "description": "Don't run bundle install",
       "type": "boolean",
       "default": false,
+      "required": false
+    },
+    {
+      "name": "test",
+      "description": "",
+      "type": "string",
+      "default": "rspec",
       "required": false
     },
     {

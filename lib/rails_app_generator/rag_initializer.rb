@@ -182,7 +182,7 @@ KConfig.configure do |config|
   # future_option   :skip_hotwire               , type: :boolean, default: false              # , description: "Skip Hotwire integration"
   # future_option   :skip_jbuilder              , type: :boolean, default: false              # , description: "Skip jbuilder gem"
   # config.rag.add_option    :skip_test                  , type: :boolean, default: false              # , description: "Skip test files"
-  # config.rag.add_option    :test                       , type: :string , default: 'rspec'            # , description: "minitest or rspec (default: rspec)"
+  config.rag.add_option    :test                       , type: :string , default: 'rspec'            # , description: "minitest or rspec (default: rspec)"
   # future_option   :skip_system_test           , type: :boolean, default: false              # , description: "Skip system test files"
   # future_option   :skip_bootsnap              , type: :boolean, default: false              # , description: "Skip bootsnap gem"
   # future_option   :dev                        , type: :boolean, default: false              # , description: "Set up the #{name} with Gemfile pointing to your Rails checkout"
