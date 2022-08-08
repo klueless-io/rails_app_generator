@@ -50,7 +50,6 @@ module RailsAppGenerator
       opts = extract_rails_options(app_path, options)
 
       if capture_output
-        binding.pry
         @console_output = capture_console do
           RailsAppGenerator::AppGenerator.start(opts, destination_root: destination_root)
         end

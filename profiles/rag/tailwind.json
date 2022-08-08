@@ -1,7 +1,8 @@
 {
   "args": {
     "app_path": "tailwind",
-    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag"
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/rag",
+    "capture_output": true
   },
   "opts": {
     "skip_git": true,
