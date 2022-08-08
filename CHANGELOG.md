@@ -1,3 +1,11 @@
+## [0.2.1](https://github.com/klueless-io/rails_app_generator/compare/v0.2.0...v0.2.1) (2022-08-08)
+
+
+### Bug Fixes
+
+* refactor rag examples ([ef5b1f3](https://github.com/klueless-io/rails_app_generator/commit/ef5b1f308cf7e24057aa917d9aaa1c8bd92edd32))
+* refactor rag examples ([f06a268](https://github.com/klueless-io/rails_app_generator/commit/f06a2685793e215476787887ba62fb855a89d01a))
+
 # [0.2.0](https://github.com/klueless-io/rails_app_generator/compare/v0.1.28...v0.2.0) (2022-08-08)
 
 
