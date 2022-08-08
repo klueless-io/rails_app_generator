@@ -38,7 +38,10 @@
     "javascript",
     "css",
     "skip_bundle",
+    "note",
     "test",
+    "add_devise",
+    "add_annotate",
     "add_acts_as_list",
     "add_browser",
     "add_chartkick",
@@ -319,10 +322,31 @@
       "required": false
     },
     {
+      "name": "note",
+      "description": "Indicates when to generate note",
+      "type": "string",
+      "default": "",
+      "required": false
+    },
+    {
       "name": "test",
       "description": "Indicates when to generate test",
       "type": "string",
       "default": "rspec",
+      "required": false
+    },
+    {
+      "name": "add_devise",
+      "description": "Indicates when to generate add devise",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_annotate",
+      "description": "Indicates when to generate add annotate",
+      "type": "boolean",
+      "default": false,
       "required": false
     },
     {

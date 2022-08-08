@@ -38,7 +38,10 @@
     "javascript",
     "css",
     "skip_bundle",
+    "note",
     "test",
+    "add_devise",
+    "add_annotate",
     "add_acts_as_list",
     "add_browser",
     "add_chartkick",
@@ -319,10 +322,31 @@
       "required": false
     },
     {
+      "name": "note",
+      "description": "Set a note or comment",
+      "type": "string",
+      "default": "",
+      "required": false
+    },
+    {
       "name": "test",
       "description": "",
       "type": "string",
       "default": "rspec",
+      "required": false
+    },
+    {
+      "name": "add_devise",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_annotate",
+      "description": "",
+      "type": "boolean",
+      "default": false,
       "required": false
     },
     {

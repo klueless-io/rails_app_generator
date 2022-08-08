@@ -7,7 +7,7 @@
     "quiet": false,
     "skip": false,
     "ruby": "/Users/davidcruwys/.asdf/installs/ruby/2.7.6/bin/ruby",
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/twilio_ruby/_.rb",
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/rag/tailwind/_.rb",
     "database": "sqlite3",
     "skip_git": true,
     "skip_keeps": false,
@@ -36,8 +36,12 @@
     "api": false,
     "minimal": false,
     "javascript": "importmap",
-    "css": "",
+    "css": "tailwind",
     "skip_bundle": false,
+    "note": "",
+    "test": "rspec",
+    "add_devise": false,
+    "add_annotate": false,
     "add_acts_as_list": false,
     "add_browser": false,
     "add_chartkick": false,
@@ -48,6 +52,6 @@
     "add_honeybadger": false,
     "add_mini_magick": false,
     "add_rails_html_sanitizer": false,
-    "add_twilio_ruby": true
+    "add_twilio_ruby": false
   }
 }

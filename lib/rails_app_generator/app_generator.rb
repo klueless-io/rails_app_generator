@@ -213,11 +213,6 @@ module RailsAppGenerator
 
       # https://codingpackets.com/blog/rails-generators-cheat-sheet/
 
-      # OLD style will be removed soon
-      def local_template_base(xxx)
-        File.join(File.dirname(xxx), File.basename(xxx, '.*'))
-      end
-
       # force_copy?         # defaults to false
       # force_copy(true)    # set to true
       # force_copy(false)   # set to false

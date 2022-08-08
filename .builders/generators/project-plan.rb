@@ -13,7 +13,8 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
-        todo(title: 'generator for new profiles')
+        todo(title: 'broken profile - tailwind-hotwire-form - tailwind-hotwire-form-search, tailwind-hotwire-flash, ')
+
         todo(title: 'look at the sample tailwind pages in P7 and turn them into an addon')
 
         todo(title: 'add auto open flag to profile and command line')
@@ -42,7 +43,6 @@ KManager.action :project_plan do
         todo(title: 'add addon - twilio')
         todo(title: 'add addon - honeybadger')
 
-        
         todo(title: 'add profile - rails-html-sanitizer')
         todo(title: 'add profile - tailwind-emulating-bootstrap')
         todo(title: 'add profile - tailwind-hotwire-form-search')
@@ -56,7 +56,6 @@ KManager.action :project_plan do
         todo(title: 'add diff tool - open in editor')
         todo(title: 'add diff tool supporting lhs only, rhs only, same and different')
         todo(title: 'add project plan to do list')
-
       end
       .cd(:docs)
       .save('project-plan/project.drawio')
