@@ -28,7 +28,7 @@ module RailsAppGenerator
         description: description,
         type: type,
         default: default,
-        required: required,
+        required: required
       }
     end
 

@@ -7,8 +7,7 @@ module RailsAppGenerator
     class TwilioRuby < RailsAppGenerator::Addon
       required_gem gem.version('twilio-ruby', '5.70.0', 'The official library for communicating with the Twilio REST API, building TwiML, and generating Twilio JWT Capability Tokens')
 
-      def apply
-      end
+      def apply; end
     end
   end
 end

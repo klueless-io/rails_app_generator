@@ -13,6 +13,7 @@ AllCops:
     - "a/**/*"
     - "after_templates/**/*"
     - "templates/**/*"
+    - "lib/rails_app_generator/rag_initializer.rb"
 
 Metrics/BlockLength:
   Exclude:

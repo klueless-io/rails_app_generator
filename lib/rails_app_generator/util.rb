@@ -38,13 +38,12 @@ module RailsAppGenerator
       #
       # You can find the array on the class_options reader
       def thor_options_to_hash(thor_options)
-        common_keys = thor_options.flat_map { |o| o.instance_variables }.uniq
+        common_keys = thor_options.flat_map(&:instance_variables).uniq
         common_keys = common_keys.map { |k| k.to_s.delete_prefix('@').to_sym }
 
         thor_options.map do |option|
-          common_keys.reduce({}) do |result, key|
+          common_keys.each_with_object({}) do |key, result|
             result[key] = option.send(key) if option.respond_to?(key)
-            result
           end
         end
       end

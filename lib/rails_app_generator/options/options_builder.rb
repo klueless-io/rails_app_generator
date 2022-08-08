@@ -59,13 +59,14 @@ module RailsAppGenerator
       end
 
       def to_h
-        { 
+        {
           class_option_keys: class_options.map(&:name),
-          class_options: class_options.map(&:to_h),
+          class_options: class_options.map(&:to_h)
         }
       end
     end
 
+    # rubocop:disable Metrics/AbcSize
     def cmd_line_options
       available_options = options.clone
 
@@ -89,6 +90,7 @@ module RailsAppGenerator
       result
       # raise 'Unknown options'
     end
+    # rubocop:enable Metrics/AbcSize
 
     def debug
       puts '[ Options JSON ]----------------------------------------------------'
@@ -98,7 +100,7 @@ module RailsAppGenerator
     end
 
     def to_h
-      { 
+      {
         options: options
       }
     end

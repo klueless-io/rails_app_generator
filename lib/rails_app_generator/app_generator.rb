@@ -41,7 +41,7 @@ module RailsAppGenerator
 
         # for some reason, Railties uses :desc while thor uses :description and thor has nice humanization when key is missing
         args[:desc] = option.description unless option.description
-        
+
         class_option(option.name, **args)
       end
 
@@ -50,9 +50,9 @@ module RailsAppGenerator
         options_hash = RailsAppGenerator::Util.thor_options_to_hash(thor_options)
 
         # class_options_detailed: options_hash,
-        { 
+        {
           class_option_keys: options_hash.map { |option| option[:name] },
-          class_options: options_hash.map { |option| option.slice(:name, :description, :type, :default, :required) },
+          class_options: options_hash.map { |option| option.slice(:name, :description, :type, :default, :required) }
         }
       end
 
@@ -143,7 +143,7 @@ module RailsAppGenerator
     # end
 
     def create_root_files
-      RailsAppGenerator::Util.write_last_run('app_generator_data.json', self.to_h)
+      RailsAppGenerator::Util.write_last_run('app_generator_data.json', to_h)
 
       super
 
@@ -206,7 +206,7 @@ module RailsAppGenerator
 
     no_commands do
       def to_h
-        { 
+        {
           options: options
         }
       end

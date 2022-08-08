@@ -127,10 +127,9 @@ KConfig.configure do |config|
   # # webmock              3.13.0   3.14.0   = 3.13.0   development, test
   # # websocket-driver     0.6.5    0.7.5
 
-
   # config.rag.add_option :skip_namespace                , type: :boolean    , default: false         , description: "Skip namespace (affects only isolated engines)"
   # config.rag.add_option :skip_collision_check          , type: :boolean    , default: false         , description: "Skip collision check"
-  config.rag.add_option :force                         , type: :boolean    , default: nil           , description: "Overwrite files that already exist"
+  config.rag.add_option :force , type: :boolean , default: nil , description: 'Overwrite files that already exist'
   # XXX config.rag.add_option :pretend                       , type: :boolean    , default: nil           , description: "Run but do not make any changes"
   # XXX config.rag.add_option :quiet                         , type: :boolean    , default: nil           , description: "Suppress status output"
   # XXX config.rag.add_option :skip                          , type: :boolean    , default: nil           , description: "Skip files that already exist"
@@ -229,7 +228,7 @@ KConfig.configure do |config|
   config.rag.add_option :add_hexapdf                  , type: :boolean, default: false
   config.rag.add_option :add_httparty                 , type: :boolean, default: false
   config.rag.add_option :add_honeybadger              , type: :boolean, default: false
-  config.rag.add_option :add_mini_magick              , type: :boolean, default: false , description: "Add Mini Magick gem"
+  config.rag.add_option :add_mini_magick              , type: :boolean, default: false , description: 'Add Mini Magick gem'
   config.rag.add_option :add_rails_html_sanitizer     , type: :boolean, default: false
   config.rag.add_option :add_twilio_ruby              , type: :boolean, default: false
 end
