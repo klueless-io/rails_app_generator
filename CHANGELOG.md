@@ -1,3 +1,16 @@
+# [0.2.0](https://github.com/klueless-io/rails_app_generator/compare/v0.1.28...v0.2.0) (2022-08-08)
+
+
+### Bug Fixes
+
+* cops ([e23bdee](https://github.com/klueless-io/rails_app_generator/commit/e23bdee8904cc8e0e9040ba1a4cb9c819587cec6))
+* fix failing specs ([c13f7f8](https://github.com/klueless-io/rails_app_generator/commit/c13f7f8a858905f79c788ab0fd316a2aa826fb24))
+
+
+### Features
+
+* big refactor on the addon configuration ([24f23e0](https://github.com/klueless-io/rails_app_generator/commit/24f23e0624f2e4cf8447b6cbb094b7572535149b))
+
 ## [0.1.28](https://github.com/klueless-io/rails_app_generator/compare/v0.1.27...v0.1.28) (2022-08-06)
 
 
