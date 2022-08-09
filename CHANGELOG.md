@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/klueless-io/rails_app_generator/compare/v0.2.1...v0.2.2) (2022-08-09)
+
+
+### Bug Fixes
+
+* add application example printspeak ([e07a215](https://github.com/klueless-io/rails_app_generator/commit/e07a215ae1700fd57a23478cb3efe2246fb5a88d))
+
 ## [0.2.1](https://github.com/klueless-io/rails_app_generator/compare/v0.2.0...v0.2.1) (2022-08-08)
 
 
