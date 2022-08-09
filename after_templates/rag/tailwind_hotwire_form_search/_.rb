@@ -15,8 +15,6 @@ require 'pry'
 # This builds on top of: Ruby on Rails Forms With Hotwire
 # https://www.youtube.com/watch?v=-n7IbUFKjoM
 
-require 'pry'
-
 self.local_template_path = File.dirname(__FILE__)
 
 puts '----------------------------------------------------------------------'

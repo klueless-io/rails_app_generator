@@ -13,6 +13,10 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        todo(title: 'add google fonts')
+        # <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        # <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+
         todo(title: 'broken profile - tailwind-hotwire-form - tailwind-hotwire-form-search, tailwind-hotwire-flash, ')
 
         todo(title: 'look at the sample tailwind pages in P7 and turn them into an addon')

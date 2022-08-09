@@ -5,8 +5,8 @@
   },
   "opts": {
     "skip_test": true,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/rag/printspeak/_.rb",
-    "javascript": "esbuild",
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/application/printspeak/_.rb",
+    "css": "bootstrap",
     "add_annotate": true
   }
 }

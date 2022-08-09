@@ -1,0 +1,12 @@
+{
+  "args": {
+    "app_path": "printspeak",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/default"
+  },
+  "opts": {
+    "skip_git": true,
+    "skip_test": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/default/printspeak/_.rb",
+    "add_printspeak": true
+  }
+}

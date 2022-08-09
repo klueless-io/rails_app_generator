@@ -28,7 +28,7 @@ class Profile < Thor
   attr_accessor :data
 
   desc 'new', 'Create a new Profile for testing Rails App Generator settings'
-  method_option :variant, type: :string, default: 'default', desc: 'Profile variant to create, valid values are (nil, addons)'
+  method_option :variant, type: :string, default: 'application', desc: 'Profile variant to create, valid values are (nil, addons)'
   method_option :gem, type: :string, default: nil, desc: 'Gem name is looked up to find version and description'
   method_option :force, type: :boolean, default: false, desc: 'Overwrite existing files'
   # rubocop:disable Metrics/AbcSize

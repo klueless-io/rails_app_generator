@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-# require 'pry'
-
-# <%= data.description %>
+# Description goes here
 #
-# exe/rag addons/<%= data.name_snake %>
+# exe/rag addons/printspeak
 
 self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'
 
 add_controller('home', 'index')
+add_controller('page', 'blog', 'readme', 'about', 'contact', 'faq', 'terms', 'privacy')
+
 route("root 'home#index'")
 
 force_copy
@@ -26,15 +26,18 @@ template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/a
 template  'db/seeds.rb'                                   , 'db/seeds.rb'
 
 after_bundle do
+  directory "app/assets/images"
+  directory "app/assets/stylesheets"
+  directory "app/views/page"
+
   setup_db
 end
 
 def setup_db
-  # add_scaffold('post', 'title', 'body:text')
-  # add_scaffold('people', 'first_name', 'last_name', 'age:integer', 'address:text')
-  # add_scaffold('product', 'name', 'price:integer')
+  add_scaffold('post', 'title', 'body:text')
+  add_scaffold('people', 'first_name', 'last_name', 'age:integer', 'address:text')
 
-  # db_migrate
+  db_migrate
 end
 
 # Other template command examples
@@ -44,10 +47,9 @@ end
 # rails_command('hotwire:install')
 # run('bin/importmap pin sortablejs')
 # run('npm install daisyui')
-# directory         'app/assets/images'
 # create_file       'app/assets/stylesheets/custom-bootstrap-import.scss' , read_template('custom-bootstrap-import.scss')
 # append_to_file    'app/assets/config/manifest.js'                       , read_template('manifest.js')
 # insert_into_file  'app/views/layouts/application.html.erb', read_template('application.html.erb'),
-#     before: %(    <%%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>)
+#     before: %(    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>)
 # gsub_file         'app/views/layouts/application.html.erb', %(container mx-auto mt-28 px-5 flex), 'container mx-auto px-5'
 # template 'home.css', 'app/assets/stylesheets/home.css'
