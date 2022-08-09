@@ -7,6 +7,7 @@ module RailsAppGenerator
     class FactoryBot < RailsAppGenerator::Addon
       depends_on :active_record, :test
 
+      # Requires Testing
       def apply
         # TODO: Make this work for minitest
         return unless uses?(:factory_bot)

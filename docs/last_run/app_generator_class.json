@@ -41,6 +41,7 @@
     "note",
     "test",
     "add_devise",
+    "add_dotenv",
     "add_annotate",
     "add_acts_as_list",
     "add_browser",
@@ -338,6 +339,13 @@
     {
       "name": "add_devise",
       "description": "Indicates when to generate add devise",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_dotenv",
+      "description": "Indicates when to generate add dotenv",
       "type": "boolean",
       "default": false,
       "required": false

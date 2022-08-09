@@ -1,12 +1,13 @@
 {
   "args": {
-    "app_path": "printspeak",
-    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/application"
+    "app_path": "p7",
+    "destination_root": "/Users/davidcruwys/dev/printspeak"
   },
   "opts": {
-    "skip_git": true,
     "skip_test": true,
     "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/application/printspeak/_.rb",
-    "add_printspeak": true
+    "css": "bootstrap",
+    "add_annotate": true,
+    "add_dotenv": true
   }
 }

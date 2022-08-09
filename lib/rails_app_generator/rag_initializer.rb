@@ -203,7 +203,7 @@ KConfig.configure do |config|
   # rag.add_option :add_irbrc                   , type: :boolean, default: false
   # rag.add_option :add_foreman                 , type: :boolean, default: false
   rag.add_option :add_devise                  , type: :boolean, default: false
-  # rag.add_option :add_dotenv                  , type: :boolean, default: false
+  rag.add_option :add_dotenv                  , type: :boolean, default: false
   # rag.add_option :add_docker                  , type: :boolean, default: false
   # rag.add_option :add_docker_compose          , type: :boolean, default: false
   # rag.add_option :add_rubocop                 , type: :boolean, default: false

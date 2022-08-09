@@ -41,6 +41,7 @@
     "note",
     "test",
     "add_devise",
+    "add_dotenv",
     "add_annotate",
     "add_acts_as_list",
     "add_browser",
@@ -337,6 +338,13 @@
     },
     {
       "name": "add_devise",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_dotenv",
       "description": "",
       "type": "boolean",
       "default": false,

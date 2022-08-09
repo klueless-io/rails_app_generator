@@ -5,6 +5,7 @@ module RailsAppGenerator
   module AddOns
     # Add GitHub Actions continuous integration
     class ContinuousIntegration < RailsAppGenerator::Addon
+      # Requires Testing
       def apply
         say 'continuous integration - Setup GitHub Actions'
         template('github/workflows/build.yml.erb', '.github/workflows/build.yml')
