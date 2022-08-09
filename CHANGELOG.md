@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/klueless-io/rails_app_generator/compare/v0.2.2...v0.2.3) (2022-08-09)
+
+
+### Bug Fixes
+
+* add profile - rubocop ([1c30098](https://github.com/klueless-io/rails_app_generator/commit/1c30098ea0abee370aba96f3f7db6748ebdbccd4))
+
 ## [0.2.2](https://github.com/klueless-io/rails_app_generator/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 
