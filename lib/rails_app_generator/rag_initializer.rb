@@ -206,7 +206,7 @@ KConfig.configure do |config|
   rag.add_option :add_dotenv                  , type: :boolean, default: false
   # rag.add_option :add_docker                  , type: :boolean, default: false
   # rag.add_option :add_docker_compose          , type: :boolean, default: false
-  # rag.add_option :add_rubocop                 , type: :boolean, default: false
+  rag.add_option :add_rubocop                 , type: :boolean, default: false
   rag.add_option :add_annotate                , type: :boolean, default: false
   # rag.add_option :add_continuous_integration  , type: :boolean, default: false
   # rag.add_option :add_high_voltage            , type: :boolean, default: false

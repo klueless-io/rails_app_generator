@@ -1,3 +1,6 @@
+require:
+  - rubocop-rails
+
 AllCops:
   NewCops: enable
   Exclude:
@@ -11,10 +14,10 @@ Naming/AccessorMethodName:
 
 Metrics/MethodLength:
   CountAsOne: ['array', 'heredoc']
-  IgnoredMethods: ['describe', 'context']
+  AllowedMethods: ['describe', 'context']
 
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'context']
+  AllowedMethods: ['describe', 'context']
   Exclude:
     - config/environments/*.rb
     - '**/*.rake'

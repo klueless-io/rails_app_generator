@@ -1,0 +1,46 @@
+<h1>Rubocop</h1>
+
+<h2>RuboCop is a Ruby code style checking and code formatting tool.</h2>
+
+<p>It aims to enforce the community-driven Ruby Style Guide.</p>
+
+<hr />
+
+<h3>.rubocop.yml</h3>
+
+<pre>
+<code>
+<%= File.read('.rubocop.yml') %>
+</code>
+</pre>
+
+<hr />
+
+<h3>controllers/home_controller.rb</h3>
+
+<pre>
+<code>
+<%= File.read('app/controllers/home_controller.rb') %>
+</code>
+</pre>
+
+<hr />
+
+<h3>Call rubocop variations</h3>
+
+<pre>
+<code>
+# uses .rubocop.yml and any hierarchy configs
+rubocop
+
+# uses .rubocop.yml only
+rubocop --config .rubocop.yml
+
+# uses will AutoCorrect offenses
+rubocop -A --config .rubocop.yml
+</code>
+</pre>
+
+<hr />
+
+<%= image_tag 'cop-output' %>
