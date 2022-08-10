@@ -4,7 +4,7 @@
     "skip_collision_check": false,
     "ruby": "/Users/davidcruwys/.asdf/installs/ruby/2.7.6/bin/ruby",
     "database": "sqlite3",
-    "skip_git": true,
+    "skip_git": false,
     "skip_keeps": false,
     "skip_action_mailer": false,
     "skip_action_mailbox": false,
@@ -31,9 +31,9 @@
     "note": "",
     "test": "rspec",
     "add_devise": false,
-    "add_dotenv": false,
+    "add_dotenv": true,
     "add_rubocop": true,
-    "add_annotate": false,
+    "add_annotate": true,
     "add_acts_as_list": false,
     "add_browser": false,
     "add_chartkick": false,
@@ -45,6 +45,7 @@
     "add_mini_magick": false,
     "add_rails_html_sanitizer": false,
     "add_twilio_ruby": false,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/rubocop/_.rb"
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/application/printspeak/_.rb",
+    "css": "bootstrap"
   }
 }

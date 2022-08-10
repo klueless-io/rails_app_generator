@@ -15,15 +15,15 @@
   <%- else -%>
   <%%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%- end -%>
+  <%%= render head_partial if head_partial %>
 </head>
 
 <body id="page-top">
-  <%%= render 'layouts/navbar' %>
+  <%%= render navbar_partial if navbar_partial %>
   <main>
-    <%%= render 'layouts/alerts' %>
     <%%= yield %>
   </main>
-  <%%= render 'layouts/footer' %>
+  <%%= render footer_partial if footer_partial %>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

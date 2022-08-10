@@ -245,6 +245,10 @@ module RailsAppGenerator
         generate(:migration, name, *args)
       end
 
+      def rubocop
+        run('rubocop -A --config .rubocop.yml')
+      end
+
       def db_migrate
         rails_command('db:migrate')
       end

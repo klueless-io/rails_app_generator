@@ -8,6 +8,7 @@
     "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/application/printspeak/_.rb",
     "css": "bootstrap",
     "add_annotate": true,
-    "add_dotenv": true
+    "add_dotenv": true,
+    "add_rubocop": true
   }
 }

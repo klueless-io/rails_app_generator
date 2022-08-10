@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
-  def index
-  end
+  before_action { navbar_partial('navbar') }
+  before_action { body_end_partial('body_end') }
 
-  def some_action
+  def index
   end
 end

@@ -9,28 +9,31 @@ self.local_template_path = File.dirname(__FILE__)
 gac 'base rails 7 image created'
 
 add_controller('home', 'index')
-add_controller('page', 'blog', 'readme', 'about', 'contact', 'faq', 'terms', 'privacy')
+add_controller('page', 'benefits', 'faq', 'terms', 'privacy')
 
 route("root 'home#index'")
 
-force_copy
-
-copy_file 'app/controllers/home_controller.rb'            , 'app/controllers/home_controller.rb'
-copy_file 'app/views/home/index.html.erb'                 , 'app/views/home/index.html.erb'
-
-copy_file 'app/views/layouts/_alerts.html.erb'            , 'app/views/layouts/_alerts.html.erb'
-copy_file 'app/views/layouts/_navbar.html.erb'            , 'app/views/layouts/_navbar.html.erb'
-copy_file 'app/views/layouts/_footer.html.erb'            , 'app/views/layouts/_footer.html.erb'
-template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
-
-template  'db/seeds.rb'                                   , 'db/seeds.rb'
-
 after_bundle do
+  customizations 
+  setup_db
+  rubocop
+end
+
+def customizations
+  force_copy
+
   directory "app/assets/images"
   directory "app/assets/stylesheets"
+
+  directory "app/controllers"
+
+  directory "app/views/home"
   directory "app/views/page"
 
-  setup_db
+  directory "app/views/layouts"
+  template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
+
+  template  'db/seeds.rb'                                   , 'db/seeds.rb'
 end
 
 def setup_db
