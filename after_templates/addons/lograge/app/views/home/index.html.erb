@@ -1,0 +1,11 @@
+<style>
+.alert { color: red; }
+.notice { color: green; }
+</style>
+
+<% flash.each do |type, msg| %><div class="<%= type %>"><%= msg %></div><% end %>
+<% if flash.any? %><hr /><% end %>
+
+<h1>Lograge</h1>
+
+<h2>Tame Rails' multi-line logging into a single line per request</h2>

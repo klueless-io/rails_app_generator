@@ -110,7 +110,6 @@ module RailsAppGenerator
     #   # invoke :copy_miscellaneous_files
     #   # invoke :setup_database
     #   # invoke :create_github_repo
-    #   # binding.pry
     #   # invoke :generate_default
     #   # invoke :create_heroku_apps
     #   # invoke :generate_deployment_default
@@ -121,7 +120,6 @@ module RailsAppGenerator
 
     # def xxx_generate_default
     #   puts 'xxx_generate_default'
-    #   # binding.pry
     #   # run("spring stop > /dev/null 2>&1 || true")
     #   generate("rails_app_generator:foo")
     #   # generate("suspenders:runner")
@@ -260,6 +258,12 @@ module RailsAppGenerator
       def add_stimulus(name, *args)
         generate(:stimulus, name, *args)
       end
+
+      def bundle_install
+        Bundler.with_unbundled_env do
+          run("bundle install")
+        end
+      end        
 
       def bundle_add(name)
         run("bundle add #{name}")

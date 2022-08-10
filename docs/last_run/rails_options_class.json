@@ -44,6 +44,7 @@
     "add_dotenv",
     "add_rubocop",
     "add_annotate",
+    "add_lograge",
     "add_acts_as_list",
     "add_browser",
     "add_chartkick",
@@ -360,6 +361,13 @@
     },
     {
       "name": "add_annotate",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_lograge",
       "description": "",
       "type": "boolean",
       "default": false,

@@ -211,7 +211,7 @@ KConfig.configure do |config|
   # rag.add_option :add_continuous_integration  , type: :boolean, default: false
   # rag.add_option :add_high_voltage            , type: :boolean, default: false
   # rag.add_option :add_generators              , type: :boolean, default: false
-  # rag.add_option :add_lograge                 , type: :boolean, default: false
+  rag.add_option :add_lograge                 , type: :boolean, default: false
   # rag.add_option :add_pundit                  , type: :boolean, default: false
   # rag.add_option :add_services                , type: :boolean, default: false
   # rag.add_option :add_sidekiq                 , type: :boolean, default: false

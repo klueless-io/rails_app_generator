@@ -5,6 +5,8 @@ module RailsAppGenerator
   module AddOns
     # Add Rails Generator configuration to rails application
     class Generators < RailsAppGenerator::Addon
+
+      # Requires Testing (NOT SURE IF THIS IS A GOOD APPROACH, need to look at other generator systems)
       def apply
         directory('lib/generators/rails/navigation', 'lib/generators/rails/navigation') if uses?(:views)
 
