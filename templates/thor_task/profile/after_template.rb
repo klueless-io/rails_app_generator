@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'pry'
-
 # <%= data.description %>
 #
 # exe/rag addons/<%= data.name_snake %>
@@ -10,6 +8,8 @@ self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'
 
+bundle_install
+
 add_controller('home', 'index')
 
 route("root 'home#index'")
@@ -17,9 +17,7 @@ route("root 'home#index'")
 force_copy
 
 directory "app/controllers"
-
 directory "app/views/home"
-
 directory "app/views/layouts"
 template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
 

@@ -54,6 +54,7 @@
     "add_httparty",
     "add_honeybadger",
     "add_mini_magick",
+    "add_public_suffix",
     "add_rails_html_sanitizer",
     "add_twilio_ruby"
   ],
@@ -432,6 +433,13 @@
     {
       "name": "add_mini_magick",
       "description": "Indicates when to generate add mini magick",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_public_suffix",
+      "description": "Indicates when to generate add public suffix",
       "type": "boolean",
       "default": false,
       "required": false

@@ -31,7 +31,6 @@ KConfig.configure do |config|
   # # paper_trail                      10.3.1   12.3.0   ~> 10.3    default
   # # pg                               0.21.0   1.4.2    ~> 0.20    default
   # # pg_search                        2.3.0    2.3.6    ~> 2.0     default
-  # # pry                              0.13.1   0.14.1
   # # public_suffix                    2.0.5    5.0.0    ~> 2.0     default
   # # pusher                           1.4.3    2.0.2    ~> 1.3     default
   # # rack-mini-profiler               0.10.7   3.0.0    ~> 0.10    default
@@ -222,17 +221,18 @@ KConfig.configure do |config|
   # rag.add_option :add_shoulda                 , type: :boolean, default: false
 
   # NEW GEM ADDONS
-  rag.add_option :add_acts_as_list             , type: :boolean, default: false
-  rag.add_option :add_browser                  , type: :boolean, default: false
-  rag.add_option :add_chartkick                , type: :boolean, default: false
-  rag.add_option :add_faker                    , type: :boolean, default: false
-  rag.add_option :add_groupdate                , type: :boolean, default: false
-  rag.add_option :add_hexapdf                  , type: :boolean, default: false
-  rag.add_option :add_httparty                 , type: :boolean, default: false
-  rag.add_option :add_honeybadger              , type: :boolean, default: false
-  rag.add_option :add_mini_magick              , type: :boolean, default: false , description: 'Add Mini Magick gem'
-  rag.add_option :add_rails_html_sanitizer     , type: :boolean, default: false
-  rag.add_option :add_twilio_ruby              , type: :boolean, default: false
+  rag.add_option :add_acts_as_list            , type: :boolean, default: false
+  rag.add_option :add_browser                 , type: :boolean, default: false
+  rag.add_option :add_chartkick               , type: :boolean, default: false
+  rag.add_option :add_faker                   , type: :boolean, default: false
+  rag.add_option :add_groupdate               , type: :boolean, default: false
+  rag.add_option :add_hexapdf                 , type: :boolean, default: false
+  rag.add_option :add_httparty                , type: :boolean, default: false
+  rag.add_option :add_honeybadger             , type: :boolean, default: false
+  rag.add_option :add_mini_magick             , type: :boolean, default: false , description: 'Add Mini Magick gem'
+  rag.add_option :add_public_suffix           , type: :boolean, default: false
+  rag.add_option :add_rails_html_sanitizer    , type: :boolean, default: false
+  rag.add_option :add_twilio_ruby             , type: :boolean, default: false
 end
 
 # Make sure that RailsOptions reflect the options available from Railties

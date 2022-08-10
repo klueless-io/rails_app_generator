@@ -1,0 +1,29 @@
+<h1>Public suffix</h1>
+
+<h2>PublicSuffix can parse and decompose a domain name into top level domain, domain and subdomains.</h2>
+
+<hr />
+
+<p>PublicSuffix.domain("<b>KlueLess.io</b>")</p>
+<code><%= PublicSuffix.domain("KlueLess.io") %></code>
+<br><br>
+<p>PublicSuffix.domain("<b>AppyDave.com</b>")</p>
+<code><%= PublicSuffix.domain("AppyDave.com") %></code>
+<br><br>
+<p>PublicSuffix.domain("<b>www.google.com</b>")</p>
+<code><%= PublicSuffix.domain("www.google.com") %></code>
+<br><br>
+<p>PublicSuffix.domain("<b>www.google.co.uk</b>")</p>
+<code><%= PublicSuffix.domain("www.google.co.uk") %></code>
+<br><br>
+
+<hr />
+
+<p>domain = PublicSuffix.parse("<b>www.google.com</b>")</p>
+<% domain = PublicSuffix.parse("www.google.com") %>
+
+<p>tld: <code><b><%= domain.tld %></b></code>
+<p>sld: <code><b><%= domain.sld %></b></code>
+<p>trd: <code><b><%= domain.trd %></b></code>
+<p>domain: <code><b><%= domain.domain %></b></code>
+<p>subdomain: <code><b><%= domain.subdomain %></b></code>
