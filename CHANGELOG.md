@@ -1,3 +1,11 @@
+## [0.2.4](https://github.com/klueless-io/rails_app_generator/compare/v0.2.3...v0.2.4) (2022-08-10)
+
+
+### Bug Fixes
+
+* add lograge addon ([e980bb2](https://github.com/klueless-io/rails_app_generator/commit/e980bb2ccf46a33aba755c0370a9ae263e820256))
+* cops ([cce097d](https://github.com/klueless-io/rails_app_generator/commit/cce097d61da2a5d8a3d1c335a08820cacb1936f4))
+
 ## [0.2.3](https://github.com/klueless-io/rails_app_generator/compare/v0.2.2...v0.2.3) (2022-08-09)
 
 
