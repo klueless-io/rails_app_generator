@@ -7,7 +7,7 @@
     "quiet": false,
     "skip": false,
     "ruby": "/Users/davidcruwys/.asdf/installs/ruby/2.7.6/bin/ruby",
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/public_suffix/_.rb",
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/phony_rails/_.rb",
     "database": "sqlite3",
     "skip_git": true,
     "skip_keeps": false,
@@ -54,7 +54,8 @@
     "add_httparty": false,
     "add_honeybadger": false,
     "add_mini_magick": false,
-    "add_public_suffix": true,
+    "add_phony_rails": true,
+    "add_public_suffix": false,
     "add_rails_html_sanitizer": false,
     "add_twilio_ruby": false
   }

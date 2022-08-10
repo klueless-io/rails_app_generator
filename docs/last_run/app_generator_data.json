@@ -44,9 +44,10 @@
     "add_httparty": false,
     "add_honeybadger": false,
     "add_mini_magick": false,
-    "add_public_suffix": true,
+    "add_phony_rails": true,
+    "add_public_suffix": false,
     "add_rails_html_sanitizer": false,
     "add_twilio_ruby": false,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/public_suffix/_.rb"
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/phony_rails/_.rb"
   }
 }

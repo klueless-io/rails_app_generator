@@ -1,0 +1,46 @@
+<style>
+.alert { color: red; }
+.notice { color: green; }
+</style>
+
+<% flash.each do |type, msg| %><div class="<%= type %>"><%= msg %></div><% end %>
+<% if flash.any? %><hr /><% end %>
+
+<h1>Phony rails</h1>
+
+<h2>This Gem adds useful methods to your Rails app to validate, display and save phone numbers.</h2>
+
+<hr />
+
+<pre>
+<code>
+PhonyRails.normalize_number('0211112222', country_code: 'AU')
+PhonyRails.normalize_number('0424001122', country_code: 'AU')
+PhonyRails.normalize_number('+4790909090', default_country_code: 'SE')
+</code>
+</pre>
+
+<pre>
+<code>
+<%= PhonyRails.normalize_number('0211112222', country_code: 'AU') %>
+<%= PhonyRails.normalize_number('0424001122', country_code: 'AU') %>
+<%= PhonyRails.normalize_number('+61424001122', default_country_code: 'AU') %>
+</code>
+</pre>
+
+<hr />
+
+<pre>
+<code>
+"311012341234".phony_formatted(format: :international, spaces: '-')
+"+31-10-12341234".phony_formatted(format: :international, spaces: '-')
+"+31(0)012341234".phony_formatted(format: :international, spaces: '-')
+</code>
+</pre>
+
+<pre>
+<code>
+<%= "311012341234".phony_formatted(format: :international, spaces: '-') %>
+<%= "+31-10-12341234".phony_formatted(format: :international, spaces: '-') %>
+<%= "+31(0)012341234".phony_formatted(format: :international, spaces: '-') %></code>
+</pre>

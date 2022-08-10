@@ -12,121 +12,6 @@ KConfig.configure do |config|
 
   # rag.add_option :test                        , type: :string , default: 'rspec'
 
-  # # Gem                              Current  Latest   Requested  Groups
-  # # aws-sdk
-  # # capistrano-bundler               1.6.0    2.1.0    ~> 1.2     development, test
-  # # capybara                         3.33.0   3.37.1   = 3.33.0   development, test
-  # # clamby                           1.6.6    1.6.8    = 1.6.6    default
-  # # createsend                       5.1.1    6.0.0    ~> 5.1     default
-  # # database_cleaner                 1.7.0    2.0.1    = 1.7.0    development, test
-  # # erubi                            1.10.0   1.11.0
-  # # factory_bot                      5.2.0    6.2.1
-  # # factory_bot_rails                5.2.0    6.2.0    = 5.2.0    development, test
-  # # guard-bundler                    2.2.1    3.0.0    = 2.2.1    development, test
-  # # guard-rubocop                    1.4.0    1.5.0    = 1.4.0    development, test
-  # # http-accept                      1.7.0    2.2.0
-  # # net-ssh                          6.1.0    7.0.1
-  # # oauth2                           1.4.10   2.0.6
-  # # omniauth-oauth2                  1.7.3    1.8.0
-  # # paper_trail                      10.3.1   12.3.0   ~> 10.3    default
-  # # pg                               0.21.0   1.4.2    ~> 0.20    default
-  # # pg_search                        2.3.0    2.3.6    ~> 2.0     default
-  # # public_suffix                    2.0.5    5.0.0    ~> 2.0     default
-  # # pusher                           1.4.3    2.0.2    ~> 1.3     default
-  # # rack-mini-profiler               0.10.7   3.0.0    ~> 0.10    default
-  # # rack-test                        0.6.3    2.0.2
-  # # rails                            5.0.7.2  7.0.3.1  = 5.0.7.2  default
-  # # railties                         5.0.7.2  7.0.3.1
-  # # ransack                          1.8.10   3.2.1    ~> 1.8     default
-  # # redis                            3.3.5    4.7.1    ~> 3.3     default
-  # # redis-store                      1.6.0    1.9.1
-  # # regexp_parser                    1.8.2    2.5.0
-  # # rspec                            3.10.0   3.11.0
-  # # rspec-core                       3.10.1   3.11.0   = 3.10.1   development, test
-  # # rspec-expectations               3.10.1   3.11.0   = 3.10.1   development, test
-  # # rspec-mocks                      3.10.2   3.11.1   = 3.10.2   development, test
-  # # rspec-rails                      4.1.2    5.1.2    = 4.1.2    development, test
-  # # rspec-support                    3.10.2   3.11.0   = 3.10.2   development, test
-  # # rubyzip                          1.3.0    2.3.2    ~> 1.3     default
-  # # scenic                           1.5.4    1.6.0    = 1.5.4    default
-  # # scout_apm                        4.1.2    5.2.0    ~> 4.1     default
-  # # selenium-webdriver               3.142.7  4.3.0    = 3.142.7  development, test
-  # # shoulda-matchers                 4.0.1    5.1.0    = 4.0.1    development, test
-  # # sidekiq                          4.2.10   6.5.1    ~> 4.2     default
-  # # sidekiq-pool                     1.9.3    2.0.1    ~> 1.8     default
-  # # sidekiq-unique-jobs              6.0.25   7.1.27   ~> 6.0     default
-  # # spring                           2.1.1    4.0.0    ~> 2.0     development, test
-  # # sprockets                        3.7.2    4.1.1    ~> 3.7     default
-  # # sprockets-rails                  3.2.2    3.4.2
-  # # timecop                          0.8.1    0.9.5    = 0.8.1    development, test
-  # # tzinfo                           1.2.10   2.0.5
-  # # uglifier                         3.2.0    4.2.0    ~> 3.2     default
-  # # unicorn                          5.8.0    6.1.0    ~> 5.3     default
-  # # webmock                          3.13.0   3.16.0   = 3.13.0   development, test
-  # # websocket-driver                 0.6.5    0.7.5
-
-  # # acts_as_list         0.9.19   1.0.4    ~> 0.9     default
-  # # arel                 7.1.4    9.0.0
-  # # bigdecimal           1.4.4    3.1.2    ~> 1.4     development, test
-  # # binding_of_caller    0.8.0    1.0.0    ~> 0.8     default
-  # # browser              2.7.1    5.3.1    ~> 2.3     default
-  # # capistrano-bundler   1.6.0    2.1.0    ~> 1.2     development, test
-  # # capybara             3.33.0   3.37.1   = 3.33.0   development, test
-  # # chartkick            2.3.5    4.2.0    ~> 2.3     default
-  # # childprocess         3.0.0    4.1.0
-  # # clamby               1.6.6    1.6.8    = 1.6.6    default
-  # # createsend           5.1.1    6.0.0    ~> 5.1     default
-  # # database_cleaner     1.7.0    2.0.1    = 1.7.0    development, test
-  # # factory_bot          5.2.0    6.2.1
-  # # factory_bot_rails    5.2.0    6.2.0    = 5.2.0    development, test
-  # # faker                1.9.6    2.22.0   ~> 1.7     default
-  # # groupdate            4.3.0    6.1.0    ~> 4.1     default
-  # # guard-bundler        2.2.1    3.0.0    = 2.2.1    development, test
-  # # guard-rubocop        1.4.0    1.5.0    = 1.4.0    development, test
-  # # hashie               3.6.0    5.0.0
-  # # http-accept          1.7.0    2.1.1
-  # # k_log                0.0.18   0.0.33   = 0.0.18   development, test
-  # # net-ssh              6.1.0    7.0.1
-  # # oauth2               1.4.10   2.0.6
-  # # omniauth-oauth2      1.7.3    1.8.0
-  # # paper_trail          10.3.1   12.3.0   ~> 10.3    default
-  # # pg                   0.21.0   1.4.2    ~> 0.20    default
-  # # pg_search            2.3.0    2.3.6    ~> 2.0     default
-  # # pry                  0.13.1   0.14.1
-  # # public_suffix        2.0.5    5.0.0    ~> 2.0     default
-  # # pusher               1.4.3    2.0.2    ~> 1.3     default
-  # # rack-mini-profiler   0.10.7   3.0.0    ~> 0.10    default
-  # # rack-test            0.6.3    2.0.2
-  # # rails                5.0.7.2  7.0.3.1  = 5.0.7.2  default
-  # # railties             5.0.7.2  7.0.3.1
-  # # ransack              1.8.10   3.2.1    ~> 1.8     default
-  # # redis                3.3.5    4.7.1    ~> 3.3     default
-  # # redis-store          1.6.0    1.9.1
-  # # regexp_parser        1.8.2    2.5.0
-  # # rspec                3.10.0   3.11.0
-  # # rspec-core           3.10.1   3.11.0   = 3.10.1   development, test
-  # # rspec-expectations   3.10.1   3.11.0   = 3.10.1   development, test
-  # # rspec-mocks          3.10.2   3.11.1   = 3.10.2   development, test
-  # # rspec-rails          4.1.2    5.1.2    = 4.1.2    development, test
-  # # rspec-support        3.10.2   3.11.0   = 3.10.2   development, test
-  # # rubyzip              1.3.0    2.3.2    ~> 1.3     default
-  # # scenic               1.5.4    1.6.0    = 1.5.4    default
-  # # scout_apm            4.1.2    5.2.0    ~> 4.1     default
-  # # selenium-webdriver   3.142.7  4.3.0    = 3.142.7  development, test
-  # # shoulda-matchers     4.0.1    5.1.0    = 4.0.1    development, test
-  # # sidekiq              4.2.10   6.5.1    ~> 4.2     default
-  # # sidekiq-pool         1.9.3    2.0.1    ~> 1.8     default
-  # # sidekiq-unique-jobs  6.0.25   7.1.27   ~> 6.0     default
-  # # spring               2.1.1    4.0.0    ~> 2.0     development, test
-  # # sprockets            3.7.2    4.1.1    ~> 3.7     default
-  # # sprockets-rails      3.2.2    3.4.2
-  # # timecop              0.8.1    0.9.5    = 0.8.1    development, test
-  # # tzinfo               1.2.10   2.0.5
-  # # uglifier             3.2.0    4.2.0    ~> 3.2     default
-  # # unicorn              5.8.0    6.1.0    ~> 5.3     default
-  # # webmock              3.13.0   3.14.0   = 3.13.0   development, test
-  # # websocket-driver     0.6.5    0.7.5
-
   # rag.add_option :skip_namespace                , type: :boolean    , default: false         , description: "Skip namespace (affects only isolated engines)"
   # rag.add_option :skip_collision_check          , type: :boolean    , default: false         , description: "Skip collision check"
   rag.add_option :force , type: :boolean , default: nil , description: 'Overwrite files that already exist'
@@ -229,7 +114,8 @@ KConfig.configure do |config|
   rag.add_option :add_hexapdf                 , type: :boolean, default: false
   rag.add_option :add_httparty                , type: :boolean, default: false
   rag.add_option :add_honeybadger             , type: :boolean, default: false
-  rag.add_option :add_mini_magick             , type: :boolean, default: false , description: 'Add Mini Magick gem'
+  rag.add_option :add_mini_magick             , type: :boolean, default: false
+  rag.add_option :add_phony_rails             , type: :boolean, default: false
   rag.add_option :add_public_suffix           , type: :boolean, default: false
   rag.add_option :add_rails_html_sanitizer    , type: :boolean, default: false
   rag.add_option :add_twilio_ruby             , type: :boolean, default: false

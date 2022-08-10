@@ -54,6 +54,7 @@
     "add_httparty",
     "add_honeybadger",
     "add_mini_magick",
+    "add_phony_rails",
     "add_public_suffix",
     "add_rails_html_sanitizer",
     "add_twilio_ruby"
@@ -433,6 +434,13 @@
     {
       "name": "add_mini_magick",
       "description": "Indicates when to generate add mini magick",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_phony_rails",
+      "description": "Indicates when to generate add phony rails",
       "type": "boolean",
       "default": false,
       "required": false
