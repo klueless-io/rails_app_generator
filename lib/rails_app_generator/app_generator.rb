@@ -261,9 +261,9 @@ module RailsAppGenerator
 
       def bundle_install
         Bundler.with_unbundled_env do
-          run("bundle install")
+          run('bundle install')
         end
-      end        
+      end
 
       def bundle_add(name)
         run("bundle add #{name}")
