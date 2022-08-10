@@ -1,3 +1,11 @@
+## [0.2.6](https://github.com/klueless-io/rails_app_generator/compare/v0.2.5...v0.2.6) (2022-08-10)
+
+
+### Bug Fixes
+
+* add phony_rails addon ([77aec0e](https://github.com/klueless-io/rails_app_generator/commit/77aec0e7ed2fe9093cb988ab408db1f1e50e78d3))
+* add phony_rails addon ([7a45829](https://github.com/klueless-io/rails_app_generator/commit/7a45829688dfb371a4257a5e1c6bb10ebc0a56ad))
+
 ## [0.2.5](https://github.com/klueless-io/rails_app_generator/compare/v0.2.4...v0.2.5) (2022-08-10)
 
 
