@@ -1,3 +1,10 @@
+## [0.2.5](https://github.com/klueless-io/rails_app_generator/compare/v0.2.4...v0.2.5) (2022-08-10)
+
+
+### Bug Fixes
+
+* add public_suffix addon ([dce30f3](https://github.com/klueless-io/rails_app_generator/commit/dce30f3d3a479ca41ab7c60deef59f9d19d2ce13))
+
 ## [0.2.4](https://github.com/klueless-io/rails_app_generator/compare/v0.2.3...v0.2.4) (2022-08-10)
 
 
