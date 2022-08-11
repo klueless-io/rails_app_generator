@@ -1,3 +1,10 @@
+## [0.2.8](https://github.com/klueless-io/rails_app_generator/compare/v0.2.7...v0.2.8) (2022-08-11)
+
+
+### Bug Fixes
+
+* add bcrypt_ruby profile ([a07dfdb](https://github.com/klueless-io/rails_app_generator/commit/a07dfdb04190826edfe3a1258b00e00653326e10))
+
 ## [0.2.7](https://github.com/klueless-io/rails_app_generator/compare/v0.2.6...v0.2.7) (2022-08-11)
 
 
