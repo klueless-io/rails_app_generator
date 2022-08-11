@@ -58,6 +58,7 @@
     "add_phony_rails",
     "add_public_suffix",
     "add_rails_html_sanitizer",
+    "add_redcarpet",
     "add_twilio_ruby"
   ],
   "class_options": [
@@ -463,6 +464,13 @@
     {
       "name": "add_rails_html_sanitizer",
       "description": "Indicates when to generate add rails html sanitizer",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_redcarpet",
+      "description": "Indicates when to generate add redcarpet",
       "type": "boolean",
       "default": false,
       "required": false

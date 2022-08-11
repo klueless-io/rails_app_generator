@@ -119,6 +119,7 @@ KConfig.configure do |config|
   rag.add_option :add_phony_rails             , type: :boolean, default: false
   rag.add_option :add_public_suffix           , type: :boolean, default: false
   rag.add_option :add_rails_html_sanitizer    , type: :boolean, default: false
+  rag.add_option :add_redcarpet               , type: :boolean, default: false
   rag.add_option :add_twilio_ruby             , type: :boolean, default: false
 end
 

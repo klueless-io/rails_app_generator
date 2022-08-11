@@ -44,7 +44,6 @@ class Profile < Thor
     template('profile/app/controllers/home_controller.rb'             , after_template_path('app/controllers/home_controller.rb')     , force: options[:force])
     template('profile/app/views/home/index.html.erb'                  , after_template_path('app/views/home/index.html.erb')          , force: options[:force])
 
-    copy_file('profile/app/views/layouts/_alerts.html.erb'            , after_template_path('app/views/layouts/_alerts.html.erb')     , force: options[:force])
     copy_file('profile/app/views/layouts/_navbar.html.erb'            , after_template_path('app/views/layouts/_navbar.html.erb')     , force: options[:force])
     copy_file('profile/app/views/layouts/_footer.html.erb'            , after_template_path('app/views/layouts/_footer.html.erb')     , force: options[:force])
     copy_file('profile/app/views/layouts/application.html.erb'        , after_template_path('app/views/layouts/application.html.erb') , force: options[:force])
