@@ -1,3 +1,10 @@
+## [0.2.9](https://github.com/klueless-io/rails_app_generator/compare/v0.2.8...v0.2.9) (2022-08-11)
+
+
+### Bug Fixes
+
+* add redcarpet addon ([fb8acf0](https://github.com/klueless-io/rails_app_generator/commit/fb8acf09d3d1be3d4eb9b82e5fc1d9af1fea0e0c))
+
 ## [0.2.8](https://github.com/klueless-io/rails_app_generator/compare/v0.2.7...v0.2.8) (2022-08-11)
 
 
