@@ -1,0 +1,17 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Name:</strong>
+    <%= user.name %>
+  </p>
+
+  <p>
+    <strong>Password:</strong>
+    <%= user.password %>
+  </p>
+
+  <p>match?('password1'): <%= user.match?('password1') ? '<strong>TRUE</strong>'.html_safe : false %></p>
+  <p>match?('password2'): <%= user.match?('password2') ? '<strong>TRUE</strong>'.html_safe : false %></p>
+  <p>match?('password3'): <%= user.match?('password3') ? '<strong>TRUE</strong>'.html_safe : false %></p>
+  <p>match?('hello'): <%= user.match?('hello') ? '<strong>TRUE</strong>'.html_safe : false %></p>
+
+</div>

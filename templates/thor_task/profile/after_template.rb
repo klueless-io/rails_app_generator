@@ -33,6 +33,7 @@ def setup_db
   # add_scaffold('product', 'name', 'price:integer')
 
   # db_migrate
+  # db_seed
 end
 
 # Other template command examples
