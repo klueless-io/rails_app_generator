@@ -7,8 +7,7 @@ module RailsAppGenerator
     class BcryptRuby < RailsAppGenerator::Addon
       required_gem gem.version('bcrypt-ruby', '3.1.5', 'bcrypt() is a sophisticated and secure hash algorithm designed by The OpenBSD project for hashing passwords.')
 
-      def apply
-      end
+      def apply; end
     end
   end
 end

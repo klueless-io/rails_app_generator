@@ -47,6 +47,7 @@
     "add_lograge",
     "add_acts_as_list",
     "add_browser",
+    "add_bcrypt_ruby",
     "add_chartkick",
     "add_faker",
     "add_groupdate",
@@ -384,6 +385,13 @@
     },
     {
       "name": "add_browser",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_bcrypt_ruby",
       "description": "",
       "type": "boolean",
       "default": false,
