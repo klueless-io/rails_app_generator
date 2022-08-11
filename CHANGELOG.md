@@ -1,3 +1,10 @@
+## [0.2.10](https://github.com/klueless-io/rails_app_generator/compare/v0.2.9...v0.2.10) (2022-08-11)
+
+
+### Bug Fixes
+
+* add administrate addon ([330ce3c](https://github.com/klueless-io/rails_app_generator/commit/330ce3c0db2148ccb34585eb7fb45dae8b267884))
+
 ## [0.2.9](https://github.com/klueless-io/rails_app_generator/compare/v0.2.8...v0.2.9) (2022-08-11)
 
 
