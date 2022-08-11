@@ -1,3 +1,11 @@
+## [0.2.7](https://github.com/klueless-io/rails_app_generator/compare/v0.2.6...v0.2.7) (2022-08-11)
+
+
+### Bug Fixes
+
+* add bcrypt_ruby addon ([34eb3ca](https://github.com/klueless-io/rails_app_generator/commit/34eb3ca4236804dec52ea995addbb1e3749336d9))
+* add bcrypt_ruby addon ([4622249](https://github.com/klueless-io/rails_app_generator/commit/4622249b03ab204728432d04d4743e8ba8569ec3))
+
 ## [0.2.6](https://github.com/klueless-io/rails_app_generator/compare/v0.2.5...v0.2.6) (2022-08-10)
 
 
