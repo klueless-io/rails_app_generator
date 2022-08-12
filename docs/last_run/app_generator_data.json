@@ -32,7 +32,7 @@
     "test": "rspec",
     "add_devise": false,
     "add_dotenv": false,
-    "add_rubocop": false,
+    "add_rubocop": true,
     "add_annotate": false,
     "add_lograge": false,
     "add_acts_as_list": false,
@@ -47,11 +47,11 @@
     "add_honeybadger": false,
     "add_mini_magick": false,
     "add_motor_admin": false,
-    "add_phony_rails": true,
+    "add_phony_rails": false,
     "add_public_suffix": false,
     "add_rails_html_sanitizer": false,
     "add_redcarpet": false,
     "add_twilio_ruby": false,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/phony_rails/_.rb"
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/rubocop/_.rb"
   }
 }
