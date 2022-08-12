@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @image_id = params[:image] || 1
     @img = get_image
 
     @img_rotate = get_image do |options|
@@ -21,15 +22,17 @@ class HomeController < ApplicationController
   private
 
   def image_name
-    @variable ||= begin
-      image_names = [
-        'cat1.jpg',
-        'cat2.jpg',
-        'cat3.jpg'
-      ]
+    image_names = [
+      'cat1.jpg',
+      'cat2.jpg',
+      'cat3.jpg'
+    ]
+    image_name = image_names[@image_id.to_i - 1]
+    puts params
+    puts @image_id
+    puts image_name
 
-      "app/assets/images/#{image_names.sample}"
-    end
+    "app/assets/images/#{image_name}"
   end
 
   def get_image(&block)
@@ -40,4 +43,3 @@ class HomeController < ApplicationController
     Base64.encode64(image.to_blob)
   end
 end
-

@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     canvas.font('Helvetica', size: 40)
     name = Faker::Name.name
     canvas.text("Hello #{name}", at: [20, 400])
-    doc.write("hello-sean.pdf")
+    doc.write("hello-jin.pdf")
 
     flash.notice = "PDF Created!"
 

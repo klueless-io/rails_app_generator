@@ -26,12 +26,8 @@ template  'db/seeds.rb'                                   , 'db/seeds.rb'
 after_bundle do
   setup_db
 
-  # generate('motor:install')
-  # db_migrate
-  
-  # directory "app/dashboards"
-
-  rubocop
+  generate('motor:install')
+  db_migrate
 end
 
 def setup_db
