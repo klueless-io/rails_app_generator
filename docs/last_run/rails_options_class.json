@@ -46,6 +46,7 @@
     "add_annotate",
     "add_lograge",
     "add_acts_as_list",
+    "add_administrate",
     "add_browser",
     "add_bcrypt_ruby",
     "add_chartkick",
@@ -379,6 +380,13 @@
     },
     {
       "name": "add_acts_as_list",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_administrate",
       "description": "",
       "type": "boolean",
       "default": false,
