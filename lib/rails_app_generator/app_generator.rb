@@ -304,7 +304,9 @@ module RailsAppGenerator
         pin(name, *args)
       end
 
-      def copy_file(source, destination, args)
+      # copy_file in railties and copy_file in thor have different signatures
+      # I may want to remove this method because it just causes pain at the moment
+      def copy_file(source, destination, args = {})
         # puts source
         # puts destination
         # puts args

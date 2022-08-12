@@ -8,6 +8,8 @@ self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'
 
+prepare_environment
+
 add_controller('home', 'index')
 route("root 'home#index'")
 
@@ -40,7 +42,6 @@ after_bundle do
 end
 
 def setup_db
-    
   db_migrate
-  rails_command('db:seed')
+  db_seed
 end
