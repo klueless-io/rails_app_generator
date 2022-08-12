@@ -1,3 +1,10 @@
+## [0.2.13](https://github.com/klueless-io/rails_app_generator/compare/v0.2.12...v0.2.13) (2022-08-12)
+
+
+### Bug Fixes
+
+* add motor-admin profile ([f74dc4b](https://github.com/klueless-io/rails_app_generator/commit/f74dc4bf2671ae460a27bbc67df0701499526afa))
+
 ## [0.2.12](https://github.com/klueless-io/rails_app_generator/compare/v0.2.11...v0.2.12) (2022-08-12)
 
 
