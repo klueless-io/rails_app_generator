@@ -8,7 +8,7 @@ self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'
 
-bundle_install
+prepare_environment
 
 add_controller('home', 'index')
 
@@ -37,6 +37,7 @@ def setup_db
 end
 
 # Other template command examples
+# prepare_environment
 # bundle_install
 # css_install('tailwind')
 # rails_command('db:migrate')

@@ -32,8 +32,8 @@
     "test": "rspec",
     "add_devise": false,
     "add_dotenv": false,
-    "add_rubocop": true,
-    "add_annotate": false,
+    "add_rubocop": false,
+    "add_annotate": true,
     "add_lograge": false,
     "add_acts_as_list": false,
     "add_administrate": false,
@@ -52,6 +52,6 @@
     "add_rails_html_sanitizer": false,
     "add_redcarpet": false,
     "add_twilio_ruby": false,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/rubocop/_.rb"
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/annotate/_.rb"
   }
 }

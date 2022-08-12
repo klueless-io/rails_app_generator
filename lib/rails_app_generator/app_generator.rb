@@ -167,9 +167,9 @@ module RailsAppGenerator
     def finish_template
       puts 'finish template'
 
+      add_if(:acts_as_list) # tested
       add_if(:administrate) # tested
-      add_if(:acts_as_list)
-      add_if(:annotate)
+      add_if(:annotate) # tested
       add_if(:browser)
       add_if(:bcrypt) # tested
       add_if(:chartkick)
