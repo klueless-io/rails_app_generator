@@ -1,3 +1,10 @@
+## [0.2.18](https://github.com/klueless-io/rails_app_generator/compare/v0.2.17...v0.2.18) (2022-08-12)
+
+
+### Bug Fixes
+
+* add prepare_environment to all custom templates ([73a4500](https://github.com/klueless-io/rails_app_generator/commit/73a4500b6a4cebfe63756ca4f97db4adee10db63))
+
 ## [0.2.17](https://github.com/klueless-io/rails_app_generator/compare/v0.2.16...v0.2.17) (2022-08-12)
 
 
