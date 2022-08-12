@@ -1,3 +1,10 @@
+## [0.2.21](https://github.com/klueless-io/rails_app_generator/compare/v0.2.20...v0.2.21) (2022-08-12)
+
+
+### Bug Fixes
+
+* add annotate profile ([1794612](https://github.com/klueless-io/rails_app_generator/commit/17946124c5600881a4d015c3283fc9e2e3278634))
+
 ## [0.2.20](https://github.com/klueless-io/rails_app_generator/compare/v0.2.19...v0.2.20) (2022-08-12)
 
 
