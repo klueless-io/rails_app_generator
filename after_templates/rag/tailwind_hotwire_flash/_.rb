@@ -2,7 +2,6 @@
 
 # Rails 7 hotwire and flash messages
 
-require 'pry'
 
 self.local_template_path = File.dirname(__FILE__)
 

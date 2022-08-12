@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'pry'
-
 # Do some browser detection with Ruby.
 #
 # exe/rag addons/browser

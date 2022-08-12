@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry'
-
 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
 #
 # exe/rag addons/mini_magick

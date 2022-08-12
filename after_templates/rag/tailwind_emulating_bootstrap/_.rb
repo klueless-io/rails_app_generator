@@ -2,8 +2,6 @@
 
 # Rails 7 using Tailwind CSS and Reusable Styles
 
-require 'pry'
-
 self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'

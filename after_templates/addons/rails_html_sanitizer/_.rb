@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 # HTML sanitization for Rails applications
-require 'pry'
-
 self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'

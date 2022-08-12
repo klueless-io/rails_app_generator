@@ -6,7 +6,6 @@
 # This builds on top of: Ruby on Rails Forms With Hotwire
 # https://www.youtube.com/watch?v=-n7IbUFKjoM
 
-require 'pry'
 # frozen_string_literal: true
 
 # How To Build a Powerful Search Form With Hotwire

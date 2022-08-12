@@ -6,8 +6,6 @@
 #   https://youtu.be/phOUsR0dm5s?t=493
 #   https://www.youtube.com/watch?v=nxKDTtuKOo4
 
-require 'pry'
-
 def add_customizations
   self.local_template_path = File.dirname(__FILE__)
 

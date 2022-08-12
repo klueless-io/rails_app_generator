@@ -48,7 +48,7 @@
     "add_acts_as_list",
     "add_administrate",
     "add_browser",
-    "add_bcrypt_ruby",
+    "add_bcrypt",
     "add_chartkick",
     "add_faker",
     "add_groupdate",
@@ -110,7 +110,7 @@
       "name": "ruby",
       "description": "Path to the Ruby binary of your choice",
       "type": "string",
-      "default": "/Users/davidcruwys/.asdf/installs/ruby/2.7.6/bin/ruby",
+      "default": "/Users/davidcruwys/.asdf/installs/ruby/3.1.1/bin/ruby",
       "required": false
     },
     {
@@ -401,7 +401,7 @@
       "required": false
     },
     {
-      "name": "add_bcrypt_ruby",
+      "name": "add_bcrypt",
       "description": "",
       "type": "boolean",
       "default": false,

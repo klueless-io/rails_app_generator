@@ -47,6 +47,17 @@ module RailsAppGenerator
           end
         end
       end
+
+      def bundler_environment(environment_style: :unbundled_env, &block)
+        case environment_style
+        when :unbundled_env
+          Bundler.with_unbundled_env(&block)
+        when :original_env
+          Bundler.with_original_env(&block)
+        else
+          block.call
+        end
+      end
     end
   end
 end

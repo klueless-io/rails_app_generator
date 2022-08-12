@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 # Daisy 
-require 'pry'
-
 # Do NOT use the --css=tailwind option when using DaisyUI or any other custom plugin syste for tailwindcss
 
 self.local_template_path = File.dirname(__FILE__)

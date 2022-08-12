@@ -2,7 +2,6 @@
 
 # https://codecrate.com/2014/01/replace-rake-with-thor.html
 
-require 'pry'
 require_relative 'gem_info'
 require 'cmdlet'
 

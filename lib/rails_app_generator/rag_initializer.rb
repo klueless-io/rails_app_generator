@@ -109,7 +109,7 @@ KConfig.configure do |config|
   rag.add_option :add_acts_as_list            , type: :boolean, default: false
   rag.add_option :add_administrate            , type: :boolean, default: false
   rag.add_option :add_browser                 , type: :boolean, default: false
-  rag.add_option :add_bcrypt_ruby             , type: :boolean, default: false
+  rag.add_option :add_bcrypt                  , type: :boolean, default: false
   rag.add_option :add_chartkick               , type: :boolean, default: false
   rag.add_option :add_faker                   , type: :boolean, default: false
   rag.add_option :add_groupdate               , type: :boolean, default: false

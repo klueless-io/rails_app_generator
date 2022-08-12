@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'pry'
-
 # The official library for communicating with the Twilio REST API, building TwiML, and generating Twilio JWT Capability Tokens
 #
 # exe/rag addons/twilio_ruby

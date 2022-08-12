@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'pry'
-
 # HexaPDF is a pure Ruby library with an accompanying application for working with PDF files.
 
 #

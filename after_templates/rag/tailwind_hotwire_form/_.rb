@@ -3,7 +3,6 @@
 # How to Start a Ruby on Rails 7 App With Hotwire and Tailwind CSS
 # https://www.youtube.com/watch?v=-n7IbUFKjoM
 
-require 'pry'
 
 self.local_template_path = File.dirname(__FILE__)
 

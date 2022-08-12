@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'pry'
-
 # Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
 #
 # exe/rag addons/faker

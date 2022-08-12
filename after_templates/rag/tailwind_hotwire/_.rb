@@ -3,8 +3,6 @@
 # How to Start a Ruby on Rails 7 App With Hotwire and Tailwind CSS
 # https://www.youtube.com/watch?v=7G0oWn2Gn5c
 
-require 'pry'
-
 self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'

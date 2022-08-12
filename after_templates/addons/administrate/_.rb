@@ -8,7 +8,7 @@ self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'
 
-bundle_install
+prepare_environment
 
 add_controller('home', 'index')
 
@@ -30,7 +30,7 @@ after_bundle do
   
   directory "app/dashboards"
 
-  rubocop
+  rubocop_minimal
 end
 
 def setup_db

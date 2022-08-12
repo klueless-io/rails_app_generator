@@ -50,7 +50,7 @@ module RailsAppGenerator
       opts = extract_rails_options(app_path, options)
 
       if capture_output
-        @console_output = capture_console do
+        @console_output = Util.capture_console do
           RailsAppGenerator::AppGenerator.start(opts, destination_root: destination_root)
         end
       else
@@ -63,17 +63,6 @@ module RailsAppGenerator
     end
 
     private
-
-    def capture_console
-      $stdout = StringIO.new
-      yield
-      output = $stdout.string
-      $stdout.close
-      output
-    ensure
-      $stdout = STDOUT
-      $stdout.puts output
-    end
 
     # Rails options returns a flat array of options
     #

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'pry'
-
 # Create beautiful JavaScript charts with one line of Ruby
 #
 # exe/rag addons/chartkick

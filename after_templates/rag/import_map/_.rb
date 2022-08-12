@@ -3,8 +3,6 @@
 # Episode #312 - Importmaps in Rails 7
 # https://www.youtube.com/watch?v=veWpot6zfUQ
 
-require 'pry'
-
 def add_customizations
   self.local_template_path = File.dirname(__FILE__)
 

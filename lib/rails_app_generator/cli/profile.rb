@@ -28,7 +28,7 @@ module RailsAppGenerator
 
         RailsAppGenerator::Util.write_last_run('rails_options_data.json', opts.to_h)
 
-        starter = RailsAppGenerator::Starter.new(args)
+        starter = RailsAppGenerator::Starter.new(**args)
 
         starter.delete_target_folder
         starter.start(opts)

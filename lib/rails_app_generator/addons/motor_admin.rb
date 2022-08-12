@@ -9,14 +9,20 @@ module RailsAppGenerator
 
       def apply
         say 'Setting up MotorAdmin'
+        puts '11111111111111111111111111111111111111111111111111111111111111'
       end
 
       def before_bundle
         say 'Setting up MotorAdmin - before bundle install'
+        puts '22222222222222222222222222222222222222222222222222222222222222'
       end
 
       def after_bundle
         say 'Setting up MotorAdmin - after bundle install'
+        puts '33333333333333333333333333333333333333333333333333333333333333'
+
+        generate('motor:install')
+        db_migrate
       end
     end
   end

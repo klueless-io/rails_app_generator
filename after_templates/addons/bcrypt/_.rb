@@ -2,13 +2,13 @@
 
 # bcrypt() is a sophisticated and secure hash algorithm designed by The OpenBSD project for hashing passwords.
 #
-# exe/rag addons/bcrypt_ruby
+# exe/rag addons/bcrypt
 
 self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'
 
-bundle_install
+prepare_environment
 
 add_controller('home', 'index')
 

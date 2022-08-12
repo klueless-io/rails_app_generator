@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'pry'
-
 # Makes http fun! Also, makes consuming restful web services dead easy.
 #
 # exe/rag addons/httparty

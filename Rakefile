@@ -8,8 +8,6 @@ require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
 require 'rails_app_generator/version'
 
-require 'pry'
-
 RSpec::Core::RakeTask.new(:spec)
 
 require 'rake/extensiontask'

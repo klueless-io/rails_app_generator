@@ -11,11 +11,11 @@ RSpec.describe RailsAppGenerator::Starter do
     File.expand_path("../../../a/#{name}", __dir__)
   end
 
-  let(:instance) { described_class.new(args) }
+  let(:instance) { described_class.new(**args) }
   let(:app_path) { sample_path('a1') }
   let(:args) { {} }
   let(:opts) { {} }
-  let(:rails_options) { RailsAppGenerator::RailsOptions.new(opts) }
+  let(:rails_options) { RailsAppGenerator::RailsOptions.new(**opts) }
 
   let(:dry_run) { true }
   let(:no_dry_run) { false }

@@ -3,8 +3,6 @@
 # Rails 7 - Intro to Devise
 # https://www.youtube.com/watch?v=m3uhldUGVes
 
-require 'pry'
-
 self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'

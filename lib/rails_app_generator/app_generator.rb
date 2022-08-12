@@ -163,13 +163,15 @@ module RailsAppGenerator
     #   # add(:rspec) if options[:testing_framework] == 'rspec'
     # end
 
-    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     def finish_template
       puts 'finish template'
 
+      add_if(:administrate) # tested
       add_if(:acts_as_list)
       add_if(:annotate)
       add_if(:browser)
+      add_if(:bcrypt) # tested
       add_if(:chartkick)
       add_if(:continuous_integration)
       add_if(:devise)
@@ -194,7 +196,7 @@ module RailsAppGenerator
       # invoke :rails_customization
       super
     end
-    # rubocop:enable Metrics/AbcSize
+    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
     def run_after_bundle_callbacks
       addon_instances.select { |addon| addon.respond_to?(:before_bundle) }.each(&:before_bundle)
@@ -247,6 +249,10 @@ module RailsAppGenerator
         run('rubocop -A --config .rubocop.yml')
       end
 
+      def rubocop_minimal
+        run('rubocop -A --format worst --config .rubocop.yml')
+      end
+
       def db_migrate
         rails_command('db:migrate')
       end
@@ -259,18 +265,27 @@ module RailsAppGenerator
         generate(:stimulus, name, *args)
       end
 
+      def prepare_environment
+        bundle_add('pry')
+        bundle_install
+      end
+
       def bundle_install
-        Bundler.with_unbundled_env do
+        Util.bundler_environment(environment_style: :unbundled_env) do
           run('bundle install')
         end
       end
 
       def bundle_add(name)
-        run("bundle add #{name}")
+        Util.bundler_environment(environment_style: :unbundled_env) do
+          run("bundle add #{name}")
+        end
       end
 
       def bundle_exec(name, *args)
-        run("bundle exec #{name} #{args.join(' ')}")
+        Util.bundler_environment(environment_style: :unbundled_env) do
+          run("bundle exec #{name} #{args.join(' ')}")
+        end
       end
 
       # If you need to manually install tailwind (instead of using the --template option)
@@ -289,10 +304,13 @@ module RailsAppGenerator
         pin(name, *args)
       end
 
-      def copy_file(source, destination, **args)
+      def copy_file(source, destination, args)
+        # puts source
+        # puts destination
+        # puts args
         args = { force: true }.merge(args) if force_copy?
 
-        super(source, destination, **args)
+        super(source, destination, args)
       end
 
       def template(source, *args, &block)
@@ -420,6 +438,10 @@ module RailsAppGenerator
 
       def addon_gemfile_entries
         active_addon_classes.flat_map(&:gem_entries)
+      end
+
+      def capture_console(&block)
+        Util.capture_console(&block)
       end
     end
 

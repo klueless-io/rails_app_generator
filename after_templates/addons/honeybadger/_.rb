@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'pry'
-
 # Make managing application errors a more pleasant experience.
 #
 # exe/rag addons/honeybadger

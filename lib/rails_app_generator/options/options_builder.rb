@@ -25,7 +25,7 @@ module RailsAppGenerator
       #
       # This is so options can be used interchangeably between OptionsBuilder and Thor.
       def class_option(name, **args)
-        option = BuildOption.new(name, args)
+        option = BuildOption.new(name, **args)
 
         add_class_option(option)
       end
@@ -48,7 +48,7 @@ module RailsAppGenerator
           default: thor_option.default,
           required: thor_option.required
         }
-        option = BuildOption.new(thor_option.name, args)
+        option = BuildOption.new(thor_option.name, **args)
 
         add_class_option(option)
       end
