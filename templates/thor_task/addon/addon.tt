@@ -21,6 +21,10 @@ module RailsAppGenerator
         # rails_command('tailwindcss:install')
       end
 
+      def before_template
+        say 'Setting up <%= data.name_camel %> - before custom template'
+      end
+
       def before_bundle
         say 'Setting up <%= data.name_camel %> - before bundle install'
       end

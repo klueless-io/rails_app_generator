@@ -198,6 +198,13 @@ module RailsAppGenerator
     end
     # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
+    # Fire any callbacks defined on addons either before running the custom template
+    def apply_rails_template
+      addon_instances.select { |addon| addon.respond_to?(:before_template) }.each(&:before_template)
+      super
+    end
+
+    # Fire any callbacks defined on addons either before or after the standard callbacks
     def run_after_bundle_callbacks
       addon_instances.select { |addon| addon.respond_to?(:before_bundle) }.each(&:before_bundle)
       super

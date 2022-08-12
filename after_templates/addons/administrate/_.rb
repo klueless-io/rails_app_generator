@@ -29,8 +29,6 @@ after_bundle do
   generate('administrate:install')
   
   directory "app/dashboards"
-
-  rubocop_minimal
 end
 
 def setup_db

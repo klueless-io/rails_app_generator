@@ -12,6 +12,13 @@ module RailsAppGenerator
       def apply
         template '.rubocop.yml.erb', '.rubocop.yml'
       end
+
+      def before_template
+        # This will cleanup the basic Rails 7 code base
+        # May want to make this a setting in the future
+        say 'Rubocop to cleanup the default Rails 7 code base'
+        run('rubocop -A --format worst --config .rubocop.yml')
+      end
     end
   end
 end
