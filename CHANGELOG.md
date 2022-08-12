@@ -1,3 +1,10 @@
+## [0.2.17](https://github.com/klueless-io/rails_app_generator/compare/v0.2.16...v0.2.17) (2022-08-12)
+
+
+### Bug Fixes
+
+* refactor browser ([c266fdf](https://github.com/klueless-io/rails_app_generator/commit/c266fdf71cc80a310e75f7dd47cc4f62e912723b))
+
 ## [0.2.16](https://github.com/klueless-io/rails_app_generator/compare/v0.2.15...v0.2.16) (2022-08-12)
 
 
