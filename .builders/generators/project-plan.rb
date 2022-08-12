@@ -52,6 +52,7 @@ KManager.action :project_plan do
         todo(title: 'add addon - lograge')
         todo(title: 'add addon - mini_magick')
         todo(title: 'add addon - motor_magick')
+        todo(title: 'add addon - phony_rails')
         todo(title: 'add addon - groupdate')
         todo(title: 'add addon - browser')
         todo(title: 'add addon - faker')

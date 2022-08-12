@@ -20,5 +20,3 @@ directory "app/controllers"
 directory "app/views/home"
 directory "app/views/layouts"
 template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
-
-template  'db/seeds.rb'                                   , 'db/seeds.rb'
