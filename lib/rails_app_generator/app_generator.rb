@@ -256,10 +256,6 @@ module RailsAppGenerator
         run('rubocop -A --config .rubocop.yml')
       end
 
-      def rubocop_minimal
-        run('rubocop -A --format worst --config .rubocop.yml')
-      end
-
       def db_migrate
         rails_command('db:migrate')
       end

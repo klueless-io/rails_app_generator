@@ -39,13 +39,15 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
-        todo(title: 'add addon - administrate')
         todo(title: 'add addon - acts_as_list')
+        todo(title: 'add addon - administrate')
         todo(title: 'add addon - bcrypt')
+        todo(title: 'add addon - browser')
         todo(title: 'add addon - groupdate')
         todo(title: 'add addon - chartkick')
         todo(title: 'add addon - browser')
         todo(title: 'add addon - faker')
+        todo(title: 'add addon - rubocop')
         todo(title: 'add addon - twilio')
         todo(title: 'add addon - honeybadger')
 
