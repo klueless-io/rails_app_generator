@@ -1,3 +1,10 @@
+## [0.2.14](https://github.com/klueless-io/rails_app_generator/compare/v0.2.13...v0.2.14) (2022-08-12)
+
+
+### Bug Fixes
+
+* refactor for ruby 3.0, refactor bcrypt-ruby to bcrypt, cleanup warning messages ([a4eea32](https://github.com/klueless-io/rails_app_generator/commit/a4eea3235a7d838a359ce48396aa048f52a00c91))
+
 ## [0.2.13](https://github.com/klueless-io/rails_app_generator/compare/v0.2.12...v0.2.13) (2022-08-12)
 
 
