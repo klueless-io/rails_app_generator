@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-# lib/rails_app_generator/rag_initializer.rb
-# rag.add_option :add_motor_admin            , type: :boolean, default: false
-
 module RailsAppGenerator
   # Custom add-ons for RailsAppGenerator
   module AddOns

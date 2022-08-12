@@ -36,7 +36,7 @@
     "add_annotate": true,
     "add_lograge": false,
     "add_acts_as_list": false,
-    "add_administrate": true,
+    "add_administrate": false,
     "add_browser": false,
     "add_bcrypt_ruby": false,
     "add_chartkick": false,
@@ -46,11 +46,12 @@
     "add_httparty": false,
     "add_honeybadger": false,
     "add_mini_magick": false,
+    "add_motor_admin": true,
     "add_phony_rails": false,
     "add_public_suffix": false,
     "add_rails_html_sanitizer": false,
     "add_redcarpet": false,
     "add_twilio_ruby": false,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/administrate/_.rb"
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/motor_admin/_.rb"
   }
 }
