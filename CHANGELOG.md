@@ -1,3 +1,10 @@
+## [0.2.16](https://github.com/klueless-io/rails_app_generator/compare/v0.2.15...v0.2.16) (2022-08-12)
+
+
+### Bug Fixes
+
+* refactor rubocop ([d8bd37b](https://github.com/klueless-io/rails_app_generator/commit/d8bd37bcdccd67cb6751dcf409728a74bbbf42cf))
+
 ## [0.2.15](https://github.com/klueless-io/rails_app_generator/compare/v0.2.14...v0.2.15) (2022-08-12)
 
 
