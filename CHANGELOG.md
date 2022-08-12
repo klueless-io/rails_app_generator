@@ -1,3 +1,10 @@
+## [0.2.11](https://github.com/klueless-io/rails_app_generator/compare/v0.2.10...v0.2.11) (2022-08-12)
+
+
+### Bug Fixes
+
+* add administrate profile ([4049add](https://github.com/klueless-io/rails_app_generator/commit/4049add2e8b4ccf840daa22a817a454cb8bf2ab0))
+
 ## [0.2.10](https://github.com/klueless-io/rails_app_generator/compare/v0.2.9...v0.2.10) (2022-08-11)
 
 
