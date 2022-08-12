@@ -1,3 +1,10 @@
+## [0.2.19](https://github.com/klueless-io/rails_app_generator/compare/v0.2.18...v0.2.19) (2022-08-12)
+
+
+### Bug Fixes
+
+* refactor motor-admin, mini_magick and hexapdf profile ([5e6eae3](https://github.com/klueless-io/rails_app_generator/commit/5e6eae35e17b9b84af97fc2a71c9fb6aff548ab7))
+
 ## [0.2.18](https://github.com/klueless-io/rails_app_generator/compare/v0.2.17...v0.2.18) (2022-08-12)
 
 
