@@ -1,3 +1,10 @@
+## [0.2.15](https://github.com/klueless-io/rails_app_generator/compare/v0.2.14...v0.2.15) (2022-08-12)
+
+
+### Bug Fixes
+
+* refactor acts_on_list ([b35bb14](https://github.com/klueless-io/rails_app_generator/commit/b35bb142ecafcac1ae47d88edd1a79649b5924c2))
+
 ## [0.2.14](https://github.com/klueless-io/rails_app_generator/compare/v0.2.13...v0.2.14) (2022-08-12)
 
 
