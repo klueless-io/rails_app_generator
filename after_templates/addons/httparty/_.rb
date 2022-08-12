@@ -8,6 +8,8 @@ self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'
 
+prepare_environment
+
 add_controller('home', 'index', 'questions', 'users')
 route("root 'home#index'")
 # route("get 'home/stack_overflow'")

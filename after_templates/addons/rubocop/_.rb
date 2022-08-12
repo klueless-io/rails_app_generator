@@ -8,13 +8,12 @@ self.local_template_path = File.dirname(__FILE__)
 
 gac 'base rails 7 image created'
 
+prepare_environment
+
 add_controller('home', 'index')
 route("root 'home#index'")
 
 after_bundle do
-  # This will clean up the standard Rails application
-  run('rubocop -A --config .rubocop.yml')
-
   # There are linting errors in the controller that can be fixed manually with
   # rubocop -A --config .rubocop.yml
 
@@ -25,5 +24,8 @@ after_bundle do
   copy_file 'app/assets/images/cop-output.png'              , 'app/assets/images/cop-output.png'
 
   template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
+
+  # Cleanup the generated files
+  run('rubocop -A --config .rubocop.yml')
 end
 
