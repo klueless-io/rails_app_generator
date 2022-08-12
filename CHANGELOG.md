@@ -1,3 +1,10 @@
+## [0.2.20](https://github.com/klueless-io/rails_app_generator/compare/v0.2.19...v0.2.20) (2022-08-12)
+
+
+### Bug Fixes
+
+* refactor phony_rails profile ([4ac976a](https://github.com/klueless-io/rails_app_generator/commit/4ac976af07f7d0773a404c15ca8d746e479825f2))
+
 ## [0.2.19](https://github.com/klueless-io/rails_app_generator/compare/v0.2.18...v0.2.19) (2022-08-12)
 
 
