@@ -40,16 +40,16 @@
     "skip_bundle",
     "note",
     "test",
-    "add_devise",
-    "add_dotenv",
     "add_rubocop",
-    "add_annotate",
     "add_lograge",
     "add_acts_as_list",
     "add_administrate",
-    "add_browser",
+    "add_annotate",
     "add_bcrypt",
+    "add_browser",
     "add_chartkick",
+    "add_devise",
+    "add_dotenv",
     "add_faker",
     "add_groupdate",
     "add_hexapdf",
@@ -345,28 +345,7 @@
       "required": false
     },
     {
-      "name": "add_devise",
-      "description": "",
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    {
-      "name": "add_dotenv",
-      "description": "",
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    {
       "name": "add_rubocop",
-      "description": "",
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    {
-      "name": "add_annotate",
       "description": "",
       "type": "boolean",
       "default": false,
@@ -394,7 +373,7 @@
       "required": false
     },
     {
-      "name": "add_browser",
+      "name": "add_annotate",
       "description": "",
       "type": "boolean",
       "default": false,
@@ -408,7 +387,28 @@
       "required": false
     },
     {
+      "name": "add_browser",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
       "name": "add_chartkick",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_devise",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_dotenv",
       "description": "",
       "type": "boolean",
       "default": false,

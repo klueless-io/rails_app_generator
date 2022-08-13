@@ -170,27 +170,35 @@ module RailsAppGenerator
       add_if(:acts_as_list) # tested
       add_if(:administrate) # tested
       add_if(:annotate) # tested
-      add_if(:browser)
       add_if(:bcrypt) # tested
-      add_if(:chartkick)
-      add_if(:continuous_integration)
-      add_if(:devise)
-      add_if(:groupdate)
-      add_if(:factory_bot)
+      add_if(:browser) # tested
+      add_if(:chartkick) # tested
+      add_if(:continuous_integration) # TODO: needs work
+      add_if(:devise) # TODO: needs testing
+      add_if(:dotenv) # tested
+      add_if(:factory_bot) # TODO: needs testing
       add_if(:faker)
-      add_if(:generators)
-      add_if(:hexapdf)
-      add_if(:httparty)
-      add_if(:high_voltage)
-      add_if(:honeybadger)
-      add_if(:lograge)
-      add_if(:mini_magick)
-      add_if(:pundit)
-      add_if(:rails_app_generator)
-      add_if(:services)
-      add_if(:shoulda)
-      add_if(:sidekiq)
-      add_if(:twilio_ruby)
+      add_if(:generators) # TODO: needs testing
+      add_if(:groupdate) # TODO: does not have a profile
+      add_if(:hexapdf) # tested
+      add_if(:httparty) # tested
+      add_if(:high_voltage) # TODO: needs testing
+      add_if(:honeybadger) # tested
+      add_if(:lograge) # tested
+      add_if(:mini_magick) # tested
+      add_if(:motor_magick) # tested
+      add_if(:public_suffix) # tested
+      add_if(:phony_rails) # tested
+      add_if(:pundit) # TODO: needs testing
+      add_if(:rails_html_sanitizer) # tested
+      add_if(:rails_app_generator) # TODO: needs testing
+      add_if(:services) # TODO: needs testing
+      add_if(:shoulda) # TODO: needs testing
+      add_if(:sidekiq) # TODO: needs testing
+      # redcarpet
+      # groupdate
+      # rubocop
+      add_if(:twilio_ruby) # tested
       add(:views, :errors, :scaffold) if active?(:views)
 
       # invoke :rails_customization

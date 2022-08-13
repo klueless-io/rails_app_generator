@@ -86,12 +86,9 @@ KConfig.configure do |config|
 
   # rag.add_option :add_irbrc                   , type: :boolean, default: false
   # rag.add_option :add_foreman                 , type: :boolean, default: false
-  rag.add_option :add_devise                  , type: :boolean, default: false
-  rag.add_option :add_dotenv                  , type: :boolean, default: false
   # rag.add_option :add_docker                  , type: :boolean, default: false
   # rag.add_option :add_docker_compose          , type: :boolean, default: false
   rag.add_option :add_rubocop                 , type: :boolean, default: false
-  rag.add_option :add_annotate                , type: :boolean, default: false
   # rag.add_option :add_continuous_integration  , type: :boolean, default: false
   # rag.add_option :add_high_voltage            , type: :boolean, default: false
   # rag.add_option :add_generators              , type: :boolean, default: false
@@ -108,10 +105,16 @@ KConfig.configure do |config|
   # NEW GEM ADDONS
   rag.add_option :add_acts_as_list            , type: :boolean, default: false
   rag.add_option :add_administrate            , type: :boolean, default: false
-  rag.add_option :add_browser                 , type: :boolean, default: false
+  rag.add_option :add_annotate                , type: :boolean, default: false
   rag.add_option :add_bcrypt                  , type: :boolean, default: false
+  rag.add_option :add_browser                 , type: :boolean, default: false
   rag.add_option :add_chartkick               , type: :boolean, default: false
+  # continuous_integration
+  rag.add_option :add_devise                  , type: :boolean, default: false
+  rag.add_option :add_dotenv                  , type: :boolean, default: false
+  # factory_bot
   rag.add_option :add_faker                   , type: :boolean, default: false
+  # generators
   rag.add_option :add_groupdate               , type: :boolean, default: false
   rag.add_option :add_hexapdf                 , type: :boolean, default: false
   rag.add_option :add_httparty                , type: :boolean, default: false

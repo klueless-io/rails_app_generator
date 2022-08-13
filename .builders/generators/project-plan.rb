@@ -41,19 +41,27 @@ KManager.action :project_plan do
 
         todo(title: 'add addon - acts_as_list')
         todo(title: 'add addon - administrate')
+        todo(title: 'add addon - annotate')
         todo(title: 'add addon - bcrypt')
         todo(title: 'add addon - browser')
         todo(title: 'add addon - chartkick')
+        # continuous_integration
+        # devise
         todo(title: 'add addon - dotenv')
+        # factory_bot
         todo(title: 'add addon - faker')
+        # generators
+        todo(title: 'add addon - groupdate')
         todo(title: 'add addon - hexapdf')
-        todo(title: 'add addon - honeybadger')
         todo(title: 'add addon - httparty')
+        # high_voltage
+        todo(title: 'add addon - honeybadger')
         todo(title: 'add addon - lograge')
         todo(title: 'add addon - mini_magick')
         todo(title: 'add addon - motor_magick')
-        todo(title: 'add addon - phony_rails')
         todo(title: 'add addon - public_suffix')
+        todo(title: 'add addon - phony_rails')
+        # pundit
         todo(title: 'add addon - rails_html_sanitizer')
         todo(title: 'add addon - redcarpet')
         todo(title: 'add addon - groupdate')

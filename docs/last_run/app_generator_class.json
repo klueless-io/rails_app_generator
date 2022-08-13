@@ -40,16 +40,16 @@
     "skip_bundle",
     "note",
     "test",
-    "add_devise",
-    "add_dotenv",
     "add_rubocop",
-    "add_annotate",
     "add_lograge",
     "add_acts_as_list",
     "add_administrate",
-    "add_browser",
+    "add_annotate",
     "add_bcrypt",
+    "add_browser",
     "add_chartkick",
+    "add_devise",
+    "add_dotenv",
     "add_faker",
     "add_groupdate",
     "add_hexapdf",
@@ -345,29 +345,8 @@
       "required": false
     },
     {
-      "name": "add_devise",
-      "description": "Indicates when to generate add devise",
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    {
-      "name": "add_dotenv",
-      "description": "Indicates when to generate add dotenv",
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    {
       "name": "add_rubocop",
       "description": "Indicates when to generate add rubocop",
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    {
-      "name": "add_annotate",
-      "description": "Indicates when to generate add annotate",
       "type": "boolean",
       "default": false,
       "required": false
@@ -394,8 +373,8 @@
       "required": false
     },
     {
-      "name": "add_browser",
-      "description": "Indicates when to generate add browser",
+      "name": "add_annotate",
+      "description": "Indicates when to generate add annotate",
       "type": "boolean",
       "default": false,
       "required": false
@@ -408,8 +387,29 @@
       "required": false
     },
     {
+      "name": "add_browser",
+      "description": "Indicates when to generate add browser",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
       "name": "add_chartkick",
       "description": "Indicates when to generate add chartkick",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_devise",
+      "description": "Indicates when to generate add devise",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_dotenv",
+      "description": "Indicates when to generate add dotenv",
       "type": "boolean",
       "default": false,
       "required": false
