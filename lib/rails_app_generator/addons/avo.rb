@@ -5,7 +5,7 @@ module RailsAppGenerator
   module AddOns
     # Add Avo to rails application
     class Avo < RailsAppGenerator::Addon
-      required_gem gem.version('avo', '2.12.0', 'Avo abstracts away the common parts of building apps, letting your engineers work on your apps essential components. The result is a full-featured admin panel that works out of the box, ready to give to your end-users.')
+      required_gem gem.version('avo', '2.12.0', 'Avo full-featured admin panel abstracts away the common parts of building apps, letting your engineers work on your apps essential components.')
 
       def apply
         # copy_file 'config/initializers/avo.rb'
