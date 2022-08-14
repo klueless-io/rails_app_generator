@@ -16,33 +16,3 @@ class TurboDeviseController < ApplicationController
   self.responder = Responder
   respond_to :html, :turbo_stream
 end
-
-
-class TurboFailureApp < Devise::FailureApp
-  def respond
-    if request_format == :turbo_stream
-      redirect
-    else
-      super
-    end
-  end
-
-  def skip_format?
-    %w(html turbo_stream */*).include? request_format.to_s
-  end
-end
-
- Devise.setup do |config|
-  ...
-  # Configure the parent class to the custom controller.
-  config.parent_controller = 'TurboDeviseUserController'
-  config.navigational_formats = ['*/*', :html, :turbo_stream]
-
-
-  # Warden configuration
-  config.warden do |manager|
-    manager.failure_app = TurboFailureApp
-  end
-
-...
-end
