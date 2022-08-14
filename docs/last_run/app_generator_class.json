@@ -40,11 +40,10 @@
     "skip_bundle",
     "note",
     "test",
-    "add_rubocop",
-    "add_lograge",
     "add_acts_as_list",
     "add_administrate",
     "add_annotate",
+    "add_avo",
     "add_bcrypt",
     "add_browser",
     "add_chartkick",
@@ -55,12 +54,14 @@
     "add_hexapdf",
     "add_httparty",
     "add_honeybadger",
+    "add_lograge",
     "add_mini_magick",
     "add_motor_admin",
-    "add_phony_rails",
     "add_public_suffix",
+    "add_phony_rails",
     "add_rails_html_sanitizer",
     "add_redcarpet",
+    "add_rubocop",
     "add_twilio_ruby"
   ],
   "class_options": [
@@ -345,20 +346,6 @@
       "required": false
     },
     {
-      "name": "add_rubocop",
-      "description": "Indicates when to generate add rubocop",
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    {
-      "name": "add_lograge",
-      "description": "Indicates when to generate add lograge",
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    {
       "name": "add_acts_as_list",
       "description": "Indicates when to generate add acts as list",
       "type": "boolean",
@@ -375,6 +362,13 @@
     {
       "name": "add_annotate",
       "description": "Indicates when to generate add annotate",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_avo",
+      "description": "Indicates when to generate add avo",
       "type": "boolean",
       "default": false,
       "required": false
@@ -450,6 +444,13 @@
       "required": false
     },
     {
+      "name": "add_lograge",
+      "description": "Indicates when to generate add lograge",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
       "name": "add_mini_magick",
       "description": "Indicates when to generate add mini magick",
       "type": "boolean",
@@ -464,15 +465,15 @@
       "required": false
     },
     {
-      "name": "add_phony_rails",
-      "description": "Indicates when to generate add phony rails",
+      "name": "add_public_suffix",
+      "description": "Indicates when to generate add public suffix",
       "type": "boolean",
       "default": false,
       "required": false
     },
     {
-      "name": "add_public_suffix",
-      "description": "Indicates when to generate add public suffix",
+      "name": "add_phony_rails",
+      "description": "Indicates when to generate add phony rails",
       "type": "boolean",
       "default": false,
       "required": false
@@ -487,6 +488,13 @@
     {
       "name": "add_redcarpet",
       "description": "Indicates when to generate add redcarpet",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_rubocop",
+      "description": "Indicates when to generate add rubocop",
       "type": "boolean",
       "default": false,
       "required": false

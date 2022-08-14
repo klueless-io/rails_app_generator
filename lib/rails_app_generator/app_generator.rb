@@ -170,14 +170,17 @@ module RailsAppGenerator
       add_if(:acts_as_list) # tested
       add_if(:administrate) # tested
       add_if(:annotate) # tested
+      add_if(:avo) # tested
       add_if(:bcrypt) # tested
       add_if(:browser) # tested
       add_if(:chartkick) # tested
       add_if(:continuous_integration) # TODO: needs work
       add_if(:devise) # TODO: needs testing
+      # docker_compose
+      # docker
       add_if(:dotenv) # tested
       add_if(:factory_bot) # TODO: needs testing
-      add_if(:faker)
+      add_if(:faker) # tested
       add_if(:generators) # TODO: needs testing
       add_if(:groupdate) # TODO: does not have a profile
       add_if(:hexapdf) # tested
@@ -192,12 +195,11 @@ module RailsAppGenerator
       add_if(:pundit) # TODO: needs testing
       add_if(:rails_html_sanitizer) # tested
       add_if(:rails_app_generator) # TODO: needs testing
+      add_if(:redcarpet) # tested
       add_if(:services) # TODO: needs testing
       add_if(:shoulda) # TODO: needs testing
       add_if(:sidekiq) # TODO: needs testing
-      # redcarpet
-      # groupdate
-      # rubocop
+      add_if(:rubocop) # tested
       add_if(:twilio_ruby) # tested
       add(:views, :errors, :scaffold) if active?(:views)
 

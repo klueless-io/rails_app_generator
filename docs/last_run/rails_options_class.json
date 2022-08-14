@@ -40,11 +40,10 @@
     "skip_bundle",
     "note",
     "test",
-    "add_rubocop",
-    "add_lograge",
     "add_acts_as_list",
     "add_administrate",
     "add_annotate",
+    "add_avo",
     "add_bcrypt",
     "add_browser",
     "add_chartkick",
@@ -55,12 +54,14 @@
     "add_hexapdf",
     "add_httparty",
     "add_honeybadger",
+    "add_lograge",
     "add_mini_magick",
     "add_motor_admin",
-    "add_phony_rails",
     "add_public_suffix",
+    "add_phony_rails",
     "add_rails_html_sanitizer",
     "add_redcarpet",
+    "add_rubocop",
     "add_twilio_ruby"
   ],
   "class_options": [
@@ -345,20 +346,6 @@
       "required": false
     },
     {
-      "name": "add_rubocop",
-      "description": "",
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    {
-      "name": "add_lograge",
-      "description": "",
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    {
       "name": "add_acts_as_list",
       "description": "",
       "type": "boolean",
@@ -374,6 +361,13 @@
     },
     {
       "name": "add_annotate",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_avo",
       "description": "",
       "type": "boolean",
       "default": false,
@@ -450,6 +444,13 @@
       "required": false
     },
     {
+      "name": "add_lograge",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
       "name": "add_mini_magick",
       "description": "",
       "type": "boolean",
@@ -464,14 +465,14 @@
       "required": false
     },
     {
-      "name": "add_phony_rails",
+      "name": "add_public_suffix",
       "description": "",
       "type": "boolean",
       "default": false,
       "required": false
     },
     {
-      "name": "add_public_suffix",
+      "name": "add_phony_rails",
       "description": "",
       "type": "boolean",
       "default": false,
@@ -486,6 +487,13 @@
     },
     {
       "name": "add_redcarpet",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_rubocop",
       "description": "",
       "type": "boolean",
       "default": false,

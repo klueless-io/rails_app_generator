@@ -88,11 +88,9 @@ KConfig.configure do |config|
   # rag.add_option :add_foreman                 , type: :boolean, default: false
   # rag.add_option :add_docker                  , type: :boolean, default: false
   # rag.add_option :add_docker_compose          , type: :boolean, default: false
-  rag.add_option :add_rubocop                 , type: :boolean, default: false
   # rag.add_option :add_continuous_integration  , type: :boolean, default: false
   # rag.add_option :add_high_voltage            , type: :boolean, default: false
   # rag.add_option :add_generators              , type: :boolean, default: false
-  rag.add_option :add_lograge                 , type: :boolean, default: false
   # rag.add_option :add_pundit                  , type: :boolean, default: false
   # rag.add_option :add_services                , type: :boolean, default: false
   # rag.add_option :add_sidekiq                 , type: :boolean, default: false
@@ -106,11 +104,14 @@ KConfig.configure do |config|
   rag.add_option :add_acts_as_list            , type: :boolean, default: false
   rag.add_option :add_administrate            , type: :boolean, default: false
   rag.add_option :add_annotate                , type: :boolean, default: false
+  rag.add_option :add_avo                     , type: :boolean, default: false
   rag.add_option :add_bcrypt                  , type: :boolean, default: false
   rag.add_option :add_browser                 , type: :boolean, default: false
   rag.add_option :add_chartkick               , type: :boolean, default: false
   # continuous_integration
   rag.add_option :add_devise                  , type: :boolean, default: false
+  # docker_compose
+  # docker
   rag.add_option :add_dotenv                  , type: :boolean, default: false
   # factory_bot
   rag.add_option :add_faker                   , type: :boolean, default: false
@@ -118,13 +119,22 @@ KConfig.configure do |config|
   rag.add_option :add_groupdate               , type: :boolean, default: false
   rag.add_option :add_hexapdf                 , type: :boolean, default: false
   rag.add_option :add_httparty                , type: :boolean, default: false
+  # high_voltage
   rag.add_option :add_honeybadger             , type: :boolean, default: false
+  rag.add_option :add_lograge                 , type: :boolean, default: false
   rag.add_option :add_mini_magick             , type: :boolean, default: false
   rag.add_option :add_motor_admin             , type: :boolean, default: false
-  rag.add_option :add_phony_rails             , type: :boolean, default: false
   rag.add_option :add_public_suffix           , type: :boolean, default: false
+  rag.add_option :add_phony_rails             , type: :boolean, default: false
+  # pundit
   rag.add_option :add_rails_html_sanitizer    , type: :boolean, default: false
+  # rails_app_generator
+  # RANSACK
   rag.add_option :add_redcarpet               , type: :boolean, default: false
+  # services
+  # shoulda
+  # sidekiq
+  rag.add_option :add_rubocop                 , type: :boolean, default: false
   rag.add_option :add_twilio_ruby             , type: :boolean, default: false
 end
 

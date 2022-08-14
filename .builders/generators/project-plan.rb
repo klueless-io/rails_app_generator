@@ -47,6 +47,8 @@ KManager.action :project_plan do
         todo(title: 'add addon - chartkick')
         # continuous_integration
         # devise
+        # docker_compose
+        # docker
         todo(title: 'add addon - dotenv')
         # factory_bot
         todo(title: 'add addon - faker')
@@ -63,6 +65,10 @@ KManager.action :project_plan do
         todo(title: 'add addon - phony_rails')
         # pundit
         todo(title: 'add addon - rails_html_sanitizer')
+        # rails_app_generator
+        # services
+        # shoulda
+        # sidekiq
         todo(title: 'add addon - redcarpet')
         todo(title: 'add addon - groupdate')
         todo(title: 'add addon - rubocop')
