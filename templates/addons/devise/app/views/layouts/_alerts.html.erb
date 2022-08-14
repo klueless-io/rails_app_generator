@@ -1,0 +1,5 @@
+<p class="notice"<%= notice %></p>
+<p class="alert"<%= alert %></p>
+
+<% flash.each do |type, msg| %><div class="<%= type %>"><%= msg %></div><% end %>
+<% if flash.any? %><hr /><% end %>

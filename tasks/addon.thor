@@ -4,7 +4,9 @@
 
 require 'net/http'
 require 'json'
-require_relative 'gem_info'
+require 'pry'
+require 'cmdlet'
+require 'rails_app_generator'
 
 # Thor task to create a new Addon for Rails App Generator
 class Addon < Thor
@@ -48,7 +50,7 @@ class Addon < Thor
     def build_required_gem_code
       info = gem_info
 
-      "      required_gem gem.version('#{info.name}', '#{info.version}', '#{info.description}')"
+      "      required_gem gem.version('#{info.name}', '#{info.version}', '#{info.comment}')"
     end
 
     # example: 'https://rubygems.org/api/v1/gems/draper.json'
@@ -57,7 +59,7 @@ class Addon < Thor
 
       gem_name = options[:gem] == 'gem' ? name : options[:gem]
 
-      ::GemInfo.get(gem_name)
+      RailsAppGenerator::GemQuery.get(gem_name)
     end
 
     def build_data

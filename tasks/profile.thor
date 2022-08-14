@@ -2,8 +2,8 @@
 
 # https://codecrate.com/2014/01/replace-rake-with-thor.html
 
-require_relative 'gem_info'
 require 'cmdlet'
+require 'rails_app_generator'
 
 # Thor task to create a new Profile for Rails App Generator
 class Profile < Thor
@@ -70,7 +70,7 @@ class Profile < Thor
     def build_data
       gi = gem_info(name)
 
-      description = gi ? gi.description : 'Description goes here'
+      description = gi ? gi.comment : 'Description goes here'
 
       Data.new(
         name: name,
@@ -104,7 +104,7 @@ class Profile < Thor
 
       gem_name = options[:gem] == 'gem' ? name : options[:gem]
 
-      GemInfo.get(gem_name)
+      RailsAppGenerator::GemQuery.get(gem_name)
     end
 
     def human(value)

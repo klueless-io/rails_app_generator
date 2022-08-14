@@ -94,14 +94,26 @@ module RailsAppGenerator
         @gem_entries ||= []
       end
 
-      protected
-
       def depends_on(*addon)
         @dependencies = addon.map(&:to_sym)
       end
 
       def required_gem(gem_entry)
+        existing_gem = gem_entries.find { |gem| gem.name == gem_entry.name }
+
+        if existing_gem
+          return if Gem::Version.new(gem_entry.version) < Gem::Version.new(existing_gem.version)
+
+          existing_gem.version = gem_entry.version
+          existing_gem.comment = gem_entry.comment
+          return
+        end
+
         gem_entries << gem_entry
+      end
+
+      def reset_gem_entries
+        @gem_entries = []
       end
 
       def gem

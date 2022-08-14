@@ -99,6 +99,7 @@ KConfig.configure do |config|
   # rag.add_option :add_scaffold                , type: :boolean, default: false
   # rag.add_option :add_factory_bot             , type: :boolean, default: false
   # rag.add_option :add_shoulda                 , type: :boolean, default: false
+  # letter_opener
 
   # NEW GEM ADDONS
   rag.add_option :add_acts_as_list            , type: :boolean, default: false

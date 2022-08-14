@@ -175,7 +175,7 @@ module RailsAppGenerator
       add_if(:browser) # tested
       add_if(:chartkick) # tested
       add_if(:continuous_integration) # TODO: needs work
-      add_if(:devise) # TODO: needs testing
+      add_if(:devise) # tested
       # docker_compose
       # docker
       add_if(:dotenv) # tested
