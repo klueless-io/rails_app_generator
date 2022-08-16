@@ -1,3 +1,10 @@
+## [0.2.24](https://github.com/klueless-io/rails_app_generator/compare/v0.2.23...v0.2.24) (2022-08-16)
+
+
+### Bug Fixes
+
+* add minimal_css profile ([5770975](https://github.com/klueless-io/rails_app_generator/commit/577097594ee3c82218628525b9bc6dd8299fb13e))
+
 ## [0.2.23](https://github.com/klueless-io/rails_app_generator/compare/v0.2.22...v0.2.23) (2022-08-16)
 
 
