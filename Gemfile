@@ -19,5 +19,3 @@ end
 group :test do
   gem 'simplecov', require: false
 end
-
-gem 'ruby-lsp', '~> 0.2.2', group: :development
