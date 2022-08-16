@@ -48,6 +48,8 @@ class Addon < Thor
     end
 
     def build_required_gem_code
+      return nil unless options[:gem]
+
       info = gem_info
 
       "      required_gem gem.version('#{info.name}', '#{info.version}', '#{info.comment}')"
