@@ -123,6 +123,8 @@ KConfig.configure do |config|
   # high_voltage
   rag.add_option :add_honeybadger             , type: :boolean, default: false
   rag.add_option :add_lograge                 , type: :boolean, default: false
+  rag.add_option :add_minimal_css             , type: :boolean, default: false
+  rag.add_option :minimal_css_library         , type: :string, default: 'water.css', description: "Minimal CSS library to get you started. [options: water.css (default)]"
   rag.add_option :add_mini_magick             , type: :boolean, default: false
   rag.add_option :add_motor_admin             , type: :boolean, default: false
   rag.add_option :add_public_suffix           , type: :boolean, default: false

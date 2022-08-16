@@ -55,6 +55,8 @@
     "add_httparty",
     "add_honeybadger",
     "add_lograge",
+    "add_minimal_css",
+    "minimal_css_library",
     "add_mini_magick",
     "add_motor_admin",
     "add_public_suffix",
@@ -448,6 +450,20 @@
       "description": "",
       "type": "boolean",
       "default": false,
+      "required": false
+    },
+    {
+      "name": "add_minimal_css",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "minimal_css_library",
+      "description": "Minimal CSS library to get you started. [options: water.css (default)]",
+      "type": "string",
+      "default": "water.css",
       "required": false
     },
     {

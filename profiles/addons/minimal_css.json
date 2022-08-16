@@ -1,0 +1,15 @@
+{
+  "args": {
+    "app_path": "minimal_css",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/addons"
+  },
+  "opts": {
+    "skip_git": true,
+    "skip_test": true,
+    "note": "minimal_css_library is optional and will default to water if not specified.",
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/minimal_css/_.rb",
+    "add_faker": true,
+    "add_minimal_css": true,
+    "minimal_css_library": "water"
+  }
+}
