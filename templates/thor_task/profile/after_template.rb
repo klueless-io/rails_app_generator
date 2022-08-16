@@ -28,7 +28,7 @@ after_bundle do
 end
 
 def setup_db
-  # add_scaffold('post', 'title', 'body:text')
+  # add_scaffold('post', 'title', 'body:text', 'user:references')
   # add_scaffold('people', 'first_name', 'last_name', 'age:integer', 'address:text')
   # add_scaffold('product', 'name', 'price:integer')
 

@@ -1,3 +1,40 @@
 <h1>Devise</h1>
 
-<p></p>
+<h4>Using a simple Enum based Role for permissions</h4>
+
+<ul>
+  <li>Anyone can view posts</li>
+  <li>Only signed in users can create, update or delete a post</li>
+  <li>If role <b>user</b>, you can update and delete your own posts only</li>
+  <li>If role <b>moderator</b>, you can update any post, but only delete your own posts</li>
+  <li>If role <b>admin</b>, you can update or delete any post</li>
+</ul>
+
+<h3>Sample users and passwords</h3>
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+</style>
+
+<table style='width: 600px;'>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Password</th>
+  </tr>
+  <% User.all.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.role %></td>
+      <td>password</td>
+    </tr>
+  <% end %>
+</table>

@@ -7,6 +7,10 @@
     "skip_git": true,
     "skip_test": true,
     "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/devise/_.rb",
-    "add_devise": true
+    "notes": "javascript: esbuild is used for the demonstration of this addon so that the destroy_user_session_path can be used as a link using turbo_method: :delete",
+    "javascript": "esbuild",
+    "add_annotate": true,
+    "add_devise": true,
+    "add_faker": true
   }
 }

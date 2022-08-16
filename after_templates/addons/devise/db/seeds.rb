@@ -1,16 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# User.find_or_create_by(email: "admin@admin.com") do |user|
-#   user.name = 'Admin'
-#   user.password = 'password'
-#   user.admin = true
-# end
+david = User.create(email: 'david@site.com', name: 'david', password: 'password', password_confirmation: 'password', role: :admin)
+james = User.create(email: 'james@site.com', name: 'james', password: 'password', password_confirmation: 'password')
+sally = User.create(email: 'sally@site.com', name: 'sally', password: 'password', password_confirmation: 'password', role: :moderator)
 
-# david = User.create(email: 'david@site.com', name: 'david', password: 'password')
-# bob   = User.create(email: 'bob@site.com', name: 'bob', password: 'password')
-# lisa  = User.create(email: 'lisa@site.com', name: 'lisa', password: 'password')
-
-# 10.times do |i|
-#   Post.create(title: "Post #{i}", body: "This is the body of post #{i}", user: User.all.sample)
-# end
+10.times do
+  Post.create(
+    title: "Post #{Faker::Lorem.words(number: rand(1..3)).join(' ')}",
+    body: "#{Faker::Lorem.sentences(number: 8).join("<br />")}",
+    views: 0,
+    user: User.all.sample)
+end

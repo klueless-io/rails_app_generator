@@ -35,6 +35,12 @@ module RailsAppGenerator
         context.options
       end
 
+      def option?(option_name)
+        value = options[option_name.to_sym]
+
+        !value.nil?
+      end
+
       def uses?(addon_name = nil)
         addon_name ||= self.class.addon_name
 

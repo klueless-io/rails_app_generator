@@ -31,15 +31,15 @@
     "note": "",
     "test": "rspec",
     "add_acts_as_list": false,
-    "add_administrate": false,
-    "add_annotate": false,
+    "add_administrate": true,
+    "add_annotate": true,
     "add_avo": false,
     "add_bcrypt": false,
     "add_browser": false,
     "add_chartkick": false,
-    "add_devise": true,
+    "add_devise": false,
     "add_dotenv": false,
-    "add_faker": false,
+    "add_faker": true,
     "add_groupdate": false,
     "add_hexapdf": false,
     "add_httparty": false,
@@ -51,8 +51,8 @@
     "add_phony_rails": false,
     "add_rails_html_sanitizer": false,
     "add_redcarpet": false,
-    "add_rubocop": false,
+    "add_rubocop": true,
     "add_twilio_ruby": false,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/devise/_.rb"
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/administrate/_.rb"
   }
 }

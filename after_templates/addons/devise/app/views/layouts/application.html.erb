@@ -11,13 +11,28 @@
     <%- else -%>
     <%%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%- end -%>
+    <%%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <style>
+    .notice {
+      color: green;
+    }
+    .alert {
+      color: red;
+    }
+    </style>
   </head>
 
   <body>
-    <%%= render 'layouts/navbar' %>
+    <header>
+      <%%= render 'layouts/navbar' %>
+      <hr />
+      <%%= render 'layouts/alerts' %>
+    </header>
     <main>
       <%%= yield %>
     </main>
-    <%%= render 'layouts/footer' %>
+    <footer>
+      <%%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>

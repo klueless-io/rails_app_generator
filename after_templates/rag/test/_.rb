@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-# Based on guidance from:
-#   Rails 7 - Intro to Devise
-#   https://www.youtube.com/watch?v=m3uhldUGVes
+# Description goes here
 #
-# exe/rag addons/devise
+# exe/rag addons/test
 
 self.local_template_path = File.dirname(__FILE__)
 
@@ -12,34 +10,30 @@ gac 'base rails 7 image created'
 
 prepare_environment
 
+add_controller('home', 'index')
+
+route("root 'home#index'")
+
+force_copy
+
+directory "app/controllers"
+directory "app/views/home"
+directory "app/views/layouts"
+template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
+
+template  'db/seeds.rb'                                   , 'db/seeds.rb'
+
 after_bundle do
-  scaffolds
-  setup_customizations
   setup_db
 end
 
-def scaffolds
-  add_scaffold('post', 'title', 'body:text', 'views:integer', 'user:references')
-end
-
 def setup_db
-  template  'db/seeds.rb'                                   , 'db/seeds.rb'
+  # add_scaffold('post', 'title', 'body:text', 'user:references')
+  # add_scaffold('people', 'first_name', 'last_name', 'age:integer', 'address:text')
+  # add_scaffold('product', 'name', 'price:integer')
 
-  db_migrate
-  db_seed
-end
-
-def setup_customizations
-  route("root 'home#index'")
-
-  force_copy
-  
-  add_controller('home', 'index')
-  
-  directory "app/controllers"
-  directory "app/models"
-  directory "app/views"
-  template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
+  # db_migrate
+  # db_seed
 end
 
 # Other template command examples

@@ -210,6 +210,10 @@ module RailsAppGenerator
 
     # Fire any callbacks defined on addons either before running the custom template
     def apply_rails_template
+      # currently running prepare_environment in the template
+      # this is doing a bundle install
+      # unfortunately this bundle install happens before the normal bundle install, but for now
+      # I have to do it until I figure out the why I need the prepare_environment method anyway.
       addon_instances.select { |addon| addon.respond_to?(:before_template) }.each(&:before_template)
       super
     end
@@ -430,6 +434,10 @@ module RailsAppGenerator
 
       def active?(option_name)
         add_flag?(option_name) # || !skip_flag?(option_name)
+      end
+
+      def option?(option_name)
+        !options[option_name.to_sym].nil?
       end
 
       def uses?(addon)

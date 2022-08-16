@@ -11,30 +11,40 @@ module RailsAppGenerator
 
       def apply
         generate('devise:install', capture: true)
+        generate(:devise, 'User', 'name', 'role:integer', capture: true)
+
+        update_migration
+
+        add_trackable       if option?(:devise_has_trackable)
+        add_confirmable     if option?(:devise_has_confirmable)
+        add_lockable        if option?(:devise_has_lockable)
+
+        add_turbo_support
+
         generate('devise:views', capture: true)
-        generate(:devise, 'User', 'name', 'admin:boolean', capture: true)
+        generate('devise:controllers', 'users', capture: true)
 
-        has_confirmable if uses?(:confirmable)
-        has_lockable if uses?(:devise_has_lockable)
+        update_routes_with_devise_controllers
 
-        copy_file('app/views/layouts/_alerts.html.erb', 'app/views/layouts/_alerts.html.erb')
+        copy_file('app/controllers/users/registrations_controller.rb', 'app/controllers/users/registrations_controller.rb', force: true)
 
         enable_devise_mailer
-      end
 
-      def before_template
-        say 'Setting up Devise - before custom template'
+        directory('app/views', force: true)
       end
 
       def before_bundle
-        say 'Setting up Devise - before bundle install'
-      end
-
-      def after_bundle
-        say 'Setting up Devise - after bundle install'
+        prepend_to_file 'db/seeds.rb', seed, force: true
       end
 
       private
+
+      def update_migration
+        in_root do
+          migration = Dir.glob('db/migrate/*').max_by { |f| File.mtime(f) }
+          gsub_file migration, /:role/, ':role, default: 0'
+        end
+      end
 
       def enable_devise_mailer
         inject_into_file 'config/environments/development.rb', <<-RUBY, after: %(config.action_mailer.raise_delivery_errors = false)
@@ -44,8 +54,25 @@ module RailsAppGenerator
         RUBY
       end
 
-      def has_confirmable
-        # TODO: remove these comments
+      def update_routes_with_devise_controllers
+        in_root do
+          gsub_file 'config/routes.rb', /devise_for :users/, 'devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }'
+        end
+      end
+
+      def add_trackable
+        # TODO: remove these comments in generated file
+
+        ## Trackable
+        # t.integer  :sign_in_count, default: 0, null: false
+        # t.datetime :current_sign_in_at
+        # t.datetime :last_sign_in_at
+        # t.string   :current_sign_in_ip
+        # t.string   :last_sign_in_ip
+      end
+
+      def add_confirmable
+        # TODO: remove these comments in generated file
 
         ## Confirmable
         # t.string   :confirmation_token
@@ -54,13 +81,30 @@ module RailsAppGenerator
         # t.string   :unconfirmed_email # Only if using reconfirmable
       end
 
-      def has_lockable
-        # TODO: remove these comments
+      def add_lockable
+        # TODO: remove these comments in generated file
 
         ## Lockable
         # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
         # t.string   :unlock_token # Only if unlock strategy is :email or :both
         # t.datetime :locked_at
+      end
+
+      def add_turbo_support
+        copy_file('app/controllers/turbo_devise_controller.rb', 'app/controllers/turbo_devise_controller.rb')
+        copy_file('config/initializers/devise_turbo.rb', 'config/initializers/devise_turbo.rb')
+      end
+
+      def seed
+        <<~RUBY
+          # Create an initial admin user for development
+          User.find_or_create_by(email: "admin@admin.com") do |user|
+            user.name = 'Admin'
+            user.password = 'password'
+            user.role = :admin
+          end
+
+        RUBY
       end
     end
   end
