@@ -1,3 +1,12 @@
+## [0.2.23](https://github.com/klueless-io/rails_app_generator/compare/v0.2.22...v0.2.23) (2022-08-16)
+
+
+### Bug Fixes
+
+* add devise profile ([a665767](https://github.com/klueless-io/rails_app_generator/commit/a6657670b1fce4eb802a56ace36368505ede3c2e))
+* fix invalid gem ([377e547](https://github.com/klueless-io/rails_app_generator/commit/377e5479c4debbd0df9e1362694d1847cf7d58e0))
+* update addon to work with non gems ([f9b0b14](https://github.com/klueless-io/rails_app_generator/commit/f9b0b147859760abbb921a236cd1e7f6a97eb3f0))
+
 ## [0.2.22](https://github.com/klueless-io/rails_app_generator/compare/v0.2.21...v0.2.22) (2022-08-14)
 
 
