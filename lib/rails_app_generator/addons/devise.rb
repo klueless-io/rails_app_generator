@@ -11,10 +11,10 @@ module RailsAppGenerator
 
       def apply
         bundle_install
-        generate('devise:install', capture: true)
-        generate(:devise, 'User', 'name', 'role:integer', capture: true)
 
-        update_migration
+        generate('devise:install', capture: true)
+
+        setup_db
 
         add_trackable       if option?(:devise_has_trackable)
         add_confirmable     if option?(:devise_has_confirmable)
@@ -39,6 +39,12 @@ module RailsAppGenerator
       end
 
       private
+
+      def setup_db
+        generate(:devise, 'User', 'name', 'role:integer', capture: true)
+
+        update_migration
+      end
 
       def update_migration
         in_root do
