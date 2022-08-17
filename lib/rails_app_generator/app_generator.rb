@@ -192,8 +192,9 @@ module RailsAppGenerator
       add_if(:minimal_css) # tested (this is NOT a GEM)
       add_if(:mini_magick) # tested
       add_if(:motor_magick) # tested
-      add_if(:public_suffix) # tested
       add_if(:phony_rails) # tested
+      add_if(:pretender) # tested
+      add_if(:public_suffix) # tested
       add_if(:pundit) # TODO: needs testing
       add_if(:rails_html_sanitizer) # tested
       add_if(:rails_app_generator) # TODO: needs testing

@@ -12,12 +12,6 @@ module RailsAppGenerator
       def apply
         # NOTE: update_routes_with_devise_controllers is being handled in devise.rb addon
       end
-
-      # def update_routes_with_devise_controllers
-      #   in_root do
-      #     gsub_file 'config/routes.rb', /registrations: "users\/registrations"/, 'registrations: "users/registrations", masquerades: "users/masquerades"'
-      #   end
-      # end
     end
   end
 end

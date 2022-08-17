@@ -128,8 +128,9 @@ KConfig.configure do |config|
   rag.add_option :minimal_css_library         , type: :string, default: 'water.css', description: "Minimal CSS library to get you started. [options: water.css (default)]"
   rag.add_option :add_mini_magick             , type: :boolean, default: false
   rag.add_option :add_motor_admin             , type: :boolean, default: false
-  rag.add_option :add_public_suffix           , type: :boolean, default: false
   rag.add_option :add_phony_rails             , type: :boolean, default: false
+  rag.add_option :add_pretender               , type: :boolean, default: false
+  rag.add_option :add_public_suffix           , type: :boolean, default: false
   # pundit
   rag.add_option :add_rails_html_sanitizer    , type: :boolean, default: false
   # rails_app_generator
