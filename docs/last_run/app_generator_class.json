@@ -60,8 +60,9 @@
     "minimal_css_library",
     "add_mini_magick",
     "add_motor_admin",
-    "add_public_suffix",
     "add_phony_rails",
+    "add_pretender",
+    "add_public_suffix",
     "add_rails_html_sanitizer",
     "add_redcarpet",
     "add_rubocop",
@@ -489,15 +490,22 @@
       "required": false
     },
     {
-      "name": "add_public_suffix",
-      "description": "Indicates when to generate add public suffix",
+      "name": "add_phony_rails",
+      "description": "Indicates when to generate add phony rails",
       "type": "boolean",
       "default": false,
       "required": false
     },
     {
-      "name": "add_phony_rails",
-      "description": "Indicates when to generate add phony rails",
+      "name": "add_pretender",
+      "description": "Indicates when to generate add pretender",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_public_suffix",
+      "description": "Indicates when to generate add public suffix",
       "type": "boolean",
       "default": false,
       "required": false

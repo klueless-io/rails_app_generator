@@ -1,6 +1,6 @@
 {
   "args": {
-    "app_path": "<%= data.name_snake %>",
+    "app_path": "r7_<%= data.name_snake %>",
     "destination_root": "<%= data.destination_root %>"
   },
   "opts": {

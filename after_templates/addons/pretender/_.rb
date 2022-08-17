@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# Description goes here
+# Log in as another user in Rails
 #
-# exe/rag addons/devise_masquerade
+# exe/rag addons/pretender
 
 self.local_template_path = File.dirname(__FILE__)
 

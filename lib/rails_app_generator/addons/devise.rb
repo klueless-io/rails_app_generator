@@ -10,6 +10,7 @@ module RailsAppGenerator
       required_gem gem.version('devise', '4.8.1', 'Flexible authentication solution for Rails with Warden')
 
       def apply
+        bundle_install
         generate('devise:install', capture: true)
         generate(:devise, 'User', 'name', 'role:integer', capture: true)
 

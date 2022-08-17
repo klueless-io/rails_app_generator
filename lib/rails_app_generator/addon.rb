@@ -94,6 +94,12 @@ module RailsAppGenerator
         ::FileUtils.mv(source, target)
       end
       # rubocop:enable Metrics/AbcSize
+
+      def bundle_install
+        Util.bundler_environment(environment_style: :unbundled_env) do
+          run('bundle install')
+        end
+      end
     end
     # rubocop:enable Metrics/BlockLength
 

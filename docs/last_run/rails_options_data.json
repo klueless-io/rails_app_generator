@@ -7,7 +7,7 @@
     "quiet": false,
     "skip": false,
     "ruby": "/Users/davidcruwys/.asdf/installs/ruby/2.7.6/bin/ruby",
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/devise_masquerade/_.rb",
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/pretender/_.rb",
     "database": "sqlite3",
     "skip_git": true,
     "skip_keeps": false,
@@ -48,7 +48,7 @@
     "add_browser": false,
     "add_chartkick": false,
     "add_devise": true,
-    "add_devise_masquerade": true,
+    "add_devise_masquerade": false,
     "add_dotenv": false,
     "add_faker": false,
     "add_groupdate": false,
@@ -60,12 +60,12 @@
     "minimal_css_library": "water.css",
     "add_mini_magick": false,
     "add_motor_admin": false,
-    "add_public_suffix": false,
     "add_phony_rails": false,
+    "add_pretender": true,
+    "add_public_suffix": false,
     "add_rails_html_sanitizer": false,
     "add_redcarpet": false,
     "add_rubocop": false,
-    "add_twilio_ruby": false,
-    "notes": "there is a name conflict if the rails application has the same name as the gem and so devise_masquerade has been renamed to devise_masquerade_sample"
+    "add_twilio_ruby": false
   }
 }

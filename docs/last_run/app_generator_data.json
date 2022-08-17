@@ -38,7 +38,7 @@
     "add_browser": false,
     "add_chartkick": false,
     "add_devise": true,
-    "add_devise_masquerade": true,
+    "add_devise_masquerade": false,
     "add_dotenv": false,
     "add_faker": false,
     "add_groupdate": false,
@@ -50,12 +50,13 @@
     "minimal_css_library": "water.css",
     "add_mini_magick": false,
     "add_motor_admin": false,
-    "add_public_suffix": false,
     "add_phony_rails": false,
+    "add_pretender": true,
+    "add_public_suffix": false,
     "add_rails_html_sanitizer": false,
     "add_redcarpet": false,
     "add_rubocop": false,
     "add_twilio_ruby": false,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/devise_masquerade/_.rb"
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/pretender/_.rb"
   }
 }

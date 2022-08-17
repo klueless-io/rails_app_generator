@@ -1,8 +1,6 @@
-<h1>Devise Masquerade</h1>
+<h1>Pretender</h1>
 
-<h4>Devise extension that enables login as another user functionality</h4>
-
-<p><b class='alert'>Warning!</b> If <code>masquerade?</code> is never returning <code>true</code> then ensure you have turned on caching in development using <code>rails dev:cache</code> </p>
+<h4>Log in as another user in Rails</h4>
 
 <pre><code>true_user => <%= current_user ? true_user.name : 'NOT SIGNED IN' %></code></pre>
 
@@ -26,11 +24,16 @@
     <th>Email</th>
     <th>Role</th>
     <% if current_user %>
-    <th>Masquerade As</th>
+    <th>Impersonate</th>
     <% else %>
     <th>Password</th>
     <% end %>
   </tr>
+
+  <% if current_user != true_user %>
+    You (<%= true_user.name %>) are signed in as <%= current_user.name %>
+  <% end %>
+
   <% User.all.each do |user| %>
     <tr>
       <td><%= user.name %></td>
@@ -38,17 +41,19 @@
       <td><%= user.role %></td>
       <td>
       <% if current_user %>
-        <% if user_masquerade? %>
-          <% if user.admin? %>
-            <%= link_to "Back to #{user.name.capitalize}", back_masquerade_path(User.new) %>
+        <% if current_user.admin? %>
+          <% if user.admin? && current_user != true_user %>
+            <%= link_to "Back to #{user.name.capitalize}", stop_impersonating_user_path, data: { turbo_method: :post } %>
+          <% elsif user.user? %>
+            <%= link_to user.name.capitalize, impersonate_user_path(user), data: { turbo_method: :post } %>
           <% end %>
         <% else %>
-          <% if current_user.user? %>
-            Cannot masquerade
-          <% elsif user.user? %>
-            <%= link_to user.name.capitalize, masquerade_path(user), data: { turbo_method: :post } %>
+          <% if user.admin? && current_user != true_user %>
+            <%= link_to "Back to #{user.name.capitalize}", stop_impersonating_user_path, data: { turbo_method: :post } %>
+          <% elsif current_user == true_user %>
+            N/A
           <% else %>
-            
+
           <% end %>
         <% end %>
       <% else %>
