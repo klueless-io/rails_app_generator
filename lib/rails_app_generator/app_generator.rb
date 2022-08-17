@@ -199,6 +199,7 @@ module RailsAppGenerator
       add_if(:rails_html_sanitizer) # tested
       add_if(:rails_app_generator) # TODO: needs testing
       add_if(:redcarpet) # tested
+      add_if(:rolify) # tested
       add_if(:services) # TODO: needs testing
       add_if(:shoulda) # TODO: needs testing
       add_if(:sidekiq) # TODO: needs testing

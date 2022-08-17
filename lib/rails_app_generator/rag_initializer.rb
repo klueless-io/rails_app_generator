@@ -136,6 +136,7 @@ KConfig.configure do |config|
   # rails_app_generator
   # RANSACK
   rag.add_option :add_redcarpet               , type: :boolean, default: false
+  rag.add_option :add_rolify                  , type: :boolean, default: false
   # services
   # shoulda
   # sidekiq
