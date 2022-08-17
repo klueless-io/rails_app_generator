@@ -1,3 +1,11 @@
+## [0.2.27](https://github.com/klueless-io/rails_app_generator/compare/v0.2.26...v0.2.27) (2022-08-17)
+
+
+### Bug Fixes
+
+* add pretender profile ([25abb2b](https://github.com/klueless-io/rails_app_generator/commit/25abb2b5b4a187db13d62d9747b7a8e283298a88))
+* add pretender profile ([5d24dfc](https://github.com/klueless-io/rails_app_generator/commit/5d24dfcd5f0420e7e1004a30de33e9003f1e9d5c))
+
 ## [0.2.26](https://github.com/klueless-io/rails_app_generator/compare/v0.2.25...v0.2.26) (2022-08-17)
 
 
