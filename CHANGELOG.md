@@ -1,3 +1,10 @@
+## [0.2.25](https://github.com/klueless-io/rails_app_generator/compare/v0.2.24...v0.2.25) (2022-08-17)
+
+
+### Bug Fixes
+
+* add devise_masquerade profile ([d34668c](https://github.com/klueless-io/rails_app_generator/commit/d34668cf2af1103ebee888ef3c78498e8323b1a5))
+
 ## [0.2.24](https://github.com/klueless-io/rails_app_generator/compare/v0.2.23...v0.2.24) (2022-08-16)
 
 
