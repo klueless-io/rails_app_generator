@@ -35,10 +35,20 @@ module RailsAppGenerator
         context.options
       end
 
-      def option?(option_name)
-        value = options[option_name.to_sym]
+      def add_flag?(option_name)
+        value = options["add_#{option_name}".to_sym]
 
-        !value.nil?
+        return false if value.nil?
+
+        value == true
+      end
+
+      def active?(option_name)
+        add_flag?(option_name) # || !skip_flag?(option_name)
+      end
+
+      def option?(option_name)
+        !options[option_name.to_sym].nil?
       end
 
       def uses?(addon_name = nil)

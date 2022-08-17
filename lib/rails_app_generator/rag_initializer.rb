@@ -111,6 +111,7 @@ KConfig.configure do |config|
   rag.add_option :add_chartkick               , type: :boolean, default: false
   # continuous_integration
   rag.add_option :add_devise                  , type: :boolean, default: false
+  rag.add_option :add_devise_masquerade       , type: :boolean, default: false
   # docker_compose
   # docker
   rag.add_option :add_dotenv                  , type: :boolean, default: false

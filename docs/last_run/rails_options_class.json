@@ -48,6 +48,7 @@
     "add_browser",
     "add_chartkick",
     "add_devise",
+    "add_devise_masquerade",
     "add_dotenv",
     "add_faker",
     "add_groupdate",
@@ -113,7 +114,7 @@
       "name": "ruby",
       "description": "Path to the Ruby binary of your choice",
       "type": "string",
-      "default": "/Users/davidcruwys/.asdf/installs/ruby/3.1.1/bin/ruby",
+      "default": "/Users/davidcruwys/.asdf/installs/ruby/2.7.6/bin/ruby",
       "required": false
     },
     {
@@ -398,6 +399,13 @@
     },
     {
       "name": "add_devise",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_devise_masquerade",
       "description": "",
       "type": "boolean",
       "default": false,

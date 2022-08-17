@@ -1,0 +1,17 @@
+{
+  "args": {
+    "app_path": "r7_devise_masquerade",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/addons"
+  },
+  "opts": {
+    "notes": "there is a name conflict if the rails application has the same name as the gem and so devise_masquerade has been renamed to devise_masquerade_sample",
+    "skip_git": true,
+    "skip_test": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/devise_masquerade/_.rb",
+    "javascript": "esbuild",
+    "add_annotate": true,
+    "add_devise": true,
+    "add_devise_masquerade": true,
+    "add_minimal_css": true
+  }
+}

@@ -1,0 +1,66 @@
+<h1>Devise Masquerade</h1>
+
+<h4>Devise extension that enables login as another user functionality</h4>
+
+<p><b class='alert'>Warning!</b> If <code>masquerade?</code> is never returning <code>true</code> then ensure you have turned on caching in development using <code>rails dev:cache</code> </p>
+
+<pre><code>user_masquerade? => <%= user_masquerade? %></code></pre>
+
+<p>Sign in with an <b>Admin</b> user and then impersonate other users</p>
+
+<h3>Sample users and passwords</h3>
+
+<% if current_user %>
+  <% if current_user.admin? %>
+    <h1 class='admin'><%= current_user.name.capitalize %> - Admininstrator</h1>
+  <% elsif current_user.user? %>
+    <h1 class='user'><%= current_user.name.capitalize %> - User</h1>
+  <% end %>
+<% else %>
+  <h1 class='not-signed-in'>Not currently signed in</h1>
+<% end %>
+
+<table style='width: 600px;'>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+    <% if current_user %>
+    <th>Masquerade As</th>
+    <% else %>
+    <th>Password</th>
+    <% end %>
+  </tr>
+  <% User.all.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.role %></td>
+      <td>
+      <% if current_user %>
+        <% if user_masquerade? %>
+          <% if user.admin? %>
+            <%= link_to "Back to #{user.name.capitalize}", back_masquerade_path(User.new) %>
+          <% end %>
+        <% else %>
+          <% if current_user.user? %>
+            Cannot masquerade
+          <% elsif user.user? %>
+            <%= link_to user.name.capitalize, masquerade_path(user) %>
+          <% else %>
+            
+          <% end %>
+        <% end %>
+      <% else %>
+        password
+      <% end %>
+
+      </td>
+    </td>
+    </tr>
+  <% end %>
+</table>
+
+<% if current_user&.user? && !user_masquerade? %>
+  <p class='alert'>Sign in as an admin user</p>
+<% end %>

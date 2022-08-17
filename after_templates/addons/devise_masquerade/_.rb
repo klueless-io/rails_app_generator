@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-# Based on guidance from:
-#   Rails 7 - Intro to Devise
-#   https://www.youtube.com/watch?v=m3uhldUGVes
+# Description goes here
 #
-# exe/rag addons/devise
+# exe/rag addons/devise_masquerade
 
 self.local_template_path = File.dirname(__FILE__)
 
@@ -13,13 +11,8 @@ gac 'base rails 7 image created'
 prepare_environment
 
 after_bundle do
-  scaffolds
   setup_customizations
   setup_db
-end
-
-def scaffolds
-  add_scaffold('post', 'title', 'body:text', 'views:integer', 'user:references')
 end
 
 def setup_db

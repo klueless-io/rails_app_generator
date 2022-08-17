@@ -56,7 +56,15 @@ module RailsAppGenerator
 
       def update_routes_with_devise_controllers
         in_root do
-          gsub_file 'config/routes.rb', /devise_for :users/, 'devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }'
+          controller_config = [
+            'sessions: "users/sessions"',
+            'registrations: "users/registrations"'
+          ]
+          controller_config << 'masquerades: "users/masquerades"' if active?(:devise_masquerade)
+
+          devise_for_replacement = "devise_for :users, controllers: { #{controller_config.join(', ')} }"
+
+          gsub_file 'config/routes.rb', /devise_for :users/, devise_for_replacement
         end
       end
 
