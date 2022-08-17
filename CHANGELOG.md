@@ -1,3 +1,10 @@
+## [0.2.26](https://github.com/klueless-io/rails_app_generator/compare/v0.2.25...v0.2.26) (2022-08-17)
+
+
+### Bug Fixes
+
+* add pretender addon ([e0bda54](https://github.com/klueless-io/rails_app_generator/commit/e0bda54cc74da230a579ff1219b9b2f2172936d1))
+
 ## [0.2.25](https://github.com/klueless-io/rails_app_generator/compare/v0.2.24...v0.2.25) (2022-08-17)
 
 
