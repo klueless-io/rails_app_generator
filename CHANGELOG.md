@@ -1,3 +1,10 @@
+## [0.2.28](https://github.com/klueless-io/rails_app_generator/compare/v0.2.27...v0.2.28) (2022-08-17)
+
+
+### Bug Fixes
+
+* add rolify addon ([804ecf1](https://github.com/klueless-io/rails_app_generator/commit/804ecf1ba1fe1a56512b6d335a77558b0da3ad97))
+
 ## [0.2.27](https://github.com/klueless-io/rails_app_generator/compare/v0.2.26...v0.2.27) (2022-08-17)
 
 
