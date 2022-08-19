@@ -1,3 +1,10 @@
+## [0.2.34](https://github.com/klueless-io/rails_app_generator/compare/v0.2.33...v0.2.34) (2022-08-19)
+
+
+### Bug Fixes
+
+* add kaminari profile ([f9b044b](https://github.com/klueless-io/rails_app_generator/commit/f9b044b6e718fdfa851562ea7d4ddab39066d0de))
+
 ## [0.2.33](https://github.com/klueless-io/rails_app_generator/compare/v0.2.32...v0.2.33) (2022-08-19)
 
 
