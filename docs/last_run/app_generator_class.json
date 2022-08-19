@@ -57,6 +57,7 @@
     "add_hexapdf",
     "add_httparty",
     "add_honeybadger",
+    "add_kaminari",
     "add_lograge",
     "add_minimal_css",
     "minimal_css_library",
@@ -467,6 +468,13 @@
     {
       "name": "add_honeybadger",
       "description": "Indicates when to generate add honeybadger",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_kaminari",
+      "description": "Indicates when to generate add kaminari",
       "type": "boolean",
       "default": false,
       "required": false

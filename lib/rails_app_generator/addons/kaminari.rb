@@ -11,14 +11,11 @@ module RailsAppGenerator
         say 'Setting up Kaminari'
       end
 
-      def before_template
-      end
+      def before_template; end
 
-      def before_bundle
-      end
+      def before_bundle; end
 
-      def after_bundle
-      end
+      def after_bundle; end
     end
   end
 end
