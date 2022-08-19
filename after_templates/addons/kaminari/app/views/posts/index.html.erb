@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<%= link_to "New post", new_post_path %>
+
+<hr>
+<%= paginate @posts %>
+<hr>
+
+<div id="posts">
+  <h1>Players List</h1>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Order</th>
+      <th></th>
+    </tr>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%=post.title %></td>
+      <td><%=post.body %></td><td>
+      <td><%=post.order %></td>
+      <td><%= link_to 'Show', post %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= page_entries_info @posts %>
+

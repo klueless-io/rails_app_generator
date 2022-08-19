@@ -37,16 +37,17 @@
     "add_bcrypt": false,
     "add_brakeman": false,
     "add_browser": false,
-    "add_bundler_audit": true,
+    "add_bundler_audit": false,
     "add_chartkick": false,
     "add_devise": false,
     "add_devise_masquerade": false,
     "add_dotenv": false,
-    "add_faker": false,
+    "add_faker": true,
     "add_groupdate": false,
     "add_hexapdf": false,
     "add_httparty": false,
     "add_honeybadger": false,
+    "add_kaminari": true,
     "add_lograge": false,
     "add_minimal_css": true,
     "minimal_css_library": "water.css",
@@ -60,6 +61,6 @@
     "add_rolify": false,
     "add_rubocop": false,
     "add_twilio_ruby": false,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/bundler_audit/_.rb"
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/kaminari/_.rb"
   }
 }

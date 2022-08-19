@@ -17,9 +17,7 @@ after_bundle do
 end
 
 def scaffolds
-  # add_scaffold('post', 'title', 'body:text', 'user:references')
-  # add_scaffold('people', 'first_name', 'last_name', 'age:integer', 'address:text')
-  # add_scaffold('product', 'name', 'price:integer')
+  add_scaffold('post', 'title', 'body:text', 'order:integer')
 end
 
 def setup_customizations
@@ -30,9 +28,11 @@ def setup_customizations
   add_controller('home', 'index')
   
   directory "app/controllers"
-  directory "app/models"
+  directory "app/assets"
   directory "app/views"
   template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
+
+  gsub_file 'config/initializers/kaminari_config.rb', '# config.default_per_page = 25', 'config.default_per_page = 10'
 end
 
 def setup_db
