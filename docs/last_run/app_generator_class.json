@@ -65,6 +65,7 @@
     "add_public_suffix",
     "add_rails_html_sanitizer",
     "add_redcarpet",
+    "add_rolify",
     "add_rubocop",
     "add_twilio_ruby"
   ],
@@ -520,6 +521,13 @@
     {
       "name": "add_redcarpet",
       "description": "Indicates when to generate add redcarpet",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_rolify",
+      "description": "Indicates when to generate add rolify",
       "type": "boolean",
       "default": false,
       "required": false

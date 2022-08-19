@@ -40,7 +40,7 @@
     "add_devise": true,
     "add_devise_masquerade": false,
     "add_dotenv": false,
-    "add_faker": false,
+    "add_faker": true,
     "add_groupdate": false,
     "add_hexapdf": false,
     "add_httparty": false,
@@ -51,12 +51,13 @@
     "add_mini_magick": false,
     "add_motor_admin": false,
     "add_phony_rails": false,
-    "add_pretender": true,
+    "add_pretender": false,
     "add_public_suffix": false,
     "add_rails_html_sanitizer": false,
     "add_redcarpet": false,
+    "add_rolify": true,
     "add_rubocop": false,
     "add_twilio_ruby": false,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/pretender/_.rb"
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/rolify/_.rb"
   }
 }

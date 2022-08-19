@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= camelized %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%%= csrf_meta_tags %>
+    <%%= csp_meta_tag %>
+
+    <%- if options[:skip_hotwire] || options[:skip_javascript] -%>
+    <%%= stylesheet_link_tag "application" %>
+    <%- else -%>
+    <%%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%- end -%>
+    <%%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <style>
+    .notice {
+      color: green;
+    }
+    .alert {
+      color: red;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+    .has-role {
+      color: green;
+    }
+    .has-no-role {
+      color: grey;
+    }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <%%= render 'layouts/navbar' %>
+      <hr />
+      <%%= render 'layouts/alerts' %>
+    </header>
+    <main>
+      <%%= yield %>
+    </main>
+    <footer>
+      <%%= render 'layouts/footer' %>
+    </footer>
+  </body>
+</html>
+

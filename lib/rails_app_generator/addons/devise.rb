@@ -41,12 +41,21 @@ module RailsAppGenerator
       private
 
       def setup_db
-        generate(:devise, 'User', 'name', 'role:integer', capture: true)
-
-        update_migration
+        if active?(:rolify)
+          # Rolify will setup up a role relationship
+          user_basic
+        else
+          user_with_simplified_role
+        end
       end
 
-      def update_migration
+      def user_basic
+        generate(:devise, 'User', 'name', capture: true)
+      end
+
+      def user_with_simplified_role
+        generate(:devise, 'User', 'name', 'role:integer', capture: true)
+
         in_root do
           migration = Dir.glob('db/migrate/*').max_by { |f| File.mtime(f) }
           gsub_file migration, /:role/, ':role, default: 0'

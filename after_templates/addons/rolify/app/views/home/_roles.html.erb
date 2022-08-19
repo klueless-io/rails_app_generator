@@ -1,0 +1,5 @@
+<ul>
+  <% current_user&.roles&.each do |role| %>
+    <li><code><%= role.name %></code></li>
+  <% end %>
+</ul>

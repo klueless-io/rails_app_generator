@@ -1,0 +1,61 @@
+<%# , url: { controller: "rolify", action: "update" }, html: { :turbo_method => :post } %>
+<%= form_with(model: user, url: rolify_path(user)) do |form| %>
+
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <strong>Name:</strong>
+    <%= user.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= user.email %>
+  </p>
+
+  <p>
+    <%= form.label :current_roles, style: "display: block" %>
+    <%= user.roles.where(resource_type: nil).map { |role| role.name.capitalize }.to_sentence %>
+  </p>
+
+  <div>
+    <%= form.label :raw_roles, style: "display: block" %>
+    <pre>
+    <code>
+    <% user.roles.each do |role| %>
+      <%= 
+        extra_info = if role.resource_type
+          " (#{role.resource_type}: #{role.resource_id})"
+        else
+          ""
+        end
+        "#{role.id} - #{role.name}, #{extra_info}"
+      %>
+    <% end %>
+    </code>
+    </pre>
+  </div>
+
+  <div>
+    <%= form.label :user_roles, style: "display: block" %>
+    <% Role.where(resource_type: nil).each do |role| %>
+        <%= form.check_box :role_ids, { multiple: true, checked: user.role_ids.include?(role.id) }, role.id, nil %>
+        <%= role.name %><br />
+    <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

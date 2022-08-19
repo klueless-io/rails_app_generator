@@ -1,0 +1,34 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Name:</strong>
+    <%= user.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= user.email %>
+  </p>
+
+  <div>
+    <strong>Current Roles:</strong>
+    <%= user.roles.where(resource_type: nil).map { |role| role.name.capitalize }.join(', ') %>
+  </div>
+
+  <div>
+    <pre>
+    <code>
+    <% user.roles.each do |role| %>
+      <%= 
+        extra_info = if role.resource_type
+          " (#{role.resource_type}: #{role.resource_id})"
+        else
+          ""
+        end
+        "#{role.id} - #{role.name}, #{extra_info}"
+      %>
+    <% end %>
+    </code>
+    </pre>
+  </div>
+
+</div>

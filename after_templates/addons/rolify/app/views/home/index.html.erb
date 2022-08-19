@@ -1,0 +1,37 @@
+<h1>Rolify</h1>
+
+<h4>Role management library with resource scoping</h4>
+
+<ul>
+  <li>Role <b>admin</b>, can access <b>Bossy Boots</b></li>
+  <li>Role <b>moderator</b>, can access <b>Use in moderation</b></li>
+  <li>Role <b>user</b>, can access <b>Use Me</b></li>
+  <li>Role <b>super_user</b>, can access <b>every thing</b></li>
+</ul>
+
+<h3>Sample users and passwords</h3>
+
+<table style='width: 800px;'>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Roles</th>
+    <th>Be who you wanna be</th>
+    <th>Manage Roles</th>
+  </tr>
+  <% User.all.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td>
+        <ul style='list-style-type: none; padding: 2px; margin: 0px'>
+          <% user.role_names.each do |role| %>
+            <li><%= role %></li>
+          <% end %>
+        </ul>
+      </td>
+      <td><%= link_to "Sign In", quick_sign_in_path(user) %></td>
+      <td><%= link_to "Manage", edit_rolify_path(user) %></td>
+  </tr>
+  <% end %>
+</table>

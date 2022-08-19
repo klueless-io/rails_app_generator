@@ -1,0 +1,17 @@
+{
+  "args": {
+    "app_path": "r7_rolify",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/addons"
+  },
+  "opts": {
+    "skip_git": true,
+    "skip_test": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/rolify/_.rb",
+    "javascript": "esbuild",
+    "add_annotate": true,
+    "add_devise": true,
+    "add_rolify": true,
+    "add_faker": true,
+    "add_minimal_css": true
+  }
+}
