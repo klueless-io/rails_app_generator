@@ -1,3 +1,10 @@
+## [0.2.31](https://github.com/klueless-io/rails_app_generator/compare/v0.2.30...v0.2.31) (2022-08-19)
+
+
+### Bug Fixes
+
+* add brakeman profile ([5cb8166](https://github.com/klueless-io/rails_app_generator/commit/5cb8166a4a1630edd07b7fcb70ca5eff6d2e7136))
+
 ## [0.2.30](https://github.com/klueless-io/rails_app_generator/compare/v0.2.29...v0.2.30) (2022-08-19)
 
 
