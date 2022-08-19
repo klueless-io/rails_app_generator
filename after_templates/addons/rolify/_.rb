@@ -3,6 +3,10 @@
 # Role management library with resource scoping
 #
 # exe/rag addons/rolify
+#
+# source: https://youtu.be/URDKxGn0pxo
+# need to complete this profile by supporting resource level roles, go to 29 minutes on video
+# source: https://youtu.be/URDKxGn0pxo?t=1101
 
 self.local_template_path = File.dirname(__FILE__)
 
