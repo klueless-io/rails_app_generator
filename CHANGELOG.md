@@ -1,3 +1,10 @@
+## [0.2.32](https://github.com/klueless-io/rails_app_generator/compare/v0.2.31...v0.2.32) (2022-08-19)
+
+
+### Bug Fixes
+
+* add bundler-audit addon ([bb8c2bc](https://github.com/klueless-io/rails_app_generator/commit/bb8c2bce5b1925ffe0b4c745894d7cebfc25498d))
+
 ## [0.2.31](https://github.com/klueless-io/rails_app_generator/compare/v0.2.30...v0.2.31) (2022-08-19)
 
 
