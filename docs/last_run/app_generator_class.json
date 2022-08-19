@@ -47,6 +47,7 @@
     "add_bcrypt",
     "add_brakeman",
     "add_browser",
+    "add_bundler_audit",
     "add_chartkick",
     "add_devise",
     "add_devise_masquerade",
@@ -396,6 +397,13 @@
     {
       "name": "add_browser",
       "description": "Indicates when to generate add browser",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_bundler_audit",
+      "description": "Indicates when to generate add bundler audit",
       "type": "boolean",
       "default": false,
       "required": false

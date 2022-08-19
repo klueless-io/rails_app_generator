@@ -190,6 +190,7 @@ module RailsAppGenerator
       add_if(:httparty) # tested
       add_if(:high_voltage) # TODO: needs testing
       add_if(:honeybadger) # tested
+      add_if(:kaminari) # tested
       add_if(:lograge) # tested
       add_if(:minimal_css) # tested (this is NOT a GEM)
       add_if(:mini_magick) # tested

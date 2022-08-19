@@ -1,0 +1,20 @@
+<h1>Bundler audit</h1>
+
+<p>Provides patch-level verification for Bundler</p>
+
+<p>The following two GEMs have vulnerabilities listed in the <b>ruby-advisory-db</b></p>
+
+<p>If you add the following to your Gemfile</p>
+
+<pre><code>gem "brakeman", "4.5.0"
+gem "curl"</code></pre>
+
+<p>And then run the following command</p>
+
+<pre><code>rm -rf Gemfile.lock
+bundle install
+bundler-audit</code></pre>
+
+<p>You will see this output</p>
+
+<%= image_tag("output.png") %>

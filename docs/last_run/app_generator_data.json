@@ -35,8 +35,9 @@
     "add_annotate": false,
     "add_avo": false,
     "add_bcrypt": false,
-    "add_brakeman": true,
+    "add_brakeman": false,
     "add_browser": false,
+    "add_bundler_audit": true,
     "add_chartkick": false,
     "add_devise": false,
     "add_devise_masquerade": false,
@@ -59,6 +60,6 @@
     "add_rolify": false,
     "add_rubocop": false,
     "add_twilio_ruby": false,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/brakeman/_.rb"
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/bundler_audit/_.rb"
   }
 }

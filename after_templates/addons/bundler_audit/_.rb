@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# Brakeman is a static analysis security vulnerability scanner for Ruby on Rails applications
+# Patch-level verification for Bundler
 #
-# exe/rag addons/brakeman
+# exe/rag addons/bundler_audit
 
 self.local_template_path = File.dirname(__FILE__)
 
@@ -10,14 +10,11 @@ gac 'base rails 7 image created'
 
 prepare_environment
 
-after_bundle do
-  scaffolds
-  setup_customizations
-  setup_db
-end
+gem "brakeman", "4.5.0"
+gem "curl"
 
-def scaffolds
-  add_scaffold('post', 'title', 'body:text')
+after_bundle do
+  setup_customizations
 end
 
 def setup_customizations
@@ -25,15 +22,10 @@ def setup_customizations
 
   force_copy
   
-  add_controller('home', 'index', 'examples', 'output')
+  add_controller('home', 'index', 'advisories')
   
   directory "app/controllers"
-  directory "app/models"
+  directory "app/assets"
   directory "app/views"
   template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
-end
-
-def setup_db
-  db_migrate
-  db_seed
 end
