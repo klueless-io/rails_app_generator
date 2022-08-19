@@ -1,3 +1,10 @@
+## [0.2.30](https://github.com/klueless-io/rails_app_generator/compare/v0.2.29...v0.2.30) (2022-08-19)
+
+
+### Bug Fixes
+
+* add brakeman addon ([1dcc1c2](https://github.com/klueless-io/rails_app_generator/commit/1dcc1c2b904d35f557daa688111baeaa0fa71495))
+
 ## [0.2.29](https://github.com/klueless-io/rails_app_generator/compare/v0.2.28...v0.2.29) (2022-08-19)
 
 
