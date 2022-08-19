@@ -45,6 +45,7 @@
     "add_annotate",
     "add_avo",
     "add_bcrypt",
+    "add_brakeman",
     "add_browser",
     "add_chartkick",
     "add_devise",
@@ -381,6 +382,13 @@
     {
       "name": "add_bcrypt",
       "description": "Indicates when to generate add bcrypt",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_brakeman",
+      "description": "Indicates when to generate add brakeman",
       "type": "boolean",
       "default": false,
       "required": false

@@ -1,0 +1,145 @@
+<h1>Brakeman</h1>
+
+<h2>Output</h2>
+
+<p>Run <code>brakeman</code> against this sample Rails 7 application</p>
+
+<pre>
+<code>brakeman
+Loading scanner...
+Processing application in /Users/davidcruwys/dev/kgems/rails_app_generator/a/addons/r7_brakeman
+Processing gems...
+[Notice] Detected Rails 7 application
+Processing configuration...
+[Notice] Escaping HTML by default
+Parsing files...
+Detecting file types...
+Processing initializers...
+Processing libs...
+Processing routes...
+Processing templates...
+Processing data flow in templates...
+Processing models...
+Processing controllers...
+Processing data flow in controllers...
+Indexing call sites...
+Running checks in parallel...
+ - CheckBasicAuth
+ - CheckBasicAuthTimingAttack
+ - CheckCrossSiteScripting
+ - CheckContentTag
+ - CheckCookieSerialization
+ - CheckCreateWith
+ - CheckCSRFTokenForgeryCVE
+ - CheckDefaultRoutes
+ - CheckDeserialize
+ - CheckDetailedExceptions
+ - CheckDigestDoS
+ - CheckDynamicFinders
+ - CheckEOLRails
+ - CheckEOLRuby
+ - CheckEscapeFunction
+ - CheckEvaluation
+ - CheckExecute
+ - CheckFileAccess
+ - CheckFileDisclosure
+ - CheckFilterSkipping
+ - CheckForgerySetting
+ - CheckHeaderDoS
+ - CheckI18nXSS
+ - CheckJRubyXML
+ - CheckJSONEncoding
+ - CheckJSONEntityEscape
+ - CheckJSONParsing
+ - CheckLinkTo
+ - CheckLinkToHref
+ - CheckMailTo
+ - CheckMassAssignment
+ - CheckMimeTypeDoS
+ - CheckModelAttrAccessible
+ - CheckModelAttributes
+ - CheckModelSerialize
+ - CheckNestedAttributes
+ - CheckNestedAttributesBypass
+ - CheckNumberToCurrency
+ - CheckPageCachingCVE
+ - CheckPermitAttributes
+ - CheckQuoteTableName
+ - CheckRedirect
+ - CheckRegexDoS
+ - CheckRender
+ - CheckRenderDoS
+ - CheckRenderInline
+ - CheckResponseSplitting
+ - CheckRouteDoS
+ - CheckSafeBufferManipulation
+ - CheckSanitizeConfigCve
+ - CheckSanitizeMethods
+ - CheckSelectTag
+ - CheckSelectVulnerability
+ - CheckSend
+ - CheckSendFile
+ - CheckSessionManipulation
+ - CheckSessionSettings
+ - CheckSimpleFormat
+ - CheckSingleQuotes
+ - CheckSkipBeforeFilter
+ - CheckSprocketsPathTraversal
+ - CheckSQL
+ - CheckSQLCVEs
+ - CheckSSLVerify
+ - CheckStripTags
+ - CheckSymbolDoSCVE
+ - CheckTemplateInjection
+ - CheckTranslateBug
+ - CheckUnsafeReflection
+ - CheckUnsafeReflectionMethods
+ - CheckValidationRegex
+ - CheckVerbConfusion
+ - CheckWithoutProtection
+ - CheckXMLDoS
+ - CheckYAMLParsing
+Checks finished, collecting results...
+Generating report...
+
+== Brakeman Report ==
+
+Application Path: /Users/davidcruwys/dev/kgems/rails_app_generator/a/addons/r7_brakeman
+Rails Version: 7.0.3.1
+Brakeman Version: 5.3.1
+Scan Date: 2022-08-19 14:19:28 +1000
+Duration: 0.228864 seconds
+Checks Run: BasicAuth, BasicAuthTimingAttack, CSRFTokenForgeryCVE, ContentTag, CookieSerialization, CreateWith, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, DynamicFinders, EOLRails, EOLRuby, EscapeFunction, Evaluation, Execute, FileAccess, FileDisclosure, FilterSkipping, ForgerySetting, HeaderDoS, I18nXSS, JRubyXML, JSONEncoding, JSONEntityEscape, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, MimeTypeDoS, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, NestedAttributesBypass, NumberToCurrency, PageCachingCVE, PermitAttributes, QuoteTableName, Redirect, RegexDoS, Render, RenderDoS, RenderInline, ResponseSplitting, RouteDoS, SQL, SQLCVEs, SSLVerify, SafeBufferManipulation, SanitizeConfigCve, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionManipulation, SessionSettings, SimpleFormat, SingleQuotes, SkipBeforeFilter, SprocketsPathTraversal, StripTags, SymbolDoSCVE, TemplateInjection, TranslateBug, UnsafeReflection, UnsafeReflectionMethods, ValidationRegex, VerbConfusion, WithoutProtection, XMLDoS, YAMLParsing
+
+== Overview ==
+
+Controllers: 3
+Models: 2
+Templates: 13
+Errors: 0
+Security Warnings: 2
+
+== Warning Types ==
+
+Dangerous Eval: 1
+Dangerous Send: 1
+
+== Warnings ==
+
+Confidence: High
+Category: Dangerous Eval
+Check: Evaluation
+Message: User input in eval
+Code: eval("echo '#{(params[:message] or "hello world")}'")
+File: app/controllers/posts_controller.rb
+Line: 12
+
+Confidence: High
+Category: Dangerous Send
+Check: Send
+Message: User controlled method execution
+Code: send((params[:xmen_or_avengers] or "xmen").to_sym)
+File: app/controllers/home_controller.rb
+Line: 4
+</code>
+</pre>

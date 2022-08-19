@@ -6,6 +6,7 @@
   "opts": {
     "skip_git": true,
     "skip_test": true,
+    "add_minimal_css": true,
     "template": "<%= data.template_file %>",
     "add_<%= data.name_snake %>": true
   }

@@ -1,0 +1,43 @@
+<h1>Brakeman</h1>
+
+<h2>Examples</h2>
+
+<p>Run the brakeman command from the root of your rails application</p>
+
+<pre><code>brakeman</code></pre>
+
+<h2>Example code that fails analysis</h2>
+
+<h3>Dangerous Evaluation - User input in an eval statement is VERY dangerous</h3>
+
+<code>app/controllers/posts_controller.rb</code>
+
+<pre><code>  def show
+    message = params[:message] || 'hello world'
+
+    eval("echo '#{message}'")
+  end
+</code></pre>
+
+
+<h3>Dangerous Send - Using unfiltered user data to select a Class or Method to be dynamically sent is dangerous.</h3>
+
+<code>app/controllers/home_controller.rb</code>
+
+<pre><code>class HomeController < ApplicationController
+  def index
+    xmen_or_avengers = params[:xmen_or_avengers] || 'xmen'
+    puts send(xmen_or_avengers.to_sym)
+  end
+
+  private
+
+  def xmen
+    'Wolverine'
+  end
+
+  def avengers
+    'Captain America'
+  end
+end
+</code></pre>
