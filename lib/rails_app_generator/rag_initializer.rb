@@ -107,6 +107,7 @@ KConfig.configure do |config|
   rag.add_option :add_annotate                , type: :boolean, default: false
   rag.add_option :add_avo                     , type: :boolean, default: false
   rag.add_option :add_bcrypt                  , type: :boolean, default: false
+  rag.add_option :add_brakeman                , type: :boolean, default: false
   rag.add_option :add_browser                 , type: :boolean, default: false
   rag.add_option :add_chartkick               , type: :boolean, default: false
   # continuous_integration
