@@ -174,6 +174,7 @@ module RailsAppGenerator
       add_if(:bcrypt) # tested
       add_if(:brakeman) # tested
       add_if(:browser) # tested
+      add_if(:bundler_audit) # tested
       add_if(:chartkick) # tested
       add_if(:continuous_integration) # TODO: needs work
       add_if(:devise) # tested
