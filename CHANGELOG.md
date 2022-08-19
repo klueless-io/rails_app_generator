@@ -1,3 +1,11 @@
+## [0.2.33](https://github.com/klueless-io/rails_app_generator/compare/v0.2.32...v0.2.33) (2022-08-19)
+
+
+### Bug Fixes
+
+* add kaminari addon ([b57fd5b](https://github.com/klueless-io/rails_app_generator/commit/b57fd5bdda219852b659404660187cbd0d8ec5dc))
+* add kaminari addon ([d5774ed](https://github.com/klueless-io/rails_app_generator/commit/d5774ed173b0d594e2228278c2d34edce3a80ac9))
+
 ## [0.2.32](https://github.com/klueless-io/rails_app_generator/compare/v0.2.31...v0.2.32) (2022-08-19)
 
 
