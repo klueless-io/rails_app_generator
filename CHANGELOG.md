@@ -1,3 +1,10 @@
+## [0.2.35](https://github.com/klueless-io/rails_app_generator/compare/v0.2.34...v0.2.35) (2022-08-20)
+
+
+### Bug Fixes
+
+* add image-processing addon ([3466708](https://github.com/klueless-io/rails_app_generator/commit/3466708e66cfc8da487f619f77516f863ef5cb46))
+
 ## [0.2.34](https://github.com/klueless-io/rails_app_generator/compare/v0.2.33...v0.2.34) (2022-08-19)
 
 
