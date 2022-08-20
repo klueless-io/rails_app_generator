@@ -4,7 +4,8 @@
 #
 # exe/rag addons/avo
 # 
-# based on: https://www.youtube.com/watch?v=WgNK-oINFww
+# based on: https://youtu.be/WgNK-oINFww
+#           https://youtu.be/BK47E7TMXn0
 
 self.local_template_path = File.dirname(__FILE__)
 
@@ -35,6 +36,9 @@ def setup_db
   add_scaffold('category', 'title:string', 'description:text')
   add_scaffold('post', 'title:string content:text', 'published:boolean', 'author:references', 'category:references')
   add_scaffold('product', 'name', 'quantity:integer', 'price:decimal', 'author:references')
+  add_scaffold('location', 'name', 'description:text', 'photo:file')
+  add_scaffold('room', 'name', 'description:text', 'photo:file', 'location:references')
+  add_scaffold('booking', 'user:references', 'room:references', 'booked_at:timestamp', 'booked_for:number')
 
   db_migrate
   db_seed

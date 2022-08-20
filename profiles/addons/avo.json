@@ -11,6 +11,7 @@
     "add_avo": true,
     "add_devise": true,
     "add_faker": true,
-    "add_rubocop": true
+    "add_rubocop": true,
+    "add_minimal_css": true
   }
 }

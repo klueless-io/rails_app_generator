@@ -125,6 +125,7 @@ KConfig.configure do |config|
   rag.add_option :add_httparty                , type: :boolean, default: false
   # high_voltage
   rag.add_option :add_honeybadger             , type: :boolean, default: false
+  rag.add_option :add_image_processing        , type: :boolean, default: false
   rag.add_option :add_kaminari                , type: :boolean, default: false
   rag.add_option :add_lograge                 , type: :boolean, default: false
   rag.add_option :add_minimal_css             , type: :boolean, default: false
