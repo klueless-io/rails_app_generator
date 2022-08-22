@@ -9,6 +9,14 @@ module RailsAppGenerator
 
       def apply
         # copy_file 'config/initializers/avo.rb'
+
+        generate('avo:install')
+
+        gsub_file 'config/routes.rb', %(mount Avo::Engine, at: Avo.configuration.root_path), <<-RUBY
+        authenticate :user do
+          mount Avo::Engine, at: Avo.configuration.root_path
+        end
+        RUBY
       end
 
       def before_template

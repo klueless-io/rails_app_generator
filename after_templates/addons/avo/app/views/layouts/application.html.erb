@@ -11,13 +11,26 @@
     <%- else -%>
     <%%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%- end -%>
+    <style>
+    .bold {
+      font-weight: bold;
+    }
+    .simple_scaffold {
+      color: #333333;
+    }
+    </style>
   </head>
 
   <body>
-    <%%= render 'layouts/navbar' %>
+    <header>
+      <%%= render 'layouts/navbar' %>
+    </header>
+    <hr>
     <main>
       <%%= yield %>
     </main>
-    <%%= render 'layouts/footer' %>
+    <footer>
+      <%%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>

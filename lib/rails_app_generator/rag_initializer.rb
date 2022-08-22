@@ -138,7 +138,7 @@ KConfig.configure do |config|
   # pundit
   rag.add_option :add_rails_html_sanitizer    , type: :boolean, default: false
   # rails_app_generator
-  # RANSACK
+  rag.add_option :add_ransack                 , type: :boolean, default: false
   rag.add_option :add_redcarpet               , type: :boolean, default: false
   rag.add_option :add_rolify                  , type: :boolean, default: false
   # services

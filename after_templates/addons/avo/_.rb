@@ -13,45 +13,57 @@ gac 'base rails 7 image created'
 
 prepare_environment
 
-add_controller('home', 'index')
-
-route("root 'home#index'")
-
-force_copy
-
-directory "app/controllers"
-directory "app/views/home"
-directory "app/views/layouts"
-template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
-
-template  'db/seeds.rb'                                   , 'db/seeds.rb'
-
 after_bundle do
+  scaffolds
+  setup_customizations
   setup_db
   setup_avo
 end
 
+def scaffolds
+  add_scaffold_controller('users', 'name', 'email')
+  # add_scaffold('author', 'name', 'email', 'bio:text')
+  add_scaffold('category', 'title', 'description:text')
+  add_scaffold('post', 'title content:text', 'published:boolean', 'user:references', 'category:references')
+  add_scaffold('location', 'name', 'description:text') #, 'photo:file')
+  add_scaffold('room', 'name', 'description:text', 'location:references') #, 'photo:file'
+  add_scaffold('booking', 'user:references', 'room:references', 'booked_at:datetime', 'booked_for:integer')
+end
+
+def setup_customizations
+  route("root 'home#index'")
+
+  force_copy
+  
+  add_controller('home', 'index', 'quick_signin')
+  
+  directory "app/controllers"
+  directory "app/models"
+  directory "app/views"
+  template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
+end
+
 def setup_db
-  add_scaffold('author', 'name:string', 'email:string', 'bio:text')
-  add_scaffold('category', 'title:string', 'description:text')
-  add_scaffold('post', 'title:string content:text', 'published:boolean', 'author:references', 'category:references')
-  add_scaffold('product', 'name', 'quantity:integer', 'price:decimal', 'author:references')
-  add_scaffold('location', 'name', 'description:text', 'photo:file')
-  add_scaffold('room', 'name', 'description:text', 'photo:file', 'location:references')
-  add_scaffold('booking', 'user:references', 'room:references', 'booked_at:timestamp', 'booked_for:number')
+  template  'db/seeds.rb'                                   , 'db/seeds.rb'
 
   db_migrate
   db_seed
 end
 
 def setup_avo
-  generate('avo:install')
-  generate('avo:resource Product')
-  generate('avo:resource Post')
-  generate('avo:resource Author')
+  # generate('avo:install')
+
   generate('avo:resource Category')
+  generate('avo:resource Post')
+  generate('avo:resource Location')
+  generate('avo:resource Room')
+  generate('avo:resource Booking')
   generate('avo:resource User')
   generate('avo:dashboard Dashboard')
+
+  directory "app/avo"
+  directory "config/initializers"
+  directory "config/locales"
 
   # add devise support
   gsub_file 'config/initializers/avo.rb', %(# config.current_user_method = {}), 'config.current_user_method = :current_user'

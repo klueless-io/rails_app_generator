@@ -1,8 +1,13 @@
-<header>
-  <%= link_to 'Home', root_path %> |
-  <%= link_to 'Authors', authors_path %> |
-  <%= link_to 'Posts', posts_path %> |
-  <%= link_to 'Products', products_path %> |
-  <%= link_to 'ADMIN', avo_path %>
-  <hr />
-</header>
+<%= link_to 'Home', root_path %> |
+<%= link_to 'Quick Sign In', home_quick_signin_path %> |
+<%= link_to 'AVO', avo_path %>
+(
+<%= link_to 'Posts', posts_path, class: 'simple_scaffold' %> |
+<%= link_to 'Categories', categories_path, class: 'simple_scaffold' %> |
+<%= link_to 'Authors', users_path, class: 'simple_scaffold' %>
+)
+(
+<%= link_to 'Locations', locations_path, class: 'simple_scaffold' %> |
+<%= link_to 'Rooms', rooms_path, class: 'simple_scaffold' %> |
+<%= link_to 'Bookings', bookings_path, class: 'simple_scaffold' %>
+)

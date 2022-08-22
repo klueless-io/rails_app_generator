@@ -167,6 +167,7 @@ module RailsAppGenerator
     def finish_template
       puts 'finish template'
 
+      # https://github.com/AaronLasseigne/active_interaction
       add_if(:acts_as_list) # tested
       add_if(:administrate) # tested
       add_if(:annotate) # tested
@@ -190,7 +191,8 @@ module RailsAppGenerator
       add_if(:httparty) # tested
       add_if(:high_voltage) # TODO: needs testing
       add_if(:honeybadger) # tested
-      add_if(:image_processing) # tested
+      add_if(:image_processing) # TODO: needs testing
+      # https://github.com/collectiveidea/interactor
       add_if(:kaminari) # tested
       add_if(:lograge) # tested
       add_if(:minimal_css) # tested (this is NOT a GEM)
@@ -207,6 +209,7 @@ module RailsAppGenerator
       add_if(:services) # TODO: needs testing
       add_if(:shoulda) # TODO: needs testing
       add_if(:sidekiq) # TODO: needs testing
+      add_if(:ransack) # TODO: needs testing
       add_if(:rubocop) # tested
       add_if(:twilio_ruby) # tested
       add(:views, :errors, :scaffold) if active?(:views)
@@ -268,6 +271,10 @@ module RailsAppGenerator
 
       def add_scaffold(name, *args)
         generate(:scaffold, name, *args)
+      end
+
+      def add_scaffold_controller(name, *args)
+        generate(:scaffold_controller, name, *args)
       end
 
       def add_migration(name, *args)

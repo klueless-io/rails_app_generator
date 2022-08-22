@@ -57,6 +57,7 @@
     "add_hexapdf",
     "add_httparty",
     "add_honeybadger",
+    "add_image_processing",
     "add_kaminari",
     "add_lograge",
     "add_minimal_css",
@@ -67,6 +68,7 @@
     "add_pretender",
     "add_public_suffix",
     "add_rails_html_sanitizer",
+    "add_ransack",
     "add_redcarpet",
     "add_rolify",
     "add_rubocop",
@@ -119,7 +121,7 @@
       "name": "ruby",
       "description": "Path to the Ruby binary of your choice",
       "type": "string",
-      "default": "/Users/davidcruwys/.asdf/installs/ruby/2.7.6/bin/ruby",
+      "default": "/Users/davidcruwys/.asdf/installs/ruby/3.1.1/bin/ruby",
       "required": false
     },
     {
@@ -473,6 +475,13 @@
       "required": false
     },
     {
+      "name": "add_image_processing",
+      "description": "Indicates when to generate add image processing",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
       "name": "add_kaminari",
       "description": "Indicates when to generate add kaminari",
       "type": "boolean",
@@ -538,6 +547,13 @@
     {
       "name": "add_rails_html_sanitizer",
       "description": "Indicates when to generate add rails html sanitizer",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_ransack",
+      "description": "Indicates when to generate add ransack",
       "type": "boolean",
       "default": false,
       "required": false

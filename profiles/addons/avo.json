@@ -6,12 +6,14 @@
   "opts": {
     "skip_git": true,
     "skip_test": true,
+    "add_minimal_css": true,
     "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/avo/_.rb",
     "add_annotate": true,
     "add_avo": true,
     "add_devise": true,
     "add_faker": true,
-    "add_rubocop": true,
-    "add_minimal_css": true
+    "add_image_processing": true,
+    "add_ransack": true,
+    "add_rubocop": true
   }
 }

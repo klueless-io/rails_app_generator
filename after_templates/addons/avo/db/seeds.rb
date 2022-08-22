@@ -10,6 +10,46 @@ def fake_category
   ]
 end
 
+def avatar_emails
+  [
+    'ben@ben.com',
+    'david@hey.com',
+    'adrian@adrianthedev.com',
+    'david@ideasmen.com.au'
+  ]
+end
+
+
+def email_domain
+  [
+    'gmail.com',
+    'outlook.com',
+    'yahoo.com',
+    'hotmail.com',
+    'aol.com',
+    'mail.com',
+  ].sample
+end
+
+def common_names
+  [
+    'Ben',
+    'John',
+    'James',
+    'Robert',
+    'Michael',
+    'William',
+    'Mary',
+    'Patricia',
+    'Linda',
+    'Barbara',
+    'Elizabeth',
+    'Jennifer',
+    'Maria',
+    'Susan',
+  ]
+end
+
 def fake_title
   [
     'Fundamentals of Wavelets',
@@ -108,25 +148,42 @@ def fake_title
   ].sample
 end
 
-60.times do
-  Author.create!(name: Faker::Name.name, bio: Faker::Lorem.words(number: 5).join(' '), email: Faker::Internet.email)
+User.find_or_create_by(email: "admin@admin.com") do |user|
+  user.name = 'Admin'
+  user.password = 'password'
+  user.role = :admin
 end
+
+common_names.each do |first_name|
+  last_name = Faker::Name.last_name
+  email = Faker::Internet.email(name: first_name.downcase, domain: email_domain)
+  User.create!(name: "#{first_name} #{last_name}", email: email, password: 'password', role: :user)
+end
+
+avatar_emails.each do |email|
+  first_name = email.split('@').first
+  last_name = Faker::Name.last_name
+  User.create!(name: "#{first_name} #{last_name}", email: email, password: 'password', role: :user)
+end
+# bio: Faker::Lorem.words(number: 5).join(' ')
 
 fake_category.each do |category|
   Category.create!(title: category, description: Faker::Lorem.sentence)
 end
 
-100.times do |i|
+40.times do
   Post.create!(title: fake_title,
-                    content: "This is the body of post #{i}",
+                    content: Faker::Lorem.sentences(number: 5).join('<br />'),
                     published: Faker::Boolean.boolean(true_ratio: 0.6),
-                    author: Author.all.sample)
+                    category: Category.all.sample,
+                    author: User.all.sample)
 end
 
-200.times do
-  Product.create!(
-    name: Faker::Name.name,
-    quantity: Faker::Number.number(digits: 2),
-    price: Faker::Number.decimal(l_digits: 4)
-  )
-end
+# 200.times do
+#   Product.create!(
+#     name: Faker::Name.name,
+#     quantity: Faker::Number.number(digits: 2),
+#     price: Faker::Number.decimal(l_digits: 4),
+#     author: Author.all.sample
+#   )
+# end
