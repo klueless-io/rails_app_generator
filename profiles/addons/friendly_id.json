@@ -1,0 +1,14 @@
+{
+  "args": {
+    "app_path": "r7_friendly_id",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/addons"
+  },
+  "opts": {
+    "skip_git": true,
+    "skip_test": true,
+    "add_minimal_css": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/friendly_id/_.rb",
+    "add_faker": true,
+    "add_friendly_id": true
+  }
+}

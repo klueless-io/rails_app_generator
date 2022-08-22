@@ -53,6 +53,7 @@
     "add_devise_masquerade",
     "add_dotenv",
     "add_faker",
+    "add_friendly_id",
     "add_groupdate",
     "add_hexapdf",
     "add_httparty",
@@ -442,6 +443,13 @@
     {
       "name": "add_faker",
       "description": "Indicates when to generate add faker",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_friendly_id",
+      "description": "Indicates when to generate add friendly",
       "type": "boolean",
       "default": false,
       "required": false
