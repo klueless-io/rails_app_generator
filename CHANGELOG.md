@@ -1,3 +1,10 @@
+## [0.2.36](https://github.com/klueless-io/rails_app_generator/compare/v0.2.35...v0.2.36) (2022-08-22)
+
+
+### Bug Fixes
+
+* update avo profile ([f02ee7f](https://github.com/klueless-io/rails_app_generator/commit/f02ee7f7e6e5e25842a023f210674d9602edfe58))
+
 ## [0.2.35](https://github.com/klueless-io/rails_app_generator/compare/v0.2.34...v0.2.35) (2022-08-20)
 
 
