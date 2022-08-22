@@ -185,6 +185,7 @@ module RailsAppGenerator
       add_if(:dotenv) # tested
       add_if(:factory_bot) # TODO: needs testing
       add_if(:faker) # tested
+      add_if(:friendly_id) # tested
       add_if(:generators) # TODO: needs testing
       add_if(:groupdate) # TODO: does not have a profile
       add_if(:hexapdf) # tested

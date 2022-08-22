@@ -119,6 +119,7 @@ KConfig.configure do |config|
   rag.add_option :add_dotenv                  , type: :boolean, default: false
   # factory_bot
   rag.add_option :add_faker                   , type: :boolean, default: false
+  rag.add_option :add_friendly_id             , type: :boolean, default: false
   # generators
   rag.add_option :add_groupdate               , type: :boolean, default: false
   rag.add_option :add_hexapdf                 , type: :boolean, default: false
