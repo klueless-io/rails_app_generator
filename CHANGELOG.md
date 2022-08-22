@@ -1,3 +1,10 @@
+## [0.2.37](https://github.com/klueless-io/rails_app_generator/compare/v0.2.36...v0.2.37) (2022-08-22)
+
+
+### Bug Fixes
+
+* add friendly_id addon ([e6fc42e](https://github.com/klueless-io/rails_app_generator/commit/e6fc42e7d4ef017775c6b33850fb22aabc156ca5))
+
 ## [0.2.36](https://github.com/klueless-io/rails_app_generator/compare/v0.2.35...v0.2.36) (2022-08-22)
 
 
