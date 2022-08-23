@@ -52,6 +52,7 @@
     "add_devise",
     "add_devise_masquerade",
     "add_dotenv",
+    "add_factory_bot_rails",
     "add_faker",
     "add_friendly_id",
     "add_groupdate",
@@ -435,6 +436,13 @@
     },
     {
       "name": "add_dotenv",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_factory_bot_rails",
       "description": "",
       "type": "boolean",
       "default": false,

@@ -52,6 +52,7 @@
     "add_devise",
     "add_devise_masquerade",
     "add_dotenv",
+    "add_factory_bot_rails",
     "add_faker",
     "add_friendly_id",
     "add_groupdate",
@@ -436,6 +437,13 @@
     {
       "name": "add_dotenv",
       "description": "Indicates when to generate add dotenv",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_factory_bot_rails",
+      "description": "Indicates when to generate add factory bot rails",
       "type": "boolean",
       "default": false,
       "required": false
