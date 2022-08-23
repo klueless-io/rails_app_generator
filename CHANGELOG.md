@@ -1,3 +1,10 @@
+## [0.2.40](https://github.com/klueless-io/rails_app_generator/compare/v0.2.39...v0.2.40) (2022-08-23)
+
+
+### Bug Fixes
+
+* add factory_bot_rails profile ([8a6a7ef](https://github.com/klueless-io/rails_app_generator/commit/8a6a7ef6c4b1b26003930776724cedaeb5232f84))
+
 ## [0.2.39](https://github.com/klueless-io/rails_app_generator/compare/v0.2.38...v0.2.39) (2022-08-23)
 
 
