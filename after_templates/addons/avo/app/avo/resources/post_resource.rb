@@ -22,4 +22,7 @@ class PostResource < Avo::BaseResource
 
   # tutorial (related category): https://youtu.be/WgNK-oINFww?t=328
   field :category, as: :belongs_to
+
+  # tutorial (related category with custom name): https://youtu.be/WgNK-oINFww?t=722
+  field :user, name: "Author", as: :belongs_to
 end

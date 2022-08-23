@@ -18,13 +18,19 @@ after_bundle do
   setup_customizations
   setup_db
   setup_avo
+
+  swap1 = '  resources :users'
+  swap2 = "  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }"
+
+  swap_lines('config/routes.rb', swap1, swap2)
 end
 
 def scaffolds
   add_scaffold_controller('users', 'name', 'email')
-  # add_scaffold('author', 'name', 'email', 'bio:text')
   add_scaffold('category', 'title', 'description:text')
-  add_scaffold('post', 'title content:text', 'published:boolean', 'user:references', 'category:references')
+  add_scaffold('post', 'title', 'content:text', 'published:boolean', 'user:references', 'category:references')
+  add_scaffold('comment', 'body:text', 'commentable:references{polymorphic}', 'user:references')
+
   add_scaffold('location', 'name', 'description:text') #, 'photo:file')
   add_scaffold('room', 'name', 'description:text', 'location:references') #, 'photo:file'
   add_scaffold('booking', 'user:references', 'room:references', 'booked_at:datetime', 'booked_for:integer')
@@ -35,11 +41,12 @@ def setup_customizations
 
   force_copy
   
-  add_controller('home', 'index', 'quick_signin')
+  add_controller('home', 'index', 'quick_signin', 'reseed')
   
   directory "app/controllers"
   directory "app/models"
   directory "app/views"
+  directory "app/services"
   template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
 end
 
@@ -55,6 +62,7 @@ def setup_avo
 
   generate('avo:resource Category')
   generate('avo:resource Post')
+  generate('avo:resource Comment')
   generate('avo:resource Location')
   generate('avo:resource Room')
   generate('avo:resource Booking')

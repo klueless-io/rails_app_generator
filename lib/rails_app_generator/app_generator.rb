@@ -184,6 +184,7 @@ module RailsAppGenerator
       # docker
       add_if(:dotenv) # tested
       add_if(:factory_bot) # TODO: needs testing
+      add_if(:factory_bot_rails) # tested
       add_if(:faker) # tested
       add_if(:friendly_id) # tested
       add_if(:generators) # TODO: needs testing
@@ -363,6 +364,14 @@ module RailsAppGenerator
 
       def join_templates(*template_files, join: "\n\n")
         template_files.map { |template_file| read_template(template_file) }.join(join)
+      end
+
+      # swap two lines using the gsub_file
+      def swap_lines(file, swap1, swap2)
+        swap_temp = '##SWAP_IT##'
+        gsub_file(file, swap1, swap_temp)
+        gsub_file(file, swap2, swap1)
+        gsub_file(file, swap_temp, swap2)
       end
 
       # Moves a file at given location, to another location. Both files are relative to the destination_root

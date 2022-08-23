@@ -176,7 +176,7 @@ end
                     content: Faker::Lorem.sentences(number: 5).join('<br />'),
                     published: Faker::Boolean.boolean(true_ratio: 0.6),
                     category: Category.all.sample,
-                    author: User.all.sample)
+                    user: User.all.sample)
 end
 
 # 200.times do

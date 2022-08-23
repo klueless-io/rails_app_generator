@@ -20,4 +20,5 @@ class UserResource < Avo::BaseResource
   field :name, as: :text
   field :email, as: :text, as_description: true
   field :password, as: :text
+  field :posts, as: :has_many
 end

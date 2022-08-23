@@ -118,6 +118,7 @@ KConfig.configure do |config|
   # docker
   rag.add_option :add_dotenv                  , type: :boolean, default: false
   # factory_bot
+  rag.add_option :add_factory_bot_rails       , type: :boolean, default: false
   rag.add_option :add_faker                   , type: :boolean, default: false
   rag.add_option :add_friendly_id             , type: :boolean, default: false
   # generators
