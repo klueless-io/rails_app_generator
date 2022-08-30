@@ -1,3 +1,11 @@
+## [0.2.42](https://github.com/klueless-io/rails_app_generator/compare/v0.2.41...v0.2.42) (2022-08-30)
+
+
+### Bug Fixes
+
+* add scenic addon ([93a9561](https://github.com/klueless-io/rails_app_generator/commit/93a9561131658399b91075e15c6d9680f1b73ece))
+* cops ([fe3e6b7](https://github.com/klueless-io/rails_app_generator/commit/fe3e6b7031a57b0f212fd91491ebc7f32928b9c1))
+
 ## [0.2.41](https://github.com/klueless-io/rails_app_generator/compare/v0.2.40...v0.2.41) (2022-08-30)
 
 
