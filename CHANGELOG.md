@@ -1,3 +1,10 @@
+## [0.2.41](https://github.com/klueless-io/rails_app_generator/compare/v0.2.40...v0.2.41) (2022-08-30)
+
+
+### Bug Fixes
+
+* update klueless profile ([e426b82](https://github.com/klueless-io/rails_app_generator/commit/e426b820b15e8e49d2cc6c6ec2ccfd4ed8ea1158))
+
 ## [0.2.40](https://github.com/klueless-io/rails_app_generator/compare/v0.2.39...v0.2.40) (2022-08-23)
 
 
