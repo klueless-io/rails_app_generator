@@ -23,7 +23,9 @@ module RailsAppGenerator
         info = Net::HTTP.get(URI.parse(link))
         json = JSON.parse(info)
 
-        Rails::Generators::AppBase::GemfileEntry.new(json['name'], json['version'], json['description'])
+        comment = (json['description'] || json['info'] || '').gsub(/(\r?\n|\r)/, " ").squeeze.strip
+
+        Rails::Generators::AppBase::GemfileEntry.new(json['name'], json['version'], comment)
       rescue SocketError
         abort 'Internet connection cannot be established to RubyGems.org'
       rescue JSON::ParserError
