@@ -70,6 +70,7 @@
     "add_pretender",
     "add_public_suffix",
     "add_rails_html_sanitizer",
+    "add_scenic",
     "add_ransack",
     "add_redcarpet",
     "add_rolify",
@@ -562,6 +563,13 @@
     },
     {
       "name": "add_rails_html_sanitizer",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_scenic",
       "description": "",
       "type": "boolean",
       "default": false,

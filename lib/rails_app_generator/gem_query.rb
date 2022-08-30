@@ -23,7 +23,7 @@ module RailsAppGenerator
         info = Net::HTTP.get(URI.parse(link))
         json = JSON.parse(info)
 
-        comment = (json['description'] || json['info'] || '').gsub(/(\r?\n|\r)/, " ").squeeze.strip
+        comment = (json['description'] || json['info'] || '').gsub(/(\r?\n|\r)/, ' ').squeeze.strip
 
         Rails::Generators::AppBase::GemfileEntry.new(json['name'], json['version'], comment)
       rescue SocketError
