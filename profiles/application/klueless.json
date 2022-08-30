@@ -1,0 +1,23 @@
+{
+  "args": {
+    "app_path": "klueless",
+    "destination_root": "/Users/davidcruwys/dev/kweb",
+    "note": "add sidekiq to handle the data import tasks, add impersonate"
+  },
+  "opts": {
+    "skip_test": true,
+    "database": "postgresql",
+    "css": "tailwind",
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/application/klueless/_.rb",
+    "add_avo": true,
+    "add_annotate": true,
+    "add_brakeman": true,
+    "add_bundler_audit": true,
+    "add_devise": true,
+    "add_dotenv": true,
+    "add_factory_bot_rails": true,
+    "add_faker": true,
+    "add_ransack": false,
+    "add_rubocop": true
+  }
+}

@@ -5,10 +5,16 @@
   },
   "opts": {
     "skip_test": true,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/application/printspeak/_.rb",
     "css": "bootstrap",
+    "database": "postgresql",
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/application/printspeak/_.rb",
+    "add_avo": true,
     "add_annotate": true,
+    "add_devise": true,
     "add_dotenv": true,
+    "add_factory_bot_rails": true,
+    "add_faker": true,
+    "add_ransack": false,
     "add_rubocop": true
   }
 }

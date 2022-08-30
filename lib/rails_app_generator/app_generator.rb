@@ -291,6 +291,15 @@ module RailsAppGenerator
         rails_command('db:migrate')
       end
 
+      def db(drop: false, create: false, migrate: false, seed: false)
+        commands = []
+        commands << 'db:drop' if drop
+        commands << 'db:create' if create
+        commands << 'db:migrate' if migrate
+        commands << 'db:seed' if seed
+        rails_command(commands.join(' '))
+      end
+
       def db_seed
         rails_command('db:seed')
       end
