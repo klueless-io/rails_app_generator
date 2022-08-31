@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# <%= data.description %>
+# Ads methods to ActiveRecord:Migration to create and manage database views in Rails
 #
-# exe/rag addons/<%= data.name_snake %>
+# exe/rag addons/scenic
 
 self.local_template_path = File.dirname(__FILE__)
 
@@ -11,6 +11,8 @@ gac 'base rails 7 image created'
 prepare_environment
 
 after_bundle do
+  force_copy
+  
   create_db
   scaffolds
   setup_customizations
@@ -18,18 +20,21 @@ after_bundle do
 end
 
 def scaffolds
-  # add_scaffold('post', 'title', 'body:text', 'user:references')
-  # add_scaffold('people', 'first_name', 'last_name', 'age:integer', 'address:text')
-  # add_scaffold('product', 'name', 'price:integer')
+  add_scaffold('country', 'code', 'name')
+  add_scaffold('monument', 'name', 'description', 'country:references')
+  add_scaffold('visitor', 'name', 'monument:references')
+
+  generate('scenic:model visitors_by_monument')
+  generate('scenic:model individual_visitors_by_monument --materialized')
+
+  directory "db/views"
 end
 
 def setup_customizations
   route("root 'home#index'")
 
-  force_copy
-  
-  add_controller('home', 'index')
-  
+  add_controller('home', 'index', 'visitors_by_monument', 'individual_visitors_by_monument', 'reseed', 'refresh_material_view')
+
   directory "app/controllers"
   directory "app/models"
   directory "app/views"
@@ -38,8 +43,8 @@ def setup_customizations
 end
 
 def create_db
-  # uncomment this if you need custom configuration in database.yml
-  # gsub_file('config/database.yml', '  encoding: unicode', db_development_settings)
+  gsub_file('config/database.yml', '  encoding: unicode', db_development_settings)
+  rails_command('db:environment:set RAILS_ENV=development')
   db(drop: true, create: true)
 end
 

@@ -42,6 +42,7 @@ class Profile < Thor
     template('profile/after_template.rb'                              , after_template_path('_.rb')                                   , force: options[:force])
     template('profile/app/controllers/home_controller.rb'             , after_template_path('app/controllers/home_controller.rb')     , force: options[:force])
     template('profile/app/views/home/index.html.erb'                  , after_template_path('app/views/home/index.html.erb')          , force: options[:force])
+    template('profile/app/services/seed_service.rb'                   , after_template_path('app/services/seed_service.rb')     , force: options[:force])
 
     copy_file('profile/app/views/layouts/_navbar.html.erb'            , after_template_path('app/views/layouts/_navbar.html.erb')     , force: options[:force])
     copy_file('profile/app/views/layouts/_footer.html.erb'            , after_template_path('app/views/layouts/_footer.html.erb')     , force: options[:force])

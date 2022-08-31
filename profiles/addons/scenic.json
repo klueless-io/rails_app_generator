@@ -1,0 +1,14 @@
+{
+  "args": {
+    "app_path": "r7_scenic",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/addons"
+  },
+  "opts": {
+    "skip_git": true,
+    "skip_test": true,
+    "database": "postgresql",
+    "add_minimal_css": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/scenic/_.rb",
+    "add_scenic": true
+  }
+}

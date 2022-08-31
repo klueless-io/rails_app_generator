@@ -1,0 +1,22 @@
+<h1>Visitors by Monument</h1>
+
+<pre><code><%= File.read('db/views/visitors_by_monuments_v01.sql') %></code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Monument</th>
+      <th>Country</th>
+      <th>Visits</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @visitors.each do |visitor| %>
+    <tr>
+      <td><%= visitor.monument %></td>
+      <td><%= visitor.country %></td>
+      <td><%= visitor.visits %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
