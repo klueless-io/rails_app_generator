@@ -1,3 +1,11 @@
+## [0.2.43](https://github.com/klueless-io/rails_app_generator/compare/v0.2.42...v0.2.43) (2022-08-31)
+
+
+### Bug Fixes
+
+* add scenic profile ([dc309e6](https://github.com/klueless-io/rails_app_generator/commit/dc309e6f399cec7085de3133aa32989bc7ff7ed4))
+* add scenic profile ([44614f7](https://github.com/klueless-io/rails_app_generator/commit/44614f70d73fe41cee5fd9cb9af5d20f0aa4f915))
+
 ## [0.2.42](https://github.com/klueless-io/rails_app_generator/compare/v0.2.41...v0.2.42) (2022-08-30)
 
 
