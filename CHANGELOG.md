@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/klueless-io/rails_app_generator/compare/v0.2.43...v0.3.0) (2022-09-02)
+
+
+### Features
+
+* add target_folder_exists handling ([cf0b7c6](https://github.com/klueless-io/rails_app_generator/commit/cf0b7c6d9b09fddc6cef940b17d3ce431b9c4eff))
+
 ## [0.2.43](https://github.com/klueless-io/rails_app_generator/compare/v0.2.42...v0.2.43) (2022-08-31)
 
 
