@@ -1,4 +1,10 @@
-<%= link_to 'Home', root_path %>
-<%= link_to 'Quick Sign In', home_quick_signin_path %> |
-<%= link_to 'Admin', avo_path %>
+  <%= link_to 'Home', root_path %>
+| <%= link_to 'Re-Seed', home_reseed_path, style: 'color: blue; font-weight: 600;' %>
+| <%= link_to 'Refresh Material View', home_refresh_material_view_path, style: 'color: blue; font-weight: 600;' %>
+| <%= link_to 'Quick Sign In', home_quick_signin_path %>
+| <%= link_to 'Admin', avo_path %>
+<hr />
+
+  <%= link_to 'Visits (View)', home_visitors_by_monument_path %>
+| <%= link_to 'Visits (Materialized)', home_individual_visitors_by_monument_path %>
 <hr />

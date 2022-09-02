@@ -7,6 +7,8 @@
 # RailsAppGenerator::Starter.new(app_path: 'xmen', destination_root: '~/projects_path').start
 # RailsAppGenerator::Starter.new(app_path: '.', destination_root: '~/projects_path/xmen').start
 RSpec.describe RailsAppGenerator::Starter do
+  include_context :use_temp_folder
+
   def sample_path(name)
     File.expand_path("../../../a/#{name}", __dir__)
   end
@@ -141,95 +143,185 @@ RSpec.describe RailsAppGenerator::Starter do
       end
     end
 
-    context 'when executing the generator' do
-      subject { instance.start }
+    describe '.target_folder_exist_action' do
+      subject { instance.target_folder_exist_action }
 
-      let(:args) { { destination_root: sample_path('rag_standard') } }
-      let(:opts) do
-        {
-          skip_git: true,
-          skip_bundle: true
+      it { is_expected.to eq('abort') }
 
-          # # new addon options
-          # add_irbrc: false,
-          # add_foreman: false,
-          # add_dotenv: false,
-          # add_docker: false,
-          # add_docker_compose: false,
-          # add_rubocop: false
+      context 'when addon_template_path supplied' do
+        let(:args) { { target_folder_exist_action: 'destroy' } }
 
-          # new addon options after finish
-          # add_annotate: false,
-          # add_continuous_integration: false,
-          # add_high_voltage: false,
-          # add_generators: false,
-          # add_lograge: false,
-          # add_pundit: false,
-          # add_services: false,
-          # add_sidekiq: false,
-          # add_views: false,
-          # add_factory_bot: false,
-          # add_shoulda: false
+        it { is_expected.to eq('destroy') }
+      end
+    end
+  end
 
-          # test: 'rspec'
+  describe '#handle_target_folder_found?' do
+    subject { instance.handle_target_folder_found? }
 
-        }
+    let(:args) { { destination_root: temp_folder, app_path: 'my_cool_app', target_folder_exist_action: action } }
+    let(:action) { 'abort' }
+
+    let(:app_folder) { File.join(temp_folder, 'my_cool_app') }
+    let(:app_folder_deep) { File.join(app_folder, 'app', 'controller') }
+    let(:git_folder) { File.join(app_folder, '.git') }
+    let(:code_file) { File.join(app_folder, 'code_file.rb') }
+    let(:code_file_deep) { File.join(app_folder_deep, 'code_file.rb') }
+    let(:git_file) { File.join(git_folder, 'some_file.txt') }
+
+    context 'when target folder does not exist' do
+      it { is_expected.to eq(true) }
+    end
+
+    context 'when target folder exists' do
+      before do
+        FileUtils.mkdir_p(git_folder)
+        FileUtils.mkdir_p(app_folder_deep)
+        File.write(git_file, 'content of a file in git folder')
+        File.write(code_file, 'content of a file in code folder')
+        File.write(code_file_deep, 'content of a file in nested code folder')
       end
 
-      # describe '.console_output' do
-      #   subject { instance.console_output }
+      context 'when target_folder_exist_action is abort' do
+        it do
+          is_expected.to eq(false)
 
-      #   it { is_expected.to be_nil }
+          expect(File.directory?(app_folder)).to eq(true)
+          expect(File.exist?(code_file)).to eq(true)
+          expect(File.exist?(code_file_deep)).to eq(true)
+          expect(File.exist?(git_file)).to eq(true)
+        end
+      end
 
-      #   context 'when console_output is written too' do
-      #     before do
-      #       FileUtils.rm_rf(instance.target_path)
-      #       instance.start(rails_options)
-      #     end
+      context 'when target_folder_exist_action is destroy' do
+        let(:action) { 'destroy' }
 
-      #     it { is_expected.not_to be_empty }
-      #   end
-      # end
+        it do
+          is_expected.to eq(true)
 
-      # describe '#start' do
-      #   before { FileUtils.rm_rf(instance.target_path) }
+          expect(File.directory?(app_folder)).to eq(false)
+          expect(File.exist?(code_file)).to eq(false)
+          expect(File.exist?(code_file_deep)).to eq(false)
+          expect(File.exist?(git_file)).to eq(false)
+        end
+      end
 
-      #   it do
-      #     instance.start(rails_options)
+      context 'when target_folder_exist_action is keep_git' do
+        let(:action) { 'keep_git' }
 
-      #     console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/a2.txt', File.join(File.dirname(__FILE__)))
+        it do
+          is_expected.to eq(true)
 
-      #     File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
-      #   end
-      # end
+          expect(File.directory?(app_folder)).to eq(true)
+          expect(File.exist?(code_file)).to eq(false)
+          expect(File.exist?(code_file_deep)).to eq(false)
+          expect(File.exist?(git_file)).to eq(true)
+        end
+      end
 
-      # describe '#kw01_bootstrap' do
-      #   let(:args) do
-      #     {
-      #       app_path: 'kw01_bootstrap',
-      #       destination_root: '/Users/davidcruwys/dev/kweb'
-      #     }
-      #   end
-      #   let(:opts) do
-      #     {
-      #       skip_git: true,
-      #       skip_bundle: false
-      #       # css: 'bootstrap'
-      #     }
-      #   end
+      context 'when target_folder_exist_action is overwrite' do
+        let(:action) { 'overwrite' }
 
-      #   before { FileUtils.rm_rf(instance.target_path) }
+        it do
+          is_expected.to eq(true)
 
-      #   xit do
-      #     instance.start(rails_options)
-
-      #     system 'gem env'
-
-      #     console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/kw01.txt', File.join(File.dirname(__FILE__)))
-
-      #     File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
-      #   end
-      # end
+          expect(File.directory?(app_folder)).to eq(true)
+          expect(File.exist?(code_file)).to eq(true)
+          expect(File.exist?(code_file_deep)).to eq(true)
+          expect(File.exist?(git_file)).to eq(true)
+        end
+      end
     end
+  end
+
+  context 'when executing the generator' do
+    subject { instance.start }
+
+    let(:args) { { destination_root: sample_path('rag_standard') } }
+    let(:opts) do
+      {
+        skip_git: true,
+        skip_bundle: true
+
+        # # new addon options
+        # add_irbrc: false,
+        # add_foreman: false,
+        # add_dotenv: false,
+        # add_docker: false,
+        # add_docker_compose: false,
+        # add_rubocop: false
+
+        # new addon options after finish
+        # add_annotate: false,
+        # add_continuous_integration: false,
+        # add_high_voltage: false,
+        # add_generators: false,
+        # add_lograge: false,
+        # add_pundit: false,
+        # add_services: false,
+        # add_sidekiq: false,
+        # add_views: false,
+        # add_factory_bot: false,
+        # add_shoulda: false
+
+        # test: 'rspec'
+
+      }
+    end
+
+    # describe '.console_output' do
+    #   subject { instance.console_output }
+
+    #   it { is_expected.to be_nil }
+
+    #   context 'when console_output is written too' do
+    #     before do
+    #       FileUtils.rm_rf(instance.target_path)
+    #       instance.start(rails_options)
+    #     end
+
+    #     it { is_expected.not_to be_empty }
+    #   end
+    # end
+
+    # describe '#start' do
+    #   before { FileUtils.rm_rf(instance.target_path) }
+
+    #   it do
+    #     instance.start(rails_options)
+
+    #     console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/a2.txt', File.join(File.dirname(__FILE__)))
+
+    #     File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
+    #   end
+    # end
+
+    # describe '#kw01_bootstrap' do
+    #   let(:args) do
+    #     {
+    #       app_path: 'kw01_bootstrap',
+    #       destination_root: '/Users/davidcruwys/dev/kweb'
+    #     }
+    #   end
+    #   let(:opts) do
+    #     {
+    #       skip_git: true,
+    #       skip_bundle: false
+    #       # css: 'bootstrap'
+    #     }
+    #   end
+
+    #   before { FileUtils.rm_rf(instance.target_path) }
+
+    #   xit do
+    #     instance.start(rails_options)
+
+    #     system 'gem env'
+
+    #     console_output_file = File.expand_path('../../../lib/rails_app_generator/notes/kw01.txt', File.join(File.dirname(__FILE__)))
+
+    #     File.write(console_output_file, instance.console_output.split("\n").compact.collect(&:strip).join("\n"))
+    #   end
+    # end
   end
 end

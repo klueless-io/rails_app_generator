@@ -44,6 +44,10 @@ def scaffolds
   # add_scaffold('db_schema_foreign_key', 'left', 'right', 'name', 'on_update', 'on_delete', 'column', 'db_schema_table:references')
   # add_scaffold('db_schema_index', 'name', 'fields', 'using', 'order:jsonb', 'where', 'unique', 'db_schema_table:references')
   # add_scaffold('db_schema_view', 'name', 'materialized:boolean', 'sql_definition', 'db_schema_table:references')
+
+  generate('scenic:model rubocop_log --materialized')
+
+  directory "db/views"
 end
 
 def setup_customizations
@@ -51,13 +55,14 @@ def setup_customizations
 
   force_copy
   
-  add_controller('home', 'index', 'quick_signin', 'reseed')
+  add_controller('home', 'index', 'quick_signin', 'reseed', 'refresh_material_view')
   
   directory "app/controllers"
   directory "app/models"
   directory "app/views"
   template  'app/views/layouts/application.html.erb', 'app/views/layouts/application.html.erb'
   directory "app/queries"
+  directory "app/services"
 end
 
 def setup_avo

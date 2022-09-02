@@ -7,6 +7,14 @@ class HomeController < ApplicationController
   end
 
   def reseed
-    SeedService.seed
+    SeedService.seed(variant: :refresh)
+
+    redirect_back_or_to root_path
+  end
+
+  def refresh_material_view
+    RubocopLog.refresh
+
+    redirect_back_or_to root_path
   end
 end

@@ -9,4 +9,12 @@ class RubocopResource < Avo::BaseResource
   field :id, as: :id
   # field :data, as: :textarea, only_on: [:edit]
   # field :user_name, as: :text
+
+  tabs do
+    tab "List of Cops" do
+      panel do
+        field :id, as: :id
+      end
+    end
+  end
 end

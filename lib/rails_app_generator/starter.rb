@@ -28,17 +28,22 @@ module RailsAppGenerator
     # points to templates related to rails addons
     attr_reader :addon_template_path
 
+    attr_reader :target_folder_exist_action # [abort destroy keep_git overwrite]
+
     attr_reader :capture_output
     attr_reader :console_output
 
+    # rubocop:disable Metrics/CyclomaticComplexity
     def initialize(**args)
-      @app_path               = args[:app_path]                     || '.'
-      @destination_root       = args[:destination_root]             || Dir.pwd
-      @rails_template_path    = args[:rails_template_path]          || AppGenerator.rails_template_path
-      @override_template_path = args[:override_template_path]       || AppGenerator.override_template_path
-      @addon_template_path    = args[:addon_template_path]          || AppGenerator.addon_template_path
-      @capture_output         = args[:capture_output].nil? ? false : args[:capture_output]
+      @app_path                   = args[:app_path]                     || '.'
+      @destination_root           = args[:destination_root]             || Dir.pwd
+      @rails_template_path        = args[:rails_template_path]          || AppGenerator.rails_template_path
+      @override_template_path     = args[:override_template_path]       || AppGenerator.override_template_path
+      @addon_template_path        = args[:addon_template_path]          || AppGenerator.addon_template_path
+      @target_folder_exist_action = args[:target_folder_exist_action]   || 'abort'
+      @capture_output             = args[:capture_output].nil? ? false : args[:capture_output]
     end
+    # rubocop:enable Metrics/CyclomaticComplexity
 
     def target_path
       File.expand_path(File.join(destination_root, app_path))
@@ -58,11 +63,44 @@ module RailsAppGenerator
       end
     end
 
-    def delete_target_folder
-      FileUtils.rm_rf(target_path)
+    def handle_target_folder_found?
+      return true unless File.directory?(target_path)
+
+      case target_folder_exist_action
+      when 'abort'
+        puts "Target folder [#{target_path}] already exists. Aborting"
+        false
+      when 'destroy'
+        puts "Target folder [#{target_path}] already exists. Destroying it"
+        FileUtils.rm_rf(target_path)
+        true
+      when 'keep_git'
+        puts "Target folder [#{target_path}] already exists. Wiping it but keeping git history"
+        clean_target_folder
+        true
+      when 'overwrite'
+        puts "Target folder [#{target_path}] already exists. Overwriting it"
+        true
+      else
+        raise "Invalid target_folder_exist_action: #{target_folder_exist_action}"
+      end
     end
 
     private
+
+    def clean_target_folder
+      Dir.entries(target_path).each do |entry|
+        entry_path = File.join(target_path, entry)
+
+        next if ['.', '..', '.git'].include?(entry)
+
+        if File.file?(entry_path)
+          File.delete(entry_path)
+        elsif File.directory?(entry_path)
+          FileUtils.rm_rf(entry_path)
+        end
+      end
+    end
 
     # Rails options returns a flat array of options
     #
