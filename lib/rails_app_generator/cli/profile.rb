@@ -29,7 +29,7 @@ module RailsAppGenerator
         RailsAppGenerator::Util.write_last_run('rails_options_data.json', opts.to_h)
 
         starter = RailsAppGenerator::Starter.new(**args)
-        starter.start(opts) if starter.handle_target_folder_existence?
+        starter.start(opts) if starter.handle_target_folder_found?
       end
       # rubocop:enable Metrics/AbcSize
     end

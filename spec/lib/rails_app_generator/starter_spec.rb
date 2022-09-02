@@ -143,13 +143,13 @@ RSpec.describe RailsAppGenerator::Starter do
       end
     end
 
-    describe '.target_folder_exist_action' do
-      subject { instance.target_folder_exist_action }
+    describe '.when_folder_exist' do
+      subject { instance.when_folder_exist }
 
       it { is_expected.to eq('abort') }
 
       context 'when addon_template_path supplied' do
-        let(:args) { { target_folder_exist_action: 'destroy' } }
+        let(:args) { { when_folder_exist: 'destroy' } }
 
         it { is_expected.to eq('destroy') }
       end
@@ -159,7 +159,7 @@ RSpec.describe RailsAppGenerator::Starter do
   describe '#handle_target_folder_found?' do
     subject { instance.handle_target_folder_found? }
 
-    let(:args) { { destination_root: temp_folder, app_path: 'my_cool_app', target_folder_exist_action: action } }
+    let(:args) { { destination_root: temp_folder, app_path: 'my_cool_app', when_folder_exist: action } }
     let(:action) { 'abort' }
 
     let(:app_folder) { File.join(temp_folder, 'my_cool_app') }
@@ -182,7 +182,7 @@ RSpec.describe RailsAppGenerator::Starter do
         File.write(code_file_deep, 'content of a file in nested code folder')
       end
 
-      context 'when target_folder_exist_action is abort' do
+      context 'when when_folder_exist is abort' do
         it do
           is_expected.to eq(false)
 
@@ -193,7 +193,7 @@ RSpec.describe RailsAppGenerator::Starter do
         end
       end
 
-      context 'when target_folder_exist_action is destroy' do
+      context 'when when_folder_exist is destroy' do
         let(:action) { 'destroy' }
 
         it do
@@ -206,7 +206,7 @@ RSpec.describe RailsAppGenerator::Starter do
         end
       end
 
-      context 'when target_folder_exist_action is keep_git' do
+      context 'when when_folder_exist is keep_git' do
         let(:action) { 'keep_git' }
 
         it do
@@ -219,7 +219,7 @@ RSpec.describe RailsAppGenerator::Starter do
         end
       end
 
-      context 'when target_folder_exist_action is overwrite' do
+      context 'when when_folder_exist is overwrite' do
         let(:action) { 'overwrite' }
 
         it do

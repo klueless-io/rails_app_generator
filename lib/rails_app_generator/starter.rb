@@ -28,7 +28,7 @@ module RailsAppGenerator
     # points to templates related to rails addons
     attr_reader :addon_template_path
 
-    attr_reader :target_folder_exist_action # [abort destroy keep_git overwrite]
+    attr_reader :when_folder_exist # [abort destroy keep_git overwrite]
 
     attr_reader :capture_output
     attr_reader :console_output
@@ -40,7 +40,7 @@ module RailsAppGenerator
       @rails_template_path        = args[:rails_template_path]          || AppGenerator.rails_template_path
       @override_template_path     = args[:override_template_path]       || AppGenerator.override_template_path
       @addon_template_path        = args[:addon_template_path]          || AppGenerator.addon_template_path
-      @target_folder_exist_action = args[:target_folder_exist_action]   || 'abort'
+      @when_folder_exist          = args[:when_folder_exist] || 'abort'
       @capture_output             = args[:capture_output].nil? ? false : args[:capture_output]
     end
     # rubocop:enable Metrics/CyclomaticComplexity
@@ -66,7 +66,7 @@ module RailsAppGenerator
     def handle_target_folder_found?
       return true unless File.directory?(target_path)
 
-      case target_folder_exist_action
+      case when_folder_exist
       when 'abort'
         puts "Target folder [#{target_path}] already exists. Aborting"
         false
@@ -82,7 +82,7 @@ module RailsAppGenerator
         puts "Target folder [#{target_path}] already exists. Overwriting it"
         true
       else
-        raise "Invalid target_folder_exist_action: #{target_folder_exist_action}"
+        raise "Invalid when_folder_exist: #{when_folder_exist}"
       end
     end
 

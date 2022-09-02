@@ -3,7 +3,7 @@
     "app_path": "klueless",
     "destination_root": "/Users/davidcruwys/dev/kweb",
     "note": "add sidekiq to handle the data import tasks, add impersonate",
-    "target_folder_exists": "keep_git"
+    "when_folder_exist": "keep_git"
   },
   "opts": {
     "skip_test": true,
