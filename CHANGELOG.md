@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/klueless-io/rails_app_generator/compare/v0.3.0...v0.3.1) (2022-09-02)
+
+
+### Bug Fixes
+
+* rename to when_folder_exist ([3363b0c](https://github.com/klueless-io/rails_app_generator/commit/3363b0c5df5c161f3578ae422b79c3bb7f3b863e))
+
 # [0.3.0](https://github.com/klueless-io/rails_app_generator/compare/v0.2.43...v0.3.0) (2022-09-02)
 
 
