@@ -13,7 +13,7 @@ class HomeController < ApplicationController
   end
 
   def refresh_material_view
-    RubocopLog.refresh
+    RubocopEntry.refresh
 
     redirect_back_or_to root_path
   end

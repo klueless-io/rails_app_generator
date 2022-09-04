@@ -18,7 +18,9 @@
     "add_dotenv": true,
     "add_factory_bot_rails": true,
     "add_faker": true,
-    "add_ransack": false,
+    "add_kaminari": true,
+    "add_lograge": true,
+    "add_ransack": true,
     "add_rubocop": true,
     "add_scenic": true
   }

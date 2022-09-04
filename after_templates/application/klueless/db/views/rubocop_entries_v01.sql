@@ -9,7 +9,7 @@ lines AS (
     jsonb_array_elements(files)->'lines' as lines
   FROM files 
 ),
-rubocop_log AS (
+denormalized AS (
   SELECT
     jsonb_array_elements(lines)->>'position' as position,
     jsonb_array_elements(lines)->>'status' as status,
@@ -20,4 +20,4 @@ rubocop_log AS (
     jsonb_array_elements(lines)->>'file_name' as file_name
   FROM lines
 )
-select * from rubocop_log
+select row_number() OVER () AS id, * from denormalized

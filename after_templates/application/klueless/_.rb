@@ -14,9 +14,9 @@ after_bundle do
   force_copy
   create_db
   scaffolds
+  setup_avo
   setup_customizations
   migrate_db
-  setup_avo
 
   swap1 = '  resources :users'
   swap2 = "  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }"
@@ -45,9 +45,7 @@ def scaffolds
   # add_scaffold('db_schema_index', 'name', 'fields', 'using', 'order:jsonb', 'where', 'unique', 'db_schema_table:references')
   # add_scaffold('db_schema_view', 'name', 'materialized:boolean', 'sql_definition', 'db_schema_table:references')
 
-  generate('scenic:model rubocop_log --materialized')
-
-  directory "db/views"
+  generate('scenic:model rubocop_entry --materialized')
 end
 
 def setup_customizations
@@ -63,24 +61,27 @@ def setup_customizations
   template  'app/views/layouts/application.html.erb', 'app/views/layouts/application.html.erb'
   directory "app/queries"
   directory "app/services"
+  directory "db/views" # takes views from both scaffolds and customizations
+
+  copy_file '.rubocop.yml', '.rubocop.yml'
 end
 
 def setup_avo
-  # generate('avo:install')
+  generate('avo:resource rails_app')
+  generate('avo:resource table_count')
+  generate('avo:resource rubocop')
+  generate('avo:resource rubocop_entry')
+  generate('avo:resource db_schema')
+  generate('avo:resource user')
 
-  generate('avo:resource RailsApp')
-  generate('avo:resource TableCount')
-  generate('avo:resource Rubocop')
-  generate('avo:resource DbSchema')
-  generate('avo:resource User')
+  generate('avo:resource_tool rubocop_info')
+  generate('avo:filter rubocop_entry_filter')
+
   # generate('avo:dashboard Dashboard')
 
   directory "app/avo"
   directory "config/initializers"
   directory "config/locales"
-
-  # # add devise support
-  # gsub_file 'config/initializers/avo.rb', %(# config.current_user_method = {}), 'config.current_user_method = :current_user'
 end
 
 def create_db

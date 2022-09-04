@@ -78,8 +78,9 @@ Avo.configure do |config|
         resource :table_count, label: 'Table Count'
       end
 
-      # group "Xxx" do # , collapsable: true, collapsed: true
-      # end
+      group "Live Views", collapsable: true, collapsed: true do
+        resource :rubocop_entries, label: 'RuboCop Entries'
+      end
 
       group "Admin" do
         resource :user

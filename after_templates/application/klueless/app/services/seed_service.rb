@@ -36,7 +36,7 @@ class SeedService
   def create
     refresh_printspeak
 
-    RubocopLog.refresh
+    RubocopEntry.refresh
   end
 
   def refresh_printspeak
