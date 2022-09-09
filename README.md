@@ -22,7 +22,7 @@ Or install it yourself as:
 gem install rails_app_generator
 ```
 
-Use the Gem
+### Use the Gem
 
 ```
 rag rag-simple
@@ -30,6 +30,27 @@ rag rag-tailwind
 rag rag-bootstrap
 ```
 
+### Create new Addon to Rails App Generator
+
+If you need to make a new addon available then use `thor addon:new`
+
+Generally an Addon will be for a gem so if you use the `--gem` option, it will bring in the GEM info such as latest version number
+
+```
+thor addon:new image_processing --gem
+thor addon:new kaminari --gem
+```
+
+### Create new Profile to Rails App Generator
+
+A profile is a sample Rails application template with files that allows you to test one or more Addons and produces a working Rails 7 application.
+
+If you are just keeping the example to a simple GEM then use the `--variant` option with the folder you would like to write code into, e.g. `addons`
+
+```
+thor profile:new factory_bot --variant=addons
+thor profile:new kaminari --variant=addons
+```
 
 ## Notes
 
