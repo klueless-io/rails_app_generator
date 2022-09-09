@@ -27,6 +27,8 @@ end
 def scaffolds
   add_scaffold_controller('users', 'name', 'email')
 
+  add_scaffold('booking', 'name', 'state')
+
   add_scaffold('rails_app', 'name', 'user:references') # name of the rails_app
 
   # no of records in each table per region
@@ -46,6 +48,7 @@ def scaffolds
   # add_scaffold('db_schema_view', 'name', 'materialized:boolean', 'sql_definition', 'db_schema_table:references')
 
   generate('scenic:model rubocop_entry --materialized')
+  generate('scenic:model table_count_entry')
 end
 
 def setup_customizations
@@ -68,14 +71,22 @@ end
 
 def setup_avo
   generate('avo:resource rails_app')
+
   generate('avo:resource table_count')
+  generate('avo:resource table_count_entry')
+  generate('avo:filter   table_count_tablename_filter')
+
   generate('avo:resource rubocop')
+  generate('avo:resource_tool rubocop_info')
+
   generate('avo:resource rubocop_entry')
+  generate('avo:filter   rubocop_entry_cop_filter')
+  generate('avo:filter   rubocop_entry_filename_filter')
+  generate('avo:filter   rubocop_entry_message_filter')
+  generate('avo:filter   rubocop_entry_status_filter')
+
   generate('avo:resource db_schema')
   generate('avo:resource user')
-
-  generate('avo:resource_tool rubocop_info')
-  generate('avo:filter rubocop_entry_filter')
 
   # generate('avo:dashboard Dashboard')
 
@@ -86,7 +97,9 @@ end
 
 def create_db
   gsub_file('config/database.yml', '  encoding: unicode', db_development_settings)
-  db(drop: true, create: true)
+
+  db_recreate(environment: :development)
+  db_recreate(environment: :test)
 end
 
 def migrate_db

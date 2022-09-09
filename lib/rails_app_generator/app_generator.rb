@@ -71,7 +71,7 @@ module RailsAppGenerator
         puts "gem not available for '#{gem_name}'"
 
         # THIS CODE DOES NOT REALLY WORK
-        return Dir.pwd if Dir.pwd.end_with?('dev/kgems/rails_app_generator') # code smell: this is for my local development environment
+        return Dir.pwd if Dir.pwd.end_with?('dev/kgems/rails_app_generator') # code smell: this is for my local test environment
 
         raise "'#{gem_name}' not available"
       end
@@ -103,7 +103,7 @@ module RailsAppGenerator
     # def rails_customization
     #   puts 'rails customizations'
     #   # invoke :customize_gemfile
-    #   # invoke :setup_development_environment
+    #   # invoke :setup_test_environment
     #   # invoke :setup_production_environment
     #   # invoke :setup_secret_token
     #   # invoke :configure_app
@@ -292,13 +292,26 @@ module RailsAppGenerator
         rails_command('db:migrate')
       end
 
-      def db(drop: false, create: false, migrate: false, seed: false)
+      def db_recreate(environment: nil)
+        db_environment(environment) if environment
+        # when a DB does not exist, the drop will fail, but we still need to run create separately
+        db(drop: true)
+        db(create: true)
+      end
+
+      def db(environment: nil, drop: false, create: false, migrate: false, seed: false)
         commands = []
+
+        commands << "db:environment:set RAILS_ENV=#{environment}" if environment
         commands << 'db:drop' if drop
         commands << 'db:create' if create
         commands << 'db:migrate' if migrate
         commands << 'db:seed' if seed
         rails_command(commands.join(' '))
+      end
+
+      def db_environment(environment)
+        rails_command("db:environment:set RAILS_ENV=#{environment}")
       end
 
       def db_seed
