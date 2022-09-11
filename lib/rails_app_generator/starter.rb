@@ -63,6 +63,7 @@ module RailsAppGenerator
       end
     end
 
+    # rubocop:disable Metrics/AbcSize
     def handle_target_folder_found?
       return true unless File.directory?(target_path)
 
@@ -86,6 +87,7 @@ module RailsAppGenerator
         raise "Invalid when_folder_exist: #{when_folder_exist}"
       end
     end
+    # rubocop:enable Metrics/AbcSize
 
     private
 
