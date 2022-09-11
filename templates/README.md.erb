@@ -18,9 +18,9 @@ Open your browser on [localhost:3000](http://localhost:3000).
 
 ## Development
 
-This app was generated using [Schienenzeppelin](https://github.com/hschne/schienenzeppelin) - there are tons of little tweaks to simplify your development workflow.
+This app was generated using [Klueless - RailsAppGenerator](https://github.com/klueless-io/rails_app_generator) - there are tons of little tweaks to simplify your development workflow.
 
-For more details refer to the [Documentation](https://github.com/hschne/schienenzeppelin)
+For more details refer to the [Documentation](https://github.com/klueless-io/rails_app_generator)
 
 ## Deployment
 

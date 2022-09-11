@@ -4,7 +4,7 @@
     "skip_collision_check": false,
     "ruby": "/Users/davidcruwys/.asdf/installs/ruby/3.1.1/bin/ruby",
     "database": "sqlite3",
-    "skip_git": true,
+    "skip_git": false,
     "skip_keeps": false,
     "skip_action_mailer": false,
     "skip_action_mailbox": false,
@@ -26,7 +26,7 @@
     "main": false,
     "no_rc": false,
     "api": false,
-    "javascript": "esbuild",
+    "javascript": "importmap",
     "skip_bundle": false,
     "note": "",
     "test": "rspec",
@@ -39,10 +39,10 @@
     "add_browser": false,
     "add_bundler_audit": false,
     "add_chartkick": false,
-    "add_devise": true,
+    "add_devise": false,
     "add_devise_masquerade": false,
     "add_dotenv": false,
-    "add_factory_bot_rails": false,
+    "add_factory_bot_rails": true,
     "add_faker": true,
     "add_friendly_id": false,
     "add_groupdate": false,
@@ -52,7 +52,7 @@
     "add_image_processing": false,
     "add_kaminari": false,
     "add_lograge": false,
-    "add_minimal_css": false,
+    "add_minimal_css": true,
     "minimal_css_library": "water.css",
     "add_mini_magick": false,
     "add_motor_admin": false,
@@ -66,6 +66,6 @@
     "add_rolify": false,
     "add_rubocop": false,
     "add_twilio_ruby": false,
-    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/devise/_.rb"
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/factory_bot/_.rb"
   }
 }

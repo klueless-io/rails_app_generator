@@ -363,11 +363,12 @@ module RailsAppGenerator
 
       # copy_file in railties and copy_file in thor have different signatures
       # I may want to remove this method because it just causes pain at the moment
-      def copy_file(source, destination, args = {})
+      def copy_file(source, destination = nil, args = {})
         # puts source
         # puts destination
         # puts args
         args = { force: true }.merge(args) if force_copy?
+        destination ||= source
 
         super(source, destination, args)
       end

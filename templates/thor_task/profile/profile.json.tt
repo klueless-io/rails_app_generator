@@ -1,7 +1,8 @@
 {
   "args": {
     "app_path": "r7_<%= data.name_snake %>",
-    "destination_root": "<%= data.destination_root %>"
+    "destination_root": "<%= data.destination_root %>",
+    "when_folder_exist": "destroy"
   },
   "opts": {
     "skip_git": true,

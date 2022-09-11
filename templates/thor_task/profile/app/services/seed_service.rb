@@ -1,13 +1,14 @@
 class SeedService
   class << self
-    def seed
+    def seed(variant: :reset)
       service = SeedService.new
-      service.call
+      service.call(variant: variant)
     end
   end
 
-  def call
-    reset
+  def call(variant: :reset)
+    reset     if variant == :reset
+    refresh   if variant == :refresh
     create
   end
 
@@ -17,6 +18,9 @@ class SeedService
     # Person.delete_all
     # Post.delete_all
     # Project.delete_all
+  end
+
+  def refresh
   end
 
   def create

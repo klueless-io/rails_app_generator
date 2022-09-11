@@ -1,6 +1,6 @@
 {
   "args": {
-    "app_path": "faker",
+    "app_path": "r7_faker",
     "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/addons"
   },
   "opts": {

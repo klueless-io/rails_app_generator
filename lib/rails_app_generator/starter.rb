@@ -69,6 +69,7 @@ module RailsAppGenerator
       case when_folder_exist
       when 'abort'
         puts "Target folder [#{target_path}] already exists. Aborting"
+        puts 'Maybe you want to use when_folder_exist option with one of these values [destroy overwrite keep_git]'
         false
       when 'destroy'
         puts "Target folder [#{target_path}] already exists. Destroying it"
