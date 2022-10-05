@@ -70,10 +70,11 @@
     "add_pretender",
     "add_public_suffix",
     "add_rails_html_sanitizer",
-    "add_scenic",
     "add_ransack",
     "add_redcarpet",
     "add_rolify",
+    "add_scenic",
+    "add_rspec",
     "add_rubocop",
     "add_twilio_ruby"
   ],
@@ -569,13 +570,6 @@
       "required": false
     },
     {
-      "name": "add_scenic",
-      "description": "",
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    {
       "name": "add_ransack",
       "description": "",
       "type": "boolean",
@@ -591,6 +585,20 @@
     },
     {
       "name": "add_rolify",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_scenic",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_rspec",
       "description": "",
       "type": "boolean",
       "default": false,

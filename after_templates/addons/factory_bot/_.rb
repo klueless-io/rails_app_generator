@@ -17,47 +17,33 @@ after_bundle do
   migrate_db
 end
 
-# Goals:
-# - Store Factories in subfolder under spec
-# -
-# - Use the faker GEM with both standard and custom data
-# - Custom data goes in custom locales folder, see: https://stackoverflow.com/questions/28153540/extending-faker-in-a-gem-where-do-i-put-the-yaml-file
-# - Use associations to affectively create related records
-# - Create default and NULL factory example
-# - Create Seed Data services
-# - Add support for STI
-# - Add support for polymorphic associations
-# Things to be aware of in faker
-# - Random focused data is better then sequence
-#   sequence(:name) { |n| "Category #{n}" }
-#   vs
-#   name { Faker::Hipster.word }
-# - 
-
-
 def scaffolds
-  add_scaffold('app', 'title', 'description', 'settings:json')
-  add_scaffold('tenant', 'name', 'slug', 'active:boolean', 'app:references')
-  add_scaffold('role', 'code') # contributor, moderator, admin
-  add_scaffold('employee', 'first_name', 'last_name', 'address:text', 'email', 'password', 'tenant:references', 'role:references')
-  add_scaffold('project', 'name', 'status', 'budget:decimal', 'country', 'progress:integer', 'tenant:references')
-  add_scaffold('article', 'title', 'body:text', 'is_featured:boolean', 'employee:references', 'tenant:references')
+  add_scaffold('region', 'name', 'settings:json')
+  add_scaffold('company', 'name', 'slug', 'active:boolean', 'region:references')
+  add_scaffold('role', 'code', 'description') # contributor, moderator, admin
+  add_scaffold('employee', 'first_name', 'last_name', 'address:text', 'email', 'password', 'company:references')
+  add_scaffold('employee_role', 'employee:references', 'role:references')
+  add_scaffold('project', 'name', 'status', 'budget:decimal', 'country', 'progress:integer', 'company:references')
+  add_scaffold('article', 'title', 'body:text', 'is_featured:boolean', 'published:datetime', 'employee:references', 'company:references')
   add_scaffold('video', 'title', 'youtube_id', '', 'article:references')
+  add_scaffold('reserved', 'new', 'do', 'end')
 end
 
+# https://speakerdeck.com/toshimaru/factorybot-the-right-way
 def setup_customizations
   route("root 'home#index'")
 
   force_copy
   
-  add_controller('home', 'index', 'reseed')
+  add_controller('home', 'index', 'test_data', 'sample_data')
 
   directory "app/controllers"
   directory "app/models"
   directory "app/views"
   template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
   directory "app/services"
-  copy_file 'factories.rb'
+  directory 'config'
+  directory 'custom_factories'
 end
 
 def create_db

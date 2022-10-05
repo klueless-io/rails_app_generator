@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'rails/generators/rails/app/app_generator'
-
 module RailsAppGenerator
   #  AppGenerator is a wrapper for Rails::AppGenerator
   class AppGenerator < Rails::Generators::AppGenerator
@@ -153,15 +151,13 @@ module RailsAppGenerator
       add_if(:rubocop)
     end
 
-    # def create_test_files
-    #   return if options[:skip_test]
+    def create_test_files
+      return if options[:skip_test]
 
-    #   super if options[:test] == 'minitest'
+      super if options[:test] == 'minitest'
 
-    #   # puts options[:testing_framework]
-
-    #   # add(:rspec) if options[:testing_framework] == 'rspec'
-    # end
+      add(:rspec) if active?(:rspec) || options[:test] == 'rspec'
+    end
 
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     def finish_template
@@ -209,6 +205,7 @@ module RailsAppGenerator
       add_if(:redcarpet) # tested
       add_if(:rolify) # tested
       add_if(:scenic)
+      # add_if(:rspec) # see: create_test_filers
       add_if(:services) # TODO: needs testing
       add_if(:shoulda) # TODO: needs testing
       add_if(:sidekiq) # TODO: needs testing

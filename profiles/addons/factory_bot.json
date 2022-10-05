@@ -5,14 +5,12 @@
     "when_folder_exist": "keep_git"
   },
   "opts": {
-    "skip_git": false,
     "skip_test": true,
     "add_minimal_css": true,
     "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/factory_bot/_.rb",
     "add_annotate": true,
     "add_factory_bot": true,
     "add_factory_bot_rails": true,
-    "add_faker": true,
-    "add_rspec": true
+    "add_faker": true
   }
 }

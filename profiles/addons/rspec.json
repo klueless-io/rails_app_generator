@@ -1,0 +1,14 @@
+{
+  "args": {
+    "app_path": "r7_rspec",
+    "destination_root": "/Users/davidcruwys/dev/kgems/rails_app_generator/a/addons",
+    "when_folder_exist": "destroy"
+  },
+  "opts": {
+    "skip_git": true,
+    "add_minimal_css": true,
+    "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/rspec/_.rb",
+    "test": "rspec",
+    "add_rspec": true
+  }
+}

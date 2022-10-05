@@ -1,45 +1,33 @@
-FactoryBot.define do
-  factory :app do
-    title { Faker::Name.name } # Faker::App.name
-    description { Faker::Lorem.paragraphs(number: rand(4...10)).join("\n") }
-    settings { { 'foo' => 'bar' } }
-  end
-
-  factory :tenant do
-    name { Faker::Name.name }
-    slug { Faker::Internet.slug }
-    active { [true, false].sample }
-    app
-  end
-
-  factory :employee do
-    first_name { Faker::Name.first_name }
-    last_name { Faker::Name.last_name }
-    email { Faker::Internet.email }
-    password { Faker::Internet.password }
-    address { Faker::Address.full_address }
-  end
-
-  factory :article do
-    title { Faker::Quote.famous_last_words }
-    body { Faker::Lorem.paragraphs(number: rand(4...10)).join("\n") }
-    is_featured { [true, false].sample }
-  end
-
-  factory :project do
-    name { Faker::App.name }
-    status { [:closed, :rejected, :failed, :loading, :running, :waiting, :done, :finalized, :archived, :finished].sample }
-    budget { Faker::Number.decimal(l_digits: 4) }
-    country { Faker::Address.country_code }
-    progress { Faker::Number.between(from: 0, to: 100) }
-  end
-end
-
 def examples
+  # description { Faker::Lorem.paragraphs(number: rand(1...3)).join("\n") }
   Faker::Name.name
   Faker::Name.unique.name
+  Faker::Name.unique.first_name
+  Faker::Name.unique.last_name
+  
+  Faker::Hacker.unique.say_something_smart
+  Faker::String.unique.troublesome
+
+  Faker::Lorem.unique.sentences.join(' ')
+  Faker::Lorem.unique.words.join(' ')
+  Faker::Lorem.unique.characters(10)
+  Faker::Lorem.unique.paragraphs.join("\n\n")
 
   Faker::Internet.email
+  Faker::Internet.unique.user_name
+  Faker::Internet.unique.url
+  Faker::Internet.unique.ip_v4_address
+
+  Faker::Number.unique.between(1, 10_000)
+  Faker::Number.unique.decimal(4, 2)
+
+  Faker::Company.catch_phrase
+  Faker::Company.buzzword
+  # When a straight answer won't do, BS to the rescue!
+  Faker::Company.bs
+  Faker::Company.logo #=> "https://pigment.github.com/fake-logos/logos/medium/color/5.png"
+  Faker::Company.profession #=> "firefighter"
+  Faker::Company.australian_business_number #=> "81137773602"
 
   Faker::Artist.name
   Faker::Address.city #=> "Imogeneborough"

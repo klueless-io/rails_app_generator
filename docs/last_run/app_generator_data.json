@@ -60,10 +60,11 @@
     "add_pretender": false,
     "add_public_suffix": false,
     "add_rails_html_sanitizer": false,
-    "add_scenic": false,
     "add_ransack": false,
     "add_redcarpet": false,
     "add_rolify": false,
+    "add_scenic": false,
+    "add_rspec": false,
     "add_rubocop": false,
     "add_twilio_ruby": false,
     "template": "/Users/davidcruwys/dev/kgems/rails_app_generator/after_templates/addons/factory_bot/_.rb"

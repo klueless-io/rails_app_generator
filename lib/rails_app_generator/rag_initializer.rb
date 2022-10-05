@@ -10,6 +10,7 @@ KConfig.configure do |config|
   # https://github.com/carbonfive/raygun-rails
   # https://github.com/abhaynikam/boring_generators
 
+  # NOTE: currently this is being done using add_rspec, but I should support this technique as well.
   # rag.add_option :test                        , type: :string , default: 'rspec'
 
   # rag.add_option :skip_namespace                , type: :boolean    , default: false         , description: "Skip namespace (affects only isolated engines)"
@@ -68,6 +69,7 @@ KConfig.configure do |config|
   # future_option   :skip_hotwire               , type: :boolean, default: false              # , description: "Skip Hotwire integration"
   # future_option   :skip_jbuilder              , type: :boolean, default: false              # , description: "Skip jbuilder gem"
   # rag.add_option    :skip_test                  , type: :boolean, default: false              # , description: "Skip test files"
+  # NOTE: currently this is being done using add_rspec, but I should support this technique as well.
   rag.add_option    :test                       , type: :string , default: 'rspec'            # , description: "minitest or rspec (default: rspec)"
   # future_option   :skip_system_test           , type: :boolean, default: false              # , description: "Skip system test files"
   # future_option   :skip_bootsnap              , type: :boolean, default: false              # , description: "Skip bootsnap gem"
@@ -139,14 +141,15 @@ KConfig.configure do |config|
   rag.add_option :add_public_suffix           , type: :boolean, default: false
   # pundit
   rag.add_option :add_rails_html_sanitizer    , type: :boolean, default: false
-  rag.add_option :add_scenic                  , type: :boolean, default: false
   # rails_app_generator
   rag.add_option :add_ransack                 , type: :boolean, default: false
   rag.add_option :add_redcarpet               , type: :boolean, default: false
   rag.add_option :add_rolify                  , type: :boolean, default: false
+  rag.add_option :add_scenic                  , type: :boolean, default: false
   # services
   # shoulda
   # sidekiq
+  rag.add_option :add_rspec                   , type: :boolean, default: false
   rag.add_option :add_rubocop                 , type: :boolean, default: false
   rag.add_option :add_twilio_ruby             , type: :boolean, default: false
 end

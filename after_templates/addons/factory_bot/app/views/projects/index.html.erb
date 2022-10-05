@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Projects</h1>
+
+<div id="projects">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Budget</th>
+        <th>Country</th>
+        <th>Progress</th>
+        <th>Project</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.name %></td>
+        <td><%= project.status %></td>
+        <td><%= project.budget %></td>
+        <td><%= project.country %></td>
+        <td><%= project.progress %></td>
+        <td><%= project.project&.name %></td>
+        <td><%= link_to "Show", project %></td>
+      </tr>
+    <% end %>
+
+    </tbody>
+  </table>
+
+</div>
+
+<%= link_to "New project", new_project_path %>

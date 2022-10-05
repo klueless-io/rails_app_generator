@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Videos</h1>
+
+<div id="videos">
+
+  <table>
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>Youtube ID</th>
+        <th>Article</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <% @videos.each do |video| %>
+      <tr>
+        <td><%= video.name %></td>
+        <td><%= video.slug %></td>
+        <td><%= video.article&.title %></td>
+        <td><%= link_to "Show", video %></td>
+      </tr>
+    <% end %>
+
+    </tbody>
+  </table>
+
+</div>
+
+<%= link_to "New video", new_video_path %>

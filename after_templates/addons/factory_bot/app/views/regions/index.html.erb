@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Regions</h1>
+
+<div id="regions">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Settings</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <% @regions.each do |region| %>
+      <tr>
+        <td><%= region.name %></td>
+        <td><%= region.settings %></td>
+        <td><%= link_to "Show", region %></td>
+      </tr>
+    <% end %>
+
+    </tbody>
+  </table>
+
+</div>
+
+<%= link_to "New region", new_region_path %>

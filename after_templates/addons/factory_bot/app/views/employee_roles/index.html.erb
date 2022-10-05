@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Employee roles</h1>
+
+<div id="employee_roles">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Employee</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <% @employee_roles.each do |employee_role| %>
+      <tr>
+        <td><%= employee_role.employee&.name %></td>
+        <td><%= employee_role.role&.name %></td>
+        <td><%= link_to "Show", employee_role %></td>
+      </tr>
+    <% end %>
+
+    </tbody>
+  </table>
+
+
+</div>
+
+<%= link_to "New employee role", new_employee_role_path %>
