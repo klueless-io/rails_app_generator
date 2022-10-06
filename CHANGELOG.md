@@ -1,3 +1,10 @@
+## [0.3.4](https://github.com/klueless-io/rails_app_generator/compare/v0.3.3...v0.3.4) (2022-10-06)
+
+
+### Bug Fixes
+
+* update view_component profile ([218126a](https://github.com/klueless-io/rails_app_generator/commit/218126af5df49d1c2b4b05ad99ee8e8c97ee6fb1))
+
 ## [0.3.3](https://github.com/klueless-io/rails_app_generator/compare/v0.3.2...v0.3.3) (2022-10-05)
 
 
