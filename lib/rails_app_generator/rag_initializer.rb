@@ -152,6 +152,7 @@ KConfig.configure do |config|
   rag.add_option :add_rspec                   , type: :boolean, default: false
   rag.add_option :add_rubocop                 , type: :boolean, default: false
   rag.add_option :add_twilio_ruby             , type: :boolean, default: false
+  rag.add_option :add_view_component          , type: :boolean, default: false
 end
 
 # Make sure that RailsOptions reflect the options available from Railties

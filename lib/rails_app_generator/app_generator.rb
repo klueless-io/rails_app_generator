@@ -212,6 +212,7 @@ module RailsAppGenerator
       add_if(:ransack) # TODO: needs testing
       add_if(:rubocop) # tested
       add_if(:twilio_ruby) # tested
+      add_if(:view_component)
       add(:views, :errors, :scaffold) if active?(:views)
 
       # invoke :rails_customization

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= camelized %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%%= csrf_meta_tags %>
+    <%%= csp_meta_tag %>
+
+    <%- if options[:skip_hotwire] || options[:skip_javascript] -%>
+    <%%= stylesheet_link_tag "application" %>
+    <%- else -%>
+    <%%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%- end -%>
+  </head>
+
+  <body class='container mx-auto'>
+    <header>
+      <%%= render 'layouts/navbar' %>
+      <hr />
+    </header>
+    <main>
+      <%%= yield %>
+    </main>
+    <footer>
+      <%%= render 'layouts/footer' %>
+    </footer>
+  </body>
+</html>
+

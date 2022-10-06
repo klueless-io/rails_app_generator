@@ -76,7 +76,8 @@
     "add_scenic",
     "add_rspec",
     "add_rubocop",
-    "add_twilio_ruby"
+    "add_twilio_ruby",
+    "add_view_component"
   ],
   "class_options": [
     {
@@ -613,6 +614,13 @@
     },
     {
       "name": "add_twilio_ruby",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_view_component",
       "description": "",
       "type": "boolean",
       "default": false,
