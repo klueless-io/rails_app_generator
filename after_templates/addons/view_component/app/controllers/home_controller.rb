@@ -4,17 +4,22 @@ class HomeController < ApplicationController
 
   def component
     @pricing_data1 = pricing_data_poro
-    @pricing_data1.title = nil
+    @pricing_data1.title = nil # let the component set a default title
 
-    @pricing_data2 = pricing_data_poro
-    @pricing_data2.cards.pop() # should change to a three column layout
+    @pricing_data2 = pricing_data_poro(3)
+    @pricing_data2.cards[1].highlight = true # highlight the second card
+
+    @pricing_data3 = pricing_data_poro(2)
+    @pricing_data3.title = 'Only 2 Plans'
   end
 
   private
 
-  def pricing_data_poro
+  def pricing_data_poro(take_cards = nil)
+    data = pricing_data
+    data[:cards] = data[:cards].take(take_cards) if take_cards
     # OpenStruct is not a good practice: But this makes the HASH and feel like a PORO model
-    JSON.parse(pricing_data.to_json, object_class: OpenStruct)
+    JSON.parse(data.to_json, object_class: OpenStruct)
   end
 
   def pricing_data
