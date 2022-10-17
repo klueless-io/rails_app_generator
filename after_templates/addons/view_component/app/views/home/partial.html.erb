@@ -4,3 +4,22 @@
 </div>
 
 <%= render 'price_container' %>
+
+<%# 
+NOTE: These classes are here so that tailwind pipeline sees that they are being used
+
+If you put tailwind css into .rb files, they are not being seen by the transpiler
+I need to investigate why this is?
+%>
+
+<div class='mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:max-w-none xl:grid-cols-3'>
+</div>
+<div class='mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:max-w-none xl:grid-cols-3'>
+</div>
+<div class='mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl lg:max-w-none lg:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-cols-4'>
+</div>
+<div class='border-2 lg:border-4 border-solid md:border-dashed lg:border-double xl:border-dotted 2xl:border-dashed border-red-500'>
+</div>
+<div class='divide-y divide-gray-200 rounded-lg border border-gray-200 border-7 shadow-sm border-2 border-red-500'>
+</div>
+<div class='border-7'>

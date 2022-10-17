@@ -27,10 +27,12 @@ def setup_customizations
   route("root 'home#index'")
 
   force_copy
-  
+
   add_controller('home', 'index', 'partial', 'component')
-  
+
+  directory "app/components"
   directory "app/controllers"
+  directory "app/helpers"
   directory "app/models"
   directory "app/views"
   template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'

@@ -18,7 +18,7 @@
     "skip_javascript": false,
     "skip_hotwire": false,
     "skip_jbuilder": false,
-    "skip_test": true,
+    "skip_test": false,
     "skip_system_test": false,
     "skip_bootsnap": false,
     "dev": false,
