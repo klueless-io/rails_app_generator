@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'pry'
 module RailsAppGenerator
   #  AppGenerator is a wrapper for Rails::AppGenerator
   class AppGenerator < Rails::Generators::AppGenerator
@@ -172,6 +173,7 @@ module RailsAppGenerator
       add_if(:brakeman) # tested
       add_if(:browser) # tested
       add_if(:bundler_audit) # tested
+      add_if(:capybara) # tested
       add_if(:chartkick) # tested
       add_if(:continuous_integration) # TODO: needs work
       add_if(:devise) # tested

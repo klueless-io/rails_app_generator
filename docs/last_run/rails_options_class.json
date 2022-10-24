@@ -48,6 +48,7 @@
     "add_brakeman",
     "add_browser",
     "add_bundler_audit",
+    "add_capybara",
     "add_chartkick",
     "add_devise",
     "add_devise_masquerade",
@@ -411,6 +412,13 @@
     },
     {
       "name": "add_bundler_audit",
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "add_capybara",
       "description": "",
       "type": "boolean",
       "default": false,

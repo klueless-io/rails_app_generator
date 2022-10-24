@@ -48,6 +48,7 @@
     "add_brakeman": false,
     "add_browser": false,
     "add_bundler_audit": false,
+    "add_capybara": false,
     "add_chartkick": false,
     "add_devise": false,
     "add_devise_masquerade": false,

@@ -10,6 +10,9 @@ gac 'base rails 7 image created'
 
 prepare_environment
 
+gem "rspec-rails", group: "test"
+gem "capybara", group: "test"
+
 after_bundle do
   create_db
   scaffolds
@@ -37,6 +40,11 @@ def setup_customizations
   directory "app/views"
   template  'app/views/layouts/application.html.erb'        , 'app/views/layouts/application.html.erb'
   directory "app/services"
+
+  create_file('.rspec', '--require spec_helper')
+  directory "spec"
+  # template('spec/rails_helper.rb')
+  # template('spec/spec_helper.rb')
 end
 
 def create_db
